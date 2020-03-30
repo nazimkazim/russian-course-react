@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import LessonHeader from './LessonHeaderTemplate'
 import AlphabetComponent from '../components/Alphabet'
 
@@ -17,7 +16,7 @@ export default class SingleFlower extends Component {
   render() {
     
     return (
-      <div>
+      <div className="container is-fluid">
           <LessonHeader topic="Известные брэнды" lesson="Урок 1.1"/>
           <AlphabetComponent/>
       </div>

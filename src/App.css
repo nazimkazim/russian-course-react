@@ -121,6 +121,11 @@ a {
   margin-bottom: 50px;
 }
 
+.table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (max-width: 768px) {
   .hero {
     min-height: 300px;
@@ -153,3 +158,5 @@ a {
     padding: 50px;
   }
 }
+
+

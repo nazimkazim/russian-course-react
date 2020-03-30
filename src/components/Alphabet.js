@@ -15,10 +15,10 @@ export default function Alphabet() {
                   <abbr>Русская буква</abbr>
                 </th>
                 <th>
-                  <abbr title="Won">Слово на английском</abbr>
+                  <abbr>Слово на английском</abbr>
                 </th>
                 <th>
-                  <abbr title="Drawn">Слово на русском</abbr>
+                  <abbr>Слово на русском</abbr>
                 </th>
               </tr>
             </thead>
@@ -209,72 +209,172 @@ export default function Alphabet() {
                   <abbr>Русская буква</abbr>
                 </th>
                 <th>
-                  <abbr title="Won">Слово на английском</abbr>
+                  <abbr>Слово на английском</abbr>
                 </th>
                 <th>
-                  <abbr title="Drawn">Слово на русском</abbr>
+                  <abbr>Слово на русском</abbr>
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>1</th>
-                <td>А а</td>
+                <th>18</th>
+                <td>Р р</td>
                 <td>
-                  B<span className="has-text-success">a</span>r
+                  <span className="has-text-success">R</span>оle
                 </td>
                 <td>
-                  Б<span className="has-text-success">a</span>р
-                </td>
-              </tr>
-              <tr>
-                <th>2</th>
-                <td>Б б</td>
-                <td>
-                  <span className="has-text-success">B</span>ar
-                </td>
-                <td>
-                  <span className="has-text-success">Б</span>aр
+                  <span className="has-text-success">Р</span>оль
                 </td>
               </tr>
               <tr>
-                <th>3</th>
-                <td>В в</td>
+                <th>19</th>
+                <td>С с</td>
                 <td>
-                  <span className="has-text-success">V</span>ector
+                  <span className="has-text-success">S</span>port
                 </td>
                 <td>
-                  <span className="has-text-success">B</span>ектор
-                </td>
-              </tr>
-              <tr>
-                <th>4</th>
-                <td>Г г</td>
-                <td>
-                  <span className="has-text-success">G</span>arage
-                </td>
-                <td>
-                  <span className="has-text-success">Г</span>араж
+                  <span className="has-text-success">С</span>порт
                 </td>
               </tr>
               <tr>
-                <th>5</th>
-                <td>Д д</td>
+                <th>20</th>
+                <td>Т т</td>
                 <td>
-                  <span className="has-text-success">D</span>ocker
+                  <span className="has-text-success">T</span>axi
                 </td>
                 <td>
-                  <span className="has-text-success">Д</span>окер
+                  <span className="has-text-success">Т</span>акси
                 </td>
               </tr>
               <tr>
-                <th>6</th>
-                <td>Е е</td>
+                <th>21</th>
+                <td>У у</td>
                 <td>
-                  T<span className="has-text-success">e</span>xas
+                  C<span className="has-text-success">oo</span>ler
                 </td>
                 <td>
-                  Т<span className="has-text-success">е</span>хас
+                  К<span className="has-text-success">у</span>лер
+                </td>
+              </tr>
+              <tr>
+                <th>22</th>
+                <td>Ф ф</td>
+                <td>
+                  <span className="has-text-success">F</span>ilm
+                </td>
+                <td>
+                  <span className="has-text-success">Ф</span>ильм
+                </td>
+              </tr>
+              <tr>
+                <th>23</th>
+                <td>Х х</td>
+                <td>
+                  <span className="has-text-success">H</span>ockey
+                </td>
+                <td>
+                  <span className="has-text-success">Х</span>оккей
+                </td>
+              </tr>
+              <tr>
+                <th>24</th>
+                <td>Ц ц</td>
+                <td>
+                  Pi<span className="has-text-success">zz</span>a
+                </td>
+                <td>
+                  Пи<span className="has-text-success">цц</span>а
+                </td>
+              </tr>
+              <tr>
+                <th>25</th>
+                <td>Ч ч</td>
+                <td>
+                  <span className="has-text-success">Ch</span>eck
+                </td>
+                <td>
+                  <span className="has-text-success">Ч</span>ек
+                </td>
+              </tr>
+              <tr>
+                <th>26</th>
+                <td>Ш ш</td>
+                <td>
+                  <span className="has-text-success">Sh</span>ow
+                </td>
+                <td>
+                  <span className="has-text-success">Ш</span>оу
+                </td>
+              </tr>
+              <tr>
+                <th>27</th>
+                <td>Щ щ</td>
+                <td>
+                  Bor<span className="has-text-success">sch</span>
+                </td>
+                <td>
+                  Бор<span className="has-text-success">щ</span>
+                </td>
+              </tr>
+              <tr>
+                <th>28</th>
+                <td>ъ</td>
+                <td>
+                  <span className="has-text-success">silent</span>
+                </td>
+                <td>
+                  Об<span className="has-text-success">ъ</span>ект
+                </td>
+              </tr>
+              <tr>
+                <th>29</th>
+                <td>ы</td>
+                <td>
+                  <span className="has-text-success">(no Eng)</span>
+                </td>
+                <td>
+                  Муз<span className="has-text-success">ы</span>ка
+                </td>
+              </tr>
+              <tr>
+                <th>30</th>
+                <td>ь</td>
+                <td>
+                  <span className="has-text-success">silent</span>
+                </td>
+                <td>
+                  Цар<span className="has-text-success">ь</span>
+                </td>
+              </tr>
+              <tr>
+                <th>31</th>
+                <td>Э э</td>
+                <td>
+                  <span className="has-text-success">E</span>dinburgh
+                </td>
+                <td>
+                  <span className="has-text-success">Э</span>динбург
+                </td>
+              </tr>
+              <tr>
+                <th>32</th>
+                <td>Ю ю</td>
+                <td>
+                  Prod<span className="has-text-success">u</span>cer
+                </td>
+                <td>
+                  Прод<span className="has-text-success">ю</span>сер
+                </td>
+              </tr>
+              <tr>
+                <th>33</th>
+                <td>Я я</td>
+                <td>
+                  <span className="has-text-success">Ya</span>ndex
+                </td>
+                <td>
+                  <span className="has-text-success">Я</span>ндекс
                 </td>
               </tr>
             </tbody>

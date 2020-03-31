@@ -4,6 +4,7 @@ import AlphabetComponent from '../components/Alphabet';
 import SectionHeader from '../components/SectionHeader'
 import Instruction from '../components/Instruction'
 import SyllablePlate from '../components/SyllablePlate'
+import ListenOptionsAndClick from '../components/ListenOptionsAndClick'
 import {syllableSet1} from '../data/SyllablesData'
 
 
@@ -42,7 +43,7 @@ export default class Lesson_1_1 extends Component {
               <SyllablePlate syllables={syllableSet1}/>
               </div>
               <div className="column">
-
+              <ListenOptionsAndClick syllables={syllableSet1}/>
               </div>
             </div>
           </div>

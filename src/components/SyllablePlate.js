@@ -1,5 +1,4 @@
 import React from 'react';
-import Speech from 'react-speech';
 
 
 
@@ -41,10 +40,14 @@ class SyllablePlate extends React.Component {
             let children = [];
             //Inner loop to create children
             for (let j = 0; j < 6; j++) {
-                children.push(<td> - {this.props.syllables[i][j]}</td>);
+                let audio = new Audio(this.props.syllables[i][j].audio);
+                children.push(
+                    <td onClick={ () => { audio.play(); } } key={ j }>{ this.props.syllables[i][j].text }
+                    </td>
+                );
             }
             //Create the parent and add the children
-            table.push(<tr>{ children }</tr>);
+            table.push(<tr key={ i }>{ children }</tr>);
         }
         return table;
     };
@@ -53,7 +56,9 @@ class SyllablePlate extends React.Component {
     render() {
         return (
             <table className="table is-bordered is-striped is-hoverable">
-                { this.createTable() }
+                <tbody>
+                    { this.createTable() }
+                </tbody>
             </table>
         );
     }

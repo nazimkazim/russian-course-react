@@ -154,6 +154,17 @@ td {
   
 }
 
+.buttons-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.listen-options-button-check-container {
+  text-align: center;
+}
+
+
+
 
 
 @media screen and (max-width: 768px) {

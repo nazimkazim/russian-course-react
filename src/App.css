@@ -164,7 +164,11 @@ td {
 }
 
 
-
+.listen-options-victory-plate {
+  height: 100%;
+  font-size: 40px;
+  font-weight: bold;
+}
 
 
 @media screen and (max-width: 768px) {

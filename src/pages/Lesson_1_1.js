@@ -37,12 +37,13 @@ export default class Lesson_1_1 extends Component {
         <section className="newSection">
         <SectionHeader name="Читаем по слогам" engName="Read by syllables"/>
           <div className="container is-fluid">
-            <Instruction letter="a" name="Нажмите на слог и повторяйте" engName="Click a syllable and repeat"/>
             <div className="columns is-vcentered">
               <div className="column">
+              <Instruction letter="a" name="Нажмите на слог и повторяйте" engName="Click a syllable and repeat"/>
               <SyllablePlate syllables={syllableSet1}/>
               </div>
               <div className="column">
+              <Instruction letter="б" name="Проверьте знания" engName="Check your knowledge"/>
               <ListenOptionsAndClick syllables={syllableSet1}/>
               </div>
             </div>

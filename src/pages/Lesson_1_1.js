@@ -38,7 +38,7 @@ export default class Lesson_1_1 extends Component {
         <SectionHeader name="Читаем по слогам" engName="Read by syllables"/>
           <div className="container is-fluid">
             <Instruction letter="a" name="Нажмите на слог и повторяйте" engName="Click a syllable and repeat"/>
-            <div className="columns">
+            <div className="columns is-vcentered">
               <div className="column">
               <SyllablePlate syllables={syllableSet1}/>
               </div>

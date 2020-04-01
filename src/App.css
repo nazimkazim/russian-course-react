@@ -134,6 +134,26 @@ td {
   cursor: pointer;
 }
 
+.listen-options-card {
+  width:80% !important;
+  min-height:400px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listen-options-card-syllable-header {
+  height: 130px;
+  background-color:#0288D1;
+}
+
+.listen-options-card-syllable {
+  font-size:80px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  
+}
+
 
 
 @media screen and (max-width: 768px) {

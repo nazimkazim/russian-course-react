@@ -49,6 +49,16 @@ export default class Lesson_1_1 extends Component {
             </div>
           </div>
         </section>
+        <section className="newSection">
+        <SectionHeader name="Новые слова" engName="New words"/>
+          <div className="container is-fluid">
+            <Instruction letter="a" name="Слушайте и повторяйте за учителем Русский алфавит" engName="Listen and repeat after your teacher the Russian alphabet"/>
+          </div>
+          <div>
+          <iframe src="https://quizlet.com/499126642/flashcards/embed?i=4bby1&x=1jj1" title="This is a unique title" height="500" width="100%" styles={{"border":0}}></iframe>
+          </div>
+        </section>
+
       </>
     );
   }

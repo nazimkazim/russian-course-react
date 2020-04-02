@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultImg from "../images/room-1.jpeg";
 import PropTypes from "prop-types";
 import moment from "moment";
 
@@ -12,7 +11,7 @@ export default function Blog({ blog }) {
         <div className="column is-one-fifth">
           <figure>
             <p className="image is-128x128">
-              <img src={(mainPicture && mainPicture) || defaultImg} alt="" />
+              <img src={(mainPicture && mainPicture)} alt="" />
             </p>
           </figure>
         </div>

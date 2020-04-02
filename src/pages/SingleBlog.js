@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import defaultBcg from "../images/room-1.jpeg";
 import { Link } from "react-router-dom";
 import { BlogContext } from "../contextBlog";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -11,9 +10,7 @@ export default class SingleBlog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slug: this.props.match.params.slug,
-      defaultBcg
-    };
+      slug: this.props.match.params.slug    };
   }
 
   static contextType = BlogContext;

@@ -6,7 +6,8 @@ import Instruction from '../components/Instruction'
 import SyllablePlate from '../components/SyllablePlate'
 import ListenOptionsAndClick from '../components/ListenOptionsAndClick'
 import {syllableSet1} from '../data/SyllablesData'
-
+import MatchTranscriptedWordToPicture from '../components/MatchTranscriptedWordToPicture'
+import {set1} from '../data/MTWTP'
 
 export default class Lesson_1_1 extends Component {
   constructor (props) {
@@ -30,7 +31,7 @@ export default class Lesson_1_1 extends Component {
         <section className="newSection">
         <SectionHeader name="Русский алфавит" engName="Russian alphabet"/>
           <div className="container is-fluid">
-            <Instruction letter="a" name="Слушайте и повторяйте за учителем Русский алфавит" engName="Listen and repeat after your teacher the Russian alphabet"/>
+            <Instruction letter="a" name="Слушайте и повторяйте за учителем Русский алфавит" engName="Listen and repeat the Russian alphabet after your teacher"/>
             <AlphabetComponent />
           </div>
         </section>
@@ -52,10 +53,17 @@ export default class Lesson_1_1 extends Component {
         <section className="newSection">
         <SectionHeader name="Новые слова" engName="New words"/>
           <div className="container is-fluid">
-            <Instruction letter="a" name="Слушайте и повторяйте за учителем Русский алфавит" engName="Listen and repeat after your teacher the Russian alphabet"/>
+            <Instruction letter="a" name="Слушайте и повторяйте за учителем слова" engName="Listen and repeat the words after your teacher"/>
           </div>
           <div>
-          <iframe src="https://quizlet.com/499126642/flashcards/embed?i=4bby1&x=1jj1" title="This is a unique title" height="500" width="100%" styles={{"border":0}}></iframe>
+          <iframe src="https://quizlet.com/500020326/flashcards/embed?i=4bby1&x=1jj1" title="Russian Basic Words" height="500" width="100%" styles={{"border":0}}></iframe>
+          </div>
+        </section>
+        <section className="newSection">
+        <SectionHeader name="Техника и технология" engName="Machinery and technology"/>
+          <div className="container is-fluid">
+            <Instruction letter="a" name="Выучите новые слова связанные с техникой и технологией" engName="Learn new words related to machinery and technology"/>
+            <MatchTranscriptedWordToPicture data={set1}/>
           </div>
         </section>
 

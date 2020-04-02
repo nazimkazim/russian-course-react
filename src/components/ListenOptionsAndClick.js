@@ -98,9 +98,9 @@ class ListenOptionsAndClick extends Component {
                     { this.state.win ? '' : <p className="listen-options-card-syllable">{ this.state.data && this.state.data[this.state.index][0].text }</p> }
                 </div>
                 { this.state.win ? '' : <div className="columns buttons-container is-multiline is-vcentered">
-                    { this.state.data && this.state.data[this.state.index].options.map((audio) => (
-                        <div className="column is-half">
-                            <button class="button is-success" onClick={ (e) => {
+                    { this.state.data && this.state.data[this.state.index].options.map((audio,index) => (
+                        <div className="column is-half" key={index}>
+                            <button className="button is-success" onClick={ () => {
                                 let aud = new Audio(audio);
                                 aud.play();
                                 this.setState({ optionsButtonIsClicked: true }, function () {
@@ -110,8 +110,8 @@ class ListenOptionsAndClick extends Component {
 
                                 //this.state.optionsButtonIsClicked && this.setState({isDisabled:false})
                             } }>
-                                <span class="icon is-small">
-                                    <i class="fas fa-volume-up"></i>
+                                <span className="icon is-small">
+                                    <i className="fas fa-volume-up"></i>
                                 </span>
                             </button >
                         </div>
@@ -129,7 +129,7 @@ class ListenOptionsAndClick extends Component {
                             <>
                                 <button className="button is-success is-rounded" disabled={ this.state.isDisabled } onClick={ this.checkAnswer }>check</button>
                                 <hr />
-                                <progress class="progress is-primary" value={ this.state.index } max={ this.state.data.length - 1 }></progress>
+                                <progress className="progress is-primary" value={ this.state.index } max={ this.state.data.length - 1 }></progress>
                                 <hr />
                             </>
                         )

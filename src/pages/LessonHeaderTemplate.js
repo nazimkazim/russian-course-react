@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import defaultBcg from "../images/room-1.jpeg";
 import { Link } from "react-router-dom";
 import { LessonContext } from "../context";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -8,9 +7,7 @@ export default class SingleFlower extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      slug: this.props.topic,
-      defaultBcg
-    };
+      slug: this.props.topic    };
   }
 
   static contextType = LessonContext;
@@ -50,18 +47,18 @@ export default class SingleFlower extends Component {
               
               <hr></hr>
               <ul className="has-text-centered">
-                <strong>Цели</strong>{ objectives.map((obj) => (
-                  <li>{ obj }</li>
+                <strong>Цели</strong>{ objectives.map((obj,index) => (
+                  <li key={index}>{ obj }</li>
                 )) }
               </ul>
               <ul className="has-text-centered">
-                <strong>Грамматика</strong> { grammarGoals.map((obj) => (
-                  <li>{ obj }</li>
+                <strong>Грамматика</strong> { grammarGoals.map((obj,index) => (
+                  <li key={index}>{ obj }</li>
                 )) }
               </ul>
               <ul className="has-text-centered">
-                <strong>Слова</strong> { vocabularyGoals.map((obj) => (
-                  <li>{ obj }</li>
+                <strong>Слова</strong> { vocabularyGoals.map((obj, index) => (
+                  <li key={index}>{ obj }</li>
                 )) }
               </ul>
               <ul className="has-text-centered">

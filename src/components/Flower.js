@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultImg from "../images/room-1.jpeg";
 import PropTypes from "prop-types";
 
 export default function Flower({ lesson }) {
@@ -10,7 +9,7 @@ export default function Flower({ lesson }) {
       <div className="card feature-flower-card">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img src={cover  || defaultImg} alt="single room" />
+            <img src={cover} alt="single room" />
           </figure>
         </div>
         <div className="card-content">

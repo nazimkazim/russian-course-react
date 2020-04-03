@@ -172,6 +172,16 @@ td {
   font-weight: bold;
 }
 
+.input-placeholder {
+  display: flex;
+}
+
+.letter-span {
+  width:30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
 
 @media screen and (max-width: 768px) {
   .hero {

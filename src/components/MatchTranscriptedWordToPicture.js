@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import correct from '../data/media/correct.wav';
+
 var _ = require('lodash');
 
 
@@ -13,7 +15,8 @@ class MatchTranscriptedWordToPicture extends Component {
             companyRus: '',
             rusName: '',
             randomLetters: [],
-            disabled: false
+            disabled: false,
+            nameIsCorrect:false
         };
 
 
@@ -81,8 +84,19 @@ class MatchTranscriptedWordToPicture extends Component {
         return shuffled;
     }
 
+    checkAnswer = () => {
+        if (this.state.guessed === this.state.rusName) {
+            let audio = new Audio(correct)
+            audio.play()
+            this.setState({
+                nameIsCorrect:true
+            })
+        }
+    }
+
     render() {
         console.log(this.state.guessed.length === this.state.wordIndex);
+        console.log(this.state.guessed, this.state.rusName);
 
         return (
             <div className="columns is-multiline is-vcentered">
@@ -109,13 +123,13 @@ class MatchTranscriptedWordToPicture extends Component {
                                         <p className="title is-4">{ this.state.guessed.trim().split("").map((letter) => (
                                             letter
                                         )) }
-                                            <button class="button is-small" onClick={ this.removeLetters }>
-                                                <span class="icon is-small">
-                                                    <i class="fas fa-backspace"></i>
+                                            <button className="button is-small" onClick={ this.removeLetters }>
+                                                <span className="icon is-small">
+                                                    <i className="fas fa-backspace"></i>
                                                 </span>
                                             </button>
                                         </p>
-                                        { this.state.disabled && (<button class="button is-small">
+                                        { this.state.disabled && (<button onClick={this.checkAnswer} className={`button is-small ${this.state.nameIsCorrect && 'is-success'}`}>
                                             <span class="icon is-small">
                                                 <i class="fas fa-check-circle"></i>
                                             </span>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import correct from '../data/media/correct.wav';
+import denied from '../data/media/denied.mp3';
+
 
 var _ = require('lodash');
 
@@ -9,31 +11,66 @@ class MatchTranscriptedWordToPicture extends Component {
         super(props);
 
         this.state = {
-            index: 1,
-            guessed: "_ _ _ _ _ _ _ _ _ _",
+            index: 3,
+            nameGuessed:[],
+            data: '',
             wordIndex: 0,
-            companyRus: '',
-            rusName: '',
-            randomLetters: [],
             disabled: false,
-            nameIsCorrect:false
+            nameIsCorrect: false
         };
 
 
     }
 
     componentDidMount() {
-        let splittedCompany = this.props.data[this.state.index].companyRus.trim();
+        /* let splittedCompany = this.props.data[this.state.index].companyRus.trim();
         let splittedName = this.props.data[this.state.index].rusName.trim();
-        let randomLetters = this.randomizeLetters(this.props.data[this.state.index].companyRus, this.props.data[this.state.index].rusName);
+        let dashedName = splittedName.split("").map((item) => {
+            let str = ''
+            return str += ' _'  
+        })
+        console.log()
+        let randomLetters = this.randomizeLetters(this.props.data[this.state.index].companyRus, this.props.data[this.state.index].rusName)
         this.setState({
-            companyRus: splittedCompany, rusName: splittedName, randomLetters
+            companyRus: splittedCompany, rusName: splittedName, randomLetters,nameGuessed:dashedName.join("")
+        }); */
+        let arr = [];
+        let dashedName = [];
+
+        this.props.data.map((item) => {
+            let obj = {
+                picture: item.picture,
+                engName: item.engName,
+                engCompany: item.companyEng,
+                rusCompany: item.companyRus,
+                rusName: item.rusName,
+                scrambleLetters: this.randomizeLetters(item.companyRus, item.rusName),
+                correctAnswer: item.rusName + ", " + item.companyRus,
+                dashedWord: this.dashedWord(item.rusName, item.companyRus)
+            };
+
+            //console.log(item)
+            //console.log(arr)
+            //console.log(obj)
+            return (arr.push(obj), dashedName.push(this.dashedWord(item.rusName, item.companyRus)));
+
         });
+
+        this.setState({
+            data: arr, nameGuessed: dashedName[this.state.index]
+        });
+    }
+
+    dashedWord(str1, str2) {
+        let str = str1 + ", " + str2;
+        let composed = " ";
+        str.split("").map((item) => composed += "_ " );
+        return composed.trim();
+
     }
 
     letterUnderlines(word) {
         return word;
-
     }
 
     handleGuess = (evt) => {
@@ -41,12 +78,12 @@ class MatchTranscriptedWordToPicture extends Component {
         console.log(ltr);
 
         this.setState(prevState => {
-            const updatedState = prevState.guessed.substring(0, this.state.wordIndex) + ltr + prevState.guessed.substring(this.state.wordIndex + 2);
+            const updatedState = prevState.nameGuessed.substring(0, this.state.wordIndex) + ltr + prevState.nameGuessed.substring(this.state.wordIndex + 2);
             return ({
-                guessed: updatedState, wordIndex: this.state.wordIndex + 1
+                nameGuessed: updatedState, wordIndex: this.state.wordIndex + 1
             });
         }, () => {
-            if (this.state.wordIndex === this.state.guessed.length) {
+            if (this.state.wordIndex === this.state.nameGuessed.length) {
                 this.setState({
                     disabled: true
                 });
@@ -58,16 +95,16 @@ class MatchTranscriptedWordToPicture extends Component {
     removeLetters = () => {
         //console.log("clicked")
         this.setState(prevState => {
-            let part1 = prevState.guessed.substring(0, prevState.wordIndex - 1);
-            let part2 = prevState.guessed.substring(prevState.wordIndex, prevState.guessed.length);
+            let part1 = prevState.nameGuessed.substring(0, prevState.wordIndex - 1);
+            let part2 = prevState.nameGuessed.substring(prevState.wordIndex, prevState.nameGuessed.length);
             let updatedState = part1 + " _" + part2;
 
             return ({
-                guessed: updatedState, wordIndex: this.state.wordIndex - 1
+                nameGuessed: updatedState, wordIndex: this.state.wordIndex - 1
             });
         });
 
-        if (this.state.wordIndex === this.state.guessed.length) {
+        if (this.state.wordIndex === this.state.nameGuessed[this.state.index].length) {
             this.setState({
                 disabled: false
             });
@@ -79,24 +116,30 @@ class MatchTranscriptedWordToPicture extends Component {
     randomizeLetters(str1, str2) {
         let wordSplitted1 = str1.split('');
         let wordSplitted2 = str2.split('');
-        let arr = [wordSplitted1, wordSplitted2].flat();
+        let arr = [wordSplitted1, wordSplitted2, ","].flat();
         let shuffled = _.shuffle(arr);
         return shuffled;
     }
 
     checkAnswer = () => {
-        if (this.state.guessed === this.state.rusName) {
-            let audio = new Audio(correct)
-            audio.play()
+        if (this.state.nameGuessed === this.state.rusName) {
+            let audio = new Audio(correct);
+            audio.play();
             this.setState({
-                nameIsCorrect:true
-            })
+                nameIsCorrect: true, index: this.state.index + 1
+            });
+
+        } else {
+            let audio = new Audio(denied);
+            audio.play();
         }
-    }
+    };
 
     render() {
-        console.log(this.state.guessed.length === this.state.wordIndex);
-        console.log(this.state.guessed, this.state.rusName);
+        //console.log(this.state.nameGuessed.length === this.state.wordIndex);
+        //console.log(this.state.nameGuessed, this.state.rusName);
+        console.log(this.state.nameGuessed);
+        console.log(this.state.nameGuessed === this.state.data[this.state.index] && this.state.data[this.state.index].correctAnswer, this.state.nameGuessed, this.state.data[this.state.index] && this.state.data[this.state.index].correctAnswer)
 
         return (
             <div className="columns is-multiline is-vcentered">
@@ -115,33 +158,30 @@ class MatchTranscriptedWordToPicture extends Component {
                                         <p className="subtitle is-6">{ this.props.data[this.state.index].companyEng }</p>
                                     </div>
                                 </div>
-
                             </div>
                             <div className="card-content">
                                 <div className="media">
                                     <div className="media-content">
-                                        <p className="title is-4">{ this.state.guessed.trim().split("").map((letter) => (
-                                            letter
-                                        )) }
-                                            <button className="button is-small" onClick={ this.removeLetters }>
+                                        <p className="title is-4">{ this.state.nameGuessed && this.state.nameGuessed }
+                                            <button className="button is-small" onClick={ this.removeLetters } disabled={ this.state.wordIndex <= 0 }>
                                                 <span className="icon is-small">
                                                     <i className="fas fa-backspace"></i>
                                                 </span>
                                             </button>
                                         </p>
-                                        { this.state.disabled && (<button onClick={this.checkAnswer} className={`button is-small ${this.state.nameIsCorrect && 'is-success'}`}>
+                                        { this.state.disabled && (<button onClick={ this.checkAnswer } className={ `button is-small ${this.state.nameIsCorrect && 'is-success'}` }>
                                             <span class="icon is-small">
                                                 <i class="fas fa-check-circle"></i>
                                             </span>
                                         </button>) }
-                                        <p className="subtitle is-6">{ this.letterUnderlines(this.state.companyRus) }</p>
+                                        <p className="subtitle is-6"></p>
                                     </div>
                                 </div>
                             </div>
                             <div className="card-content">
                                 <div className="media">
                                     <div className="media-content">
-                                        <div className="tags">{ this.state.randomLetters.map((letter) => (
+                                        <div className="tags">{ this.state.data[this.state.index] && this.state.data[this.state.index].scrambleLetters.map((letter) => (
                                             <button disabled={ this.state.disabled } className="tag is-dark is-light is-medium" value={ letter } onClick={ this.handleGuess } styles={ { cursor: 'pointer' } }>{ letter }</button>
                                         )) }</div>
                                     </div>

@@ -23,7 +23,7 @@ class MatchTranscriptedWordToPicture extends Component {
 
     }
 
-    componentWillMount() {
+    componentDidMount() {
         /* let splittedCompany = this.props.data[this.state.index].companyRus.trim();
         let splittedName = this.props.data[this.state.index].rusName.trim();
         let dashedName = splittedName.split("").map((item) => {
@@ -61,6 +61,9 @@ class MatchTranscriptedWordToPicture extends Component {
             data: arr, nameGuessed: dashedName[this.state.index]
         });
     }
+
+
+    
 
     dashedWord(str1, str2) {
         let str = str1 + ", " + str2;
@@ -133,14 +136,24 @@ class MatchTranscriptedWordToPicture extends Component {
             let audio = new Audio(correct);
             audio.play();
             this.setState({
-                nameIsCorrect: true, index: this.state.index + 1, nameGuessed: []
+                nameIsCorrect: true, index: this.state.index + 1
             });
-
+        this.update()
         } else {
             let audio = new Audio(denied);
             audio.play();
         }
     };
+
+    update() {
+        let dashedName = [];
+        this.props.data.map((item) => {
+            return ( dashedName.push(this.dashedWord(item.rusName, item.companyRus)));
+        });
+        this.setState({
+            nameGuessed: dashedName[this.state.index+1],wordIndex:0, disabled:false
+        });
+    }
 
     render() {
         //console.log(this.state.nameGuessed.length === this.state.wordIndex);

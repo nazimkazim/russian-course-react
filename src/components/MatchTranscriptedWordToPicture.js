@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import correct from '../data/media/correct.wav';
 import denied from '../data/media/denied.mp3';
+import type from '../data/media/type.wav';
 
 
 var _ = require('lodash');
@@ -11,8 +12,8 @@ class MatchTranscriptedWordToPicture extends Component {
         super(props);
 
         this.state = {
-            index: 3,
-            nameGuessed:[],
+            index: 0,
+            nameGuessed: [],
             data: '',
             wordIndex: 0,
             disabled: false,
@@ -22,7 +23,7 @@ class MatchTranscriptedWordToPicture extends Component {
 
     }
 
-    componentDidMount() {
+    componentWillMount() {
         /* let splittedCompany = this.props.data[this.state.index].companyRus.trim();
         let splittedName = this.props.data[this.state.index].rusName.trim();
         let dashedName = splittedName.split("").map((item) => {
@@ -64,7 +65,7 @@ class MatchTranscriptedWordToPicture extends Component {
     dashedWord(str1, str2) {
         let str = str1 + ", " + str2;
         let composed = " ";
-        str.split("").map((item) => composed += "_ " );
+        str.split("").map((item) => composed += "_ ");
         return composed.trim();
 
     }
@@ -75,6 +76,8 @@ class MatchTranscriptedWordToPicture extends Component {
 
     handleGuess = (evt) => {
         let ltr = evt.target.value;
+        let typing = new Audio(type);
+        typing.play();
         console.log(ltr);
 
         this.setState(prevState => {
@@ -94,6 +97,8 @@ class MatchTranscriptedWordToPicture extends Component {
 
     removeLetters = () => {
         //console.log("clicked")
+        let typing = new Audio(type);
+        typing.play();
         this.setState(prevState => {
             let part1 = prevState.nameGuessed.substring(0, prevState.wordIndex - 1);
             let part2 = prevState.nameGuessed.substring(prevState.wordIndex, prevState.nameGuessed.length);
@@ -102,13 +107,15 @@ class MatchTranscriptedWordToPicture extends Component {
             return ({
                 nameGuessed: updatedState, wordIndex: this.state.wordIndex - 1
             });
+        }, () => {
+            if (this.state.wordIndex !== this.state.nameGuessed[this.state.index].length) {
+                this.setState({
+                    disabled: false
+                });
+            }
         });
 
-        if (this.state.wordIndex === this.state.nameGuessed[this.state.index].length) {
-            this.setState({
-                disabled: false
-            });
-        }
+
 
 
     };
@@ -122,11 +129,11 @@ class MatchTranscriptedWordToPicture extends Component {
     }
 
     checkAnswer = () => {
-        if (this.state.nameGuessed === this.state.rusName) {
+        if (this.state.nameGuessed === this.state.data[this.state.index].correctAnswer.trim()) {
             let audio = new Audio(correct);
             audio.play();
             this.setState({
-                nameIsCorrect: true, index: this.state.index + 1
+                nameIsCorrect: true, index: this.state.index + 1, nameGuessed: []
             });
 
         } else {
@@ -139,7 +146,7 @@ class MatchTranscriptedWordToPicture extends Component {
         //console.log(this.state.nameGuessed.length === this.state.wordIndex);
         //console.log(this.state.nameGuessed, this.state.rusName);
         console.log(this.state.nameGuessed);
-        console.log(this.state.nameGuessed === this.state.data[this.state.index] && this.state.data[this.state.index].correctAnswer, this.state.nameGuessed, this.state.data[this.state.index] && this.state.data[this.state.index].correctAnswer)
+        console.log(this.state.nameGuessed === this.state.data[this.state.index] && this.state.data[this.state.index].correctAnswer.trim(), this.state.nameGuessed, this.state.data[this.state.index] && this.state.data[this.state.index].correctAnswer.trim());
 
         return (
             <div className="columns is-multiline is-vcentered">

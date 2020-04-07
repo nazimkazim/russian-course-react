@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import correct from '../data/media/correct.wav';
 import denied from '../data/media/denied.mp3';
 import type from '../data/media/type.wav';
+import ProgressBar from './ProgressBar';
 
 
 var _ = require('lodash');
@@ -189,10 +190,16 @@ class MatchTranscriptedWordToPicture extends Component {
                     <div className="column is-3">
                         <div className="card mtwp-card-container">
                             { this.state.activityIsFinished ? (
-                                <>
-                                    <div className="mtwp-winner-title">You are winner</div>
-                                    <button className="button" onClick={ this.startAgain }>Again</button>
-                                </>) : (
+                                <div className="card-content">
+                                    <div className="mtwp-winner-title">Good Job</div>
+                                    <div className="has-text-centered">
+                                        <button className="button mtwp-winner-button is-success" onClick={ this.startAgain }>
+                                        <span className="icon is-small">
+                                            <i className="fas fa-redo"></i>
+                                        </span>
+                                        </button>
+                                    </div>
+                                </div>) : (
                                     <>
                                         <div className="card-image">
                                             <figure className="image is-4by3">
@@ -232,6 +239,7 @@ class MatchTranscriptedWordToPicture extends Component {
                                                     <div className="tags">{ this.state.data[this.state.index] && this.state.data[this.state.index].scrambleLetters.map((letter) => (
                                                         <button disabled={ this.state.disabled } className="tag is-dark is-light is-medium" value={ letter } onClick={ this.handleGuess } styles={ { cursor: 'pointer' } }>{ letter }</button>
                                                     )) }</div>
+                                                <ProgressBar value={this.state.index} max={this.state.data.length - 1}/>
                                                 </div>
                                             </div>
                                         </div>

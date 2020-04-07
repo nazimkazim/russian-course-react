@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import correct from '../data/media/correct.wav';
 import denied from '../data/media/denied.mp3';
+import ProgressBar from './ProgressBar'
 var _ = require('lodash');
 
 
@@ -123,14 +124,14 @@ class ListenOptionsAndClick extends Component {
                             Good job
                             <br />
                             <button className="button" onClick={ this.startAgain }><span class="icon is-small">
-                                <i class="fas fa-redo"></i>
+                                <i className="fas fa-redo"></i>
                             </span></button>
                         </div>) : (
                             <>
                                 <button className="button is-success is-rounded" disabled={ this.state.isDisabled } onClick={ this.checkAnswer }>check</button>
-                                <hr />
-                                <progress className="progress is-primary" value={ this.state.index } max={ this.state.data.length - 1 }></progress>
-                                <hr />
+                                <hr/>
+                                <ProgressBar value={this.state.index} max={this.state.data.length}/>
+                                <hr/>
                             </>
                         )
                     }

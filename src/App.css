@@ -182,6 +182,13 @@ td {
   border: 1px solid black;
 }
 
+.mtwp-card-container {
+  min-height: 600px;
+}
+
+.mtwp-winner-title {
+  text-align: center;
+}
 
 @media screen and (max-width: 768px) {
   .hero {

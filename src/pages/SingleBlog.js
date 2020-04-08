@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { BlogContext } from "../contextBlog";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+//import { Carousel } from "react-responsive-carousel";
 import moment from "moment";
 import profilePhoto from "../images/profile-photo.jpg";
 
@@ -30,7 +30,7 @@ export default class SingleBlog extends Component {
       );
     }
 
-    const { header, description, date, extraPictures, mainPicture } = blog;
+    const { header, description, date } = blog;
     return (
       <section className="container single-blog-container">
         <div className="columns">
@@ -53,7 +53,6 @@ export default class SingleBlog extends Component {
             </div>
             <div className="has-text-centered main-picture-container">
               <figure className="image is-16by9">
-                <img alt="" src={mainPicture} />
               </figure>
             </div>
             <div>{description}</div>

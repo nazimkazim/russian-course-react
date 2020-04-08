@@ -8,8 +8,10 @@ import ListenOptionsAndClick from '../components/ListenOptionsAndClick';
 import { syllableSet1 } from '../data/SyllablesData';
 import MatchTranscriptedWordToPicture from '../components/MatchTranscriptedWordToPicture';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
+import TextQuizzer from '../components/TextQuizzer';
 import { set1 } from '../data/MTWTP';
 import { set1COSOC } from '../data/ComposeOrderedSentOnClick';
+import { set1TextQuizzer } from '../data/TextQuizzerData';
 
 
 export default class Lesson_1_1 extends Component {
@@ -80,6 +82,20 @@ export default class Lesson_1_1 extends Component {
           <div className="container is-fluid">
             <Instruction letter="a" name="Слушайте и повторяйте за учителем слова" engName="Listen and repeat the words after your teacher" />
             <iframe src="https://quizlet.com/501180727/flashcards/embed?i=4bby1&x=1jj1" title="Technology and machinery" height="500" width="100%" styles={ { "border": 0 } }></iframe>
+          </div>
+        </section>
+        <section className="newSection">
+          <SectionHeader name="Чтение" engName="Reading" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+                <Instruction letter="a" name="Слушайте и повторяйте за учителем слова" engName="Listen and repeat the words after your teacher" />
+                <TextQuizzer data={ set1TextQuizzer } />
+              </div>
+              <div className="column">
+
+              </div>
+            </div>
           </div>
         </section>
       </>

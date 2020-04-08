@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import click from "../data/media/click.wav";
-import denied from '../data/media/denied.mp3';
-import correct from '../data/media/correct.wav';
+import denied from "../data/media/denied.mp3";
+import correct from "../data/media/correct.wav";
 import ProgressBar from "../components/ProgressBar";
 var _ = require("lodash");
 
@@ -12,6 +12,7 @@ class ScrambleWordsActivity extends Component {
       data: [],
       answer: [],
       index: 0,
+      activityIsFinished: false,
     };
   }
   componentDidMount() {
@@ -57,29 +58,66 @@ class ScrambleWordsActivity extends Component {
   };
 
   handleCheck = () => {
-    let answer = this.state.answer.join(" ")
+    let answer = this.state.answer.join(" ");
     if (answer === this.state.data[this.state.index].rus) {
       let sound = new Audio(correct);
-      this.setState({
-        index:this.state.index + 1, answer:[]
-      })
       sound.play();
+      this.setState(
+        {
+          index: this.state.index + 1,
+          answer: [],
+        },
+        () => {
+          if (this.state.index === this.state.data.length) {
+            this.setState({
+              activityIsFinished: true,
+            });
+          }
+        }
+      );
     } else {
       let sound = new Audio(denied);
       sound.play();
     }
-    console.log(answer)
-  }
+  };
+
+  startAgain = () => {
+    this.setState({
+      data: [],
+      answer: [],
+      index: 0,
+      activityIsFinished: false,
+    });
+    this.update()
+  };
+
+  update = () => {
+    let arr = [];
+    this.props.data.map((item) => {
+      let obj = {
+        eng: item.eng,
+        rus: item.rus,
+        scrambled: this.randomize(item.rus),
+      };
+      return arr.push(obj);
+    });
+    this.setState({
+      data: arr,
+    });
+  };
 
   render() {
     console.log(this.state.data);
     console.log(this.state.answer);
+    console.log(this.state.index === this.state.data.length);
     return (
       <div className="card mtwp-card-container">
         <div className="card-content scramble-words-activity-image">
           <div className="scramble-words-activity-image-sent">
-            {this.state.data[this.state.index] &&
-              this.state.data[this.state.index].eng}
+            {this.state.activityIsFinished
+              ? "Good Job"
+              : this.state.data[this.state.index] &&
+                this.state.data[this.state.index].eng}
           </div>
         </div>
         <div className="card-content card-content-answer-container">
@@ -88,7 +126,7 @@ class ScrambleWordsActivity extends Component {
               <p className="title is-4">
                 {this.state.answer.map((word) => (
                   <button
-                    className="tag is-info is-large"
+                    className="tag is-info is-medium"
                     value={word}
                     onClick={this.handleRemove}>
                     {word}
@@ -105,14 +143,27 @@ class ScrambleWordsActivity extends Component {
                 {this.state.data[this.state.index] &&
                   this.state.data[this.state.index].scrambled.map((item) => (
                     <button
-                      className="tag is-info is-large"
+                      className="tag is-info is-medium"
                       value={item}
                       onClick={this.handleAnswer}>
                       {item}
                     </button>
                   ))}
               </span>
-              <button className="button is-success" onClick={this.handleCheck} disabled={this.state.answer.length < 1}>Check</button>
+              {this.state.activityIsFinished ? (
+                <button className="button is-success" onClick={this.startAgain}>
+                  <span class="icon is-small">
+                    <i className="fas fa-redo"></i>
+                  </span>
+                </button>
+              ) : (
+                <button
+                  className="button is-success"
+                  onClick={this.handleCheck}
+                  disabled={this.state.answer.length < 1}>
+                  Check
+                </button>
+              )}
               <hr />
               <ProgressBar
                 value={this.state.index}

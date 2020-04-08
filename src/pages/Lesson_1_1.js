@@ -9,7 +9,7 @@ import { syllableSet1 } from '../data/SyllablesData';
 import MatchTranscriptedWordToPicture from '../components/MatchTranscriptedWordToPicture';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
 import { set1 } from '../data/MTWTP';
-import {set1COSOC} from '../data/ComposeOrderedSentOnClick'
+import { set1COSOC } from '../data/ComposeOrderedSentOnClick';
 
 
 export default class Lesson_1_1 extends Component {
@@ -54,30 +54,34 @@ export default class Lesson_1_1 extends Component {
           </div>
         </section>
         <section className="newSection">
-          <SectionHeader name="Новые слова" engName="New words" />
+          <SectionHeader name="Новые слова (основные слова)" engName="New words (basic words)" />
           <div className="container is-fluid">
             <Instruction letter="a" name="Слушайте и повторяйте за учителем слова" engName="Listen and repeat the words after your teacher" />
-          </div>
-          <div>
             <iframe src="https://quizlet.com/500020326/flashcards/embed?i=4bby1&x=1jj1" title="Russian Basic Words" height="500" width="100%" styles={ { "border": 0 } }></iframe>
           </div>
         </section>
         <section className="newSection">
-          <SectionHeader name="Техника и технология" engName="Machinery and technology" />
+          <SectionHeader name="Упражнение (Техника и технология)" engName="Exercise (Machinery and technology)" />
           <div className="container is-fluid">
             <div className="columns is-multiline is-vcentered">
-            <div className="column">
-            <Instruction letter="a" name="Выучите новые слова связанные с техникой и технологией" engName="Learn new words related to machinery and technology" />
-              <MatchTranscriptedWordToPicture data={ set1 } />
-            </div>
-            <div className="column">
-            <Instruction letter="a" name="Выучите новые слова связанные с техникой и технологией" engName="Learn new words related to machinery and technology" />
-              <ScrambleWordsActivity data={set1COSOC}/>
-            </div>
+              <div className="column">
+                <Instruction letter="a" name="Научитесь печатать имена людей и компаний на русском" engName="Learn type people's names and companies's names in russian" />
+                <MatchTranscriptedWordToPicture data={ set1 } />
+              </div>
+              <div className="column">
+                <Instruction letter="b" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+                <ScrambleWordsActivity data={ set1COSOC } />
+              </div>
             </div>
           </div>
         </section>
-
+        <section className="newSection">
+          <SectionHeader name="Новые слова (Техника и технология)" engName="New words (Machinery and technology)" />
+          <div className="container is-fluid">
+            <Instruction letter="a" name="Слушайте и повторяйте за учителем слова" engName="Listen and repeat the words after your teacher" />
+            <iframe src="https://quizlet.com/501180727/flashcards/embed?i=4bby1&x=1jj1" title="Technology and machinery" height="500" width="100%" styles={ { "border": 0 } }></iframe>
+          </div>
+        </section>
       </>
     );
   }

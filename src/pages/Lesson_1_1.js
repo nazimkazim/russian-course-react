@@ -7,7 +7,10 @@ import SyllablePlate from '../components/SyllablePlate';
 import ListenOptionsAndClick from '../components/ListenOptionsAndClick';
 import { syllableSet1 } from '../data/SyllablesData';
 import MatchTranscriptedWordToPicture from '../components/MatchTranscriptedWordToPicture';
+import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
 import { set1 } from '../data/MTWTP';
+import {set1COSOC} from '../data/ComposeOrderedSentOnClick'
+
 
 export default class Lesson_1_1 extends Component {
   constructor (props) {
@@ -68,7 +71,8 @@ export default class Lesson_1_1 extends Component {
               <MatchTranscriptedWordToPicture data={ set1 } />
             </div>
             <div className="column">
-
+            <Instruction letter="a" name="Выучите новые слова связанные с техникой и технологией" engName="Learn new words related to machinery and technology" />
+              <ScrambleWordsActivity data={set1COSOC}/>
             </div>
             </div>
           </div>

@@ -141,8 +141,9 @@ class ScrambleWordsActivity extends Component {
             <div className="media-content">
               <span className="tags">
                 {this.state.data[this.state.index] &&
-                  this.state.data[this.state.index].scrambled.map((item) => (
+                  this.state.data[this.state.index].scrambled.map((item,i) => (
                     <button
+                      key={i}
                       className="tag is-info is-medium"
                       value={item}
                       onClick={this.handleAnswer}>

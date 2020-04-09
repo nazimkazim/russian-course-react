@@ -227,8 +227,8 @@ class MatchTranscriptedWordToPicture extends Component {
                                             <div className="card-content">
                                                 <div className="media">
                                                     <div className="media-content">
-                                                        <div className="tags">{ this.state.data[this.state.index] && this.state.data[this.state.index].scrambleLetters.map((letter) => (
-                                                            <button disabled={ this.state.disabled } className="tag is-dark is-light is-medium" value={ letter } onClick={ this.handleGuess } styles={ { cursor: 'pointer' } }>{ letter }</button>
+                                                        <div className="tags">{ this.state.data[this.state.index] && this.state.data[this.state.index].scrambleLetters.map((letter,i) => (
+                                                            <button disabled={ this.state.disabled } className="tag is-dark is-light is-medium" key={i} value={ letter } onClick={ this.handleGuess } styles={ { cursor: 'pointer' } }>{ letter }</button>
                                                         )) }</div>
                                                         <ProgressBar value={ this.state.index } max={ this.state.data.length - 1 } />
                                                     </div>

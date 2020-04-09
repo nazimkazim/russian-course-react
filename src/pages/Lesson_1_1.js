@@ -12,6 +12,8 @@ import TextQuizzer from '../components/TextQuizzer';
 import { set1 } from '../data/MTWTP';
 import { set1COSOC } from '../data/ComposeOrderedSentOnClick';
 import { set1TextQuizzer } from '../data/TextQuizzerData';
+import Quiz from '../components/Quiz'
+import appleImg from '../images/apple-company.jpg'
 
 
 export default class Lesson_1_1 extends Component {
@@ -89,8 +91,12 @@ export default class Lesson_1_1 extends Component {
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">
-                <Instruction letter="a" name="Слушайте и повторяйте за учителем слова" engName="Listen and repeat the words after your teacher" />
-                <TextQuizzer data={ set1TextQuizzer } />
+                <Instruction letter="a" name="Читайте текст" engName="Read the text" />
+                <TextQuizzer data={ set1TextQuizzer } image={appleImg} />
+              </div>
+              <div className="column">
+                <Instruction letter="b" name="Что значат эти слова" engName="What do these words mean" />
+                <Quiz data={set1TextQuizzer}/>
               </div>
               <div className="column">
 

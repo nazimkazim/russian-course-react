@@ -12,8 +12,8 @@ import TextQuizzer from '../components/TextQuizzer';
 import { set1 } from '../data/MTWTP';
 import { set1COSOC } from '../data/ComposeOrderedSentOnClick';
 import { set1TextQuizzer } from '../data/TextQuizzerData';
-import Quiz from '../components/Quiz'
-import appleImg from '../images/apple-company.jpg'
+import Quiz from '../components/Quiz';
+import appleImg from '../images/apple-company.jpg';
 
 
 export default class Lesson_1_1 extends Component {
@@ -92,14 +92,16 @@ export default class Lesson_1_1 extends Component {
             <div className="columns">
               <div className="column">
                 <Instruction letter="a" name="Читайте текст" engName="Read the text" />
-                <TextQuizzer data={ set1TextQuizzer } image={appleImg} />
+                <TextQuizzer data={ set1TextQuizzer } image={ appleImg } />
               </div>
               <div className="column">
-                <Instruction letter="b" name="Что значат эти слова" engName="What do these words mean" />
-                <Quiz data={set1TextQuizzer}/>
+                <Instruction letter="b" name="Что значат выделенные слова" engName="What do the bolded words mean" />
+                <Quiz data={ set1TextQuizzer } />
               </div>
               <div className="column">
+                <Instruction letter="c" name="Выучите новые слова" engName="Learn new wrods" />
 
+                <iframe src="https://quizlet.com/501391453/flashcards/embed?i=4bby1&x=1jj1" height="500" title="countries" width="100%" styles={ { "border": 0 } }></iframe>
               </div>
             </div>
           </div>

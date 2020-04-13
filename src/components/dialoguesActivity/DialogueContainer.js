@@ -9,7 +9,7 @@ function dialogueContainer(props) {
             { props.dialogues.map((dialogue) => (
                 <div className="media" key={dialogue.eng}>
                     <DialogueImage image={ dialogue.image } />
-                    <DialogueContent name={ dialogue.name } company={dialogue.company} eng={dialogue.eng} rus={dialogue.rus} />
+                    <DialogueContent name={ dialogue.name } company={dialogue.company} eng={dialogue.eng} rus={dialogue.rus} extra={dialogue.extra} />
                 </div>
             )) }
         </>

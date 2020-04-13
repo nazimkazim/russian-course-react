@@ -49,5 +49,12 @@ export const set1 = _.shuffle([
         rusName: 'Тим Кук',
         companyEng: 'Apple',
         companyRus: 'Аппл'
+    },
+    {
+        picture: timCook,
+        engName: 'Printer',
+        rusName: 'Принтер',
+        companyEng: '',
+        companyRus: ''
     }
 ]);

@@ -251,6 +251,12 @@ td {
   color: orange;
 }
 
+.active {
+  background-color: teal;
+  color: white;
+}
+
+
 @media screen and (max-width: 768px) {
   .hero {
     min-height: 300px;

@@ -12,7 +12,7 @@ class Quiz extends Component {
       myanswers: [],
       checked: false,
       isCorrect: false,
-      isIncorrect: false,
+      isIncorrect: false
     };
   }
 
@@ -39,7 +39,6 @@ class Quiz extends Component {
   };
 
   checkHandler = () => {
-    console.log("cleciked");
     if (this.state.myanswers.join(" ") === this.state.answers.join(" ")) {
       let sound = new Audio(correct);
       sound.play();
@@ -95,22 +94,22 @@ class Quiz extends Component {
             </div>
           ))}
         </ul>
-        <p class="buttons">
+        <p className="buttons">
           <button
             className={`button ${this.state.isCorrect && "is-success"}`}
             onClick={this.checkHandler}
             disabled={this.state.myanswers.length < 1}>
             {this.state.isCorrect ? "Good Job" : "Check"}
           </button>
-          <button class="button" onClick={this.startAgainHandler}>
-            <span class="icon is-small">
+          <button className="button" onClick={this.startAgainHandler}>
+            <span className="icon is-small">
               <i className="fas fa-redo"></i>
             </span>
           </button>
         </p>
 
         {this.state.isIncorrect && (
-          <div class="notification is-warning">Try again</div>
+          <div className="notification is-warning">Try again</div>
         )}
       </aside>
     );
@@ -118,3 +117,4 @@ class Quiz extends Component {
 }
 
 export default Quiz;
+

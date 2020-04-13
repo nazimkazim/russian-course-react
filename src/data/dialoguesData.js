@@ -39,8 +39,8 @@ export const dialogue1 = [
         rus: "Компания Аппл была основана в городе Калифорния",
         image: timCook,
         extra: [{
-            L1: "Очень приятно познакомиться",
-            L2: "Very pleased to meet you"
+            L1: "Была основана",
+            L2: "Was founded"
         }]
     },
     {

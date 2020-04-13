@@ -113,6 +113,7 @@ export default class Lesson_1_1 extends Component {
           <div className="container is-fluid">
             <div className="columns">
               <div className="column is-three-fifths is-offset-one-fifth">
+                <Instruction name="Говорите данные предложения на Рыусском" engName="Say the given sentences in Russian" />
                 <DialogueContainer dialogues={dialogue1}/>
               </div>
             </div>

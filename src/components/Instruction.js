@@ -14,7 +14,7 @@ const Text = styled.span`
 export default function Instruction(props) {
     const [isShown, setToggle] = useState(true);
     return (<>
-        <Text onClick={ () => setToggle(!isShown) }>{props.letter}) { isShown ? props.name : props.engName }</Text>
+        <Text onClick={ () => setToggle(!isShown) }>{props.letter && `${props.letter})` } { isShown ? props.name : props.engName }</Text>
     </>
     );
 }

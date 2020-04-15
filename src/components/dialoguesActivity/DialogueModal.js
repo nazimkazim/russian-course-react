@@ -8,8 +8,8 @@ function DialogueModal(props) {
                 
             </div>
             <div className="modal-content">
-                <div class="container">
-                    <div class="notification">
+                <div className="container">
+                    <div className="notification">
                         { props.rus }
                     </div>
                 </div>

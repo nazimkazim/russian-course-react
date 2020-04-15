@@ -14,8 +14,8 @@ function DialogueHelperWords(props) {
             </div>
             <div className="dropdown-menu" id="dropdown-menu" role="menu">
                 <div className="dropdown-content">
-                    { props.extra.length > 0 && props.extra.map((item) => (
-                        <span href="#" className="dropdown-item">
+                    { props.extra.length > 0 && props.extra.map((item,index) => (
+                        <span href="#" className="dropdown-item" key={index}>
                             <strong>{ item.L1 }</strong> - {item.L2 }
                         </span>
                     )) }

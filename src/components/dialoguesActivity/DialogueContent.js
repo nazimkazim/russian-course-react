@@ -10,11 +10,11 @@ function DialogueContent(props) {
     return (
         <div className="media-content">
             <div className="content">
-                <p>
+                <span>
                     <strong>{ props.name && props.name }</strong> <small>{ props.company && props.company }</small>
                     <br />
-                    <p>Say: { props.eng }</p>
-                </p>
+                    <span>Say: { props.eng }</span>
+                </span>
                 <button className="button is-info is-small" onClick={ () => { setModal(!isActive); } }>Show answer</button>
                 <DialogueModal isActive={ isActive } rus={ props.rus } setModal={ setModal } />
                 { props.extra.length > 0 && (<DialogueHelperWords extra={ props.extra } setDropdown={setDropdown} dropdownIsActive = {dropdownIsActive} />) }

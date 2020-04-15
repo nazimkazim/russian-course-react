@@ -24,7 +24,7 @@ const Text = styled.span`
 export default function SectionHeader(props) {
     const [isShown, setToggle] = useState(true)
     return (
-        <Section>
+        <Section className="section-header">
             <Text onClick={() => setToggle(!isShown)}>{isShown ? props.name : props.engName}</Text>
         </Section>
     )

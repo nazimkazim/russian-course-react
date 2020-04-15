@@ -280,16 +280,53 @@ td {
   .featured-flowers {
     padding: 50px;
   }
+
+  .newSection {
+    padding: 5px;
+  }
+
+  .mtwp-card-container {
+    width: 100%;
+  }
+
+  .listen-options-card {
+    width: 100% !important;
+  }
+
+  .section-header span {
+    font-size: 20px;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .featured-flowers {
     padding: 50px;
   }
+  .mtwp-card-container {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 414px) {
   .featured-flowers {
     padding: 50px;
+  }
+
+  .newSection {
+    padding: 5px;
+  }
+
+  .mtwp-card-container {
+    width: 100%;
+  }
+
+  .listen-options-card {
+    width: 100% !important;
+  }
+
+  .section-header span {
+    font-size: 20px;
+    text-align: center;
   }
 }

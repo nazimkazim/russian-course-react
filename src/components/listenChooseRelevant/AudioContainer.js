@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import Card from './Card';
+import AudioPlayer from './AudioPlayer';
 var _ = require('lodash');
+
 
 class AudioContainer extends Component {
     constructor (props) {
@@ -23,7 +26,6 @@ class AudioContainer extends Component {
         this.setState({
             images: _.shuffle(arrImages.flat(Infinity))
         });
-
     }
 
     showImages = () => {
@@ -39,8 +41,42 @@ class AudioContainer extends Component {
 
     handleChange = (e) => {
         const item = e.target.name;
-        const newArray = [...this.state.checkedItems, item];
-        this.setState(prevState => ({ checkedItems: newArray }));
+        const isChecked = e.target.checked;
+        this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+    };
+
+    onCheckHandler = (e) => {
+        e.preventDefault();
+        /* function checkTrue(item) {
+            return item.value === true;
+        }
+        const filteredItems = this.state.checkedItems.filter(checkTrue) */
+        //console.log(this.state.checkedItems.value())
+        let arr = [];
+        // eslint-disable-next-line no-unused-vars
+        for (let [key, value] of this.state.checkedItems) {
+            //console.log(key,value)
+            let obj = {
+                value: key,
+                bool: value
+            };
+            arr.push(obj);
+        }
+
+        //console.log(arr);
+        let filteredArr = arr.filter((el) => {
+            return el.bool === true;
+        });
+        //console.log(filteredArr);
+        let arrWithAnswers = []
+        filteredArr.map((el) => {
+            return arrWithAnswers.push(el.value)
+        })
+        //console.log(arrWithAnswers)
+        //console.log(this.props.data[this.state.index].answers.sort())
+        if (_.isEqual(arrWithAnswers.sort(), this.props.data[this.state.index].answers.sort())) {
+            console.log("true")
+        }
     };
 
 
@@ -50,19 +86,18 @@ class AudioContainer extends Component {
         console.log(this.state.checkedItems);
         return (
             <div>
-                <audio controls>
-                    <source src={ this.props.data[this.state.index].audio }
-                        type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                </audio>
-                { this.state.images && this.state.images.map((image) => (
-                    <div>
-                        <figure class="image is-128x128">
-                            <img src={ image.src } alt="" />
-                        </figure>
-                        <input type="checkbox" name={ image.name } onChange={ this.handleChange } />
-                    </div>
-                )) }
+
+                <AudioPlayer audio={ this.props.data[this.state.index].audio } />
+                <div className="columns is-vcentered is-multiline">
+                    { this.state.images && this.state.images.map((image) => (
+                        <div className="column is-3">
+                            <Card image={ image.src } clickHandler={ this.handleChange } checked={ this.state.checkedItems.get(image.name) } name={ image.name } />
+                        </div>
+                    )) }
+
+                </div>
+
+                <button onClick={ this.onCheckHandler }>Check</button>
             </div>
         );
     }

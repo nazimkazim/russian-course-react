@@ -4,8 +4,8 @@ import SectionHeader from '../components/SectionHeader';
 import Instruction from '../components/Instruction';
 import SyllablePlate from '../components/SyllablePlate';
 import { syllableSet2 } from '../data/SyllablesData';
-
-
+import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer'
+import {ListenChooseRelevantSet1} from '../data/ListentChooseRelevant'
 
 export default class SingleFlower extends Component {
   constructor (props) {
@@ -45,7 +45,9 @@ export default class SingleFlower extends Component {
         <SectionHeader name="Чтение и слушание" engName="Reading and listening" />
         <div className="container is-fluid">
         <div className="columns">
-
+            <div className="column">
+              <ListenChooseRelevant data={ListenChooseRelevantSet1}/>
+            </div>
         </div>
         </div>
       </div>

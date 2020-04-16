@@ -15,10 +15,11 @@ function DialogueContent(props) {
                     <br />
                     <span>Say: { props.eng }</span>
                 </span>
+                <br />
+                <br />
                 <button className="button is-info is-small" onClick={ () => { setModal(!isActive); } }>Show answer</button>
                 <DialogueModal isActive={ isActive } rus={ props.rus } setModal={ setModal } />
                 { props.extra.length > 0 && (<DialogueHelperWords extra={ props.extra } setDropdown={setDropdown} dropdownIsActive = {dropdownIsActive} />) }
-
             </div>
 
         </div>

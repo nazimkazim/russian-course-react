@@ -145,3 +145,47 @@ export const syllableSet1 = [
         {text:"ло", audio:ло}
     ]
 ]
+
+export const syllableSet2 = [
+    [
+        {text:"ак"}, 
+        {text:"тё"}, 
+        {text:"рё"}, 
+        {text:"кё"}, 
+        {text:"ка"}, 
+        {text:"кё"}
+    ],
+    [
+        {text:"ар"}, 
+        {text:"ро"}, 
+        {text:"бат"}, 
+        {text:"та"}, 
+        {text:"бо"}, 
+        {text:"кё"}
+    ],
+    [
+        {text:"ст"}, 
+        {text:"ар"}, 
+        {text:"ти"}, 
+        {text:"арт"}, 
+        {text:"тар"}, 
+        {text:"ист"}
+    ],
+    [
+        {text:"шо"}, 
+        {text:"фё"}, 
+        {text:"ро"}, 
+        {text:"ди"}, 
+        {text:"ре"}, 
+        {text:"тор"}
+    ],
+    [
+        {text:"ме"}, 
+        {text:"не"}, 
+        {text:"дж"}, 
+        {text:"же"}, 
+        {text:"жер"}, 
+        {text:"реж"}
+    ]
+]
+

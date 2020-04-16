@@ -14,7 +14,7 @@ import { set1COSOC } from '../data/ComposeOrderedSentOnClick';
 import { set1TextQuizzer } from '../data/TextQuizzerData';
 import { dialogue1 } from '../data/dialoguesData';
 import Quiz from '../components/Quiz';
-import appleImg from '../images/apple-company.jpg';
+import appleImg from '../images/TextQuizzer/lesson1.1/apple-company.jpg';
 import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
 
 
@@ -113,7 +113,7 @@ export default class Lesson_1_1 extends Component {
             <div className="columns">
               <div className="column is-half
 is-offset-one-quarter">
-                <Instruction name="Говорите данные предложения на Рыусском" engName="Say the given sentences in Russian" />
+                <Instruction name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
                 <DialogueContainer dialogues={ dialogue1 } />
               </div>
             </div>

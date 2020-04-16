@@ -1,5 +1,5 @@
-import billGates from '../images/gates.PNG';
-import timCook from '../images/tim_cook.jpg';
+import billGates from '../images/MTWTP/lesson1.1/gates.PNG';
+import timCook from '../images/MTWTP/lesson1.1/tim_cook.jpg';
 
 
 export const dialogue1 = [

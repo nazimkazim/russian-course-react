@@ -1,9 +1,9 @@
-import larryPage from '../images/larry_page.jpg';
-import jeffBezos from '../images/jeff_bezos.jpg';
-import elonMusk from '../images/elon_musk.jpg';
-import jackMa from '../images/jack_ma.PNG';
-import billGates from '../images/gates.PNG';
-import timCook from '../images/tim_cook.jpg';
+import larryPage from '../images/MTWTP/lesson1.1/larry_page.jpg';
+import jeffBezos from '../images/MTWTP/lesson1.1/jeff_bezos.jpg';
+import elonMusk from '../images/MTWTP/lesson1.1/elon_musk.jpg';
+import jackMa from '../images/MTWTP/lesson1.1/jack_ma.PNG';
+import billGates from '../images/MTWTP/lesson1.1/gates.PNG';
+import timCook from '../images/MTWTP/lesson1.1/tim_cook.jpg';
 let _ = require("lodash");
 
 

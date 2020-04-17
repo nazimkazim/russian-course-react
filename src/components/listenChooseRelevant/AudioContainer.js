@@ -4,11 +4,12 @@ import Button from './Button';
 import correct from '../../data/media/correct.wav';
 import denied from '../../data/media/denied.mp3';
 import Notification from './Notification';
+import ProgressBar from '../ProgressBar';
 var _ = require('lodash');
 
 
 
-let audio = new Audio()
+let audio = new Audio();
 
 class AudioContainer extends Component {
     constructor (props) {
@@ -19,7 +20,8 @@ class AudioContainer extends Component {
             checkedItems: new Map(),
             correct: false,
             isPlaying: false,
-            error: false
+            error: false,
+            activityIsFinished: false
         };
 
     }
@@ -88,10 +90,16 @@ class AudioContainer extends Component {
             let sound = new Audio(correct);
             sound.play();
             this.setState({
-                index: this.state.index + 1, checkedItems: new Map(), isPlaying:false
+                index: this.state.index + 1, checkedItems: new Map(), isPlaying: false
+            }, () => {
+                if (this.state.index === this.props.data.length) {
+                    this.setState({
+                        activityIsFinished: true
+                    });
+                }
             });
 
-            audio.src = this.props.data[this.state.index].audio
+            audio.src = this.props.data[this.state.index].audio;
             audio.pause();
             //console.log("true");
         } else {
@@ -105,7 +113,7 @@ class AudioContainer extends Component {
                 this.setState({
                     error: false
                 });
-            },2000);
+            }, 2000);
         }
     };
 
@@ -123,17 +131,24 @@ class AudioContainer extends Component {
     }
 
     onPlayHandler = () => {
-        audio.src = this.props.data[this.state.index].audio
+        audio.src = this.props.data[this.state.index].audio;
         audio.play();
         this.setState({
             isPlaying: true
         });
+
+        audio.addEventListener("ended", () => {
+            audio.currentTime = 0;
+            this.setState({
+                isPlaying: false
+            });
+        });
     };
 
     onPauseHandler = () => {
-        audio.src = this.props.data[this.state.index].audio
+        audio.src = this.props.data[this.state.index].audio;
         //let aud = new Audio(this.props.data[this.state.index].audio);
-        audio.currentTime = 0
+        audio.currentTime = 0;
         audio.pause();
         //aud.setAttribute("ref", `${this.myRef}`);
         this.setState({
@@ -144,13 +159,27 @@ class AudioContainer extends Component {
         //console.log(aud)
     };
 
+    onStartAgainHandler = () => {
+        this.update();
+        this.setState({
+            index: 0,
+            checkedItems: new Map(),
+            correct: false,
+            isPlaying: false,
+            error: false,
+            activityIsFinished: false
+        });
+    };
+
     render() {
         //console.log(this.props.data)
         //console.log(this.state.images)
         //console.log(this.state.checkedItems.size);
+        console.log(this.props.data.length, this.state.index);
         return (
             <div>
-                <Button playAudio={ this.state.isPlaying ? this.onPauseHandler : this.onPlayHandler } isPlaying={ this.state.isPlaying } />
+                { this.state.activityIsFinished ? '' : (<Button playAudio={ this.state.isPlaying ? this.onPauseHandler : this.onPlayHandler } isPlaying={ this.state.isPlaying } />
+                ) }
                 <div className="columns is-vcentered is-multiline">
                     { this.state.images && this.state.images.map((image, index) => (
                         <div className="column is-3" key={ index }>
@@ -160,7 +189,10 @@ class AudioContainer extends Component {
                 </div>
                 { this.state.error && (<Notification message="Please try again" />
                 ) }
-                <button className="button is-info" disabled={ this.state.checkedItems.size <= 0 } onClick={ this.onCheckHandler }>Check</button>
+                <hr />
+                { this.state.activityIsFinished ? (<button className="button is-success" onClick={ this.onStartAgainHandler }>Start again</button>) : (<button className="button is-info" disabled={ this.state.checkedItems.size <= 0 } onClick={ this.onCheckHandler }>Check</button>) }
+                <hr />
+                <ProgressBar max={ this.props.data.length } value={ this.state.index } />
             </div>
         );
     }

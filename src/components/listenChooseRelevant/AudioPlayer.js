@@ -7,7 +7,7 @@ export default function AudioPlayer(props) {
                 <source src={ props.audio }
                     type="audio/mpeg" />
                     Your browser does not support the audio element.
-                </audio>
+            </audio>
         </div>
     );
 }

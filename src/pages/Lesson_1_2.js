@@ -46,7 +46,8 @@ export default class SingleFlower extends Component {
         <div className="container is-fluid">
         <div className="columns">
             <div className="column">
-              <ListenChooseRelevant data={ListenChooseRelevantSet1}/>
+            <Instruction letter="a" name="Слушайте пять (5) аудио фрагмента, и для каждого аудиофрагмента выберите три (3) соответствующих изображения" engName="Listen to five (5) audio clips, and for each audio clip, select three (3) matching images" />
+            <ListenChooseRelevant data={ListenChooseRelevantSet1}/>
             </div>
         </div>
         </div>

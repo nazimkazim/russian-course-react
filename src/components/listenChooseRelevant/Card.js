@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-
+  let checkBoxInput = useRef(null);
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -30,6 +30,7 @@ export default function MediaCard(props) {
       <CardActions>
         <Checkbox
         onClick={props.clickHandler}
+        ref={checkBoxInput} 
         name={props.name}
         inputProps={{ 'aria-label': 'primary checkbox' }}
       />

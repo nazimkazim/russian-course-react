@@ -58,8 +58,7 @@ class AudioContainer extends Component {
         this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
     };
 
-    onCheckHandler = (e) => {
-        e.preventDefault();
+    onCheckHandler = () => {
         /* function checkTrue(item) {
             return item.value === true;
         }
@@ -89,6 +88,7 @@ class AudioContainer extends Component {
         if (_.isEqual(arrWithAnswers.sort(), this.props.data[this.state.index].answers.sort())) {
             let sound = new Audio(correct);
             sound.play();
+            this.update();
             this.setState({
                 index: this.state.index + 1, checkedItems: new Map(), isPlaying: false
             }, () => {
@@ -182,7 +182,7 @@ class AudioContainer extends Component {
                 ) }
                 <div className="columns is-vcentered is-multiline">
                     { this.state.images && this.state.images.map((image, index) => (
-                        <div className="column is-3" key={ index }>
+                        <div className="column is-3" key={ image.name + ' ' + index }>
                             <Card image={ image.src } clickHandler={ this.handleChange } name={ image.name } />
                         </div>
                     )) }

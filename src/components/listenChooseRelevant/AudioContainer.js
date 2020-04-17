@@ -21,7 +21,8 @@ class AudioContainer extends Component {
             correct: false,
             isPlaying: false,
             error: false,
-            activityIsFinished: false
+            activityIsFinished: false,
+            isSuccessNotifictionShown:false
         };
 
     }
@@ -94,10 +95,18 @@ class AudioContainer extends Component {
             }, () => {
                 if (this.state.index === this.props.data.length) {
                     this.setState({
-                        activityIsFinished: true
+                        activityIsFinished: true, isSuccessNotifictionShown:true
                     });
                 }
+
+                setTimeout(() => {
+                    this.setState({
+                        isSuccessNotifictionShown: false
+                    });
+                }, 2000);
+
             });
+
 
             audio.src = this.props.data[this.state.index].audio;
             audio.pause();
@@ -167,7 +176,8 @@ class AudioContainer extends Component {
             correct: false,
             isPlaying: false,
             error: false,
-            activityIsFinished: false
+            activityIsFinished: false,
+            isSuccessNotifictionShown: false
         });
     };
 
@@ -175,7 +185,7 @@ class AudioContainer extends Component {
         //console.log(this.props.data)
         //console.log(this.state.images)
         //console.log(this.state.checkedItems.size);
-        console.log(this.props.data.length, this.state.index);
+        //console.log(this.props.data.length, this.state.index);
         return (
             <div>
                 { this.state.activityIsFinished ? '' : (<Button playAudio={ this.state.isPlaying ? this.onPauseHandler : this.onPlayHandler } isPlaying={ this.state.isPlaying } />
@@ -187,7 +197,9 @@ class AudioContainer extends Component {
                         </div>
                     )) }
                 </div>
-                { this.state.error && (<Notification message="Please try again" />
+                { this.state.error && (<Notification message="Please try again" type="error" />
+                ) }
+                { this.state.isSuccessNotifictionShown && (<Notification message="Greate job!" type="success" />
                 ) }
                 <hr />
                 { this.state.activityIsFinished ? (<button className="button is-success" onClick={ this.onStartAgainHandler }>Start again</button>) : (<button className="button is-info" disabled={ this.state.checkedItems.size <= 0 } onClick={ this.onCheckHandler }>Check</button>) }

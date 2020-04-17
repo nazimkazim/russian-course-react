@@ -19,7 +19,7 @@ export default function CustomizedSnackbars(props) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Alert severity="error">{props.message}</Alert>
+      <Alert severity={props.type}>{props.message}</Alert>
     </div>
   );
 }

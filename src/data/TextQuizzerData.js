@@ -40,6 +40,36 @@ export const set2TextQuizzer = {
                     word: "друзьями",
                     options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
                     answer: "by friends"
+                },
+                {
+                    word: "в городе",
+                    options: _.shuffle(["in the city", "in the country", "in the village", "in the areas"]),
+                    answer: "in the city"
+                },
+                {
+                    word: "году",
+                    options: _.shuffle(["year", "month", "week", "period"]),
+                    answer: "year"
+                },
+                {
+                    word: "производит",
+                    options: _.shuffle(["produce", "buy", "tell", "give"]),
+                    answer: "produce"
+                },
+                {
+                    word: "устройства",
+                    options: _.shuffle(["devices", "equipment", "technology", "machines"]),
+                    answer: "devices"
+                },
+                {
+                    word: "продажам",
+                    options: _.shuffle(["sales", "equipment", "technology", "machines"]),
+                    answer: "sales"
+                },
+                {
+                    word: "странах",
+                    options: _.shuffle(["in cities", "in countries", "in districts", "in neighbourhoods"]),
+                    answer: "in countries"
                 }
             ]
         },

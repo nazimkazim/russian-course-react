@@ -59,6 +59,7 @@ export default class SingleFlower extends Component {
                   <div className="column">
                     <ActivityContainer data={set2TextQuizzer}/>
                   </div>
+                  <div className="column"></div>
                 </div>
               </div>
             </div>

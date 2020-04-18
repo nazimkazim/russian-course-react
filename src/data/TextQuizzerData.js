@@ -44,7 +44,7 @@ export const set2TextQuizzer = {
             ]
         },
         {
-            text: `<p>Барак Обама - первый в истории афро-американец, который стал президентом Америки. Он служил 2 срока по 4 года, всего 8 лет</p>`,
+            text: `<p>Барак Обама - первый в истории афро-американец, который стал президентом Америки. Он служил 2 срока по 4 года, всего 8 лет.</p>`,
             title: 'Обама',
             audio: BarackObama,
             quiz: [
@@ -61,9 +61,43 @@ export const set2TextQuizzer = {
             ]
         },
         {
-            text: `<p>Меня зовут Алекс, я из Нью Йорка, я шофёр, я вожу желтое такси, я зарабатываю 80 долларов в день</p>`,
+            text: `<p>Меня зовут Алекс, я из Нью Йорка, я шофёр, я вожу желтое такси, я зарабатываю 80 долларов в день.</p>`,
             title: 'Шофёр',
             audio: Chauffeur,
+            quiz: [
+                {
+                    word: "была основана",
+                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
+                    answer: "was founded"
+                },
+                {
+                    word: "друзьями",
+                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
+                    answer: "by friends"
+                }
+            ]
+        },
+        {
+            text: `<p>Майа Плисецкая - советская балерина, хореограф, директор. Она работала в театре Большой. Она родилсь в Москве в 1925 (тысяча девятсот двадцать пятом) году в Москве и умерла в (две тысячи пятнадцатом) 2015 году в Германии.</p>`,
+            title: 'Майа Плисецкая',
+            audio: Plesetskaya,
+            quiz: [
+                {
+                    word: "была основана",
+                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
+                    answer: "was founded"
+                },
+                {
+                    word: "друзьями",
+                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
+                    answer: "by friends"
+                }
+            ]
+        },
+        {
+            text: `<p>Илон Маск - известный бизнесмен и менеджер ракетной компании SpaceX и электромобильной компании Tesla. Он родился в Южной Африке в городе Притория.</p>`,
+            title: 'Илон Маск',
+            audio: ElonMusk,
             quiz: [
                 {
                     word: "была основана",

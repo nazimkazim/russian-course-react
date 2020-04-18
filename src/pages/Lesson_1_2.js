@@ -4,8 +4,13 @@ import SectionHeader from '../components/SectionHeader';
 import Instruction from '../components/Instruction';
 import SyllablePlate from '../components/SyllablePlate';
 import { syllableSet2 } from '../data/SyllablesData';
-import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer'
-import {ListenChooseRelevantSet1} from '../data/ListentChooseRelevant'
+import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
+import { ListenChooseRelevantSet1 } from '../data/ListentChooseRelevant';
+
+
+import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
+import { set2TextQuizzer } from '../data/TextQuizzerData';
+
 
 export default class SingleFlower extends Component {
   constructor (props) {
@@ -38,20 +43,27 @@ export default class SingleFlower extends Component {
                 <Instruction letter="b" name="Учим новые слова (профессии)" engName="Learn new words(professions)" />
                 <iframe src="https://quizlet.com/502383431/flashcards/embed?i=4bby1&x=1jj1" height="500" width="100%" title="professions" styles={ { "border": 0 } }></iframe>
               </div>
-          </div>
-          </div>
-      </section>
-      <div className="newSection">
-        <SectionHeader name="Чтение и слушание" engName="Reading and listening" />
-        <div className="container is-fluid">
-        <div className="columns">
-            <div className="column">
-            <Instruction letter="a" name="Слушайте пять (5) аудио фрагмента, и для каждого аудиофрагмента выберите три (3) соответствующих изображения" engName="Listen to five (5) audio clips, and for each audio clip, select three (3) matching images" />
-            <ListenChooseRelevant data={ListenChooseRelevantSet1}/>
             </div>
+          </div>
+        </section>
+        <div className="newSection">
+          <SectionHeader name="Чтение и слушание" engName="Reading and listening" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+                <Instruction letter="a" name="Слушайте пять (5) аудио фрагмента, и для каждого аудиофрагмента выберите три (3) соответствующих изображения" engName="Listen to five (5) audio clips, and for each audio clip, select three (3) matching images" />
+                <ListenChooseRelevant data={ ListenChooseRelevantSet1 } />
+                <hr/>
+                <Instruction letter="a" name="Слушайте пять (5) аудио фрагмента, и для каждого аудиофрагмента выберите три (3) соответствующих изображения" engName="Listen to five (5) audio clips, and for each audio clip, select three (3) matching images" />
+                <div className="columns">
+                  <div className="column">
+                    <ActivityContainer data={set2TextQuizzer}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
       </>
     );
   }

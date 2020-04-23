@@ -116,53 +116,48 @@ export const set2TextQuizzer = {
             ]
         },
         {
-            text: `<p>Меня зовут Алекс, я из Нью Йорка, я шофёр, я вожу желтое такси, я зарабатываю 80 долларов в день.</p>`,
+            text: `<p>Меня зовут Алекс, я из Нью Йорка, я шофёр, я <strong>вожу желтое такси</strong>, я <strong>зарабатываю 80 долларов</strong> в день.</p>`,
             title: 'Шофёр',
             audio: Chauffeur,
             quiz: [
                 {
-                    word: "была основана",
-                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
-                    answer: "was founded"
+                    word: "вожу желтое такси",
+                    options: _.shuffle(["drive a yellow taxi", "ride a blue bike", "fly a black plane", "want a big car"]),
+                    answer: "drive a yellow taxi"
                 },
                 {
-                    word: "друзьями",
-                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
-                    answer: "by friends"
+                    word: "зарабатываю 80 долларов",
+                    options: _.shuffle(["earn 80 dollars", "spend 80 dollars", "splash out 80 dollars", "take 80 dollars"]),
+                    answer: "earn 80 dollars"
                 }
             ]
         },
         {
-            text: `<p>Майа Плисецкая - советская балерина, хореограф, директор. Она работала в театре Большой. Она родилсь в Москве в 1925 (тысяча девятсот двадцать пятом) году в Москве и умерла в (две тысячи пятнадцатом) 2015 году в Германии.</p>`,
+            text: `<p>Майа Плисецкая - советская балерина, хореограф, директор. Она работала в театре Большой. Она <strong>родилсь</strong> в Москве в 1925 (тысяча девятсот двадцать пятом) году в Москве и <strong>умерла</strong> в (две тысячи пятнадцатом) 2015 году в Германии.</p>`,
             title: 'Майа Плисецкая',
             audio: Plesetskaya,
             quiz: [
                 {
-                    word: "была основана",
-                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
-                    answer: "was founded"
+                    word: "родилась",
+                    options: _.shuffle(["was born", "was given", "was taken", "was named"]),
+                    answer: "was born"
                 },
                 {
-                    word: "друзьями",
-                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
-                    answer: "by friends"
+                    word: "умерла",
+                    options: _.shuffle(["died", "became", "marked", "moved"]),
+                    answer: "died"
                 }
             ]
         },
         {
-            text: `<p>Илон Маск - известный бизнесмен и менеджер ракетной компании SpaceX и электромобильной компании Tesla. Он родился в Южной Африке в городе Притория.</p>`,
+            text: `<p>Илон Маск - известный бизнесмен и менеджер <strong>ракетной компании</strong> SpaceX и электромобильной компании Тесла. Он родился в Южной Африке в городе Притория.</p>`,
             title: 'Илон Маск',
             audio: ElonMusk,
             quiz: [
                 {
-                    word: "была основана",
-                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
-                    answer: "was founded"
-                },
-                {
-                    word: "друзьями",
-                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
-                    answer: "by friends"
+                    word: "ракетной компании",
+                    options: _.shuffle(["rocket company", "car company", "bike company", "scooter company"]),
+                    answer: "rocket company"
                 }
             ]
         }

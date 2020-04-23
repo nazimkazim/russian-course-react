@@ -20,6 +20,36 @@ export const set1TextQuizzer = {
             word: "друзьями",
             options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
             answer: "by friends"
+        },
+        {
+            word: "в городе",
+            options: _.shuffle(["in the city", "in the country", "in the village", "in the areas"]),
+            answer: "in the city"
+        },
+        {
+            word: "году",
+            options: _.shuffle(["year", "month", "week", "period"]),
+            answer: "year"
+        },
+        {
+            word: "производит",
+            options: _.shuffle(["produce", "buy", "tell", "give"]),
+            answer: "produce"
+        },
+        {
+            word: "устройства",
+            options: _.shuffle(["devices", "equipment", "technology", "machines"]),
+            answer: "devices"
+        },
+        {
+            word: "продажам",
+            options: _.shuffle(["sales", "equipment", "technology", "machines"]),
+            answer: "sales"
+        },
+        {
+            word: "странах",
+            options: _.shuffle(["in cities", "in countries", "in districts", "in neighbourhoods"]),
+            answer: "in countries"
         }
     ]
 };
@@ -27,7 +57,7 @@ export const set1TextQuizzer = {
 export const set2TextQuizzer = {
     texts: [
         {
-            text: `<p>Роберт Фиск - известный британский журналист и корреспондент газеты Индепендент, он проживает в Бейруте, столице Ливана более 25 лет.</p>`,
+            text: `<p>Роберт Фиск - <strong>известный</strong> британский журналист и корреспондент газеты Индепендент, он <strong>проживает</strong> в Бейруте, <strong>столице</strong> Ливана <strong>более</strong> 25 лет.</p>`,
             title: 'Роберт Фиск',
             audio: RoberFisk,
             quiz: [
@@ -40,36 +70,6 @@ export const set2TextQuizzer = {
                     word: "друзьями",
                     options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
                     answer: "by friends"
-                },
-                {
-                    word: "в городе",
-                    options: _.shuffle(["in the city", "in the country", "in the village", "in the areas"]),
-                    answer: "in the city"
-                },
-                {
-                    word: "году",
-                    options: _.shuffle(["year", "month", "week", "period"]),
-                    answer: "year"
-                },
-                {
-                    word: "производит",
-                    options: _.shuffle(["produce", "buy", "tell", "give"]),
-                    answer: "produce"
-                },
-                {
-                    word: "устройства",
-                    options: _.shuffle(["devices", "equipment", "technology", "machines"]),
-                    answer: "devices"
-                },
-                {
-                    word: "продажам",
-                    options: _.shuffle(["sales", "equipment", "technology", "machines"]),
-                    answer: "sales"
-                },
-                {
-                    word: "странах",
-                    options: _.shuffle(["in cities", "in countries", "in districts", "in neighbourhoods"]),
-                    answer: "in countries"
                 }
             ]
         },

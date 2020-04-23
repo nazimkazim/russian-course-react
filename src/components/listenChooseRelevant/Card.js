@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,7 +9,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles({
   root: {
-    width: 400,
+    width: 400
   },
   media: {
     height: 400,
@@ -20,20 +20,20 @@ export default function MediaCard(props) {
   const classes = useStyles();
   let checkBoxInput = useRef(null);
   return (
-    <Card className={classes.root}>
+    <Card className={ classes.root }>
       <CardActionArea>
         <CardMedia
-          className={classes.media}
-          image={props.image}
+          className={ classes.media }
+          image={ props.image }
         />
       </CardActionArea>
       <CardActions>
         <Checkbox
-        onClick={props.clickHandler}
-        ref={checkBoxInput} 
-        name={props.name}
-        inputProps={{ 'aria-label': 'primary checkbox' }}
-      />
+          onClick={ props.clickHandler }
+          ref={ checkBoxInput }
+          name={ props.name }
+          inputProps={ { 'aria-label': 'primary checkbox' } }
+        />
       </CardActions>
     </Card>
   );

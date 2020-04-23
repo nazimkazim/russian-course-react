@@ -6,8 +6,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Button from '../ReusableButton'
+import Button from '../ReusableButton';
+import Quiz from '../Quiz';
+import Divider from '@material-ui/core/Divider';
+
 const ReactMarkdown = require("react-markdown");
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -16,12 +20,12 @@ function TabPanel(props) {
     <Typography
       component="div"
       role="tabpanel"
-      hidden={value !== index}
-      id={`scrollable-auto-tabpanel-${index}`}
-      aria-labelledby={`scrollable-auto-tab-${index}`}
-      {...other}
+      hidden={ value !== index }
+      id={ `scrollable-auto-tabpanel-${index}` }
+      aria-labelledby={ `scrollable-auto-tab-${index}` }
+      { ...other }
     >
-      {value === index && <Box p={3}>{children}</Box>}
+      { value === index && <Box p={ 3 }>{ children }</Box> }
     </Typography>
   );
 }
@@ -56,11 +60,11 @@ export default function ScrollableTabsButtonAuto(props) {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={ classes.root }>
       <AppBar position="static" color="default">
         <Tabs
-          value={value}
-          onChange={handleChange}
+          value={ value }
+          onChange={ handleChange }
           indicatorColor="primary"
           textColor="primary"
           variant="scrollable"
@@ -72,14 +76,18 @@ export default function ScrollableTabsButtonAuto(props) {
           )) }
         </Tabs>
       </AppBar>
-      
+
       { props.data.texts && props.data.texts.map((item, index) => (
         <TabPanel value={ value } index={ index }>
-            <Button audio = {item.audio}/>
-            <ReactMarkdown className="text-quizzer-text has-text-primary is-size-4" source={item.text} escapeHtml={false} />
+          <Button audio={ item.audio } />
+          <ReactMarkdown className="text-quizzer-text has-text-primary is-size-4" source={ item.text } escapeHtml={ false } />
+          <Divider />
+          <Divider />
+          <Divider />
+          <Quiz data={ item } />
         </TabPanel>
-       )) }
-      
+      )) }
+
     </div>
   );
 }

@@ -62,31 +62,56 @@ export const set2TextQuizzer = {
             audio: RoberFisk,
             quiz: [
                 {
-                    word: "была основана",
-                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
-                    answer: "was founded"
+                    word: "известный",
+                    options: _.shuffle(["famous", "fast", "clean", "very"]),
+                    answer: "famous"
                 },
                 {
-                    word: "друзьями",
-                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
-                    answer: "by friends"
+                    word: "проживает",
+                    options: _.shuffle(["is living", "is eating", "strong", "busy"]),
+                    answer: "is living"
+                },
+                {
+                    word: "столице",
+                    options: _.shuffle(["capital", "village", "swimming pool", "country"]),
+                    answer: "capital"
+                },
+                {
+                    word: "более",
+                    options: _.shuffle(["more than", "cause", "rarely", "often"]),
+                    answer: "more than"
                 }
             ]
         },
         {
-            text: `<p>Барак Обама - первый в истории афро-американец, который стал президентом Америки. Он служил 2 срока по 4 года, всего 8 лет.</p>`,
+            text: `<p>Барак Обама - <strong>первый</strong> в истории афро-американец, <strong>который стал</strong> президентом Америки. Он <strong>служил</strong> 2 <strong>срока</strong> по 4 года, <strong>всего</strong> 8 лет.</p>`,
             title: 'Обама',
             audio: BarackObama,
             quiz: [
                 {
-                    word: "была основана",
-                    options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
-                    answer: "was founded"
+                    word: "первый",
+                    options: _.shuffle(["first", "second", "third", "fourth"]),
+                    answer: "first"
                 },
                 {
-                    word: "друзьями",
-                    options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
-                    answer: "by friends"
+                    word: "который стал",
+                    options: _.shuffle(["who became", "who did not become", "who dreamed", "who run"]),
+                    answer: "who became"
+                },
+                {
+                    word: "служил",
+                    options: _.shuffle(["served", "worked", "treated", "lied"]),
+                    answer: "served"
+                },
+                {
+                    word: "срока",
+                    options: _.shuffle(["terms", "time", "period", "sessions"]),
+                    answer: "terms"
+                },
+                {
+                    word: "всего",
+                    options: _.shuffle(["overall", "finish", "know", "last"]),
+                    answer: "overall"
                 }
             ]
         },

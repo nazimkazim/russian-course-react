@@ -18,7 +18,7 @@ class Quiz extends Component {
 
   componentDidMount() {
     let answers = [];
-    this.props.data.quiz.map((item) => {
+    this.props.data.quiz && this.props.data.quiz.map((item) => {
       answers.push(item.answer);
       return answers;
     });
@@ -27,7 +27,10 @@ class Quiz extends Component {
       data: this.props.data.quiz,
       answers,
     });
+    console.log(this.props.data)
   }
+
+  
 
   handleAnswer = (evt, index) => {
     let sound = new Audio(click);
@@ -75,7 +78,7 @@ class Quiz extends Component {
     return (
       <aside className="menu">
         <ul className="menu-label">
-          {this.state.data.map((item, index) => (
+          {this.state.data && this.state.data.map((item, index) => (
             <div key={index}>
               <li className="has-text-grey-dark is-size-5 is-uppercase has-text-weight-semibold">
                 {item.word}

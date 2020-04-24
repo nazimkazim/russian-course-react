@@ -6,10 +6,10 @@ import SyllablePlate from '../components/SyllablePlate';
 import { syllableSet2 } from '../data/SyllablesData';
 import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
 import { ListenChooseRelevantSet1 } from '../data/ListentChooseRelevant';
-import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index'
-import {MTCText1} from '../data/MemorizeTextClick'
+import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
+import { MTCText1, MTCText2, MTCText3,MTCText4 } from '../data/MemorizeTextClick';
 
-import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
+import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set2TextQuizzer } from '../data/TextQuizzerData';
 
 
@@ -17,8 +17,15 @@ export default class SingleFlower extends Component {
   constructor (props) {
     super(props);
     this.state = {
-
+      hiden:false
     };
+  }
+
+
+  hideHandler = () => {
+    this.setState({
+      hiden:!this.state.hiden
+    })
   }
 
 
@@ -54,14 +61,22 @@ export default class SingleFlower extends Component {
               <div className="column">
                 <Instruction letter="a" name="Слушайте пять (5) аудио фрагмента, и для каждого аудиофрагмента выберите три (3) соответствующих изображения" engName="Listen to five (5) audio clips, and for each audio clip, select three (3) matching images" />
                 <ListenChooseRelevant data={ ListenChooseRelevantSet1 } />
-                <hr/>
-                <Instruction letter="a" name="Читайте и слушайте тексты. Попытайтесь отгадать незнакомые слова" engName="Listen and read the texts. Try to guess meanings of the unknown words" />
+                <hr />
                 <div className="columns">
-                  <div className="column">
-                    <ActivityContainer data={set2TextQuizzer}/>
+                  <div className={`column ${this.state.hiden && 'hide'}`}>
+                    <Instruction letter="a" name="Читайте и слушайте тексты. Попытайтесь отгадать незнакомые слова" engName="Listen and read the texts. Try to guess meanings of the unknown words" />
+                    <ActivityContainer data={ set2TextQuizzer } />
                   </div>
                   <div className="column">
-                    <MemorizeOnClickActivity data={MTCText1}/>
+                    <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
+                    <button className="button is-info marginBottom" onClick={this.hideHandler}>{this.state.hiden ? 'Reveal left part' : 'Hide left part'}</button>
+                    <MemorizeOnClickActivity data={ MTCText1 } />
+                    <hr />
+                    <MemorizeOnClickActivity data={ MTCText2 } />
+                    <hr />
+                    <MemorizeOnClickActivity data={ MTCText3 } />
+                    <hr />
+                    <MemorizeOnClickActivity data={ MTCText4 } />
                   </div>
                 </div>
               </div>

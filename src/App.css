@@ -260,6 +260,14 @@ td {
   margin-left: 10px;
 }
 
+.hide {
+  display: none;
+}
+
+.marginBottom {
+  margin-bottom: 20px;
+}
+
 
 @media screen and (max-width: 768px) {
   .hero {
@@ -275,6 +283,8 @@ td {
     margin-top: 40px;
   }
 }
+
+
 
 @media screen and (max-width: 375px) {
   .featured-flowers {
@@ -298,6 +308,8 @@ td {
     text-align: center;
   }
 }
+
+
 
 @media screen and (max-width: 1024px) {
   .featured-flowers {

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(0.5),
     },
-  },
+  }
 }));
 
 export default function Index(props) {
@@ -30,6 +30,8 @@ export default function Index(props) {
       {items.map((item, index) => (
         <Chip
           key={index}
+          size="medium"
+          variant={!item.turned ? 'default' : 'outlined'}
           avatar={<Avatar>{item.turned ? "eng" : "ru"}</Avatar>}
           onClick={handleClick}
           id={item.id}
@@ -42,3 +44,5 @@ export default function Index(props) {
     </div>
   );
 }
+
+

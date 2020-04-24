@@ -9,7 +9,7 @@ export const MTCText1 = [
         turned:true
     },
     {
-        eng: "and correspondent of newspaper of Independent ",
+        eng: "and correspondent of Independent newspaper ",
         rus: "и корреспондент газеты Индепендент ",
         id: nextId('MTCText1-id-'),
         turned:true

@@ -72,13 +72,13 @@ export default function ScrollableTabsButtonAuto(props) {
           aria-label="scrollable auto tabs example"
         >
           { props.data.texts && props.data.texts.map((item, index) => (
-            <Tab label={ item.title } { ...a11yProps(index) } />
+            <Tab label={ item.title } key={index} { ...a11yProps(index) } />
           )) }
         </Tabs>
       </AppBar>
 
       { props.data.texts && props.data.texts.map((item, index) => (
-        <TabPanel value={ value } index={ index }>
+        <TabPanel value={ value } key={index} index={ index }>
           <Button audio={ item.audio } />
           <ReactMarkdown className="text-quizzer-text has-text-primary is-size-4" source={ item.text } escapeHtml={ false } />
           <Divider />

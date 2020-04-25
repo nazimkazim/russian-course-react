@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LessonHeader from './LessonHeaderTemplate';
-import AlphabetComponent from '../components/Alphabet';
+import AlphabetComponent from '../components/Charts/Alphabet';
 import SectionHeader from '../components/SectionHeader';
 import Instruction from '../components/Instruction';
 import SyllablePlate from '../components/SyllablePlate';

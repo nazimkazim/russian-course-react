@@ -7,7 +7,8 @@ import { syllableSet2 } from '../data/SyllablesData';
 import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
 import { ListenChooseRelevantSet1 } from '../data/ListentChooseRelevant';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCText1, MTCText2, MTCText3,MTCText4 } from '../data/MemorizeTextClick';
+import { MTCText1, MTCText2, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
+import PersonalPronounChart from '../components/Charts/PersonalPronounsChart'
 
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set2TextQuizzer } from '../data/TextQuizzerData';
@@ -17,16 +18,16 @@ export default class SingleFlower extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      hiden:false
+      hiden: false
     };
   }
 
 
   hideHandler = () => {
     this.setState({
-      hiden:!this.state.hiden
-    })
-  }
+      hiden: !this.state.hiden
+    });
+  };
 
 
   componentDidMount() { }
@@ -63,13 +64,13 @@ export default class SingleFlower extends Component {
                 <ListenChooseRelevant data={ ListenChooseRelevantSet1 } />
                 <hr />
                 <div className="columns">
-                  <div className={`column ${this.state.hiden && 'hide'}`}>
+                  <div className={ `column ${this.state.hiden && 'hide'}` }>
                     <Instruction letter="a" name="Читайте и слушайте тексты. Попытайтесь отгадать незнакомые слова" engName="Listen and read the texts. Try to guess meanings of the unknown words" />
                     <ActivityContainer data={ set2TextQuizzer } />
                   </div>
                   <div className="column">
                     <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
-                    <button className="button is-info marginBottom" onClick={this.hideHandler}>{this.state.hiden ? 'Reveal left part' : 'Hide left part'}</button>
+                    <button className="button is-info marginBottom" onClick={ this.hideHandler }>{ this.state.hiden ? 'Reveal left part' : 'Hide left part' }</button>
                     <MemorizeOnClickActivity data={ MTCText1 } />
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText2 } />
@@ -80,6 +81,14 @@ export default class SingleFlower extends Component {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Грамматика и упражнения" engName="Grammar and exrcises" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <PersonalPronounChart/>
             </div>
           </div>
         </div>

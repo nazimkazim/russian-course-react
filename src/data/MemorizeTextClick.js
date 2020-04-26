@@ -93,8 +93,8 @@ export const MTCText3 = [
 export const MTCText4 = [
 
     {
-        eng: "Maya Plisetskaya - soviet ballet dancer, choreographer, director ",
-        rus: "Майа Плисецкая - советская балерина, хореограф, директор ",
+        eng: "Maya Plisetskaya - soviet ballet dancer",
+        rus: "Майа Плисецкая - советская балерина",
         id: nextId('MTCText1-id-'),
         turned:true
     },

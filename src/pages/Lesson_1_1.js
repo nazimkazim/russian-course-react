@@ -111,8 +111,7 @@ export default class Lesson_1_1 extends Component {
           <SectionHeader name="Практика говорения" engName="Speaking practice" />
           <div className="container is-fluid">
             <div className="columns">
-              <div className="column is-half
-is-offset-one-quarter">
+              <div className="column is-half is-offset-one-quarter">
                 <Instruction name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
                 <DialogueContainer dialogues={ dialogue1 } />
               </div>

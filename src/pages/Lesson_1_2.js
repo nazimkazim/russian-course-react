@@ -92,7 +92,7 @@ export default class SingleFlower extends Component {
               <div className="column">
               <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
               <PersonalPronounChart/>
-              <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
+              <Instruction letter="b" name="Замените слова на местоимения" engName="Replace the words with pronouns" />
               <FillInGapsActivity data={FIGOCset1}/>
               </div>
               <div className="column">

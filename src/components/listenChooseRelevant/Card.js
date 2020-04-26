@@ -9,10 +9,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles({
   root: {
-    width: 400
+    width: 300
   },
   media: {
-    height: 400,
+    height: 350,
   },
 });
 

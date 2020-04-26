@@ -9,7 +9,7 @@ import { ListenChooseRelevantSet1 } from '../data/ListentChooseRelevant';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText1, MTCText2, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
 import PersonalPronounChart from '../components/Charts/PersonalPronounsChart'
-
+import FillInGapsActivity from '../components/FillInGapsActivity/Index'
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set2TextQuizzer } from '../data/TextQuizzerData';
 
@@ -88,7 +88,15 @@ export default class SingleFlower extends Component {
           <SectionHeader name="Грамматика и упражнения" engName="Grammar and exrcises" />
           <div className="container is-fluid">
             <div className="columns">
+              <div className="column">
+              <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
               <PersonalPronounChart/>
+              <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
+              <FillInGapsActivity/>
+              </div>
+              <div className="column">
+
+              </div>
             </div>
           </div>
         </div>

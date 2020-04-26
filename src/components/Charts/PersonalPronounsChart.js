@@ -17,8 +17,8 @@ function PersonalPronounsChart() {
                     <td>-</td>
                 </tr>
                 <tr>
-                    <th>Ты</th>
-                    <td>You</td>
+                    <th>You</th>
+                    <td>Ты</td>
                     <td>Informal, singular</td>
                 </tr>
                 <tr>

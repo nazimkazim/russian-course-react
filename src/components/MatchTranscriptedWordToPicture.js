@@ -78,7 +78,7 @@ class MatchTranscriptedWordToPicture extends Component {
         let ltr = evt.target.value;
         let typing = new Audio(type);
         typing.play();
-        console.log(ltr);
+        //console.log(ltr);
 
         this.setState(prevState => {
             const updatedState = prevState.nameGuessed.substring(0, this.state.wordIndex) + ltr + prevState.nameGuessed.substring(this.state.wordIndex + 2);

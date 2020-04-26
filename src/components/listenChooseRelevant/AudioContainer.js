@@ -3,7 +3,7 @@ import Card from './Card';
 import Button from './Button';
 import correct from '../../data/media/correct.wav';
 import denied from '../../data/media/denied.mp3';
-import Notification from './Notification';
+import Notification from '../Notification';
 import ProgressBar from '../ProgressBar';
 var _ = require('lodash');
 

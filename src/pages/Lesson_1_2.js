@@ -10,6 +10,7 @@ import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText1, MTCText2, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
 import PersonalPronounChart from '../components/Charts/PersonalPronounsChart'
 import FillInGapsActivity from '../components/FillInGapsActivity/Index'
+import {FIGOCset1} from '../data/FillInGapsOnClick';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set2TextQuizzer } from '../data/TextQuizzerData';
 
@@ -92,7 +93,7 @@ export default class SingleFlower extends Component {
               <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
               <PersonalPronounChart/>
               <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
-              <FillInGapsActivity/>
+              <FillInGapsActivity data={FIGOCset1}/>
               </div>
               <div className="column">
 

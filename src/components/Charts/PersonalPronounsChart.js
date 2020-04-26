@@ -33,7 +33,7 @@ function PersonalPronounsChart() {
                 </tr>
                 <tr>
                     <th>It</th>
-                    <td>Это</td>
+                    <td>Оно</td>
                     <td>Inanimate noun</td>
                 </tr>
                 <tr>

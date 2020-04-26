@@ -13,6 +13,8 @@ import FillInGapsActivity from '../components/FillInGapsActivity/Index'
 import {FIGOCset1} from '../data/FillInGapsOnClick';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set2TextQuizzer } from '../data/TextQuizzerData';
+import ScrambleWordsActivity from '../components/ScrambleWordsActivity'
+import {set2COSOC} from '../data/ComposeOrderedSentOnClick'
 
 
 export default class SingleFlower extends Component {
@@ -96,7 +98,8 @@ export default class SingleFlower extends Component {
               <FillInGapsActivity data={FIGOCset1}/>
               </div>
               <div className="column">
-
+              <Instruction letter="b" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+                <ScrambleWordsActivity data={ set2COSOC } />
               </div>
             </div>
           </div>

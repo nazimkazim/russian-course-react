@@ -275,7 +275,7 @@ td {
   margin:0 auto;
 }
 
-.figo-combination-container {
+.figa-combination-container {
   display: flex;
   margin:0 auto;
   max-width:200px;
@@ -285,12 +285,18 @@ td {
 }
 
 .figa-activity-container {
-  max-width:600px;
+  max-width:500px;
   margin:0 auto;
   align-items: center;
   justify-content: center;
   padding: 20px;
 }
+
+.lookChooseRelevant-container {
+  margin: 0 auto;
+  max-width:347px;
+}
+
 
 @media screen and (max-width: 768px) {
   .hero {

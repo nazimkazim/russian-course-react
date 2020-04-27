@@ -109,7 +109,7 @@ class Index extends Component {
                         </span> }
                     </p>
                 </div>
-                <div className="figo-combination-container">
+                <div className="figa-combination-container">
                     { this.state.activityIsFinished ? <button className="button is-success" onClick={ this.startAgainHandler }><i class="fas fa-redo"></i></button> : <span className="tag is-info is-medium">{ this.props.data[this.state.index].combination }</span> }
 
                 </div>

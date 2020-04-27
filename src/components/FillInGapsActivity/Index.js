@@ -116,7 +116,7 @@ class Index extends Component {
                 <hr />
                 <div className="tags keyboard-container">
                     { this.state.letters.map((letter, index) => (
-                        <button className="tag is-medium" key={ index } value={ letter } onClick={ this.onClickHandler } >
+                        <button className="tag is-medium" style={{cursor:'pointer'}} key={ index } value={ letter } onClick={ this.onClickHandler } >
                             { letter }
                         </button>
                     )) }

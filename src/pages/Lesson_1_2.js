@@ -8,14 +8,16 @@ import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContai
 import { ListenChooseRelevantSet1 } from '../data/ListentChooseRelevant';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText1, MTCText2, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
-import PersonalPronounChart from '../components/Charts/PersonalPronounsChart'
-import FillInGapsActivity from '../components/FillInGapsActivity/Index'
-import {FIGOCset1} from '../data/FillInGapsOnClick';
+import PersonalPronounChart from '../components/Charts/PersonalPronounsChart';
+import FillInGapsActivity from '../components/FillInGapsActivity/Index';
+import { FIGOCset1 } from '../data/FillInGapsOnClick';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set2TextQuizzer } from '../data/TextQuizzerData';
-import ScrambleWordsActivity from '../components/ScrambleWordsActivity'
-import {set2COSOC} from '../data/ComposeOrderedSentOnClick'
-
+import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
+import { set2COSOC } from '../data/ComposeOrderedSentOnClick';
+import NumbersZeroToTenchart from '../components/Charts/Numbers_0-10';
+import LACRActivity from '../components/LookChooseRelevant.js/Index'
+import {LCRSet1} from '../data/LookAndChooseRelevant'
 
 export default class SingleFlower extends Component {
   constructor (props) {
@@ -88,18 +90,33 @@ export default class SingleFlower extends Component {
           </div>
         </div>
         <div className="newSection">
-          <SectionHeader name="Грамматика и упражнения" engName="Grammar and exrcises" />
+          <SectionHeader name="Грамматика и упражнения (личные местоимения)" engName="Grammar and exrcises (personal pronouns)" />
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">
-              <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
-              <PersonalPronounChart/>
-              <Instruction letter="b" name="Замените слова на местоимения" engName="Replace the words with pronouns" />
-              <FillInGapsActivity data={FIGOCset1}/>
+                <Instruction letter="a" name="Слушайте и повторяйте за учителем" engName="Listen and repeat after your instructor" />
+                <PersonalPronounChart />
+                <Instruction letter="b" name="Замените слова на местоимения" engName="Replace the words with pronouns" />
+                <FillInGapsActivity data={ FIGOCset1 } />
               </div>
               <div className="column">
-              <Instruction letter="b" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+                <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
                 <ScrambleWordsActivity data={ set2COSOC } />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Новые слова: цифры 0-10" engName="New words: numbers 0-10" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+                <Instruction letter="a" name="Слушайте и повторяйте за инструктором" engName="Listen and repeat after the instructor" />
+                <NumbersZeroToTenchart />
+              </div>
+              <div className="column">
+                <Instruction letter="a" name="Слушайте и повторяйте за инструктором" engName="Listen and repeat after the instructor" />
+                <LACRActivity data={LCRSet1}/>
               </div>
             </div>
           </div>

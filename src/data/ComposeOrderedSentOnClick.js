@@ -54,11 +54,7 @@ export const set2COSOC = _.shuffle([
         rus: "Они не директора, они гимнасты"
     },
     {
-        eng: "They are not directors, they are gymnasts",
-        rus: "Они не директора, они гимнасты"
-    },
-    {
-        eng: "You are not journalist, you chauffeur",
+        eng: "You are not journalist, you are chauffeur",
         rus: "Вы не журналист, вы шофёр"
     },
     {

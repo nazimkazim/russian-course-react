@@ -45,7 +45,7 @@ export default class NavBar extends Component {
                 <span>
                   <img src={whatsapp} alt="whatsapp icon" />
                 </span>
-                <span>+7-701-121-4114</span>
+                <span>+7-777-348-6518</span>
               </Navbar.Item>
             </Navbar.Container>
           </Navbar.Menu>

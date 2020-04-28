@@ -34,7 +34,7 @@ export default function ImgMediaCard(props) {
                     <Typography variant="body2" color="textSecondary" component="div">
                         <div className="tags">
                             { props.numbers && props.numbers.map((number) => (
-                                <button className="tag is-medium" disabled={props.correct} value={ number } onClick={ props.onClickHandler }>{ number }</button>
+                                <button className="tag is-medium" disabled={ props.correct } value={ number } onClick={ props.onClickHandler }>{ number }</button>
                             )) }
                         </div>
 
@@ -51,9 +51,12 @@ export default function ImgMediaCard(props) {
                     </span> }
                     <span>Check</span>
                 </button>
-                <Button size="small" disabled={ !props.correct } onClick={ props.onNextHandler } color="primary">
-                    Next
-        </Button>
+                { props.gameIsFinished ? <Button size="small" color="primary" onClick={props.startAgainHandler}>
+                    Start again
+                </Button> : <Button size="small" disabled={ !props.correct } onClick={ props.onNextHandler } color="primary">
+                        Next
+                </Button> }
+                {props.gameIsFinished && props.notification}
             </CardActions>
         </Card>
     );

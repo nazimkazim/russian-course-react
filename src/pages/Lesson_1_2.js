@@ -115,7 +115,7 @@ export default class SingleFlower extends Component {
                 <NumbersZeroToTenchart />
               </div>
               <div className="column">
-                <Instruction letter="a" name="Слушайте и повторяйте за инструктором" engName="Listen and repeat after the instructor" />
+                <Instruction letter="a" name="Выберите число,отвечая на вопрос" engName="Choose a number, answering questions" />
                 <LACRActivity data={LCRSet1}/>
               </div>
             </div>

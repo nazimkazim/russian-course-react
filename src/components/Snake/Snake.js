@@ -38,6 +38,7 @@ const App = () => {
     )
       return true;
 
+    // eslint-disable-next-line no-unused-vars
     for (let segment of snk) {
       if (piece[0] === segment[0] && piece[1] === segment[1]) return true;
     }

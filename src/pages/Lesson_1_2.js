@@ -18,7 +18,8 @@ import { set2COSOC } from '../data/ComposeOrderedSentOnClick';
 import NumbersZeroToTenchart from '../components/Charts/Numbers_0-10';
 import LACRActivity from '../components/LookChooseRelevant.js/Index'
 import {LCRSet1} from '../data/LookAndChooseRelevant'
-
+import {NWset1} from '../data/newWords'
+import NewWordsBoard from '../components/NewWordsBoard'
 export default class SingleFlower extends Component {
   constructor (props) {
     super(props);
@@ -116,6 +117,8 @@ export default class SingleFlower extends Component {
               </div>
               <div className="column">
                 <Instruction letter="a" name="Выберите число,отвечая на вопрос" engName="Choose a number, answering questions" />
+                <NewWordsBoard data={NWset1}/>
+                <div className="marginBottom"/>
                 <LACRActivity data={LCRSet1}/>
               </div>
             </div>

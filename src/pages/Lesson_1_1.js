@@ -16,7 +16,7 @@ import { dialogue1 } from '../data/dialoguesData';
 import Quiz from '../components/Quiz';
 import appleImg from '../images/TextQuizzer/lesson1.1/apple-company.jpg';
 import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
-
+//import Snake from '../components/Snake/Snake'
 
 export default class Lesson_1_1 extends Component {
   constructor (props) {
@@ -117,7 +117,10 @@ export default class Lesson_1_1 extends Component {
               </div>
             </div>
           </div>
-        </section>
+        </section>{/* 
+        <section className="newSection">
+          <Snake/>
+        </section> */}
       </>
     );
   }

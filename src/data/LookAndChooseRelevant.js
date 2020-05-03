@@ -20,25 +20,25 @@ export const LCRSet1 = _.shuffle([
     },
     {
         rus: "Сколько лаптопов на картинке?",
-        eng: "How many laptops are the in the picture?",
+        eng: "How many laptops are there in the picture?",
         picture: OneLaptop,
         answer: "один"
     },
     {
         rus: "Сколько бабочек на картинке?",
-        eng: "How many butterflies are the in the picture?",
+        eng: "How many butterflies arere the in the picture?",
         picture: TwoButterflies,
         answer: "два"
     },
     {
         rus: "Сколько окон на картинке?",
-        eng: "How many windows are the in the picture?",
+        eng: "How many windows are there in the picture?",
         picture: ThreeWindows,
         answer: "три"
     },
     {
         rus: "Сколько колонн на картинке?",
-        eng: "How many column are the in the picture?",
+        eng: "How many column are there in the picture?",
         picture: FourColumns,
         answer: "четыре"
     },
@@ -50,7 +50,7 @@ export const LCRSet1 = _.shuffle([
     },
     {
         rus: "Сколько горшков на картинке?",
-        eng: "How many pots are the in the picture?",
+        eng: "How many pots are there in the picture?",
         picture: SixPots,
         answer: "шесть"
     },

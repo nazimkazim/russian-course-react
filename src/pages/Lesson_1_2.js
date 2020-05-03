@@ -16,10 +16,16 @@ import { set2TextQuizzer } from '../data/TextQuizzerData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
 import { set2COSOC } from '../data/ComposeOrderedSentOnClick';
 import NumbersZeroToTenchart from '../components/Charts/Numbers_0-10';
-import LACRActivity from '../components/LookChooseRelevant.js/Index'
-import {LCRSet1} from '../data/LookAndChooseRelevant'
-import {NWset1} from '../data/newWords'
-import NewWordsBoard from '../components/NewWordsBoard'
+import LACRActivity from '../components/LookChooseRelevant.js/Index';
+import { LCRSet1 } from '../data/LookAndChooseRelevant';
+import { NWset1 } from '../data/newWords';
+import NewWordsBoard from '../components/NewWordsBoard';
+import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
+import ReusableButton from '../components/ReusableButton';
+import audio from '../images/MTWTP/lesson1.2/audio/audio.wav'
+import { dialogue2 } from '../data/dialoguesData';
+
+
 export default class SingleFlower extends Component {
   constructor (props) {
     super(props);
@@ -116,10 +122,22 @@ export default class SingleFlower extends Component {
                 <NumbersZeroToTenchart />
               </div>
               <div className="column">
-                <Instruction letter="a" name="Выберите число,отвечая на вопрос" engName="Choose a number, answering questions" />
-                <NewWordsBoard data={NWset1}/>
-                <div className="marginBottom"/>
-                <LACRActivity data={LCRSet1}/>
+                <Instruction letter="б" name="Выберите число,отвечая на вопрос" engName="Choose a number, answering questions" />
+                <NewWordsBoard data={ NWset1 } />
+                <div className="marginBottom" />
+                <LACRActivity data={ LCRSet1 } />
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column">
+                <Instruction letter="в" name="Слушайте диалог и запишите цифры" engName="Listen to the dialogue and write down numbers" />
+                <ReusableButton audio={audio} />
+                <DialogueContainer dialogues={ dialogue2 } showInput="true" />
+
+              </div>
+              <div className="column">
+                <Instruction letter="a" name="Слушайте и повторяйте за инструктором" engName="Listen and repeat after the instructor" />
+
               </div>
             </div>
           </div>

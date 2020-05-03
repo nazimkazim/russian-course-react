@@ -10,7 +10,7 @@ function DialogueModal(props) {
             <div className="modal-content">
                 <div className="container">
                     <div className="notification">
-                        { props.rus }
+                        { props.L2 }
                     </div>
                 </div>
             </div>

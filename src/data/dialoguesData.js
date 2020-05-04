@@ -162,9 +162,123 @@ export const dialogue2 = [
         speaker: 1,
         image: billGates,
         extra: [
-            
+
         ]
     }
 ];
 
-export const dialogue2CustomAnswer = '87773486518'
+export const dialogue2CustomAnswer = '87773486518';
+
+
+// Lesson 1.2
+// Practice speaking section
+export const dialogue3 = [
+    {
+        L1: `Hello, I am Tom Hardy.`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Здравствуйте, я Том Харди.",
+        image: tomHardy,
+        extra: []
+    },
+    {
+        L1: "Hello, I know. You are a famous actor. Where were you born?",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Здравствуйте, я знаю. Вы известный актёр. Где вы родились?",
+        image: billGates,
+        extra: [{
+            L1: "Где вы родились?",
+            L2: "Where were you born?"
+        }]
+    },
+    {
+        L1: `I was born in Great Britain, but now I am living in the USA. Where were you born?`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Я родился в Великобритании, но сейчас проживаю в США. Где вы родились?",
+        image: tomHardy,
+        extra: [
+            {
+                L1: "Я родился",
+                L2: "I was born"
+            },
+            {
+                L1: "Но сейчас",
+                L2: "But now"
+            },
+            {
+                L1: "Я проживаю",
+                L2: "I am living"
+            }
+        ]
+    },
+    {
+        L1: "I was born in the USA. How many years are you in the USA?",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Я родился в США. Сколько лет вы в США?",
+        image: billGates,
+        extra: []
+    },
+    {
+        L1: `I am in the USA already 5 years. I am living with wife, she is also actress. And with son, he goes to school. We love the USA very much`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Я в СЩА уже 5 лет. Я проживаю с женой, она тоже актриса. И сыном, он ходит в школу. Мы очень любим США.",
+        image: tomHardy,
+        extra: [
+            {
+                L1: "Уже",
+                L2: "Already"
+            },
+            {
+                L1: "С женой",
+                L2: "With wife"
+            },
+            {
+                L1: "Тоже",
+                L2: "Too"
+            },
+            {
+                L1: "С сыном",
+                L2: "With son"
+            },
+            {
+                L1: "Он ходит в школу",
+                L2: "He goes to school"
+            },
+            {
+                L1: "Мы любим",
+                L2: "We love"
+            },
+            {
+                L1: "Очень",
+                L2: "Very much"
+            }
+        ]
+    },
+    {
+        L1: "It is nice. We also love the USA, it is our house",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Это прекрасно. Мы тоже любим США, это наш дом?",
+        image: billGates,
+        extra: [
+            {
+                L1: "Это прекрасно",
+                L2: "It is nice"
+            },
+            {
+                L1: "наш дом",
+                L2: "our house"
+            }
+        ]
+    }
+];

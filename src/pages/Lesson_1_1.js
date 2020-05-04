@@ -117,7 +117,8 @@ export default class Lesson_1_1 extends Component {
               </div>
             </div>
           </div>
-        </section>{/* 
+        </section>
+        {/* 
         <section className="newSection">
           <Snake/>
         </section> */}

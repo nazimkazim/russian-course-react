@@ -23,7 +23,7 @@ import NewWordsBoard from '../components/NewWordsBoard';
 import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
 import ReusableButton from '../components/ReusableButton';
 import audio from '../images/MTWTP/lesson1.2/audio/audio.wav';
-import { dialogue2,dialogue3 } from '../data/dialoguesData';
+import { dialogue2, dialogue3 } from '../data/dialoguesData';
 
 
 export default class SingleFlower extends Component {
@@ -128,25 +128,33 @@ export default class SingleFlower extends Component {
                 <LACRActivity data={ LCRSet1 } />
               </div>
             </div>
-            <section className="newSection">
-              <SectionHeader name="Практика говорения и слушания" engName="Speaking practice and listening" />
-              <div className="container is-fluid">
-                <div className="columns">
-                <div className="column">
-                    <Instruction letter="a" name="Слушайте диалог и запишите цифры" engName="Listen to the dialogue and write down numbers" />
-                    <ReusableButton audio={ audio } />
-                    <DialogueContainer dialogues={ dialogue2 } showInput="true" />
-                  </div>
-                  <div className="column">
-                    <Instruction letter="б"  name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
-                    <DialogueContainer dialogues={ dialogue3 }/>
-
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
         </div>
+        <div className="newSection">
+          <SectionHeader name="Практика слушания" engName="Speaking listening" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column is-half is-offset-one-quarter">
+                <Instruction letter="a" name="Слушайте диалог и запишите цифры" engName="Listen to the dialogue and write down numbers" />
+                <ReusableButton audio={ audio } />
+                <DialogueContainer dialogues={ dialogue2 } showInput="true" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Практика говорения" engName="Speaking practice" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column is-half is-offset-one-quarter">
+                <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
+                <DialogueContainer dialogues={ dialogue3 } />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
       </>
     );
   }

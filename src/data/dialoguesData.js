@@ -166,3 +166,5 @@ export const dialogue2 = [
         ]
     }
 ];
+
+export const dialogue2CustomAnswer = '87773486518'

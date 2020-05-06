@@ -74,7 +74,7 @@ export const set3COSOC = _.shuffle([
     },
     {
         eng: "His name is Elon Musk. He is a manager. He is from South Africa",
-        rus: "Его зовут Илон Маск, Он менеджер. Он из Южной Африки"
+        rus: "Его зовут Илон Маск. Он менеджер. Он из Южной Африки"
     },
     {
         eng: "Her name is Angela Merkel. She is a chancellor. She is from Germany",
@@ -82,15 +82,15 @@ export const set3COSOC = _.shuffle([
     },
     {
         eng: "Its name is Samsuns. It is a device. It is from South Korea",
-        rus: "Его зовут Самсунг, Оно устройство. Оно из Южной Кореи"
+        rus: "Его зовут Самсунг. Оно устройство. Оно из Южной Кореи"
     },
     {
         eng: "Your names are Barack and Michelle Obama. You are a couple. You are from the USA",
-        rus: "Вас зовут Барак и Мишель Обама, Вы пара. Вы из США"
+        rus: "Вас зовут Барак и Мишель Обама. Вы пара. Вы из США"
     },
     {
         eng: "Our names are Akio Morita and Masaru Ibuka. We are founders. We are from Japan",
-        rus: "Нас зовут Акио Морита и Масару Ибука, Мы основатели. Мы из Японии"
+        rus: "Нас зовут Акио Морита и Масару Ибука. Мы основатели. Мы из Японии"
     },
     {
         eng: "Their names are Alexandr Ovechkin and Evgeni Malkin. They are hockey players. They are from Russia",

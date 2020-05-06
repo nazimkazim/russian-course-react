@@ -13,9 +13,6 @@ const Home = () => {
           title="Master Russian Language"
           subtitle="Make your dream come true"
         >
-          <Link to="/flowers" className="btn-primary">
-            <button className="button is-link">All Lessons</button>
-          </Link>
         </Banner>
       </Hero>
       <Services />

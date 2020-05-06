@@ -153,8 +153,6 @@ export default class SingleFlower extends Component {
             </div>
           </div>
         </div>
-
-
       </>
     );
   }

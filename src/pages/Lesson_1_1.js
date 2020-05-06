@@ -28,6 +28,7 @@ export default class Lesson_1_1 extends Component {
 
 
   componentDidMount() { }
+  
   render() {
 
     return (
@@ -118,8 +119,8 @@ export default class Lesson_1_1 extends Component {
             </div>
           </div>
         </section>
-        {/* 
-        <section className="newSection">
+        
+        {/* <section className="newSection">
           <Snake/>
         </section> */}
       </>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { LessonContext } from "../context";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export default class SingleFlower extends Component {
+export default class LessonHeader extends Component {
   constructor (props) {
     super(props);
     this.state = {

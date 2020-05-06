@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { LessonContext } from "../context";
 import Loading from "./Loading";
-import Flower from "./Flower";
+import Flower from "./Lesson";
 import Title from "./Title";
 
 export default class FeaturedFlowers extends Component {

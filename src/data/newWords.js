@@ -8,3 +8,12 @@ export const NWset1 = [
   note:'<strong>How much</strong> in English is used for <strong>uncountable</strong> nouns, for example with <strong>sugar</strong> or <strong>salt</strong> you should use <strong>how much</strong>. In Russian <em>Сколько</em> is used both for uncountable and countable nouns.'
 }
 ]
+
+export const NWset2 = [
+  {
+  rus:'Меня зовут',
+  eng:'My name is',
+  partOfSpeech:'phrase',
+  note:'<strong>Меня зовут + name</strong> literally means <strong>I am called</strong>.'
+}
+]

@@ -5,9 +5,11 @@ import Instruction from '../components/Instruction';
 import SyllablePlate from '../components/SyllablePlate';
 import { syllableSet3 } from '../data/SyllablesData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
-import { set2COSOC } from '../data/ComposeOrderedSentOnClick';
+import { set3COSOC } from '../data/ComposeOrderedSentOnClick';
 import NewWordsBoard from '../components/NewWordsBoard';
 import { NWset2 } from '../data/newWords';
+import ObjectPronounChart from '../components/Charts/ObjectPronounsChart';
+
 
 
 class Lesson_1_3 extends Component {
@@ -26,12 +28,14 @@ class Lesson_1_3 extends Component {
               <div className="column">
                 <Instruction letter="a" name="Читаем по слогам" engName="Read by syllables" />
                 <SyllablePlate syllables={ syllableSet3 } />
+                <Instruction letter="a" name="Читаем по слогам" engName="Read by syllables" />
+                <ObjectPronounChart/>
               </div>
               <div className="column">
                 <Instruction letter="b" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
                 <NewWordsBoard data={ NWset2 } />
                 <div className="marginBottom" />
-                <ScrambleWordsActivity data={ set2COSOC } />
+                <ScrambleWordsActivity data={ set3COSOC } />
               </div>
             </div>
           </div>

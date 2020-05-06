@@ -62,3 +62,46 @@ export const set2COSOC = _.shuffle([
         rus: "Это не компьютер, это принтер"
     }
 ]);
+
+export const set3COSOC = _.shuffle([
+    {
+        eng: "My name is Jackie Chan. I am an actor. I am from China",
+        rus: "Меня зовут Джеки Чан. Я актёр. Я из Китая"
+    },
+    {
+        eng: "Your name is Tom Hardy. You are an actor. You are from Great Britain",
+        rus: "Тебя зовут Том Харди. Ты актёр. Ты из Великобритании"
+    },
+    {
+        eng: "His name is Elon Musk. He is a manager. He is from South Africa",
+        rus: "Его зовут Илон Маск, Он менеджер. Он из Южной Африки"
+    },
+    {
+        eng: "Her name is Angela Merkel. She is a chancellor. She is from Germany",
+        rus: "Её зовут Ангела Меркель, Она канцлер. Она из Германии"
+    },
+    {
+        eng: "Its name is Samsuns. It is a device. It is from South Korea",
+        rus: "Его зовут Самсунг, Оно устройство. Оно из Южной Кореи"
+    },
+    {
+        eng: "Your names are Barack and Michelle Obama. You are a couple. You are from the USA",
+        rus: "Вас зовут Барак и Мишель Обама, Вы пара. Вы из США"
+    },
+    {
+        eng: "Our names are Akio Morita and Masaru Ibuka. We are founders. We are from Japan",
+        rus: "Нас зовут Акио Морита и Масару Ибука, Мы основатели. Мы из Японии"
+    },
+    {
+        eng: "Their names are Alexandr Ovechkin and Evgeni Malkin. They are hockey players. They are from Russia",
+        rus: "Их зовут Александр Овечкин и Евгений Малкин. Они хоккеисты. Они из России"
+    },
+    {
+        eng: "My name is Luc Besson. I am a fild director. I am from France",
+        rus: "Меня зовут Люк Бессон. Я режиссёр. Я из Франции"
+    },
+    {
+        eng: "My name is Hasan Shah. I am a footballer. I am from Turkey",
+        rus: "Меня зовут Хасан Шаш. Я футболист. Я из Турции"
+    }
+]);

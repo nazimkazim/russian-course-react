@@ -4,6 +4,10 @@ import BarackObama from '../images/ListenChooseRelevant/Lesson1.2/audio/BarackOb
 import Chauffeur from '../images/ListenChooseRelevant/Lesson1.2/audio/ChauffeurNY.wav';
 import Plesetskaya from '../images/ListenChooseRelevant/Lesson1.2/audio/Plesetskaya.wav';
 import ElonMusk from '../images/ListenChooseRelevant/Lesson1.2/audio/ElonMusk.wav';
+
+import KhasanShash from '../images/ListenChooseRelevant/Lesson1.3/Audio/shash.wav'
+import AngelaMerkel from '../images/ListenChooseRelevant/Lesson1.3/Audio/merkel.wav'
+
 let _ = require("lodash");
 
 
@@ -162,7 +166,114 @@ export const set2TextQuizzer = {
             ]
         }
     ]
+};
 
-
-
+export const set3TextQuizzer = {
+    texts: [
+        {
+            text: `<p>Меня зовут Хасан Шаш, я <strong>бывший</strong> профессиональный футболист клуба Галатасарай и сборной Турции. <strong>В моей стране</strong> люди очень <strong>любят</strong> футбол. Наши фаны просто <strong>бешеные</strong></p>`,
+            title: 'Хасан Шаш',
+            audio: KhasanShash,
+            quiz: [
+                {
+                    word: "бывший",
+                    options: _.shuffle(["former", "unreal", "dangerous", "busy"]),
+                    answer: "former"
+                },
+                {
+                    word: "В моей стране",
+                    options: _.shuffle(["in my country", "in your country", "in their country", "in your country"]),
+                    answer: "in my country"
+                },
+                {
+                    word: "любят",
+                    options: _.shuffle(["love", "hate", "skip", "miss"]),
+                    answer: "love"
+                },
+                {
+                    word: "бешеные",
+                    options: _.shuffle(["crazy", "calm", "peaceful", "kind"]),
+                    answer: "crazy"
+                }
+            ]
+        },
+        {
+            text: `<p>Её зовут Ангела Меркель. Она является Канцлером Германии <strong>с 2005 года</strong>. Она <strong>представитель</strong> партии Христианско-демократический союз Германии. По профессии она Физикохимик. Но она <strong>выбрала</strong> политику, так как хочет сделать вклад в развитие своей страны.</p>`,
+            title: 'Ангела Меркель',
+            audio: AngelaMerkel,
+            quiz: [
+                {
+                    word: "с 2005 года",
+                    options: _.shuffle(["since 2005", "for 2005", "in 2005", "at 2005"]),
+                    answer: "since 2005"
+                },
+                {
+                    word: "представитель",
+                    options: _.shuffle(["representative", "accountant", "actor", "sunset"]),
+                    answer: "representative"
+                },
+                {
+                    word: "выбрала",
+                    options: _.shuffle(["chose", "took", "gave", "sorted"]),
+                    answer: "chose"
+                },
+                {
+                    word: "срока",
+                    options: _.shuffle(["terms", "time", "period", "sessions"]),
+                    answer: "terms"
+                },
+                {
+                    word: "всего",
+                    options: _.shuffle(["overall", "finish", "know", "last"]),
+                    answer: "overall"
+                }
+            ]
+        },
+        {
+            text: `<p>Меня зовут Алекс, я из Нью Йорка, я шофёр, я <strong>вожу желтое такси</strong>, я <strong>зарабатываю 80 долларов</strong> в день.</p>`,
+            title: 'Шофёр',
+            audio: Chauffeur,
+            quiz: [
+                {
+                    word: "вожу желтое такси",
+                    options: _.shuffle(["drive a yellow taxi", "ride a blue bike", "fly a black plane", "want a big car"]),
+                    answer: "drive a yellow taxi"
+                },
+                {
+                    word: "зарабатываю 80 долларов",
+                    options: _.shuffle(["earn 80 dollars", "spend 80 dollars", "splash out 80 dollars", "take 80 dollars"]),
+                    answer: "earn 80 dollars"
+                }
+            ]
+        },
+        {
+            text: `<p>Майа Плисецкая - советская балерина, хореограф, директор. Она работала в театре Большой. Она <strong>родилсь</strong> в Москве в 1925 (тысяча девятсот двадцать пятом) году в Москве и <strong>умерла</strong> в (две тысячи пятнадцатом) 2015 году в Германии.</p>`,
+            title: 'Майа Плисецкая',
+            audio: Plesetskaya,
+            quiz: [
+                {
+                    word: "родилась",
+                    options: _.shuffle(["was born", "was given", "was taken", "was named"]),
+                    answer: "was born"
+                },
+                {
+                    word: "умерла",
+                    options: _.shuffle(["died", "became", "marked", "moved"]),
+                    answer: "died"
+                }
+            ]
+        },
+        {
+            text: `<p>Илон Маск - известный бизнесмен и менеджер <strong>ракетной компании</strong> SpaceX и электромобильной компании Тесла. Он родился в Южной Африке в городе Притория.</p>`,
+            title: 'Илон Маск',
+            audio: ElonMusk,
+            quiz: [
+                {
+                    word: "ракетной компании",
+                    options: _.shuffle(["rocket company", "car company", "bike company", "scooter company"]),
+                    answer: "rocket company"
+                }
+            ]
+        }
+    ]
 };

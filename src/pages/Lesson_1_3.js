@@ -11,7 +11,7 @@ import { NWset2 } from '../data/newWords';
 import ObjectPronounChart from '../components/Charts/ObjectPronounsChart';
 import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
 import { ListenChooseRelevantSet2 } from '../data/ListentChooseRelevant';
-
+import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
 
 
 class Lesson_1_3 extends Component {

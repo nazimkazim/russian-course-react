@@ -5,9 +5,10 @@ import Chauffeur from '../images/ListenChooseRelevant/Lesson1.2/audio/ChauffeurN
 import Plesetskaya from '../images/ListenChooseRelevant/Lesson1.2/audio/Plesetskaya.wav';
 import ElonMusk from '../images/ListenChooseRelevant/Lesson1.2/audio/ElonMusk.wav';
 
-import KhasanShash from '../images/ListenChooseRelevant/Lesson1.3/Audio/shash.wav'
-import AngelaMerkel from '../images/ListenChooseRelevant/Lesson1.3/Audio/merkel.wav'
-
+import KhasanShash from '../images/ListenChooseRelevant/Lesson1.3/Audio/shash.wav';
+import AngelaMerkel from '../images/ListenChooseRelevant/Lesson1.3/Audio/merkel.wav';
+import Mozart from '../images/ListenChooseRelevant/Lesson1.3/Audio/mozart.wav';
+import CIA_agent from '../images/ListenChooseRelevant/Lesson1.3/Audio/cia_agent.wav';
 let _ = require("lodash");
 
 
@@ -171,7 +172,7 @@ export const set2TextQuizzer = {
 export const set3TextQuizzer = {
     texts: [
         {
-            text: `<p>Меня зовут Хасан Шаш, я <strong>бывший</strong> профессиональный футболист клуба Галатасарай и сборной Турции. <strong>В моей стране</strong> люди очень <strong>любят</strong> футбол. Наши фаны просто <strong>бешеные</strong></p>`,
+            text: `<p>Меня зовут Хасан Шаш, я <strong>бывший</strong> профессиональный футболист клуба Галатасарай и сборной Турции. <strong>В моей стране</strong> люди очень <strong>любят</strong> футбол. Наши фаны просто <strong>бешеные</strong>.</p>`,
             title: 'Хасан Шаш',
             audio: KhasanShash,
             quiz: [
@@ -182,7 +183,7 @@ export const set3TextQuizzer = {
                 },
                 {
                     word: "В моей стране",
-                    options: _.shuffle(["in my country", "in your country", "in their country", "in your country"]),
+                    options: _.shuffle(["in my country", "in our country", "in their country", "in your country"]),
                     answer: "in my country"
                 },
                 {
@@ -230,36 +231,41 @@ export const set3TextQuizzer = {
             ]
         },
         {
-            text: `<p>Меня зовут Алекс, я из Нью Йорка, я шофёр, я <strong>вожу желтое такси</strong>, я <strong>зарабатываю 80 долларов</strong> в день.</p>`,
-            title: 'Шофёр',
-            audio: Chauffeur,
+            text: `<p>Его зовут Моцарт. Он <strong>великий</strong> австрийский композитор, дирижер. Он представитель венской классической школы музыки. Он автор более 600 музыкальных <strong>работ</strong>.</p>`,
+            title: 'Моцарт',
+            audio: Mozart,
             quiz: [
                 {
-                    word: "вожу желтое такси",
-                    options: _.shuffle(["drive a yellow taxi", "ride a blue bike", "fly a black plane", "want a big car"]),
-                    answer: "drive a yellow taxi"
+                    word: "великий",
+                    options: _.shuffle(["great", "small", "unknown", "insignificant"]),
+                    answer: "great"
                 },
                 {
-                    word: "зарабатываю 80 долларов",
-                    options: _.shuffle(["earn 80 dollars", "spend 80 dollars", "splash out 80 dollars", "take 80 dollars"]),
-                    answer: "earn 80 dollars"
+                    word: "работ",
+                    options: _.shuffle(["pieces of work", "dollars", "numbers", "production"]),
+                    answer: "pieces of work"
                 }
             ]
         },
         {
-            text: `<p>Майа Плисецкая - советская балерина, хореограф, директор. Она работала в театре Большой. Она <strong>родилсь</strong> в Москве в 1925 (тысяча девятсот двадцать пятом) году в Москве и <strong>умерла</strong> в (две тысячи пятнадцатом) 2015 году в Германии.</p>`,
-            title: 'Майа Плисецкая',
-            audio: Plesetskaya,
+            text: `<p>Тебя зовут Борис Иванов. Ты будешь работать <strong>агентом ЦРУ</strong> <strong>под прикрытием</strong> в России. Тебе нужно узнать данные о секретном <strong>оружии</strong> и его локацию.</p>`,
+            title: 'Борис Иванов',
+            audio: CIA_agent,
             quiz: [
                 {
-                    word: "родилась",
-                    options: _.shuffle(["was born", "was given", "was taken", "was named"]),
-                    answer: "was born"
+                    word: "агентом ЦРУ",
+                    options: _.shuffle(["agent CAI", "agent BBC", "agent CNN", "agent MTV"]),
+                    answer: "agent CAI"
                 },
                 {
-                    word: "умерла",
-                    options: _.shuffle(["died", "became", "marked", "moved"]),
-                    answer: "died"
+                    word: "под прикрытием",
+                    options: _.shuffle(["under cover", "under pillow", "under table", "under water"]),
+                    answer: "under cover"
+                },
+                {
+                    word: "оружие",
+                    options: _.shuffle(["weapon", "present", "gift", "santa"]),
+                    answer: "weapon"
                 }
             ]
         },

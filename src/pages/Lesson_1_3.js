@@ -12,9 +12,26 @@ import ObjectPronounChart from '../components/Charts/ObjectPronounsChart';
 import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
 import { ListenChooseRelevantSet2 } from '../data/ListentChooseRelevant';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
+import { set3TextQuizzer } from '../data/TextQuizzerData';
+import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
+import { MTCText1, MTCText2, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
 
 
 class Lesson_1_3 extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      hiden: false
+    };
+  }
+
+
+  hideHandler = () => {
+    this.setState({
+      hiden: !this.state.hiden
+    });
+  };
+  
   render() {
     return (
       <>
@@ -50,10 +67,10 @@ class Lesson_1_3 extends Component {
                 <Instruction letter="a" name="Слушайте пять (5) аудио фрагмента, и для каждого аудиофрагмента выберите три (3) соответствующих изображения" engName="Listen to five (5) audio clips, and for each audio clip, select three (3) matching images" />
                 <ListenChooseRelevant data={ ListenChooseRelevantSet2 } />
                 <hr />
-                {/* <div className="columns">
+                <div className="columns">
                   <div className={ `column ${this.state.hiden && 'hide'}` }>
                     <Instruction letter="a" name="Читайте и слушайте тексты. Попытайтесь отгадать незнакомые слова" engName="Listen and read the texts. Try to guess meanings of the unknown words" />
-                    <ActivityContainer data={ set2TextQuizzer } />
+                    <ActivityContainer data={ set3TextQuizzer } />
                   </div>
                   <div className="column">
                     <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
@@ -66,7 +83,7 @@ class Lesson_1_3 extends Component {
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText4 } />
                   </div>
-                </div> */}
+                </div>
               </div>
             </div>
           </div>

@@ -17,3 +17,14 @@ export const NWset2 = [
   note:'<strong>Меня зовут + name</strong> literally means <strong>I am called</strong>.'
 }
 ]
+
+export const NWset3 = [
+  {
+    rus:'Тебе нужно',
+    eng:'You need'
+  },
+  {
+    rus:'Узнать данные',
+    eng:'Get data'
+  }
+]

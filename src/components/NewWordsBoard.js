@@ -39,7 +39,7 @@ function NewWordsBoard(props) {
                 <Typography component='p'>
                   {item.rus} - {item.eng}
                 </Typography>
-                <Popper
+                {item.note && <Popper
                   name='note'
                   content={
                     <ReactMarkdown
@@ -48,7 +48,8 @@ function NewWordsBoard(props) {
                       escapeHtml={false}
                     />
                   }
-                />
+                /> }
+                
               </>
             )}
           </>

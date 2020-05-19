@@ -14,7 +14,7 @@ import { ListenChooseRelevantSet2 } from '../data/ListentChooseRelevant';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
 import { set3TextQuizzer } from '../data/TextQuizzerData';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCText1, MTCText2, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
+import { MTCText5, MTCText6, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
 
 
 class Lesson_1_3 extends Component {
@@ -75,9 +75,9 @@ class Lesson_1_3 extends Component {
                   <div className="column">
                     <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
                     <button className="button is-info marginBottom" onClick={ this.hideHandler }>{ this.state.hiden ? 'Reveal left part' : 'Hide left part' }</button>
-                    <MemorizeOnClickActivity data={ MTCText1 } />
+                    <MemorizeOnClickActivity data={ MTCText5 } />
                     <hr />
-                    <MemorizeOnClickActivity data={ MTCText2 } />
+                    <MemorizeOnClickActivity data={ MTCText6 } />
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText3 } />
                     <hr />

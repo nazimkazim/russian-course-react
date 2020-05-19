@@ -9,6 +9,8 @@ import Box from '@material-ui/core/Box';
 import Button from '../ReusableButton';
 import Quiz from '../Quiz';
 import Divider from '@material-ui/core/Divider';
+import NewWordsBoard from '../NewWordsBoard';
+
 
 const ReactMarkdown = require("react-markdown");
 
@@ -84,6 +86,9 @@ export default function ScrollableTabsButtonAuto(props) {
           <Divider />
           <Divider />
           <Divider />
+          <div className="marginBottom"/>
+          {item.newWords && (<NewWordsBoard data={item.newWords}/>)}
+          <div className="marginBottom"/>
           <Quiz data={ item } />
         </TabPanel>
       )) }

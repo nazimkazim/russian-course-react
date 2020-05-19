@@ -9,6 +9,7 @@ import KhasanShash from '../images/ListenChooseRelevant/Lesson1.3/Audio/shash.wa
 import AngelaMerkel from '../images/ListenChooseRelevant/Lesson1.3/Audio/merkel.wav';
 import Mozart from '../images/ListenChooseRelevant/Lesson1.3/Audio/mozart.wav';
 import CIA_agent from '../images/ListenChooseRelevant/Lesson1.3/Audio/cia_agent.wav';
+import Klitchko from '../images/ListenChooseRelevant/Lesson1.3/Audio/klitchko.wav';
 let _ = require("lodash");
 
 
@@ -251,6 +252,14 @@ export const set3TextQuizzer = {
             text: `<p>Тебя зовут Борис Иванов. Ты будешь работать <strong>агентом ЦРУ</strong> <strong>под прикрытием</strong> в России. Тебе нужно узнать данные о секретном <strong>оружии</strong> и его локацию.</p>`,
             title: 'Борис Иванов',
             audio: CIA_agent,
+            newWords: [{
+                rus: 'Тебе нужно',
+                eng: 'You need'
+            },
+            {
+                rus: 'Узнать данные',
+                eng: 'Get data'
+            }],
             quiz: [
                 {
                     word: "агентом ЦРУ",
@@ -270,14 +279,41 @@ export const set3TextQuizzer = {
             ]
         },
         {
-            text: `<p>Илон Маск - известный бизнесмен и менеджер <strong>ракетной компании</strong> SpaceX и электромобильной компании Тесла. Он родился в Южной Африке в городе Притория.</p>`,
-            title: 'Илон Маск',
-            audio: ElonMusk,
+            text: `<p>Нас зовут Владимир и Виталий Кличко. Мы бывшие профессиональные боксёры <strong>в тяжелом весе</strong> свыше 91 килограмм. Мы из Украины. После завершения карьеры в боксе, Виталий <strong>стал</strong> политиком. <strong>Сейчас</strong> он мэр города Киев. А я <strong>основал</strong> свою компанию.</p>`,
+            title: 'Братья Кличко',
+            audio: Klitchko,
+            newWords: [{
+                rus: 'Бывшие',
+                eng: 'Former'
+            },
+            {
+                rus: 'После',
+                eng: 'After'
+            },
+            {
+                rus: 'Завершение',
+                eng: 'Completion'
+            }],
             quiz: [
                 {
-                    word: "ракетной компании",
-                    options: _.shuffle(["rocket company", "car company", "bike company", "scooter company"]),
-                    answer: "rocket company"
+                    word: "в тяжелом весе",
+                    options: _.shuffle(["heavy weight", "light weight"]),
+                    answer: "heavy weight"
+                },
+                {
+                    word: "сейчас",
+                    options: _.shuffle(["now", "then", "after", "finally"]),
+                    answer: "now"
+                },
+                {
+                    word: "стал",
+                    options: _.shuffle(["became", "stand out", "forget", "find"]),
+                    answer: "became"
+                },
+                {
+                    word: "основал",
+                    options: _.shuffle(["founded", "hided", "marked", "tapped"]),
+                    answer: "founded"
                 }
             ]
         }

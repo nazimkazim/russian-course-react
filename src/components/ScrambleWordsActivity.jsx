@@ -12,6 +12,7 @@ class ScrambleWordsActivity extends Component {
       data: [],
       answer: [],
       index: 0,
+      length:0,
       activityIsFinished: false,
     };
   }
@@ -27,6 +28,7 @@ class ScrambleWordsActivity extends Component {
     });
     this.setState({
       data: arr,
+      length:arr.length
     });
   }
 
@@ -40,8 +42,14 @@ class ScrambleWordsActivity extends Component {
     let sound = new Audio(click);
     sound.play();
     let word = e.target.value;
+    let obj = {...this.state.data}
+
+    let index = obj[this.state.index].scrambled.indexOf(word);
+    let scrambledArr = obj[this.state.index].scrambled
+    scrambledArr.splice(index, 1);
     this.setState({
       answer: this.state.answer.concat(word),
+      data:{...obj, scrambled:obj[this.state.index].scrambledArr}
     });
   };
 
@@ -51,9 +59,17 @@ class ScrambleWordsActivity extends Component {
     let array = [...this.state.answer];
     let word = e.target.value;
     const index = array.indexOf(word);
+
+    let obj = {...this.state.data}
+    let scrambledArr = obj[this.state.index].scrambled
+    scrambledArr.push(word)
+
     if (index > -1) {
       array.splice(index, 1);
-      this.setState({ answer: array });
+      this.setState({ 
+        answer: array,
+        data:{...obj, scrambled:obj[this.state.index].scrambledArr}
+      });
     }
   };
 
@@ -68,7 +84,7 @@ class ScrambleWordsActivity extends Component {
           answer: [],
         },
         () => {
-          if (this.state.index === this.state.data.length) {
+          if (this.state.index === this.state.length) {
             this.setState({
               activityIsFinished: true,
             });
@@ -86,6 +102,7 @@ class ScrambleWordsActivity extends Component {
       data: [],
       answer: [],
       index: 0,
+      length:0,
       activityIsFinished: false,
     });
     this.update()
@@ -168,7 +185,7 @@ class ScrambleWordsActivity extends Component {
               <hr />
               <ProgressBar
                 value={this.state.index}
-                max={this.state.data.length}
+                max={this.state.length}
               />
               <hr />
             </div>

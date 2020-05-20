@@ -92,7 +92,6 @@ export default function ScrollableTabsButtonAuto(props) {
           <Quiz data={ item } />
         </TabPanel>
       )) }
-
     </div>
   );
 }

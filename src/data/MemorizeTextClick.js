@@ -205,3 +205,117 @@ export const MTCText6 = [
         turned:true
     }
 ];
+
+export const MTCText7 = [
+
+    {
+        eng: "His name is Mozart ",
+        rus: "Его зовут Моцарт ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "He is a great austrian composer, conductor ",
+        rus: "Он великий австроийский композитор, дирижёр ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "He is a representative of Viennese classical music music ",
+        rus: "Он представитель венской, классической школы музыки ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "He is an author of more than 600 pieces of music ",
+        rus: "Он автор более 600 музыкальных произведений ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "our fans just crazy ",
+        rus: "наши фаны просто безумные ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    }
+];
+
+export const MTCText8 = [
+
+    {
+        eng: "Your name is Boris Ivanov ",
+        rus: "Его зовут Моцарт ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "You will work as CAI agent under cover in Russia ",
+        rus: "Ты будешь работать агентом ЦРУ под прикрытием в России ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "You need to get data ",
+        rus: "Тебе нужно узнать данные ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "About secret weapon and its location ",
+        rus: "О секретном оружии и его локацию ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    }
+];
+
+export const MTCText9 = [
+
+    {
+        eng: "Our names are Vladimir and Vitali Klitchko ",
+        rus: "Нас зовут Владимир и Виталий Кличко ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "We are former professional boxers ",
+        rus: "Мы бывшие профессиональные боксёры ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "in a heavy weight ",
+        rus: "в тяжёлом весе ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "over 91 kilograms ",
+        rus: "свыше 91 килограмм ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "after career endings in boxing ",
+        rus: "после завершения карьеры в боксе ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "Vitalii became a politician ",
+        rus: "Виталий стал политиком ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "Now he is a mayor of the Kiev city ",
+        rus: "сейчас он мэр города Киев ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    },
+    {
+        eng: "and I founded own company ",
+        rus: "а я основал свою компанию ",
+        id: nextId('MTCText2-id-'),
+        turned:true
+    }
+];

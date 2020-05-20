@@ -14,7 +14,7 @@ import { ListenChooseRelevantSet2 } from '../data/ListentChooseRelevant';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
 import { set3TextQuizzer } from '../data/TextQuizzerData';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCText5, MTCText6, MTCText3, MTCText4 } from '../data/MemorizeTextClick';
+import { MTCText5, MTCText6, MTCText7, MTCText8,MTCText9 } from '../data/MemorizeTextClick';
 
 
 class Lesson_1_3 extends Component {
@@ -79,9 +79,11 @@ class Lesson_1_3 extends Component {
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText6 } />
                     <hr />
-                    <MemorizeOnClickActivity data={ MTCText3 } />
+                    <MemorizeOnClickActivity data={ MTCText7  } />
                     <hr />
-                    <MemorizeOnClickActivity data={ MTCText4 } />
+                    <MemorizeOnClickActivity data={ MTCText8 } />
+                    <hr />
+                    <MemorizeOnClickActivity data={ MTCText9 } />
                   </div>
                 </div>
               </div>

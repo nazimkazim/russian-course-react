@@ -132,9 +132,9 @@ class ScrambleWordsActivity extends Component {
         <div className="card-content scramble-words-activity-image">
           <div className="scramble-words-activity-image-sent">
             {this.state.activityIsFinished
-              ? "Good Job"
+              ? <div className="centered-item">Good Job</div>
               : this.state.data[this.state.index] &&
-                this.state.data[this.state.index].eng}
+                <div className="centered-item sm-font-title">{this.state.data[this.state.index].eng}</div>}
           </div>
         </div>
         <div className="card-content card-content-answer-container">

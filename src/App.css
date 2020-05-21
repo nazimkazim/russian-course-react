@@ -207,6 +207,18 @@ td {
   min-height: 300px;
 }
 
+.scramble-words-activity-image.no-pic {
+  background-color:white;
+  background-image: url("");
+
+}
+
+.media-content-conteiner {
+  min-height: 150px;
+  padding: 20px;
+  background-color:#BDBDBD;
+}
+
 .scramble-words-activity-image-sent {
   text-align: center;
   font-size: 30px;
@@ -421,6 +433,12 @@ td {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+}
+
+.centered-item.sm-font-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
 }
 
 

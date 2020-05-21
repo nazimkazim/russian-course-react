@@ -145,7 +145,7 @@ class ScrambleWordsActivity extends Component {
     //console.log(this.state.index === this.state.data.length);
     return (
       <div className="card mtwp-card-container">
-        <div className="card-content scramble-words-activity-image">
+        <div className="card-content scramble-words-activity-image no-pic">
           { this.state.activityIsFinished
             ? <div className="centered-item">Good Job</div> : (<div className="wrapper">
               <div class="item">
@@ -158,7 +158,7 @@ class ScrambleWordsActivity extends Component {
         </div>
         <div className="card-content card-content-answer-container">
           <div className="media">
-            <div className="media-content">
+            <div className="media-content media-content-conteiner">
               <p className="title is-4">
                 { this.state.answer.map((word) => (
                   <button

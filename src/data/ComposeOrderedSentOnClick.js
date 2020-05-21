@@ -1,3 +1,10 @@
+import KateWoman from '../images/COSOC/Lesson 1.3/woman.jpg'
+import BorisMan from '../images/COSOC/Lesson 1.3/man.jpg'
+import YoungMan from '../images/COSOC/Lesson 1.3/youngman.jpg'
+import YoungLady from '../images/COSOC/Lesson 1.3/younglady.jpg'
+import Girl from '../images/COSOC/Lesson 1.3/girl.jpg'
+import Boy from '../images/COSOC/Lesson 1.3/boy.jpg'
+
 let _ = require("lodash");
 
 
@@ -103,5 +110,38 @@ export const set3COSOC = _.shuffle([
     {
         eng: "My name is Hasan Shah. I am a footballer. I am from Turkey",
         rus: "Меня зовут Хасан Шаш. Я футболист. Я из Турции"
+    }
+]);
+
+export const set4COSOC = _.shuffle([
+    {
+        photo:KateWoman,
+        name: 'Катя',
+        rus: "Это женщина. Её зовут Катя."
+    },
+    {
+        photo:BorisMan,
+        name: 'Борис',
+        rus: "Это мужчина. Его зовут Борис."
+    },
+    {
+        photo:YoungMan,
+        name: 'Джим',
+        rus: "Это молодой человек. Его зовут Джим."
+    },
+    {
+        photo:YoungLady,
+        name: 'Вероника',
+        rus: "Это девушка. Её зовут Вероника."
+    },
+    {
+        photo:Girl,
+        name: 'Мария',
+        rus: "Это девочка. Её зовут Мария."
+    },
+    {
+        photo:Boy,
+        name: 'Дэвид',
+        rus: "Это мальчик. Его зовут Дэвид."
     }
 ]);

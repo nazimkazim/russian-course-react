@@ -11,10 +11,13 @@ import { NWset2 } from '../data/newWords';
 import ObjectPronounChart from '../components/Charts/ObjectPronounsChart';
 import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
 import { ListenChooseRelevantSet2 } from '../data/ListentChooseRelevant';
-import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer'
+import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { set3TextQuizzer } from '../data/TextQuizzerData';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCText5, MTCText6, MTCText7, MTCText8,MTCText9 } from '../data/MemorizeTextClick';
+import { MTCText5, MTCText6, MTCText7, MTCText8, MTCText9 } from '../data/MemorizeTextClick';
+import ScrambleWordsWithPictureActivity from '../components/ScrambleWordsWithPictureActivity';
+import { set4COSOC } from '../data/ComposeOrderedSentOnClick';
+
 
 
 class Lesson_1_3 extends Component {
@@ -31,7 +34,7 @@ class Lesson_1_3 extends Component {
       hiden: !this.state.hiden
     });
   };
-  
+
   render() {
     return (
       <>
@@ -48,7 +51,7 @@ class Lesson_1_3 extends Component {
                 <Instruction letter="a" name="Читаем по слогам" engName="Read by syllables" />
                 <SyllablePlate syllables={ syllableSet3 } />
                 <Instruction letter="a" name="Читаем по слогам" engName="Read by syllables" />
-                <ObjectPronounChart/>
+                <ObjectPronounChart />
               </div>
               <div className="column">
                 <Instruction letter="b" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
@@ -79,13 +82,39 @@ class Lesson_1_3 extends Component {
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText6 } />
                     <hr />
-                    <MemorizeOnClickActivity data={ MTCText7  } />
+                    <MemorizeOnClickActivity data={ MTCText7 } />
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText8 } />
                     <hr />
                     <MemorizeOnClickActivity data={ MTCText9 } />
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Новые слова (люди)" engName="New Words(people)" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+                <Instruction letter="a" name="Выучите новые слова" engName="Learn new words" />
+                <iframe src="https://quizlet.com/508934398/flashcards/embed?i=4bby1&x=1jj1" height="500" width="100%" title="people" styles={ { "border": 0 } } />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Practice" engName="Практика" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+                <Instruction letter="a" name="Сделайте предложения по примеру: Это женщина. Её зовут Лара" engName="Make a sentence: Это женщина. Её зовут Лара" />
+                <ScrambleWordsWithPictureActivity data={ set4COSOC } />
+              </div>
+              <div className="column">
+                <Instruction letter="a" name="Выучите новые слова" engName="Learn new words" />
+                <ScrambleWordsWithPictureActivity data={ set4COSOC } />
               </div>
             </div>
           </div>

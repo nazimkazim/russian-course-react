@@ -244,7 +244,7 @@ export const MTCText8 = [
 
     {
         eng: "Your name is Boris Ivanov ",
-        rus: "Его зовут Моцарт ",
+        rus: "Тебя зовут Борис Иванов ",
         id: nextId('MTCText2-id-'),
         turned:true
     },

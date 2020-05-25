@@ -16,7 +16,7 @@ import { set3TextQuizzer } from '../data/TextQuizzerData';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText5, MTCText6, MTCText7, MTCText8, MTCText9 } from '../data/MemorizeTextClick';
 import ScrambleWordsWithPictureActivity from '../components/ScrambleWordsWithPictureActivity';
-import { set4COSOC } from '../data/ComposeOrderedSentOnClick';
+import { set4COSOC, set5COSOC } from '../data/ComposeOrderedSentOnClick';
 
 
 
@@ -109,12 +109,12 @@ class Lesson_1_3 extends Component {
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">
-                <Instruction letter="a" name="Сделайте предложения по примеру: Это женщина. Её зовут Лара" engName="Make a sentence: Это женщина. Её зовут Лара" />
+                <Instruction letter="a" name="Сделайте предложения по примеру: Это + пол. Её/Его зовут + имя" engName="Make a sentence: Это + sex. Её/Его зовут + name" />
                 <ScrambleWordsWithPictureActivity data={ set4COSOC } />
               </div>
               <div className="column">
-                <Instruction letter="a" name="Выучите новые слова" engName="Learn new words" />
-                <ScrambleWordsWithPictureActivity data={ set4COSOC } />
+              <Instruction letter="a" name="Сделайте предложения по примеру: Это + пол. Её/Его зовут + имя. Он/Она + профессия"engName="Make a sentence: Это + sex. Её/Его зовут + name. Он/Она + profession" />
+                <ScrambleWordsWithPictureActivity data={ set5COSOC } />
               </div>
             </div>
           </div>

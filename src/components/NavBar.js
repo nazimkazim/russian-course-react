@@ -31,7 +31,7 @@ export default class NavBar extends Component {
           <Navbar.Menu>
             <Navbar.Container>
               <Navbar.Item>
-                <Link to="/sevice">Услуги</Link>
+                <Link to="/credits">Credits</Link>
               </Navbar.Item>
               <Navbar.Item>
                 <Link to="/me">О нас</Link>

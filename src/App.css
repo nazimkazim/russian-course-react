@@ -441,6 +441,10 @@ td {
     padding: 20px;
 }
 
+.card-credits {
+  padding:30px;
+}
+
 
 @media screen and (max-width: 375px) {
   .featured-flowers {

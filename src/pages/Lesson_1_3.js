@@ -105,7 +105,7 @@ class Lesson_1_3 extends Component {
           </div>
         </div>
         <div className="newSection">
-          <SectionHeader name="Practice" engName="Практика" />
+          <SectionHeader name="Практика" engName="Practice" />
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">

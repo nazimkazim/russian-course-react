@@ -1,7 +1,7 @@
 import React from 'react'
 import {set4COSOC} from '../data/ComposeOrderedSentOnClick'
 import {ListenChooseRelevantSet2} from '../data/ListentChooseRelevant'
-
+import {set1} from '../data/MTWTP'
 export default function Credits() {
   const stripHtml = (html) => 
 {
@@ -22,6 +22,10 @@ export default function Credits() {
           item.picture.map((itm) => (
             <li key={itm.attr}>{stripHtml(itm.attr)}</li>
           ))
+        ))}
+        <h1>Lesson 1.1</h1>
+        {set1.map((item) => (
+          <li key={item.attr}>{stripHtml(item.attr)}</li>
         ))}
       </ol>
       </div>

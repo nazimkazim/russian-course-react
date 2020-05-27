@@ -93,21 +93,27 @@ export default class Lesson_1_1 extends Component {
           <SectionHeader name="Чтение" engName="Reading" />
           <div className="container is-fluid">
             <div className="columns">
-              <div className="column is-one-third">
+              <div className="column">
                 <Instruction letter="a" name="Читайте текст" engName="Read the text" />
                 <TextQuizzer data={ set1TextQuizzer } image={ appleImg } />
               </div>
-              <div className="column is-one-quarter">
+              <div className="column">
                 <Instruction letter="b" name="Что значат выделенные слова" engName="What do the bolded words mean" />
                 <Quiz data={ set1TextQuizzer } />
-              </div>
-              <div className="column">
-                <Instruction letter="c" name="Выучите новые слова" engName="Learn new wrods" />
-                <iframe src="https://quizlet.com/501391453/flashcards/embed?i=4bby1&x=1jj1" height="500" title="countries" width="100%" styles={ { "border": 0 } }></iframe>
               </div>
             </div>
           </div>
         </section>
+        <div className="newSection">
+          <SectionHeader name="выучите слова(страны)" engName="learn by heart the words (countries)"/>
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+              <iframe src="https://quizlet.com/501391453/flashcards/embed?i=4bby1&x=1jj1" height="500" title="countries" width="100%" styles={ { "border": 0 } }></iframe>
+              </div>
+            </div>
+          </div>  
+        </div>
         <section className="newSection">
           <SectionHeader name="Практика говорения" engName="Speaking practice" />
           <div className="container is-fluid">

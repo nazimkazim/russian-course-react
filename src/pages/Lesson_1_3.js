@@ -120,6 +120,16 @@ class Lesson_1_3 extends Component {
             </div>
           </div>
         </div>
+        <div className="newSection">
+          <SectionHeader name="повторите и выучите слова за юнит" engName="review and learn by heart the words of the unit"/>
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column">
+              <iframe src="https://quizlet.com/509881145/flashcards/embed?i=4bby1&x=1jj1" height="500" width="100%" title="words for the unit" styles={ { "border": 0 }}></iframe>
+              </div>
+            </div>
+          </div>  
+        </div>
       </>
     );
   }

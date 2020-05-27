@@ -118,15 +118,18 @@ export const ListenChooseRelevantSet1 = _.shuffle([
         picture: [
             {
                 src: chauffeur,
-                name: 'chauffeur'
+                name: 'chauffeur',
+                attr:'<a href="https://www.flickr.com/photos/evarinaldiphotography/8355161299/in/photolist-dJjona-dZ1cSy-dYUqKt-dYUDq6-dZ1dgW-dZ1mXh-dYUrYg-dYUrHv-dYUFbV-dZ1cA1-dZ1bWf-dYUtt6-dZ1aAy-dYUrMH-dZ1csu-dZ18JY-dYUFhr-dJpUZN-dYURVD-dZ1yf7-dZ19xU-dZ1845-dZ1poj-dYUEHX-dZ1kEG-dYUsKH-dZ1buW-dYUqVH-dZ1o1G-7bPaHB-dYUsE2-dYUqD2-dYUsxP-dYUsPV-dZ1bdW-dYUubH-acLB57-dYUrgX-bZLDV7-dYUrbv-bZLDyE-bZLEU7-7bULs9-7cMtwH-jzg36q-dJpQnC-aeyeNL-o37okA-5inTiY-8ai4MU" target="_blank">"James Earl Jones"</a> by <a href="https://www.flickr.com/photos/evarinaldiphotography/" target="_blank">Eva Rinaldi</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: yellowtaxi,
-                name: 'yellow_taxi'
+                name: 'yellow_taxi',
+                attr:'<a href="https://www.flickr.com/photos/joewcampbell/4545617121/in/photolist-7VFtAZ-MnSCxp-dsoSAM-hqEyPq-9Kc3s5-h1QvNj-a3neuz-9Kc9QN-5DviaZ-8Kow6Q-2dSzfVC-2gfePfy-8tjHk-2qmb4M-HUBTP-8AmZEA-tGZz4E-HLVTw-PXc8u-jTvp52-5D6kKi-akfsAQ-4Q1ocf-Ho2cdX-4zcYY4-iBYsDZ-529Az7-9K9cKc-FUD6pU-eaf1fF-PK67Rj-cYe1PA-985T6N-dGBrZ6-7tvD8K-h1Rrsw-8W6mR4-7suHDv-yFTSG-hhaYfZ-dzXsKD-9K9kd4-3i7tJJ-K75HpR-9K9cYa-abRer8-LhEQkq-pGCT-3WcLoF-5PR6io" target="_blank">"Taxi on 42nd Street"</a> by <a href="https://www.flickr.com/photos/joewcampbell/" target="_blank">Joe Campbell</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: statueofliberty,
-                name: 'statueofliberty'
+                name: 'statueofliberty',
+                attr:'<a href="https://www.flickr.com/photos/82134796@N03/24757802380/in/photolist-DHLd6J-2gsx3yb-512o9z-sqcQh3-2hTegar-7WVb8t-R19cRA-nXqCnt-74NVJm-M2Xu7b-2hS1EhW-2cErCVh-2hR1ogA-2iYUQ1q-5nDaNd-2hoidcq-2gdw6qe-2hoJfcN-p372SE-2ioJfh2-p37cW7-2hnWJqT-6aotgY-2hS2EQy-2hCEUVM-2hsVNfj-2hGazEs-2gJD3FT-2hG9vqM-T9LJY9-24FpgMX-2hPnAjb-q5T3c-2ghfrP3-2h5uBYx-2hCFSE3-2evhpmk-W7Pz2W-28GdrtB-2ghfXSF-2h8pEXG-2h8pEMw-2cwHKET-f2vKem-2eqF4AE-2isT6e6-2hD8Gsm-2gr4TRh-2irNfWc-RvjzWx" target="_blank">"New York. Statue of Liberty."</a> by <a href="https://www.flickr.com/photos/82134796@N03/" target="_blank">denisbin</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             }
         ],
         answers: ['chauffeur', 'yellow_taxi', 'statueofliberty']
@@ -136,15 +139,18 @@ export const ListenChooseRelevantSet1 = _.shuffle([
         picture: [
             {
                 src: balletdancer,
-                name: 'balletdancer'
+                name: 'balletdancer',
+                attr:'<a href="https://www.flickr.com/photos/chicks57/4284970407/in/photolist-7wDAq8-5Eowh-6BhneQ-5VeV7k-sgpezQ-U2kK61-qmToCr-845u1H-foQrma-845zf4-848zBQ-84aYb3-847pJc-sg748d-84aXr7-847R6V-84ayRj-847Qpr-27y1AxV-849JyL-hE7trR-9y1B82-84avZ9-84arzd-84awFS-847uP8-84axpN-84asZ1-84aveC-84atFL-84ay7o-847TYp-845A1k-847nyK-oGgB7-YsCHK9-yVt1YC-9Vwret-2fsFTAC-9VzmnA-qPVyXS-2fvEFh-9VwrF4-4pwDUQ-NLzsZf-7GgfFr-9Vzi6b-7TQhuW-sxEjDL-Qg3qVR" target="_blank">"Vintage Postcard ~ Ballet Dancer"</a> by <a href="https://www.flickr.com/photos/chicks57/" target="_blank">Cheryl Hicks</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: germanyflag,
-                name: 'germanyflag'
+                name: 'germanyflag',
+                attr:'<a href="https://www.flickr.com/photos/leithcote/3894040022/in/photolist-6W6Yr5-6W2WHa-F78pNB-qzEM1c-6uCYg4-WPC5Cg-CXfjaL-7G8PDb-pD5iyL-dyqNnr-6Cbte-5iqXHg-24QuQd1-7aXDAq-3WSNHD-CmrmN-zZVya-gqR2w-yJvxX-jP4Bw-8ET3eb-8ESVQE-53xshM-8DNtUd-8GtQBZ-8DNuSJ-8zHSDt-sgQtw-znHA3-QNTpWC-f9xLRA-2hh7rVv-29i5NSa-HBNv4d-TGNWHn-7jNrKx-3f8JXT-N5UZar-gR7PL-8QuBvx-oAqeS-BbiHR-2iYWnBg-6qjs44-Wpbhse-5oZqVC-2iuTs8d-2hS2ESh-2igLNKo-2hMJbHe" target="_blank">"German Flag"</a> by <a href="https://www.flickr.com/photos/leithcote/" target="_blank">Antony Oliver</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: theatrebolshoi,
-                name: 'theatrebolshoi'
+                name: 'theatrebolshoi',
+                attr:'<a href="https://www.flickr.com/photos/olibac/14823237284/in/photolist-BVZbQp-d7Aogo-ozSY1C-ygAYn6-bV23Wq-c9Vegm-dpj9MV-4bzjFq-w8FfqT-2bmFEJn" target="_blank">"Moscou - Москва"</a> by <a href="https://www.flickr.com/photos/olibac/" target="_blank">Olivier Bacquet</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             }
         ],
         answers: ['balletdancer', 'germanyflag', 'theatrebolshoi']
@@ -154,15 +160,18 @@ export const ListenChooseRelevantSet1 = _.shuffle([
         picture: [
             {
                 src: elonmusk,
-                name: 'elonmusk'
+                name: 'elonmusk',
+                attr:'<a href="https://www.flickr.com/photos/bethelct/21013392670/in/photolist-8SvDGE-8SvDSY-8SvE5G-jGmt7W-jGk2EV-jGnb1b-jGjYyK-522d5r-y1T8xC-FSTL1B-FQAHm5-Wmszw5-WFNcA9-WmszqU-WmszyQ-8SvDWN-gbC7SG-9BSeXs-KcKm7g-JtsW3T-JtsVKZ-d83K9o-v1sMMh-9FgvRu-Fb1usy-sdwKk6-srZxhM-rMuarU-2j42i59-25xtrW5-MuykRE-28fnLKF-MuykLQ-fj4izz-HaM4SN-HaM4yb-HaM4Kd-EjgNJP-GRpjm5-6yVYWS-5eBgLF-VyYwmE-26ingiQ-MwLeT5-uni1uh-unsQf8-HdS6wT-FXhVXs-h81CJf-27DcRzY" target="_blank">"Forbes 150907"</a> by <a href="https://www.flickr.com/photos/bethelct/" target="_blank">BethelCT</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: spacex,
-                name: 'spacex'
+                name: 'spacex',
+                attr:'<a href="https://www.flickr.com/photos/pandapples/37411954164/in/photolist-YZY3yu-VAho2P-2hnqNWG-KGH6C7-DNj6Su-2dD28qD-QrVefG-RxAsDg-R9TmvY-RxAsm2-R9ToRE-R9Tnsh-R9TpxQ-QuEz8i-QuEyrt-QuEyMZ-LzaDNw-RxAxBn-RxAuxM-QuEyXt-RxAsUg-QuEyFB-dhBGkD-LzaEmW-G41VDS-f5L6iw-2j42i59-JtsVKZ-LzaEk3-r7MJSd-b86SYZ-dhFWgd-Sb8pDc-29xy79a-pTQpda-QYGzFF-JtsW3T-VkNdJG-2cLBzE4-CfrFeG-2hWMw8B-sdwKk6-DdPD7Z-2hWHX2o-2hWLw5M-9KENqi-LzaEzS-ndR6YE-ePRCg3-28z26sW" target="_blank">"SpaceX HQ"</a> by <a href="https://www.flickr.com/photos/pandapples/" target="_blank">Athena Iluz</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: tesla,
-                name: 'tesla'
+                name: 'tesla',
+                attr:'<a href="https://www.flickr.com/photos/dennism2/41318617150/in/photolist-25XbHmS-2fJTkyF-7gNML9-27Kd77a-27kjAjK-2fEdBp1-yNnha-6CkjrB-LZqQss-6Hb8dx-pHjVeG-9eKrqR-28c9hqL-9eKrva-5XoDPY-d3HYJU-21DDfkE-293Sx8d-bskHL8-A7Ehrt-293Sn1E-28e7tPx-AnH38R-Z2ut3E-8zHSDt-2hR93Aq-ATsP5K-2hKwd1B-28c9isL-fcmyry-sgQtw-ruSyfz-UXz1Z3-6C3ft8-2iYBicC-6BY59d-6BY6c9-6BTYuM-6yVYWS-2gcGGxv-6QxMX9-oAqeS-2hKzWyW-BbiHR-9cs4Ei-25vqzZ5-feq9zf-HJfr8c-8KzVCn-pbNJxn" target="_blank">"Large Tesla logo"</a> by <a href="https://www.flickr.com/photos/dennism2/" target="_blank">DennisM2</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             }
         ],
         answers: ['elonmusk', 'spacex', 'tesla']

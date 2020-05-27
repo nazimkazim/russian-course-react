@@ -21,7 +21,6 @@ export default function Credits() {
         {ListenChooseRelevantSet2.map((item) => (
           item.picture.map((itm) => (
             <li key={itm.attr}>{stripHtml(itm.attr)}</li>
-
           ))
         ))}
       </ol>

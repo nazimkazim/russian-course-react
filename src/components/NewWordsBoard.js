@@ -30,10 +30,10 @@ function NewWordsBoard(props) {
 
   return (
     <Card className={classes.card}>
-      <span class='tag is-info is-medium'>New words</span>
+      <span className='tag is-info is-medium'>New words</span>
       <CardContent>
-        {props.data.map((item) => (
-          <>
+        {props.data.map((item, i) => (
+          <div key={i}>
             {item.rus && (
               <>
                 <Typography component='p'>
@@ -52,7 +52,7 @@ function NewWordsBoard(props) {
                 
               </>
             )}
-          </>
+          </div>
         ))}
       </CardContent>
     </Card>

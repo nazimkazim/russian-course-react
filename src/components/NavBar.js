@@ -20,7 +20,7 @@ export default class NavBar extends Component {
           active={this.state.active}
         >
           <Navbar.Brand>
-            <Navbar.Item>
+            <Navbar.Item renderAs="div">
               <Link to="/">RUSSIAN LANGUAGE COURSE</Link>
             </Navbar.Item>
             <Navbar.Burger
@@ -30,18 +30,18 @@ export default class NavBar extends Component {
           </Navbar.Brand>
           <Navbar.Menu>
             <Navbar.Container>
-              <Navbar.Item>
+              <Navbar.Item renderAs="div">
                 <Link to="/credits">Credits</Link>
               </Navbar.Item>
-              <Navbar.Item>
+              <Navbar.Item renderAs="div"> 
                 <Link to="/me">О нас</Link>
               </Navbar.Item>
-              <Navbar.Item>
+              <Navbar.Item renderAs="div">
                 <Link to="/blogs">Блог</Link>
               </Navbar.Item>
             </Navbar.Container>
             <Navbar.Container position="end">
-              <Navbar.Item>
+              <Navbar.Item renderAs="div">
                 <span>
                   <img src={whatsapp} alt="whatsapp icon" />
                 </span>

@@ -148,9 +148,9 @@ class ScrambleWordsActivity extends Component {
         <div className="card-content scramble-words-activity-image no-pic">
           { this.state.activityIsFinished
             ? <div className="centered-item">Good Job</div> : (<div className="wrapper">
-              <div class="item">
-                <div class="polaroid"><img src={ this.state.data[this.state.index] && this.state.data[this.state.index].photo } alt="" />
-                  <div class="caption">{ this.state.data[this.state.index] && this.state.data[this.state.index].name }</div>
+              <div className="item">
+                <div className="polaroid"><img src={ this.state.data[this.state.index] && this.state.data[this.state.index].photo } alt="" />
+                  <div className="caption">{ this.state.data[this.state.index] && this.state.data[this.state.index].name }</div>
                 </div>
               </div>
             </div>)
@@ -189,7 +189,7 @@ class ScrambleWordsActivity extends Component {
               </span>
               { this.state.activityIsFinished ? (
                 <button className="button is-success" onClick={ this.startAgain }>
-                  <span class="icon is-small">
+                  <span className="icon is-small">
                     <i className="fas fa-redo"></i>
                   </span>
                 </button>

@@ -17,7 +17,8 @@ import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText5, MTCText6, MTCText7, MTCText8, MTCText9 } from '../data/MemorizeTextClick';
 import ScrambleWordsWithPictureActivity from '../components/ScrambleWordsWithPictureActivity';
 import { set4COSOC, set5COSOC } from '../data/ComposeOrderedSentOnClick';
-
+//import SortTableDragAndDrop from '../components/SortTableDragAndDrop/Index'
+//import {sortItems1} from '../data/SortItems'
 
 
 class Lesson_1_3 extends Component {

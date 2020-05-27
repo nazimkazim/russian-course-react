@@ -76,15 +76,18 @@ export const ListenChooseRelevantSet1 = _.shuffle([
         picture: [
             {
                 src: RFIndependent,
-                name: 'independent_newspaper'
+                name: 'independent_newspaper',
+                attr:'<a href="https://www.flickr.com/photos/josephstash/5904649512/in/photolist-9ZLSzW-8wPEK2-3kRKXP-pu5ht-288HrU1-gpStZc-geRpt1-96MTQm-RhvXgT-iJ2qRi-P1mb5b-gSREym-dU3pFn-2hmDeTU-288Hxp9-qLwKqM-8HFJBh-agpKRL-3kRKYD-fYQuSS-fYQhBu-W9xEUV-yNPxpM-N4r1q9-c43ePQ-DJ3sur-fYQ7Dy-52a4BY-96MTxo-2hggEfi-4sDiVP-fYQBPz-fYQnCi-9k9QZx-fYQjBD-dGrR5U-MCAoT3-Rf5sEn-fYQsFM-fYQRn6-2hginpt-6yLLLJ-a49o2U-QNEUt8-zhdjsb-fYPWbN-fYQnSB-ReiunF-Nadyh5-RTA4J7" target="_blank">"The Independent"</a> by <a href="https://www.flickr.com/photos/josephstash/" target="_blank">Joseph Stashko</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: BritishFlag,
-                name: 'british_flag'
+                name: 'british_flag',
+                attr:'<a href="https://www.flickr.com/photos/wwarby/46155196634/in/photolist-2djzrWj-WuEXp6-26dMvoy-d3ifDA-d3ifuh-6GfstJ-c7AQZw-tYoJjg-W4TZm-52zCYA-acadq6-WjH1fT-5x8RnG-VJ589W-2qB6B-6jManw-H6tB2K-7TForf-5f3CsN-51SQcN-cbdweU-9KVsec-RGvGPH-EXjCbS-2hS2ESh-2ghVhea-2iCzDea-2hXoegb-2hTegar-2hS1EhW-c6uiW7-24y8hLy-cDU5p7-2iC8fL5-nhjao8-nRnQMG-cQTi4-2hS2EQy-8jzAgr-2ghrukJ-kSSZLx-fPxPsM-EnfM7-7wBzJ3-iisy5-VwFrBd-2tHmg-9jqzcx-4s8g4R-9AK9rH" target="_blank">"British Flag"</a> by <a href="https://www.flickr.com/photos/wwarby/" target="_blank">William Warby</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: Journalist,
-                name: 'journalist'
+                name: 'journalist',
+                attr:'<a href="https://www.flickr.com/photos/crobj/3882366608/in/photolist-6V59kj-pawAcE-pax5Ku-2hpcQ2M-5rWdeu-Urzjyq-5zj9zk-pDdXQq-oYSPdZ-qQZTGV-ENMvtA-4FSec5-yxCA55-beqbWn-tpwoM-f2WAEf-9Gx4bB-o86LtY-Y9qPsB-25KxBwA-QNTpWC-Ad6p1o-Qef8sP-RhcGZB-2iCSiCS-RG1Tbw-CELv4x-QsohTZ-PF5gH8-GhzkVA-RsNoTS-QViH61-C1N8fb-2ixVKCF-PRWHz9-Qp5kn1-st8P4C-QjuLp7-5RDVrK-aAUgVH-PAtYHD-4oXqGK-2iqrdL3-X87VVh-h13nwR-NnvGq-2hExH7V-HvpxUx-yrbQ7e-bZgrCd" target="_blank">"SNN6 Interview"</a> by <a href="https://www.flickr.com/photos/crobj/" target="_blank">Clyde Robinson</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             }
         ],
         answers: ['independent_newspaper', 'british_flag', 'journalist']
@@ -94,15 +97,18 @@ export const ListenChooseRelevantSet1 = _.shuffle([
         picture: [
             {
                 src: AmericanFlag,
-                name: 'american_flag'
+                name: 'american_flag',
+                attr:'<a href="https://www.flickr.com/photos/rwkphotography/3755789436/in/photolist-6HTpmh-7CQncA-mg6ZCu-f1J73U-mg5TzZ-8PvfPD-o19dKR-rGAq2d-9HZoe7-6eLJKy-mg6WWN-jGxbma-ao5WSx-8fUvz5-dFZwUY-9HZo5s-LyYcYv-gdi2t1-okpmoj-9HZosj-9HWwQT-7ycyEF-6vHQAH-VvNwfq-7ycEZH-9HWwHz-aMFPo-9ggQiW-nosJdT-JRHw7n-8jszaZ-74xq9Q-5DqiUB-qvCLu8-ozSrfG-7ygueA-w2xH4m-9ZCcqY-7ygkr3-4qk6G2-H2hYPY-4wkgCT-nnaZRF-eE3ZBH-8VYYoh-YHqYzr-UmhXT7-4FoL4H-7PfAUo-buWfR" target="_blank">"American Flag"</a> by <a href="https://www.flickr.com/photos/rwkphotography/" target="_blank">Riley Kaminer</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: AfroAmerican,
-                name: 'afro_american'
+                name: 'afro_american',
+                attr:'<a href="https://www.flickr.com/photos/johnnysilvercloud/24848158437/in/photolist-DRKiNM-WNJwGk-4YDMZ2-Jzo4Zf-YrL4my-JTjDw6-LiDhAD-AUiT2B-QQtF71-Q2GgKS-shm3Fy-Unwhb6-rp3HQU-TDxPbC-ARuamU-oxspr1-xa2cC1-DPZRBk-PZgXaq-RfG2NQ-Q6k25C-RfG8nL-R8wnan-227A7sD-JyPnvc-LiDk3H-VyLnHC-JznZFL-JTjt7Z-JXbWDE-RpS7j8-BT9aRa-qtPp3L-pFfoRp-pwbBqc-pt9qN2-xsHTd3-xgWRoW-DPZS5V-JR18Mf-J4MAac-RfG96Q-reVjWF-8uNup5-R8wo6k-BB4S5W-Rmmt17-t7KLhD-p9MNxF-J4MBD4" target="_blank">"I got a flag on my mind"</a> by <a href="https://www.flickr.com/photos/johnnysilvercloud/" target="_blank">Johnny Silvercloud</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             },
             {
                 src: Obama,
-                name: 'obama'
+                name: 'obama',
+                attr:'<a href="https://www.flickr.com/photos/raster/8167731771/in/photolist-drKL6z-5DVskx-deJpYD-6c54gs-5snecs-5zrLPc-5zb9NP-8r6ybY-5zfssC-5zfqK9-5bdDEP-5C5e4w-4pJvLJ-4TJNnk-4ugiZg-7WLi2Z-dNE85Y-5zb2xT-n5sYin-5zfomA-drKMg9-7WLkPK-7WLkxT-5zb8aB-5zb7p4-5zfqrm-7WPwSU-5zfkws-7WPxgu-6HEQjw-8xwTLD-4TJNia-5zfiC7-4TJNp4-5zy7T3-5zb35t-4TkZ7y-4Bf8wb-5V54Pp-7WLkaK-4TP2fh-5XLaWz-5bGc6n-4TP2iL-4TJNjZ-7wtR5b-5zb3Zg-5zb5gH-5zfgYj-5ueBL9" target="_blank">"President Obama"</a> by <a href="https://www.flickr.com/photos/raster/" target="_blank">Pete Prodoehl</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
             }
         ],
         answers: ['american_flag', 'afro_american', 'obama']

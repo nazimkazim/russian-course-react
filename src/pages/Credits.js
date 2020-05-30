@@ -2,6 +2,7 @@ import React from 'react'
 import {set4COSOC} from '../data/ComposeOrderedSentOnClick'
 import {ListenChooseRelevantSet2,ListenChooseRelevantSet1} from '../data/ListentChooseRelevant'
 import {set1} from '../data/MTWTP'
+import {tomHardyAttr} from '../data/dialoguesData'
 export default function Credits() {
   const stripHtml = (html) => 
 {
@@ -33,10 +34,10 @@ export default function Credits() {
             <li key={itm.attr}>{stripHtml(itm.attr)}</li>
           ))
         ))}
+        <h1>Lesson 1.2</h1>
+        <li>{stripHtml(tomHardyAttr)}</li>
       </ol>
       </div>
     </div>
   )
 }
-
-

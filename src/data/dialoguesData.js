@@ -2,6 +2,10 @@ import billGates from '../images/MTWTP/lesson1.1/gates.PNG';
 import timCook from '../images/MTWTP/lesson1.1/tim_cook.jpg';
 import tomHardy from '../images/MTWTP/lesson1.2/tom_hardy.jpg';
 
+
+export const tomHardyAttr = '<a href="https://www.flickr.com/photos/gageskidmore/42774738485/in/photolist-28aRHv8-2iMHTLE-DNsbWr-YxHbmj-DavA6U-GDvrPd-KdQktM-8hNkFU-pSgXo1-cyLCgu-22vjEtc-qdF4W3-cyLCNL-brd3wj-bE7VVk-MCtxHT-MCFhjU-NAt1s2-26MS4BA-28aRN5Z-dMjEzM-HKy12u-bE7jFx-brcnWA-brcR9G-4Puwav-bE824H-bE7AWx-9DJ1mR-bE7TLV-brcR9y-cyLAaL-h7dAoK-bE7mND-bE7TMx-bE7Noi-cyLD3E-bE7ms6-brcR9N-brd3vY-cyLCwL-2b1kU1d-brcK19-brcR9b-bJ35rx-P6iQsW-bE7iuk-brd3ws-aweyGL-bE7sLp" target="_blank">"Tom Hardy"</a> by <a href="https://www.flickr.com/photos/gageskidmore/" target="_blank">Gage Skidmore</a>, <a>russian course</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>';
+
+
 // Lesson 1.1
 export const dialogue1 = [
     {
@@ -280,5 +284,157 @@ export const dialogue3 = [
                 L2: "our house"
             }
         ]
+    }
+];
+
+
+// Lesson 1.3
+// Practice speaking section
+export const dialogue4 = [
+    {
+        L1: `Who is this man?`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Кто этот мужчина?",
+        image: tomHardy,
+        extra: []
+    },
+    {
+        L1: "His name is  Khasan Shash. He is a former professional footballer.",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Его зовут Хасан Шаш. Он бывший профессиональный футболист.",
+        image: billGates,
+        extra: [{
+            L1: "Бывший",
+            L2: "Former"
+        },
+        {
+            L1: "Профессиональный",
+            L2: "Professional"
+        }]
+    },
+    {
+        L1: "Who is this woman?",
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Кто эта женщина?",
+        image: tomHardy,
+        extra: []
+    },
+    {
+        L1: "Her name is Angela Merkel. She is chancellor of Germany. She is a representative of Christian-Democratic party. By profession, she is physical chemist.",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Её зовут Ангела Меркель. Она канцлер Германии. Она представитель Христианско-Демократической партии. По профессии, она физико-химик.",
+        image: billGates,
+        extra: [{
+            L1: "канцлер",
+            L2: "chancellor"
+        },
+        {
+            L1: "представитель",
+            L2: "representative"
+        },
+        {
+            L1: "по профессии",
+            L2: "By profession"
+        },
+        {
+            L1: "физико-химик",
+            L2: "physical chemist"
+        }]
+    },
+    {
+        L1: `Who is this man?`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Кто этот мужчина?",
+        image: tomHardy,
+        extra: []
+    },
+    {
+        L1: "His name is Boris Ivanov. He works for CIA under cover in Russia. He tries to find a secret weapon.",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Его зовут Борис Иванов. Он работает на ЦРУ под прикрытием в России. Он пытается найти секретное оружие.",
+        image: billGates,
+        extra: [
+            {
+                L1: "Он работает на ЦРУ",
+                L2: "He works for CIA"
+            },
+            {
+                L1: "под прикрытием",
+                L2: "under cover"
+            },
+            {
+                L1: "он пытается найти",
+                L2: "he tries to find"
+            },
+            {
+                L1: "секретное оружие",
+                L2: "secret weapon"
+            }
+        ]
+    },
+    {
+        L1: `Who is this man?`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Кто этот мужчина?",
+        image: tomHardy,
+        extra: []
+    },
+    {
+        L1: "His name is Vladimir Klichko. He is a former champion of world on boxing in heavy weight. Currently he is a mayor of the city Kiev (literally).",
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Его зовут Владимир Кличко. Он бывший чемпион мира по боксу в тяжелом весе. Сейчас он мэр города Киев.",
+        image: billGates,
+        extra: [
+            {
+                L1: "чемпион мира",
+                L2: "world champion"
+            },
+            {
+                L1: "по боксу",
+                L2: "on boxing"
+            },
+            {
+                L1: "в тяжелом весе",
+                L2: "heavyweight"
+            },
+            {
+                L1: "мэр",
+                L2: "mayor"
+            }
+        ]
+    },
+    {
+        L1: `Very interesting. Thanks for information`,
+        name: "Tom Hardy",
+        company: "Actor",
+        speaker: 2,
+        L2: "Очень интересно. Спасибо за информацию",
+        image: tomHardy,
+        extra: []
+    },
+    {
+        L1: `You are welcome`,
+        name: "Bill Gates",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Пожалуйста",
+        image: billGates,
+        extra: []
     }
 ];

@@ -17,6 +17,9 @@ import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText5, MTCText6, MTCText7, MTCText8, MTCText9 } from '../data/MemorizeTextClick';
 import ScrambleWordsWithPictureActivity from '../components/ScrambleWordsWithPictureActivity';
 import { set4COSOC, set5COSOC } from '../data/ComposeOrderedSentOnClick';
+import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
+import { dialogue4 } from '../data/dialoguesData';
+
 //import SortTableDragAndDrop from '../components/SortTableDragAndDrop/Index'
 //import {sortItems1} from '../data/SortItems'
 
@@ -129,6 +132,17 @@ class Lesson_1_3 extends Component {
               </div>
             </div>
           </div>  
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Практика говорения" engName="Speaking practice" />
+          <div className="container is-fluid">
+            <div className="columns">
+              <div className="column is-half is-offset-one-quarter">
+                <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
+                <DialogueContainer dialogues={ dialogue4 } />
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );

@@ -69,23 +69,23 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "известный",
-                    options: _.shuffle(["famous", "fast", "clean", "very"]),
-                    answer: "famous"
+                    pair: ["известный", "famous"],
+                    translation: "famous"
                 },
                 {
                     word: "проживает",
-                    options: _.shuffle(["is living", "is eating", "strong", "busy"]),
-                    answer: "is living"
+                    pair: ["проживает", "is living"],
+                    translation: "is living"
                 },
                 {
                     word: "столице",
-                    options: _.shuffle(["capital", "village", "swimming pool", "country"]),
-                    answer: "capital"
+                    pair: ["столице", "capital"],
+                    translation: "capital"
                 },
                 {
                     word: "более",
-                    options: _.shuffle(["more than", "cause", "rarely", "often"]),
-                    answer: "more than"
+                    pair: ["более", "more than"],
+                    translation: "more than"
                 }
             ]
         },
@@ -96,28 +96,28 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "первый",
-                    options: _.shuffle(["first", "second", "third", "fourth"]),
-                    answer: "first"
+                    pair: ["первый","first"],
+                    translation: "first"
                 },
                 {
                     word: "который стал",
-                    options: _.shuffle(["who became", "who did not become", "who dreamed", "who run"]),
-                    answer: "who became"
+                    pair: ["who became", "который стал"],
+                    translation: "who became"
                 },
                 {
                     word: "служил",
-                    options: _.shuffle(["served", "worked", "treated", "lied"]),
-                    answer: "served"
+                    pair: ["served", "служил"],
+                    translation: "served"
                 },
                 {
                     word: "срока",
-                    options: _.shuffle(["terms", "time", "period", "sessions"]),
-                    answer: "terms"
+                    pair: ["terms","срока"],
+                    translation: "terms"
                 },
                 {
                     word: "всего",
-                    options: _.shuffle(["overall", "finish", "know", "last"]),
-                    answer: "overall"
+                    pair: ["overall", "всего"],
+                    translation: "overall"
                 }
             ]
         },
@@ -128,13 +128,13 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "вожу желтое такси",
-                    options: _.shuffle(["drive a yellow taxi", "ride a blue bike", "fly a black plane", "want a big car"]),
-                    answer: "drive a yellow taxi"
+                    pair: ["drive a yellow taxi", "вожу желтое такси"],
+                    translation: "drive a yellow taxi"
                 },
                 {
                     word: "зарабатываю 80 долларов",
-                    options: _.shuffle(["earn 80 dollars", "spend 80 dollars", "splash out 80 dollars", "take 80 dollars"]),
-                    answer: "earn 80 dollars"
+                    pair: ["earn 80 dollars", "зарабатываю 80 долларов"],
+                    translation: "earn 80 dollars"
                 }
             ]
         },
@@ -145,13 +145,13 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "родилась",
-                    options: _.shuffle(["was born", "was given", "was taken", "was named"]),
-                    answer: "was born"
+                    pair: ["was born","родилась"],
+                    translation: "was born"
                 },
                 {
                     word: "умерла",
-                    options: _.shuffle(["died", "became", "marked", "moved"]),
-                    answer: "died"
+                    pair: ["died", "умерла"],
+                    translation: "died"
                 }
             ]
         },
@@ -162,8 +162,13 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "ракетной компании",
-                    options: _.shuffle(["rocket company", "car company", "bike company", "scooter company"]),
-                    answer: "rocket company"
+                    pair: _.shuffle(["rocket company", "ракетной компании"]),
+                    translation: "rocket company"
+                },
+                {
+                    word: "электромобильной компании",
+                    pair: ["electric vehicle company", "электромобильной компании"],
+                    translation: "electric vehicle company"
                 }
             ]
         }

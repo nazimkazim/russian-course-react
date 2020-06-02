@@ -1,15 +1,18 @@
+/* eslint-disable no-extend-native */
 import React, { Component } from "react";
 import click from "../data/media/click.wav";
 import correct from "../data/media/correct.wav";
 import denied from "../data/media/denied.mp3";
+let _ = require("lodash");
 
 class Quiz extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       data: [],
-      answers: [],
+      mixedWords: [],
       myanswers: [],
+      allPairs: [],
       checked: false,
       isCorrect: false,
       isIncorrect: false
@@ -17,104 +20,76 @@ class Quiz extends Component {
   }
 
   componentDidMount() {
-    let answers = [];
+    let mixedWords = [];
+    let allPairs = [];
     this.props.data.quiz && this.props.data.quiz.map((item) => {
-      answers.push(item.answer);
-      return answers;
+      mixedWords.push(item.word, item.translation);
+      allPairs.push(item.pair);
+      return (mixedWords, allPairs);
     });
 
     this.setState({
       data: this.props.data.quiz,
-      answers,
+      mixedWords: _.shuffle(mixedWords),
+      allPairs
     });
-    console.log(this.props.data)
+    //console.log(this.props.data);
   }
 
-  
+  selectWords = (e) => {
+    let items = e.target.value;
+    let myanswers = this.state.myanswers.concat(items);
+    this.setState({ myanswers }, () => {
+      if (this.state.myanswers.length === 2) {
+        if (this.checkAnswers(this.state.myanswers, this.state.allPairs)) {
+          console.log("correct");
+          this.setState({
+            myanswers:[]
+          })
+        } else {
+          console.log("incorrect");
+        }
+      } else {
+        console.log('choose a pair');
+      }
+    });
 
-  handleAnswer = (evt, index) => {
-    let sound = new Audio(click);
-    sound.play();
-    let option = evt.target.id;
-    const array = [...this.state.myanswers];
-    array[index] = option;
-    this.setState({ myanswers: array });
+
   };
 
-  checkHandler = () => {
-    if (this.state.myanswers.join(" ") === this.state.answers.join(" ")) {
-      let sound = new Audio(correct);
-      sound.play();
-      this.setState({ isCorrect: true });
-    } else {
-      let sound = new Audio(denied);
-      sound.play();
-      this.setState({
-        isIncorrect: true,
-      });
-      setTimeout(() => {
-        this.setState({
-          isIncorrect: false,
-        });
-      }, 3000);
+  checkAnswers = (answersArr, allPairs) => {
+    let bools = []
+    allPairs.forEach((arr) => {
+      this.arraysEqual(answersArr, arr);
+      console.log(this.arraysEqual(answersArr, arr));
+      console.log(arr, this.state.myanswers);
+      bools.push(this.arraysEqual(answersArr, arr))
+    });
+
+    if (bools.includes(true)) {
+      return true
     }
   };
 
-  startAgainHandler = () => {
-    this.setState({
-      myanswers: [],
-      index: 0,
-      checked: false,
-      isCorrect: false,
-      isIncorrect: false,
-    });
+  arraysEqual = (a, b) => {
+    return a.sort().toString() === b.sort().toString() 
   };
 
+
+
   render() {
-    //console.log(this.state.data);
-    //console.log(this.state.answers.join(" "));
+    //console.log(this.state.mixedWords);
     //console.log(this.state.myanswers);
+    //console.log(this.state.allPairs);
     //console.log(this.state.myanswers.join(" ") === this.state.answers.join(" "));
     return (
-      <aside className="menu">
-        <ul className="menu-label">
-          {this.state.data && this.state.data.map((item, index) => (
-            <div key={index}>
-              <li className="has-text-grey-dark is-size-5 is-uppercase has-text-weight-semibold">
-                {item.word}
-              </li>
-              <ul className="level tags">
-                {item.options.map((option, i) => (
-                  <li
-                    className="menu-list-options level-item tag is-primary is-medium"
-                    key={i}
-                    onClick={(event) => this.handleAnswer(event, index)}
-                    id={option}>
-                    {option}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </ul>
-        <p className="buttons">
-          <button
-            className={`button ${this.state.isCorrect && "is-success"}`}
-            onClick={this.checkHandler}
-            disabled={this.state.myanswers.length < 1}>
-            {this.state.isCorrect ? "Good Job" : "Check"}
-          </button>
-          <button className="button" onClick={this.startAgainHandler}>
-            <span className="icon is-small">
-              <i className="fas fa-redo"></i>
-            </span>
-          </button>
-        </p>
-
-        {this.state.isIncorrect && (
-          <div className="notification is-warning">Try again</div>
-        )}
-      </aside>
+      <div>
+        <div className="tags are-medium">
+          { this.state.mixedWords.map((item) => (
+            <button value={ item } onClick={ (e) => { this.selectWords(e); } } className="tag is-warning">{ item }</button>
+          )) }
+        </div>
+      </div>
     );
   }
 }

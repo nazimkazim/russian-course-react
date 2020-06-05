@@ -45,7 +45,7 @@ class Quiz extends Component {
           console.log("correct");
           const myFunction = (value) => {
             this.setState({
-              mixedWords:this.state.mixedWords.map(word => word.translation === value || word.word === value ? Object.assign({}, word, { disabled:true }) : word)
+              mixedWords:this.state.mixedWords.map(item => myanswers.includes(item.translation) || myanswers.includes(item.word) ? Object.assign({}, item, { disabled:true }) : item)
             })
           }
           this.state.myanswers.forEach(myFunction)
@@ -94,7 +94,7 @@ class Quiz extends Component {
       <div>
         <div className="tags are-medium">
           { this.state.mixedWords.map((item) => (
-            <button disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className="tag is-warning">{ item.word || item.translation }</button>
+            <button disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className={`tag ${item.disabled && 'tag is-success'}`}>{ item.word || item.translation }</button>
           )) }
         </div>
       </div>

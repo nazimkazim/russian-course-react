@@ -1,8 +1,9 @@
 /* eslint-disable no-extend-native */
 import React, { Component } from "react";
-//import click from "../data/media/click.wav";
-//import correct from "../data/media/correct.wav";
-//import denied from "../data/media/denied.mp3";
+import click from "../data/media/click.wav";
+import correct from "../data/media/correct.wav";
+import denied from "../data/media/denied.mp3";
+import Notification from './Notification'
 let _ = require("lodash");
 
 class Quiz extends Component {
@@ -39,27 +40,43 @@ class Quiz extends Component {
   selectWords = (e) => {
     let items = e.target.value;
     let myanswers = this.state.myanswers.concat(items);
+    let sound = new Audio(click);
+    sound.play();
     this.setState({ myanswers }, () => {
       if (this.state.myanswers.length === 2) {
         if (this.checkAnswers(this.state.myanswers, this.state.allPairs)) {
-          console.log("correct");
+          //console.log("correct");
+          let sound = new Audio(correct);
+          sound.play();
           const myFunction = (value) => {
             this.setState({
-              mixedWords:this.state.mixedWords.map(item => myanswers.includes(item.translation) || myanswers.includes(item.word) ? Object.assign({}, item, { disabled:true }) : item)
+              mixedWords:this.state.mixedWords.map(item => myanswers.includes(item.translation) || myanswers.includes(item.word) ? Object.assign({}, item, { disabled:true }) : item),
+              isCorrect:true
             })
           }
+
+          setTimeout(() => {
+            this.setState({isCorrect:false})
+          }, 1000)
+
           this.state.myanswers.forEach(myFunction)
           this.setState({
             myanswers:[]
           })
         } else {
-          console.log("incorrect");
+          //console.log("incorrect");
+          let sound = new Audio(denied);
+          sound.play();
           this.setState({
-            myanswers:[]
+            myanswers:[],
+            isIncorrect:true
           })
+          setTimeout(() => {
+            this.setState({isIncorrect:false})
+          }, 1000)
         }
       } else {
-        console.log('choose a pair');
+        //console.log('choose a pair');
       }
     });
 
@@ -86,8 +103,8 @@ class Quiz extends Component {
 
 
   render() {
-    console.log(this.state.mixedWords);
-    console.log(this.state.myanswers);
+    //console.log(this.state.mixedWords);
+    //console.log(this.state.myanswers);
     //console.log(this.state.allPairs);
     //console.log(this.state.myanswers.join(" ") === this.state.answers.join(" "));
     return (
@@ -96,6 +113,8 @@ class Quiz extends Component {
           { this.state.mixedWords.map((item) => (
             <button disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className={`tag ${item.disabled && 'tag is-success'}`}>{ item.word || item.translation }</button>
           )) }
+          {this.state.isCorrect && <Notification message="Correct" type="success" />}
+          {this.state.isIncorrect && <Notification message="Try again" type="error" />}
         </div>
       </div>
     );

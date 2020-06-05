@@ -19,43 +19,43 @@ export const set1TextQuizzer = {
     quiz: [
         {
             word: "была основана",
-            options: _.shuffle(["was founded", "was given", "was taken", "was named"]),
-            answer: "was founded"
+            pair: ["была основана", "was founded"],
+            translation: "was founded"
         },
         {
             word: "друзьями",
-            options: _.shuffle(["by friends", "by collegues", "by relatives", "by strangers"]),
-            answer: "by friends"
+            pair: ["друзьями", "by friends"],
+            translation: "by friends"
         },
         {
             word: "в городе",
-            options: _.shuffle(["in the city", "in the country", "in the village", "in the areas"]),
-            answer: "in the city"
+            pair: ["в городе", "in the city"],
+            translation: "in the city"
         },
         {
             word: "году",
-            options: _.shuffle(["year", "month", "week", "period"]),
-            answer: "year"
+            pair: ["году", "year"],
+            translation: "year"
         },
         {
             word: "производит",
-            options: _.shuffle(["produce", "buy", "tell", "give"]),
-            answer: "produce"
+            pair: ["производит", "produces"],
+            translation: "produces"
         },
         {
             word: "устройства",
-            options: _.shuffle(["devices", "equipment", "technology", "machines"]),
-            answer: "devices"
+            pair: ["устройства", "devices"],
+            translation: "devices"
         },
         {
             word: "продажам",
-            options: _.shuffle(["sales", "equipment", "technology", "machines"]),
-            answer: "sales"
+            pair: ["продажам", "sales"],
+            translation: "sales"
         },
         {
             word: "странах",
-            options: _.shuffle(["in cities", "in countries", "in districts", "in neighbourhoods"]),
-            answer: "in countries"
+            pair: ["странах", "countries"],
+            translation: "countries"
         }
     ]
 };
@@ -96,7 +96,7 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "первый",
-                    pair: ["первый","first"],
+                    pair: ["первый", "first"],
                     translation: "first"
                 },
                 {
@@ -111,7 +111,7 @@ export const set2TextQuizzer = {
                 },
                 {
                     word: "срока",
-                    pair: ["terms","срока"],
+                    pair: ["terms", "срока"],
                     translation: "terms"
                 },
                 {
@@ -145,7 +145,7 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "родилась",
-                    pair: ["was born","родилась"],
+                    pair: ["was born", "родилась"],
                     translation: "was born"
                 },
                 {
@@ -162,7 +162,7 @@ export const set2TextQuizzer = {
             quiz: [
                 {
                     word: "ракетной компании",
-                    pair: _.shuffle(["rocket company", "ракетной компании"]),
+                    pair: ["rocket company", "ракетной компании"],
                     translation: "rocket company"
                 },
                 {
@@ -184,23 +184,23 @@ export const set3TextQuizzer = {
             quiz: [
                 {
                     word: "бывший",
-                    options: _.shuffle(["former", "unreal", "dangerous", "busy"]),
-                    answer: "former"
+                    pair: ["former", "бывший"],
+                    translation: "former"
                 },
                 {
-                    word: "В моей стране",
-                    options: _.shuffle(["in my country", "in our country", "in their country", "in your country"]),
-                    answer: "in my country"
+                    word: "в моей стране",
+                    pair: ["in my country", "в моей стране"],
+                    translation: "in my country"
                 },
                 {
                     word: "любят",
-                    options: _.shuffle(["love", "hate", "skip", "miss"]),
-                    answer: "love"
+                    pair: ["love", "любят"],
+                    translation: "love"
                 },
                 {
                     word: "бешеные",
-                    options: _.shuffle(["crazy", "calm", "peaceful", "kind"]),
-                    answer: "crazy"
+                    pair: ["crazy", "бешеные"],
+                    translation: "crazy"
                 }
             ]
         },
@@ -208,31 +208,38 @@ export const set3TextQuizzer = {
             text: `<p>Её зовут Ангела Меркель. Она является Канцлером Германии <strong>с 2005 года</strong>. Она <strong>представитель</strong> партии Христианско-демократический союз Германии. По профессии она Физикохимик. Но она <strong>выбрала</strong> политику, так как хочет сделать вклад в развитие своей страны.</p>`,
             title: 'Ангела Меркель',
             audio: AngelaMerkel,
+            newWords: [{
+                rus: 'так как',
+                eng: 'because'
+            },
+            {
+                rus: 'хочет',
+                eng: 'wants'
+            },
+            {
+                rus: 'сделать вклад в',
+                eng: 'to contribute to'
+            }],
             quiz: [
                 {
                     word: "с 2005 года",
-                    options: _.shuffle(["since 2005", "for 2005", "in 2005", "at 2005"]),
-                    answer: "since 2005"
+                    pair: ["since 2005", "с 2005 года"],
+                    translation: "since 2005"
                 },
                 {
                     word: "представитель",
-                    options: _.shuffle(["representative", "accountant", "actor", "sunset"]),
-                    answer: "representative"
+                    pair: ["representative", "представитель"],
+                    translation: "representative"
                 },
                 {
                     word: "выбрала",
-                    options: _.shuffle(["chose", "took", "gave", "sorted"]),
-                    answer: "chose"
+                    pair: ["chose", "выбрала"],
+                    translation: "chose"
                 },
                 {
-                    word: "срока",
-                    options: _.shuffle(["terms", "time", "period", "sessions"]),
-                    answer: "terms"
-                },
-                {
-                    word: "всего",
-                    options: _.shuffle(["overall", "finish", "know", "last"]),
-                    answer: "overall"
+                    word: "развитие",
+                    pair: ["development", "развитие"],
+                    translation: "development"
                 }
             ]
         },
@@ -240,16 +247,20 @@ export const set3TextQuizzer = {
             text: `<p>Его зовут Моцарт. Он <strong>великий</strong> австрийский композитор, дирижер. Он представитель венской классической школы музыки. Он автор более 600 музыкальных <strong>работ</strong>.</p>`,
             title: 'Моцарт',
             audio: Mozart,
+            newWords: [{
+                rus: 'школа музыки',
+                eng: 'school of music'
+            }],
             quiz: [
                 {
                     word: "великий",
-                    options: _.shuffle(["great", "small", "unknown", "insignificant"]),
-                    answer: "great"
+                    pair: ["great", "великий"],
+                    translation: "great"
                 },
                 {
                     word: "работ",
-                    options: _.shuffle(["pieces of work", "dollars", "numbers", "production"]),
-                    answer: "pieces of work"
+                    pair: ["pieces of work", "работ"],
+                    translation: "pieces of work"
                 }
             ]
         },
@@ -268,18 +279,18 @@ export const set3TextQuizzer = {
             quiz: [
                 {
                     word: "агентом ЦРУ",
-                    options: _.shuffle(["agent CAI", "agent BBC", "agent CNN", "agent MTV"]),
-                    answer: "agent CAI"
+                    pair: ["agent CIA", "агентом ЦРУ"],
+                    translation: "agent CIA"
                 },
                 {
                     word: "под прикрытием",
-                    options: _.shuffle(["under cover", "under pillow", "under table", "under water"]),
-                    answer: "under cover"
+                    pair: ["under cover", "под прикрытием"],
+                    translation: "under cover"
                 },
                 {
                     word: "оружие",
-                    options: _.shuffle(["weapon", "present", "gift", "santa"]),
-                    answer: "weapon"
+                    pair: ["weapon", "оружие"],
+                    translation: "weapon"
                 }
             ]
         },
@@ -302,23 +313,23 @@ export const set3TextQuizzer = {
             quiz: [
                 {
                     word: "в тяжелом весе",
-                    options: _.shuffle(["heavy weight", "light weight"]),
-                    answer: "heavy weight"
+                    pair: ["heavy weight", "в тяжелом весе"],
+                    translation: "heavy weight"
                 },
                 {
                     word: "сейчас",
-                    options: _.shuffle(["now", "then", "after", "finally"]),
-                    answer: "now"
+                    pair: ["now", "сейчас"],
+                    translation: "now"
                 },
                 {
                     word: "стал",
-                    options: _.shuffle(["became", "stand out", "forget", "find"]),
-                    answer: "became"
+                    pair: ["became", "стал"],
+                    translation: "became"
                 },
                 {
                     word: "основал",
-                    options: _.shuffle(["founded", "hided", "marked", "tapped"]),
-                    answer: "founded"
+                    pair: ["founded", "основал"],
+                    translation: "founded"
                 }
             ]
         }

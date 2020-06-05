@@ -11,8 +11,8 @@ import { NWset2 } from '../data/newWords';
 import ObjectPronounChart from '../components/Charts/ObjectPronounsChart';
 import ListenChooseRelevant from '../components/listenChooseRelevant/AudioContainer';
 import { ListenChooseRelevantSet2 } from '../data/ListentChooseRelevant';
-/* import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
-import { set3TextQuizzer } from '../data/TextQuizzerData'; */
+import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
+import { set3TextQuizzer } from '../data/TextQuizzerData';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText5, MTCText6, MTCText7, MTCText8, MTCText9 } from '../data/MemorizeTextClick';
 import ScrambleWordsWithPictureActivity from '../components/ScrambleWordsWithPictureActivity';
@@ -77,7 +77,7 @@ class Lesson_1_3 extends Component {
                 <div className="columns">
                   <div className={ `column ${this.state.hiden && 'hide'}` }>
                     <Instruction letter="a" name="Читайте и слушайте тексты. Попытайтесь отгадать незнакомые слова" engName="Listen and read the texts. Try to guess meanings of the unknown words" />
-                    {/* <ActivityContainer data={ set3TextQuizzer } /> */}
+                    <ActivityContainer data={ set3TextQuizzer } />
                   </div>
                   <div className="column">
                     <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />

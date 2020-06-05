@@ -1,8 +1,8 @@
 /* eslint-disable no-extend-native */
 import React, { Component } from "react";
-import click from "../data/media/click.wav";
-import correct from "../data/media/correct.wav";
-import denied from "../data/media/denied.mp3";
+//import click from "../data/media/click.wav";
+//import correct from "../data/media/correct.wav";
+//import denied from "../data/media/denied.mp3";
 let _ = require("lodash");
 
 class Quiz extends Component {
@@ -23,7 +23,7 @@ class Quiz extends Component {
     let mixedWords = [];
     let allPairs = [];
     this.props.data.quiz && this.props.data.quiz.map((item) => {
-      mixedWords.push(item.word, item.translation);
+      mixedWords.push({word:item.word, disabled:false},{ translation:item.translation,disabled:false});
       allPairs.push(item.pair);
       return (mixedWords, allPairs);
     });
@@ -43,17 +43,25 @@ class Quiz extends Component {
       if (this.state.myanswers.length === 2) {
         if (this.checkAnswers(this.state.myanswers, this.state.allPairs)) {
           console.log("correct");
+          const myFunction = (value) => {
+            this.setState({
+              mixedWords:this.state.mixedWords.map(word => word.translation === value || word.word === value ? Object.assign({}, word, { disabled:true }) : word)
+            })
+          }
+          this.state.myanswers.forEach(myFunction)
           this.setState({
             myanswers:[]
           })
         } else {
           console.log("incorrect");
+          this.setState({
+            myanswers:[]
+          })
         }
       } else {
         console.log('choose a pair');
       }
     });
-
 
   };
 
@@ -61,8 +69,8 @@ class Quiz extends Component {
     let bools = []
     allPairs.forEach((arr) => {
       this.arraysEqual(answersArr, arr);
-      console.log(this.arraysEqual(answersArr, arr));
-      console.log(arr, this.state.myanswers);
+      //console.log(this.arraysEqual(answersArr, arr));
+      //console.log(arr, this.state.myanswers);
       bools.push(this.arraysEqual(answersArr, arr))
     });
 
@@ -78,15 +86,15 @@ class Quiz extends Component {
 
 
   render() {
-    //console.log(this.state.mixedWords);
-    //console.log(this.state.myanswers);
+    console.log(this.state.mixedWords);
+    console.log(this.state.myanswers);
     //console.log(this.state.allPairs);
     //console.log(this.state.myanswers.join(" ") === this.state.answers.join(" "));
     return (
       <div>
         <div className="tags are-medium">
           { this.state.mixedWords.map((item) => (
-            <button value={ item } onClick={ (e) => { this.selectWords(e); } } className="tag is-warning">{ item }</button>
+            <button disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className="tag is-warning">{ item.word || item.translation }</button>
           )) }
         </div>
       </div>

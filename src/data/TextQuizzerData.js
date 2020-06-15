@@ -10,7 +10,7 @@ import AngelaMerkel from '../images/ListenChooseRelevant/Lesson1.3/Audio/merkel.
 import Mozart from '../images/ListenChooseRelevant/Lesson1.3/Audio/mozart.wav';
 import CIA_agent from '../images/ListenChooseRelevant/Lesson1.3/Audio/cia_agent.wav';
 import Klitchko from '../images/ListenChooseRelevant/Lesson1.3/Audio/klitchko.wav';
-let _ = require("lodash");
+//let _ = require("lodash");
 
 
 
@@ -205,7 +205,7 @@ export const set3TextQuizzer = {
             ]
         },
         {
-            text: `<p>Её зовут Ангела Меркель. Она является Канцлером Германии <strong>с 2005 года</strong>. Она <strong>представитель</strong> партии Христианско-демократический союз Германии. По профессии она Физикохимик. Но она <strong>выбрала</strong> политику, так как хочет сделать вклад в развитие своей страны.</p>`,
+            text: `<p>Её зовут Ангела Меркель. Она является Канцлером Германии <strong>с 2005 года</strong>. Она <strong>представитель</strong> партии Христианско-демократический союз Германии. По профессии она Физикохимик. Но она <strong>выбрала</strong> политику, так как хочет сделать вклад в <strong>развитие</strong> своей страны.</p>`,
             title: 'Ангела Меркель',
             audio: AngelaMerkel,
             newWords: [{

@@ -148,7 +148,7 @@ export const MTCText5 = [
     },
     {
         eng: "our fans just crazy ",
-        rus: "наши фаны просто безумные ",
+        rus: "наши фаны просто бешеные ",
         id: nextId('MTCText2-id-'),
         turned:true
     }

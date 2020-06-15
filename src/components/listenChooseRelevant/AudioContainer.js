@@ -197,7 +197,7 @@ class AudioContainer extends Component {
                         </div>
                     )) }
                 </div>
-                { this.state.error && (<Notification Notification />
+                { this.state.error && (<Notification message="Try again" type="error" />
                 ) }
                 { this.state.isSuccessNotifictionShown && (<Notification message="Greate job!" type="success" />
                 ) }

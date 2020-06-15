@@ -111,7 +111,7 @@ class Quiz extends Component {
       <div>
         <div className="tags are-medium">
           { this.state.mixedWords.map((item) => (
-            <button disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className={`tag ${item.disabled && 'tag is-success'}`}>{ item.word || item.translation }</button>
+            <button style={{cursor:'pointer'}} disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className={`tag ${item.disabled && 'tag is-success'}`}>{ item.word || item.translation }</button>
           )) }
           {this.state.isCorrect && <Notification message="Correct" type="success" />}
           {this.state.isIncorrect && <Notification message="Try again" type="error" />}

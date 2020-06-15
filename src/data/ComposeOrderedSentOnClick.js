@@ -94,7 +94,7 @@ export const set3COSOC = _.shuffle([
         rus: "Её зовут Ангела Меркель, Она канцлер. Она из Германии"
     },
     {
-        eng: "Its name is Samsuns. It is a device. It is from South Korea",
+        eng: "Its name is Samsung. It is a device. It is from South Korea",
         rus: "Его зовут Самсунг. Оно устройство. Оно из Южной Кореи"
     },
     {

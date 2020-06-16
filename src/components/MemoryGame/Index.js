@@ -1,17 +1,13 @@
 import React from 'react'
 import Card from './Card'
 
-function Index() {
+function Index({data}) {
+  console.log(data)
   return (
     <div className="memory-game-container">
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+      {data.map((item) => (
+        <Card item={item}/>
+      ))}
     </div>
   )
 }

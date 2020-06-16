@@ -24,6 +24,7 @@ import DialogueContainer from "../components/dialoguesActivity/DialogueContainer
 import ReusableButton from '../components/ReusableButton';
 import audio from '../images/MTWTP/lesson1.2/audio/audio.wav';
 import { dialogue2, dialogue3 } from '../data/dialoguesData';
+import MemoryGame from '../components/MemoryGame/Index'
 
 
 export default class SingleFlower extends Component {
@@ -162,6 +163,9 @@ export default class SingleFlower extends Component {
               </div>
             </div>
           </div>
+        </div>
+        <div className="newSection">
+          <MemoryGame/>
         </div>
       </>
     );

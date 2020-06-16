@@ -515,6 +515,64 @@ td {
   background-color: #282c34;
 }
 
+.memory-game-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+  margin: 50px;
+  justify-content: center;
+}
+
+.memory-game-card {
+  position: relative;
+  background-color: black;
+  height: 175px;
+  width: 125px;
+}
+
+.memory-game-card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.corner {
+  position: absolute;
+  width:60px;
+  height: 60px;
+}
+
+.corner-top-left {
+  transform: rotate(0deg);
+  top: 0px;
+  left: 0px;
+}
+
+.corner-top-right {
+  transform: rotateY(180deg);
+  right: 0px;
+  top: 0px;
+}
+
+.corner-bottom-right {
+  transform: rotateX(180deg);
+  left: 0px;
+  bottom: 0px;
+}
+
+.corner-bottom-left {
+  transform: rotate(180deg);
+  right: 0px;
+  bottom: 0px;
+}
+
+.star {
+  width: 60px;
+}
+
 
 
 @media screen and (max-width: 1024px) {

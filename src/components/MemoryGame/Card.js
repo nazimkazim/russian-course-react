@@ -5,7 +5,7 @@ import Glass from '../../images/MemoryGameAssets/glass.png'
 
 function Card() {
   return (
-    <div className="memory-game-card visible">
+    <div className="memory-game-card">
       <div className="memory-game-card-back memory-game-card-face">
         <img className="corner corner-top-left" src={Corner} alt=""/>
         <img className="corner corner-top-right" src={Corner} alt=""/>

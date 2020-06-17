@@ -556,11 +556,11 @@ td {
   background-color: black;
 }
 
-.memory-game-card:hover .memory-game-card-back {
+.memory-game-card.visible .memory-game-card-back {
   transform: rotateY(-180deg);
 }
 
-.memory-game-card:hover .memory-game-card-front {
+.memory-game-card.visible .memory-game-card-front {
   transform: rotateY(0);
 }
 

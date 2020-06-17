@@ -3,45 +3,39 @@ import Cloud from '../../src/images/MemoryGameAssets/cloud.png'
 import Plane from '../../src/images/MemoryGameAssets/plane.png'
 import Sun from '../../src/images/MemoryGameAssets/sun.png'
 
-export const MGdata1 = [
+const _ = require('lodash')
+
+export const MGdata1 = _.shuffle([
   {
     value:"glass",
-    pic:Glass,
-    turned:false
+    pic:Glass
   },
   {
     value:"glass",
-    pic:'',
-    turned:false
+    pic:''
   },
   {
     value:"cloud",
-    pic:Cloud,
-    turned:false
+    pic:Cloud
   },
   {
     value:"cloud",
-    pic:'',
-    turned:false
+    pic:''
   },
   {
     value:"plane",
-    pic:Plane,
-    turned:false
+    pic:Plane
   },
   {
     value:"plane",
-    pic:'',
-    turned:false
+    pic:''
   },
   {
     value:"sun",
-    pic:Sun,
-    turned:false
+    pic:Sun
   },
   {
     value:"sun",
-    pic:'',
-    turned:false
+    pic:''
   }
-]
+])

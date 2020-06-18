@@ -25,7 +25,19 @@ function Index({ data }) {
             card.matched = true
           } 
         })
+        setCards(newCards)
         setPairs([])
+      } else {
+        setTimeout(() => {
+          const newCards = [...cards]
+          newCards.forEach((card) => {
+            if (card.value === pairs[0] || card.value === pairs[1]) {
+              card.turned = false
+            } 
+        })
+          setCards(newCards)
+          setPairs([])
+        }, 1000)
       }
     }
     if (pairs.length > 2) {

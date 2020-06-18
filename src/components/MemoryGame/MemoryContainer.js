@@ -1,35 +1,56 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+
 function Index({ data }) {
-  const [dataInternal, setData] = useState([]);
-  const [value, setValue] = useState('')
-  const [theArray, setTheArray] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [pairs, setPairs] = useState([]);
   
   useEffect(() => {
-    const arr = data.map(item => ({
+    const arr = data.map((item,index) => ({
       value: item.value,
       pic: item.pic,
-      turned: false
+      turned: false,
+      matched:false,
+      index
     }));
-    setData(arr);
+    setCards(arr);
   }, [data]);
 
-  console.log(theArray)
+  useEffect(() => {
+    if (pairs.length === 2) {
+      if (pairs[0] === pairs[1]) {
+        const newCards = [...cards]
+        newCards.forEach((card) => {
+          if (card.value === pairs[0]) {
+            card.matched = true
+          } 
+        })
+        setPairs([])
+      }
+    }
+    if (pairs.length > 2) {
+
+    }
+  },[pairs])
+
+  
   
   return (
     <div className="memory-game-container">
-      { dataInternal &&
-        dataInternal.map((item, index) => (
+      { cards &&
+        cards.map((card, index) => (
           <div
             onClick={ () => {
-              const newData = [...dataInternal];
-              newData[index].turned = true;
-              setData(newData);
-              setValue(item.value)
-              setTheArray([...theArray, value]);
+              const newCards = [...cards];
+              if (!newCards[index].turned) {
+                newCards[index].turned = true;
+                setCards(newCards);
+                setPairs([...pairs, card.value])
+              }
+              
             } }
           >
-            <Card key={ index } item={ item } id={ index } />
+            <Card key={ index } item={ card } id={ index } />
           </div>
         )) }
     </div>

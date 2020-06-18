@@ -619,6 +619,11 @@ td {
   transform: scale(1);
 }
 
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 
 
 @media screen and (max-width: 1024px) {

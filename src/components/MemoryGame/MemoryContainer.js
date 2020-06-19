@@ -43,7 +43,7 @@ function Index({ data }) {
     if (pairs.length > 2) {
 
     }
-  },[pairs])
+  },[pairs,cards])
 
   
   

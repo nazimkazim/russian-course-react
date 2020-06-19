@@ -685,6 +685,10 @@ td {
     grid-template-columns: repeat(2, auto);
   }
 
+  .memory-game-info {
+    margin-bottom: 5px !important;
+  }
+
   .memory-game-info-container {
     flex-direction: column;
     align-items: center;

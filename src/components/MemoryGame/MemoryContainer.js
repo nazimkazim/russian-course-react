@@ -9,6 +9,7 @@ function Index({ data }) {
   const [cards, setCards] = useState([]);
   const [pairs, setPairs] = useState([]);
   const [seconds, setSeconds] = useState(61);
+  const [clicks, setClicks] = useState(0)
 
   useEffect(() => {
     const arr = data.map((item, index) => ({
@@ -81,7 +82,7 @@ function Index({ data }) {
           <button className="button is-primary" onClick={() => {setSeconds(50)}}>start game</button>
         </div>
         <div className="memory-game-info">
-          <span class="tag is-link is-large">Flips</span>
+          <span class="tag is-link is-large">Flips {clicks}</span>
         </div>
       </div>
       <div className="memory-game-container">
@@ -94,6 +95,7 @@ function Index({ data }) {
                   let sound = new Audio(slide);
                   sound.play()
                   newCards[index].turned = true;
+                  setClicks(clicks + 1)
                   setCards(newCards);
                   setPairs([...pairs, card.value]);
                 }

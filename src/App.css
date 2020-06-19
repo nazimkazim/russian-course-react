@@ -1,3 +1,5 @@
+@import "~react-component-countdown-timer/lib/styles.css";
+
 .hero-c {
   background-color: #fff4e6;
   background-image: url("./images/stp-bck.jpg");
@@ -312,6 +314,8 @@ td {
 }
 
 
+
+
 @media screen and (max-width: 768px) {
   .hero {
     min-height: 300px;
@@ -619,9 +623,29 @@ td {
   transform: scale(1);
 }
 
-.disabledbutton {
-  pointer-events: none;
-  opacity: 0.4;
+.memory-game-info-container {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.countBox {
+  padding: 0;
+}
+
+.countBoxItem {
+  display:inline-table;
+  padding: 10px !important;
+}
+
+.countBoxItem .label {
+  display: none;
+} 
+
+.count {
+  background-color: #3273DC !important;
+  margin: 5px !important;
+  color: white !important;
 }
 
 
@@ -659,5 +683,10 @@ td {
 
   .memory-game-container {
     grid-template-columns: repeat(2, auto);
+  }
+
+  .memory-game-info-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

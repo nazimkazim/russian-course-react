@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import StopIcon from '@material-ui/icons/Stop';import 
-PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import StopIcon from '@material-ui/icons/Stop';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+
 const useStyles = makeStyles((theme) => ({
     button: {
         margin: theme.spacing(1),

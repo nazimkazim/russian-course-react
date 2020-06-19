@@ -166,6 +166,7 @@ export default class SingleFlower extends Component {
           </div>
         </div>
         <div className="newSection">
+          <SectionHeader name="Практика" engName="Practice" />
           <MemoryGame data={MGdata1}/>
         </div>
       </>

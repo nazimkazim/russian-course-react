@@ -9,10 +9,10 @@ function Index({ data }) {
   const [cards, setCards] = useState([]);
   const [pairs, setPairs] = useState([]);
   const [seconds, setSeconds] = useState(61);
-  const [clicks, setClicks] = useState(0)
+  const [clicks, setClicks] = useState(0);
 
   useEffect(() => {
-    const arr = data.map((item, index) => ({
+    const arr = data[0].map((item, index) => ({
       value: item.value,
       pic: item.pic,
       turned: false,
@@ -30,10 +30,10 @@ function Index({ data }) {
           if (card.value === pairs[0]) {
             card.matched = true;
             setTimeout(() => {
-              let sound = new Audio(notification)
-              sound.play()
-            }, 500)
-            
+              let sound = new Audio(notification);
+              sound.play();
+            }, 500);
+
           }
         });
         setCards(newCards);
@@ -48,8 +48,8 @@ function Index({ data }) {
           });
           setCards(newCards);
           setPairs([]);
-          let sound = new Audio(denied)
-          sound.play()
+          let sound = new Audio(denied);
+          sound.play();
         }, 1000);
       }
     }
@@ -57,7 +57,9 @@ function Index({ data }) {
 
     }
   }, [pairs, cards]);
-  
+
+
+  //console.log(data)
 
   var settings = {
     count: seconds,
@@ -71,18 +73,31 @@ function Index({ data }) {
 
   return (
     <div>
-      
+
       <div className="memory-game-info-container">
         <div className="memory-game-info">
           <span class="tag is-link is-large">
-            <CountdownTimer {...settings} />
+            <CountdownTimer { ...settings } />
           </span>
         </div>
         <div className="memory-game-info">
-          <button className="button is-primary" onClick={() => {setSeconds(50)}}>start game</button>
+          <button className="button is-primary" onClick={ () => { setSeconds(50); } }>start game</button>
         </div>
         <div className="memory-game-info">
-          <span class="tag is-link is-large">Flips {clicks}</span>
+          <div class="field">
+            <div class="control">
+              <div class="select is-primary">
+                <select>
+                  {data.map((option, index) => (
+                    <option>Set {index}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="memory-game-info">
+          <span class="tag is-link is-large">Flips { clicks }</span>
         </div>
       </div>
       <div className="memory-game-container">
@@ -93,9 +108,9 @@ function Index({ data }) {
                 const newCards = [...cards];
                 if (!newCards[index].turned) {
                   let sound = new Audio(slide);
-                  sound.play()
+                  sound.play();
                   newCards[index].turned = true;
-                  setClicks(clicks + 1)
+                  setClicks(clicks + 1);
                   setCards(newCards);
                   setPairs([...pairs, card.value]);
                 }

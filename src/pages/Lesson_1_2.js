@@ -25,7 +25,7 @@ import ReusableButton from '../components/ReusableButton';
 import audio from '../images/MTWTP/lesson1.2/audio/audio.wav';
 import { dialogue2, dialogue3 } from '../data/dialoguesData';
 import MemoryGame from '../components/MemoryGame/MemoryContainer'
-import {MGdata1} from '../data/MemoryGameData'
+import {MGdata1, MGdata2} from '../data/MemoryGameData'
 
 
 export default class SingleFlower extends Component {
@@ -167,7 +167,7 @@ export default class SingleFlower extends Component {
         </div>
         <div className="newSection">
           <SectionHeader name="Практика" engName="Practice" />
-          <MemoryGame data={MGdata1}/>
+          <MemoryGame data={[MGdata1, MGdata2]}/>
         </div>
       </>
     );

@@ -4,17 +4,18 @@ import slide from "../../data/media/slide.wav";
 import notification from "../../data/media/notification.wav";
 import denied from "../../data/media/denied.mp3";
 import { useCountdownTimer } from 'use-countdown-timer';
+import Notification from '../../components/Notification';
 
 function Index({ data }) {
   const [cards, setCards] = useState([]);
   const [pairs, setPairs] = useState([]);
   const [clicks, setClicks] = useState(0);
   const [memoryGameSet, setSet] = useState(0);
+  const [memoryGameStarted, setGameStart] = useState(false);
 
   const { countdown, start } = useCountdownTimer({
     timer: 1000 * 60,
     onExpire: function () {
-
     }
   });
 
@@ -24,7 +25,8 @@ function Index({ data }) {
       pic: item.pic,
       turned: false,
       matched: false,
-      index
+      index,
+      gameStarted: false
     }));
     setCards(arr);
   }, [data, memoryGameSet]);
@@ -77,11 +79,11 @@ function Index({ data }) {
 
   };
 
-
-  //console.log(data)
-
-
-
+  const showNotification = () => {
+    return (
+      <Notification message="please start the game" type="error" />
+    );
+  };
 
   return (
     <div>
@@ -93,15 +95,19 @@ function Index({ data }) {
           </span>
         </div>
         <div className="memory-game-info">
-          <div className="button is-primary" onClick={ start }>start game</div>
+          <div className="button is-link" onClick={ setGameStart }>start game</div>
         </div>
         <div className="memory-game-info">
           <div class="field">
             <div class="control">
               <div class="select is-primary">
-                <select onChange={(e) => {setSet(e.target.value); console.log(e.target.value)}}>
+                <select onChange={ (e) => {
+                  setSet(e.target.value);
+                  setClicks(0);
+                  setGameStart(false);
+                } }>
                   { data.map((option, index) => (
-                    <option key={index} value={index}>{option.name}</option>
+                    <option key={ index } value={ index }>{ option.name }</option>
                   )) }
                 </select>
               </div>
@@ -117,7 +123,11 @@ function Index({ data }) {
           cards.map((card, index) => (
             <div
               onClick={ () => {
-                handleCardClick(card, index);
+                if (memoryGameStarted) {
+                  handleCardClick(card, index);
+                } else {
+                  showNotification();
+                }
               } }
             >
               <Card key={ index } item={ card } id={ index } />
@@ -125,7 +135,6 @@ function Index({ data }) {
           )) }
       </div>
     </div>
-
   );
 }
 export default Index;

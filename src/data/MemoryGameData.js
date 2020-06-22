@@ -125,3 +125,78 @@ export const MGdata2 = _.shuffle([
     pic: ''
   }
 ]);
+
+export const MGdata3 = _.shuffle([
+  {
+    value: "Один (1)",
+    pic: ''
+  },
+  {
+    value: "Один (1)",
+    pic: ''
+  }, 
+  {
+    value: "Два (2)",
+    pic: ''
+  },
+  {
+    value: "Два (2)",
+    pic: ''
+  }, 
+  {
+    value: "Три (3)",
+    pic: ''
+  },
+  {
+    value: "Три (3)",
+    pic: ''
+  }, 
+  {
+    value: "Четыре (4)",
+    pic: ''
+  },
+  {
+    value: "Четыре (4)",
+    pic: ''
+  }, 
+  {
+    value: "Пять (5)",
+    pic: ''
+  },
+  {
+    value: "Пять (5)",
+    pic: ''
+  }, 
+  {
+    value: "Шесть (6)",
+    pic: ''
+  },
+  {
+    value: "Шесть (6)",
+    pic: ''
+  }, 
+  {
+    value: "Семь (7)",
+    pic: ''
+  },
+  {
+    value: "Семь (7)",
+    pic: ''
+  }, 
+  {
+    value: "Восемь (8)",
+    pic: ''
+  },
+  {
+    value: "Восемь (8)",
+    pic: ''
+  },
+  {
+    value: "Девять (9)",
+    pic: ''
+  },
+  {
+    value: "Девять (9)",
+    pic: ''
+  }
+]);

@@ -35,7 +35,8 @@
     "react-swipeable-views": "^0.13.9",
     "react-uid": "^2.3.0",
     "speak-tts": "^0.2.5",
-    "styled-components": "^4.4.1"
+    "styled-components": "^4.4.1",
+    "use-countdown-timer": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

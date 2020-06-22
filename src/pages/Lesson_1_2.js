@@ -167,7 +167,7 @@ export default class SingleFlower extends Component {
         </div>
         <div className="newSection">
           <SectionHeader name="Практика" engName="Practice" />
-          <MemoryGame data={[MGdata1, MGdata2]}/>
+          <MemoryGame data={[{name:"Профессии", set: MGdata1}, {name:"Цифры", set: MGdata2}]}/>
         </div>
       </>
     );

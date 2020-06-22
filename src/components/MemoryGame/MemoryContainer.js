@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react";
-import CountdownTimer from "react-component-countdown-timer";
 import Card from "./Card";
 import slide from "../../data/media/slide.wav";
 import notification from "../../data/media/notification.wav";
 import denied from "../../data/media/denied.mp3";
+import { useCountdownTimer } from 'use-countdown-timer';
 
 function Index({ data }) {
   const [cards, setCards] = useState([]);
   const [pairs, setPairs] = useState([]);
-  const [seconds, setSeconds] = useState(61);
   const [clicks, setClicks] = useState(0);
+  const [memoryGameSet, setSet] = useState(0);
+
+  const { countdown, start } = useCountdownTimer({
+    timer: 1000 * 60,
+    onExpire: function () {
+
+    }
+  });
 
   useEffect(() => {
-    const arr = data[0].map((item, index) => ({
+    const arr = data[memoryGameSet].set.map((item, index) => ({
       value: item.value,
       pic: item.pic,
       turned: false,
@@ -20,7 +27,7 @@ function Index({ data }) {
       index
     }));
     setCards(arr);
-  }, [data]);
+  }, [data, memoryGameSet]);
 
   useEffect(() => {
     if (pairs.length === 2) {
@@ -33,7 +40,6 @@ function Index({ data }) {
               let sound = new Audio(notification);
               sound.play();
             }, 500);
-
           }
         });
         setCards(newCards);
@@ -46,29 +52,35 @@ function Index({ data }) {
               card.turned = false;
             }
           });
-          setCards(newCards);
           setPairs([]);
+          setCards(newCards);
           let sound = new Audio(denied);
           sound.play();
         }, 1000);
       }
     }
-    if (pairs.length > 2) {
-
-    }
   }, [pairs, cards]);
+
+
+  const handleCardClick = (card, index) => {
+    if (pairs.length < 2) {
+      const newCards = [...cards];
+      if (!newCards[index].turned) {
+        let sound = new Audio(slide);
+        sound.play();
+        newCards[index].turned = true;
+        setClicks(clicks + 1);
+        setCards(newCards);
+        setPairs([...pairs, card.value]);
+      }
+    }
+
+  };
 
 
   //console.log(data)
 
-  var settings = {
-    count: seconds,
-    border: true,
-    showTitle: true,
-    noPoints: true,
-    hideDay: true,
-    hideHours: true
-  };
+
 
 
   return (
@@ -77,20 +89,20 @@ function Index({ data }) {
       <div className="memory-game-info-container">
         <div className="memory-game-info">
           <span class="tag is-link is-large">
-            <CountdownTimer { ...settings } />
+            <div>{ countdown / 1000 }</div>
           </span>
         </div>
         <div className="memory-game-info">
-          <button className="button is-primary" onClick={ () => { setSeconds(50); } }>start game</button>
+          <div className="button is-primary" onClick={ start }>start game</div>
         </div>
         <div className="memory-game-info">
           <div class="field">
             <div class="control">
               <div class="select is-primary">
-                <select>
-                  {data.map((option, index) => (
-                    <option>Set {index}</option>
-                  ))}
+                <select onChange={(e) => {setSet(e.target.value); console.log(e.target.value)}}>
+                  { data.map((option, index) => (
+                    <option key={index} value={index}>{option.name}</option>
+                  )) }
                 </select>
               </div>
             </div>
@@ -105,16 +117,7 @@ function Index({ data }) {
           cards.map((card, index) => (
             <div
               onClick={ () => {
-                const newCards = [...cards];
-                if (!newCards[index].turned) {
-                  let sound = new Audio(slide);
-                  sound.play();
-                  newCards[index].turned = true;
-                  setClicks(clicks + 1);
-                  setCards(newCards);
-                  setPairs([...pairs, card.value]);
-                }
-
+                handleCardClick(card, index);
               } }
             >
               <Card key={ index } item={ card } id={ index } />

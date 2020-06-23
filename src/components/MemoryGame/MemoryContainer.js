@@ -13,7 +13,7 @@ function Index({ data }) {
   const [memoryGameSet, setSet] = useState(0);
   const [memoryGameStarted, setGameStart] = useState(false);
 
-  const { countdown, start } = useCountdownTimer({
+  const { countdown } = useCountdownTimer({
     timer: 1000 * 60,
     onExpire: function () {
     }

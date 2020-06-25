@@ -9,13 +9,25 @@ import {
   DIRECTIONS
 } from "./constants";
 
-const App = () => {
+const App = ({data}) => {
   const canvasRef = useRef();
   const [snake, setSnake] = useState(SNAKE_START);
-  const [apple, setApple] = useState(APPLE_START);
+  const [letters, setLetters] = useState(APPLE_START);
   const [dir, setDir] = useState([0, -1]);
+  const [eatenLetters, setEatenLetters ] = useState([])
   const [speed, setSpeed] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+
+
+  useEffect(() => {
+    const letters = data[0].rusWord.split("").map((apple) => (
+      [
+        Math.floor(Math.random() * 20), Math.floor(Math.random() * 20),
+        apple
+      ]
+    ))
+    setLetters(letters)
+  }, [data])
 
   useInterval(() => gameLoop(), speed);
 
@@ -24,10 +36,9 @@ const App = () => {
     setGameOver(true);
   };
 
-  const moveSnake = ({ keyCode }) => setDir(DIRECTIONS[keyCode]);
+  
 
-  const createApple = () =>
-    apple.map((_a, i) => Math.floor(Math.random() * (CANVAS_SIZE[i] / SCALE)));
+  const moveSnake = ({ keyCode }) => setDir(DIRECTIONS[keyCode]);
 
   const checkCollision = (piece, snk = snake) => {
     if (
@@ -46,16 +57,31 @@ const App = () => {
   };
 
   const checkAppleCollision = newSnake => {
-    if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
-      let newApple = createApple();
-      while (checkCollision(newApple, newSnake)) {
-        newApple = createApple();
+    letters.forEach((apple, index) => {
+      if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
+        const newLetters = [...letters]
+        const eatenLetter = newLetters.splice(index, 1)
+        const newEatenLetters = [...eatenLetters]
+        newEatenLetters.push(eatenLetter)
+        verifyWords(newEatenLetters)
+        setEatenLetters(newEatenLetters)
+        setLetters(newLetters)
+        return true;
       }
-      setApple(newApple);
-      return true;
-    }
+    })
     return false;
   };
+
+  const verifyWords = (letters) => {
+    letters.forEach((letter) => {
+      if (data[0].rusWord[0] === letter[0][2]) {
+        console.log("true")
+      } else {
+        console.log(data[0].rusWord, letter)
+        endGame()
+      }
+    })
+  }
 
   const gameLoop = () => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
@@ -68,7 +94,6 @@ const App = () => {
 
   const startGame = () => {
     setSnake(SNAKE_START);
-    setApple(APPLE_START);
     setDir([0, -1]);
     setSpeed(SPEED);
     setGameOver(false);
@@ -81,11 +106,19 @@ const App = () => {
     context.fillStyle = "pink";
     snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
     context.fillStyle = "lightblue";
-    context.fillRect(apple[0], apple[1], 1, 1);
-  }, [snake, apple, gameOver]);
+    letters.forEach((apple) => {
+      context.fillRect(apple[0], apple[1], 1, 1);
+      context.font = "1px Arial";
+      context.textAlign = "center";
+      context.fillStyle = "red";
+      context.fillText(apple[2], apple[0] + 0.5, apple[1] + .3);
+      context.fillStyle = "lightblue";
+    })
+  }, [snake, letters, gameOver]);
 
   return (
     <div role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
+      {data[0].engWord}
       <canvas
         style={ { border: "1px solid black" } }
         ref={ canvasRef }

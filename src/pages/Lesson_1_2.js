@@ -26,6 +26,8 @@ import audio from '../images/MTWTP/lesson1.2/audio/audio.wav';
 import { dialogue2, dialogue3 } from '../data/dialoguesData';
 import MemoryGame from '../components/MemoryGame/MemoryContainer'
 import {MGdata1, MGdata2, MGdata3} from '../data/MemoryGameData'
+import Snake from '../components/Snake/Snake'
+import {snakeDataSet1} from '../data/SnakeData'
 
 
 export default class SingleFlower extends Component {
@@ -168,6 +170,10 @@ export default class SingleFlower extends Component {
         <div className="newSection">
           <SectionHeader name="Практика" engName="Practice" />
           <MemoryGame data={[{name:"Профессии (Professions)", set: MGdata1}, {name:"Личные местоимения (Personal pronouns)", set: MGdata2}, {name:"Цифры (Numbers)", set:MGdata3}]}/>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Практика" engName="Practice" />
+          <Snake data={snakeDataSet1}/>
         </div>
       </>
     );

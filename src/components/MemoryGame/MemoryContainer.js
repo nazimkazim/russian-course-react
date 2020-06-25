@@ -13,7 +13,7 @@ function Index({ data }) {
   const [memoryGameSet, setSet] = useState(0);
   const [memoryGameStarted, setGameStart] = useState(false);
 
-  const { countdown } = useCountdownTimer({
+  const { countdown, start, reset  } = useCountdownTimer({
     timer: 1000 * 60,
     onExpire: function () {
     }
@@ -95,7 +95,10 @@ function Index({ data }) {
           </span>
         </div>
         <div className="memory-game-info">
-          <div className="button is-link" onClick={ setGameStart }>start game</div>
+          <div className="button is-link" onClick={ () => {
+            setGameStart(true)
+            start();
+          }}>start game</div>
         </div>
         <div className="memory-game-info">
           <div class="field">
@@ -105,6 +108,7 @@ function Index({ data }) {
                   setSet(e.target.value);
                   setClicks(0);
                   setGameStart(false);
+                  reset()
                 } }>
                   { data.map((option, index) => (
                     <option key={ index } value={ index }>{ option.name }</option>

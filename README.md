@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+you can see [deployed version here](https://russian-course.netlify.app/)
+
 ## Available Scripts
 
 In the project directory, you can run:

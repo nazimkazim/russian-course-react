@@ -2,7 +2,7 @@ import React from 'react';
 
 function Numbers_0_10Chart() {
     return (
-        <table class="table is-bordered is-striped is-narrow is-hoverable">
+        <table className="table is-bordered is-striped is-narrow is-hoverable">
             <thead>
                 <tr>
                     <th>Number</th>

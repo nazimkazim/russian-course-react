@@ -169,11 +169,14 @@ export default class SingleFlower extends Component {
         </div>
         <div className="newSection">
           <SectionHeader name="Практика" engName="Practice" />
-          <MemoryGame data={[{name:"Профессии (Professions)", set: MGdata1}, {name:"Личные местоимения (Personal pronouns)", set: MGdata2}, {name:"Цифры (Numbers)", set:MGdata3}]}/>
-        </div>
-        <div className="newSection">
-          <SectionHeader name="Практика" engName="Practice" />
-          <Snake data={snakeDataSet1}/>
+          <div className="columns">
+            <div className="column">
+            <MemoryGame data={[{name:"Профессии (Professions)", set: MGdata1}, {name:"Личные местоимения (Personal pronouns)", set: MGdata2}, {name:"Цифры (Numbers)", set:MGdata3}]}/>
+            </div>
+            <div className="column">
+              <Snake data={snakeDataSet1}/>
+            </div>
+          </div>
         </div>
       </>
     );

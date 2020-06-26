@@ -110,8 +110,8 @@ class Quiz extends Component {
     return (
       <div>
         <div className="tags are-medium">
-          { this.state.mixedWords.map((item) => (
-            <button style={{cursor:'pointer'}} disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className={`tag ${item.disabled && 'tag is-success'}`}>{ item.word || item.translation }</button>
+          { this.state.mixedWords.map((item, index) => (
+            <button key={index} style={{cursor:'pointer'}} disabled={item.disabled} value={ item.word || item.translation } onClick={ (e) => { this.selectWords(e); } } className={`tag ${item.disabled && 'tag is-success'}`}>{ item.word || item.translation }</button>
           )) }
           {this.state.isCorrect && <Notification message="Correct" type="success" />}
           {this.state.isIncorrect && <Notification message="Try again" type="error" />}

@@ -33,8 +33,8 @@ export default function ImgMediaCard(props) {
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="div">
                         <div className="tags">
-                            { props.numbers && props.numbers.map((number) => (
-                                <button className="tag is-medium" disabled={ props.correct } value={ number } onClick={ props.onClickHandler }>{ number }</button>
+                            { props.numbers && props.numbers.map((number, index) => (
+                                <button key={index} className="tag is-medium" disabled={ props.correct } value={ number } onClick={ props.onClickHandler }>{ number }</button>
                             )) }
                         </div>
 
@@ -45,9 +45,9 @@ export default function ImgMediaCard(props) {
                 {/* <Button size="small" onClick={ props.onCheckHandler } disabled={ props.answer === "" } color="primary">
                     Check
                 </Button> */}
-                <button class={ `button is-primary ${props.isLoading && 'is-loading'}` } onClick={ props.onCheckHandler } disabled={ props.answer === "" }>
-                    { props.correct && <span class="icon is-small">
-                        <i class="fas fa-check"></i>
+                <button className={ `button is-primary ${props.isLoading && 'is-loading'}` } onClick={ props.onCheckHandler } disabled={ props.answer === "" }>
+                    { props.correct && <span className="icon is-small">
+                        <i className="fas fa-check"></i>
                     </span> }
                     <span>Check</span>
                 </button>

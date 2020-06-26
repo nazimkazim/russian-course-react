@@ -26,9 +26,9 @@ export default function CustomInput() {
   }
 
   return (
-    <div class="field">
-      <div class="control">
-        <input class="input is-primary" type="text" onChange={e => setValue(e.target.value)} onKeyDown={_handleKeyDown} placeholder="Type answer and press Enter to check answer" />
+    <div className="field">
+      <div className="control">
+        <input className="input is-primary" type="text" onChange={e => setValue(e.target.value)} onKeyDown={_handleKeyDown} placeholder="Type answer and press Enter to check answer" />
         <div className="marginBottom"></div>
         {correct && <Notification type="success" message="great job"/> }
         {incorrect && <Notification type="error" message="try again"/> }

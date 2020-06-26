@@ -90,7 +90,7 @@ function Index({ data }) {
 
       <div className="memory-game-info-container">
         <div className="memory-game-info">
-          <span class="tag is-link is-large">
+          <span className="tag is-link is-large">
             <div>{ countdown / 1000 }</div>
           </span>
         </div>
@@ -101,9 +101,9 @@ function Index({ data }) {
           }}>start game</div>
         </div>
         <div className="memory-game-info">
-          <div class="field">
-            <div class="control">
-              <div class="select is-primary">
+          <div className="field">
+            <div className="control">
+              <div className="select is-primary">
                 <select onChange={ (e) => {
                   setSet(e.target.value);
                   setClicks(0);
@@ -119,13 +119,14 @@ function Index({ data }) {
           </div>
         </div>
         <div className="memory-game-info">
-          <span class="tag is-link is-large">Flips { clicks }</span>
+          <span className="tag is-link is-large">Flips { clicks }</span>
         </div>
       </div>
       <div className="memory-game-container">
         { cards &&
           cards.map((card, index) => (
             <div
+              key={index}
               onClick={ () => {
                 if (memoryGameStarted) {
                   handleCardClick(card, index);

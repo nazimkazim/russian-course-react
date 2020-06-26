@@ -16,18 +16,20 @@ const App = ({ data }) => {
   const [dir, setDir] = useState([0, -1]);
   const [eatenLetters, setEatenLetters] = useState([]);
   const [speed, setSpeed] = useState(null);
+  const [incr, setIncr] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [joinedStr, setJoinedStr] = useState("")
 
 
   useEffect(() => {
-    const letters = data[0].rusWord.split("").map((apple) => (
+    const letters = data[incr].rusWord.split("").map((apple) => (
       [
         Math.floor(Math.random() * 20), Math.floor(Math.random() * 20),
         apple
       ]
     ));
     setLetters(letters);
-  }, [data]);
+  }, [data, incr]);
 
   useInterval(() => gameLoop(), speed);
 
@@ -61,6 +63,8 @@ const App = ({ data }) => {
       if (newSnake[0][0] === letter[0] && newSnake[0][1] === letter[1]) {
         const newLetters = [...letters];
         const eatenLetter = newLetters.splice(index, 1);
+        console.log(eatenLetter)
+        setJoinedStr(joinedStr + eatenLetter[0][2])
         //console.log(newEatenLetters)
         const newEatenLetters = [...eatenLetters];
         newEatenLetters.push(eatenLetter);
@@ -68,22 +72,26 @@ const App = ({ data }) => {
         setEatenLetters(newEatenLetters);
         verifyWords(newEatenLetters);
         setLetters(newLetters);
-        return true;
       }
     });
     return false;
   };
 
+  if (data[incr].rusWord.split("").length === eatenLetters.length) {
+    setIncr(incr + 1);
+    setEatenLetters([])
+    setJoinedStr("")
+  }
+
   const verifyWords = (letters) => {
-    letters.forEach((letter,index) => {
-      console.log(letter)
-      if (data[0].rusWord[index] === letter[0][2]) {
-        console.log("true");
+    letters.forEach((letter, index) => {
+      //console.log(letter)
+      if (data[incr].rusWord[index] === letter[0][2]) {
+        return true
       } else {
-        //console.log(data[0].rusWord, letter);
-        console.log('false');
         endGame();
       }
+      
     });
   };
 
@@ -91,6 +99,7 @@ const App = ({ data }) => {
     const snakeCopy = JSON.parse(JSON.stringify(snake));
     const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
     snakeCopy.unshift(newSnakeHead);
+    //console.log(snakeCopy)
     if (checkCollision(newSnakeHead)) endGame();
     if (!checkLetterCollision(snakeCopy)) snakeCopy.pop();
     setSnake(snakeCopy);
@@ -115,17 +124,17 @@ const App = ({ data }) => {
       context.font = "1px Arial";
       context.textAlign = "center";
       context.fillStyle = "red";
-      context.fillText(apple[2], apple[0] + 0.5, apple[1] + .3);
+      context.fillText(apple[2], apple[0] + 0.49, apple[1] + .8);
       context.fillStyle = "lightblue";
     });
   }, [snake, letters, gameOver]);
 
   return (
     <>
-      <div>{ data[0].engWord }</div>
+      <div>{ data[incr].engWord } - {joinedStr}</div>
       <div className="snake-container" role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
         <canvas
-          style={ { border: "1px solid black" } }
+          style={ { border: "2px solid black" } }
           ref={ canvasRef }
           width={ `${CANVAS_SIZE[0]}px` }
           height={ `${CANVAS_SIZE[1]}px` }

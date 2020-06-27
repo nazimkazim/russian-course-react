@@ -1,0 +1,82 @@
+@media screen and (max-width: 1024px) {
+  .featured-flowers {
+    padding: 50px;
+  }
+  .mtwp-card-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    min-height: 300px;
+    align-items: center;
+  }
+
+  .featured-flowers {
+    padding: 50px;
+  }
+
+  .hero-title {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .featured-flowers {
+    padding: 50px;
+  }
+
+  .newSection {
+    padding: 5px;
+  }
+
+  .mtwp-card-container {
+    width: 100%;
+  }
+
+  .listen-options-card {
+    width: 100% !important;
+  }
+
+  .section-header span {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .featured-flowers {
+    padding: 50px;
+  }
+
+  .newSection {
+    padding: 5px;
+  }
+
+  .mtwp-card-container {
+    width: 100%;
+  }
+
+  .listen-options-card {
+    width: 100% !important;
+  }
+
+  .section-header span {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .memory-game-container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .memory-game-info {
+    margin-bottom: 5px !important;
+  }
+
+  .memory-game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

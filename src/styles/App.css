@@ -1,0 +1,166 @@
+@import "~react-component-countdown-timer/lib/styles.css";
+@import "./hero.css";
+@import "./listen-options.css";
+@import "./footer.css";
+@import "./mtwp.css";
+@import "./scramble-words-activity.css";
+@import "./text-quizzer.css";
+@import "./helpers.css";
+@import "./figa.css";
+@import "./lcr.css";
+@import "./paraloid.css";
+@import "./memory-game.css";
+@import "./snake-game.css";
+@import "./media-query.css";
+
+
+.level {
+  padding: 30px;
+}
+
+.level-item {
+  padding: 30px;
+}
+
+.service-title {
+  min-width: 30px;
+  margin: 0 auto;
+}
+
+.heading img {
+  width: 50px;
+}
+
+.services-title {
+  font-family: "Caveat Brush", cursive;
+}
+
+.service-columns {
+  padding: 60px;
+}
+
+.featured-lessons {
+  min-height: 300px;
+  padding: 100px;
+}
+
+.featured-lessons-center {
+  min-width: 80%;
+  min-height: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.carousel-column {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-container {
+  max-width: 400px;
+  min-height: 400px;
+  margin-top: 100px;
+}
+
+.info-column {
+  display: flex;
+  justify-content: center;
+}
+
+.single-flower-info-container {
+  width: 400px;
+  min-height: 400px;
+  margin-top: 100px;
+}
+
+.tag-available {
+  position: absolute;
+  z-index: 10;
+  left: 5px;
+  top: 5px;
+}
+
+.primary-title,
+.secondary-title {
+  font-family: "Crimson Text", serif;
+}
+
+a {
+  color: black;
+}
+
+.loading {
+  margin: 0 auto;
+  width: 100px;
+}
+
+.single-blog-container {
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.single-blog-header {
+  margin-bottom: 50px;
+}
+
+.main-picture-container {
+  margin-bottom: 50px;
+}
+
+.table {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+}
+
+.newSection {
+  padding: 100px;
+}
+
+td {
+  cursor: pointer;
+}
+
+
+.input-placeholder {
+  display: flex;
+}
+
+.letter-span {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.card-content-answer-container {
+  min-height: 100px;
+}
+
+
+.dialogue-dropdown {
+  margin-left: 10px;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-direction: row;
+  max-width:400px;
+  margin:0 auto;
+}
+
+.card-credits {
+  padding:30px;
+}
+
+.group-title {
+  text-align: center;
+  margin-bottom: .5rem;
+  color: wheat;
+}
+
+.current {
+  background-color: #282c34;
+}

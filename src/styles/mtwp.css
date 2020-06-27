@@ -1,0 +1,18 @@
+.mtwp-card-container {
+  width: 60%;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mtwp-winner-title {
+  text-align: center;
+  margin-top: 50%;
+  font-size: 50px;
+  color: green;
+  font-weight: 800;
+}
+
+.mtwp-winner-button {
+  margin-top: 20px;
+}

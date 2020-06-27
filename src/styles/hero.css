@@ -1,0 +1,11 @@
+.hero-c {
+  background-color: #fff4e6;
+  background-image: url("../images/stp-bck.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.hero-blog-bck-img {
+  background-color: #fff4e6;
+  background-size: cover;
+}

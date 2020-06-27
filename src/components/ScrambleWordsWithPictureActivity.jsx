@@ -158,7 +158,7 @@ class ScrambleWordsActivity extends Component {
         </div>
         <div className="card-content card-content-answer-container">
           <div className="media">
-            <div className="media-content media-content-conteiner">
+            <div className="media-content media-content-container">
               <p className="title is-4">
                 { this.state.answer.map((word) => (
                   <button

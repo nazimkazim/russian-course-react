@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import Home from "../src/pages/Home";
 //import SingleFlower from "./pages/LessonHeaderTemplate";
 import Error from "../src/pages/Error";

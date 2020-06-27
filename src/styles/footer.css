@@ -1,0 +1,14 @@
+.footer-city-list,
+.footer-services-list {
+  list-style-type: none !important;
+  margin-left: 0 !important;
+}
+
+.footer-sm-img {
+  width: 20px;
+}
+
+.footer-sm-wrapper {
+  width: 40%;
+  margin: 0 auto;
+}

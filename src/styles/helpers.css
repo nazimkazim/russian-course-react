@@ -1,0 +1,25 @@
+.hide {
+  display: none;
+}
+
+.marginBottom {
+  margin-bottom: 20px;
+}
+
+.centered-item {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  color: wheat;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.centered-item.sm-font-title {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+}

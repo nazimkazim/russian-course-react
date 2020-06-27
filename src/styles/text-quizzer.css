@@ -1,0 +1,22 @@
+.text-quizzer-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-quizzer-img-container {
+  width: 500px;
+  margin-top: 30px;
+}
+
+.text-quizzer-img-container img {
+  width: 100%;
+}
+
+.text-quizzer-text {
+  margin-top: 30px;
+}

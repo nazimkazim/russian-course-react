@@ -24,10 +24,10 @@ import DialogueContainer from "../components/dialoguesActivity/DialogueContainer
 import ReusableButton from '../components/ReusableButton';
 import audio from '../images/MTWTP/lesson1.2/audio/audio.wav';
 import { dialogue2, dialogue3 } from '../data/dialoguesData';
-import MemoryGame from '../components/MemoryGame/MemoryContainer'
-import {MGdata1, MGdata2, MGdata3} from '../data/MemoryGameData'
-import Snake from '../components/Snake/Snake'
-import {snakeDataSet1} from '../data/SnakeData'
+import MemoryGame from '../components/MemoryGame/MemoryContainer';
+import { MGdata1, MGdata2, MGdata3 } from '../data/MemoryGameData';
+import Snake from '../components/Snake/Snake';
+import { snakeDataSet1 } from '../data/SnakeData';
 
 
 export default class SingleFlower extends Component {
@@ -147,14 +147,14 @@ export default class SingleFlower extends Component {
           </div>
         </div>
         <div className="newSection">
-          <SectionHeader name="повторите и выучите слова за юнит" engName="review and learn by heart the words of the unit"/>
+          <SectionHeader name="повторите и выучите слова за юнит" engName="review and learn by heart the words of the unit" />
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">
-              <iframe src="https://quizlet.com/510306075/match/embed?i=4bby1&x=1jj1" height="500" width="100%" title="words for the unit" styles={ { "border": 0 }}></iframe>
+                <iframe src="https://quizlet.com/510306075/match/embed?i=4bby1&x=1jj1" height="500" width="100%" title="words for the unit" styles={ { "border": 0 } }></iframe>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
         <div className="newSection">
           <SectionHeader name="Практика говорения" engName="Speaking practice" />
@@ -171,10 +171,12 @@ export default class SingleFlower extends Component {
           <SectionHeader name="Практика" engName="Practice" />
           <div className="columns">
             <div className="column">
-            <MemoryGame data={[{name:"Профессии (Professions)", set: MGdata1}, {name:"Личные местоимения (Personal pronouns)", set: MGdata2}, {name:"Цифры (Numbers)", set:MGdata3}]}/>
+              <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
+              <MemoryGame data={ [{ name: "Профессии (Professions)", set: MGdata1 }, { name: "Личные местоимения (Personal pronouns)", set: MGdata2 }, { name: "Цифры (Numbers)", set: MGdata3 }] } />
             </div>
             <div className="column">
-              <Snake data={snakeDataSet1}/>
+              <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
+              <Snake data={ snakeDataSet1 } />
             </div>
           </div>
         </div>

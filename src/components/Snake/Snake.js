@@ -1,5 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useInterval } from "./useInterval";
+import pickup from '../../data/media/bonus-points.wav';
+import intro from '../../data/media/intro.wav';
+import crash from '../../data/media/crash.wav';
+import hornFail from '../../data/media/horn-fail.wav';
 import {
   CANVAS_SIZE,
   SNAKE_START,
@@ -18,7 +22,8 @@ const App = ({ data }) => {
   const [speed, setSpeed] = useState(null);
   const [incr, setIncr] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const [joinedStr, setJoinedStr] = useState("")
+  const [joinedStr, setJoinedStr] = useState("");
+  const [points, setPoints] = useState(0);
 
 
   useEffect(() => {
@@ -48,8 +53,15 @@ const App = ({ data }) => {
       piece[0] < 0 ||
       piece[1] * SCALE >= CANVAS_SIZE[1] ||
       piece[1] < 0
-    )
+    ) {
+      let crashSound = new Audio(crash);
+      crashSound.play();
+      let hornFailSound = new Audio(hornFail);
+      setTimeout(() => {
+        hornFailSound.play();
+      }, 2000);
       return true;
+    }
 
     // eslint-disable-next-line no-unused-vars
     for (let segment of snk) {
@@ -63,8 +75,8 @@ const App = ({ data }) => {
       if (newSnake[0][0] === letter[0] && newSnake[0][1] === letter[1]) {
         const newLetters = [...letters];
         const eatenLetter = newLetters.splice(index, 1);
-        console.log(eatenLetter)
-        setJoinedStr(joinedStr + eatenLetter[0][2])
+        console.log(eatenLetter);
+        setJoinedStr(joinedStr + eatenLetter[0][2]);
         //console.log(newEatenLetters)
         const newEatenLetters = [...eatenLetters];
         newEatenLetters.push(eatenLetter);
@@ -79,19 +91,30 @@ const App = ({ data }) => {
 
   if (data[incr].rusWord.split("").length === eatenLetters.length) {
     setIncr(incr + 1);
-    setEatenLetters([])
-    setJoinedStr("")
+    let sound = new Audio(intro);
+    sound.play();
+    setEatenLetters([]);
+    setJoinedStr("");
   }
 
   const verifyWords = (letters) => {
     letters.forEach((letter, index) => {
       //console.log(letter)
       if (data[incr].rusWord[index] === letter[0][2]) {
-        return true
+        //setPoints(points + 1)
+        let sound = new Audio(pickup);
+        sound.play();
+        return true;
       } else {
         endGame();
+        let crashSound = new Audio(crash);
+        crashSound.play();
+        let hornFailSound = new Audio(hornFail);
+        setTimeout(() => {
+          hornFailSound.play();
+        }, 2000);
       }
-      
+
     });
   };
 
@@ -131,7 +154,17 @@ const App = ({ data }) => {
 
   return (
     <>
-      <div>{ data[incr].engWord } - {joinedStr}</div>
+      <div className="memory-game-info-container">
+        <div className="memory-game-info">
+          <div className="tag is-large is-primary">{ data[incr].engWord } - { joinedStr }</div>
+        </div>
+        <div className="memory-game-info">
+          <div className="tag is-primary is-large">Points {points}</div>
+        </div>
+        <div className="memory-game-info">
+          <button className="button is-primary" onClick={ startGame }>Start Game</button>
+        </div>
+      </div>
       <div className="snake-container" role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
         <canvas
           style={ { border: "2px solid black" } }
@@ -141,7 +174,6 @@ const App = ({ data }) => {
         />
         { gameOver && <div>GAME OVER!</div> }
       </div>
-      <button onClick={ startGame }>Start Game</button>
     </>
   );
 };

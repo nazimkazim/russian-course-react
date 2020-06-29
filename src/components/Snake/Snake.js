@@ -24,6 +24,7 @@ const App = ({ data }) => {
   const [gameOver, setGameOver] = useState(false);
   const [joinedStr, setJoinedStr] = useState("");
   const [points, setPoints] = useState(0);
+  const [showCorrectWord, setShowCorrectWord] = useState(false);
 
 
   useEffect(() => {
@@ -57,6 +58,7 @@ const App = ({ data }) => {
       let crashSound = new Audio(crash);
       crashSound.play();
       let hornFailSound = new Audio(hornFail);
+      setShowCorrectWord(true)
       setTimeout(() => {
         hornFailSound.play();
       }, 2000);
@@ -113,6 +115,7 @@ const App = ({ data }) => {
         setTimeout(() => {
           hornFailSound.play();
         }, 2000);
+        setShowCorrectWord(true)
       }
 
     });
@@ -156,10 +159,10 @@ const App = ({ data }) => {
     <>
       <div className="memory-game-info-container">
         <div className="memory-game-info">
-          <div className="tag is-large is-primary">{ data[incr].engWord } - { joinedStr }</div>
+  <div className="tag is-large is-primary">{ data[incr].engWord } - {showCorrectWord ? <span className="has-text-info">{data[incr].rusWord}</span> : joinedStr }</div>
         </div>
         <div className="memory-game-info">
-          <div className="tag is-primary is-large">Points {points}</div>
+          <div className="tag is-primary is-large">Points { points }</div>
         </div>
         <div className="memory-game-info">
           <button className="button is-primary" onClick={ startGame }>Start Game</button>

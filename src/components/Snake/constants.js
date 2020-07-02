@@ -1,7 +1,14 @@
 const CANVAS_SIZE = [400, 400];
 const SNAKE_START = [
-  [8, 7],
-  [8, 8]
+  {
+    x:8,
+    y:7,
+    letter:''
+  },{
+    x:8,
+    y:8,
+    letter:''
+  }
 ];
 const APPLE_START = [8, 3];
 const SCALE = 20;

@@ -58,7 +58,7 @@ const App = ({ data }) => {
       let crashSound = new Audio(crash);
       crashSound.play();
       let hornFailSound = new Audio(hornFail);
-      setShowCorrectWord(true)
+      setShowCorrectWord(true);
       setTimeout(() => {
         hornFailSound.play();
       }, 2000);
@@ -67,14 +67,14 @@ const App = ({ data }) => {
 
     // eslint-disable-next-line no-unused-vars
     for (let segment of snk) {
-      if (piece[0] === segment[0] && piece[1] === segment[1]) return true;
+      if (piece[0] === segment.x && piece[1] === segment.y) return true;
     }
     return false;
   };
 
   const checkLetterCollision = newSnake => {
     letters.forEach((letter, index) => {
-      if (newSnake[0][0] === letter[0] && newSnake[0][1] === letter[1]) {
+      if (newSnake[0].x === letter[0] && newSnake[0].y === letter[1]) {
         const newLetters = [...letters];
         const eatenLetter = newLetters.splice(index, 1);
         console.log(eatenLetter);
@@ -82,6 +82,8 @@ const App = ({ data }) => {
         //console.log(newEatenLetters)
         const newEatenLetters = [...eatenLetters];
         newEatenLetters.push(eatenLetter);
+        newSnake.push([dir]);
+        setSnake(newSnake);
         //console.log(newEatenLetters)
         setEatenLetters(newEatenLetters);
         verifyWords(newEatenLetters);
@@ -115,15 +117,22 @@ const App = ({ data }) => {
         setTimeout(() => {
           hornFailSound.play();
         }, 2000);
-        setShowCorrectWord(true)
+        setShowCorrectWord(true);
       }
 
     });
   };
 
   const gameLoop = () => {
+    const letter = data[incr].rusWord[0]
     const snakeCopy = JSON.parse(JSON.stringify(snake));
-    const newSnakeHead = [snakeCopy[0][0] + dir[0], snakeCopy[0][1] + dir[1]];
+    const newSnakeHead = {x:snakeCopy[0].x + dir[0], y:snakeCopy[0].y + dir[1], letter};
+    const context = canvasRef.current.getContext("2d");
+    context.fillStyle = "red";
+    context.fillText(letter, newSnakeHead.x + 0.49, newSnakeHead.y + .8);
+    context.font = "1px Arial";
+    context.textAlign = "center";
+    context.fillStyle = "red";
     snakeCopy.unshift(newSnakeHead);
     //console.log(snakeCopy)
     if (checkCollision(newSnakeHead)) endGame();
@@ -142,15 +151,20 @@ const App = ({ data }) => {
     const context = canvasRef.current.getContext("2d");
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    context.fillStyle = "pink";
-    snake.forEach(([x, y]) => context.fillRect(x, y, 1, 1));
+    snake.forEach(({x, y,letter}) => {
+      context.fillStyle = "pink";
+      context.fillRect(x, y, 1, 1);
+      context.fillStyle = "blue";
+      context.fillText(letter, x + 0.49, y + .8);
+
+    })
     context.fillStyle = "lightblue";
-    letters.forEach((apple) => {
-      context.fillRect(apple[0], apple[1], 1, 1);
+    letters.forEach((letter) => {
+      context.fillRect(letter[0], letter[1], 1, 1);
       context.font = "1px Arial";
       context.textAlign = "center";
       context.fillStyle = "red";
-      context.fillText(apple[2], apple[0] + 0.49, apple[1] + .8);
+      context.fillText(letter[2], letter[0] + 0.49, letter[1] + .8);
       context.fillStyle = "lightblue";
     });
   }, [snake, letters, gameOver]);
@@ -159,7 +173,7 @@ const App = ({ data }) => {
     <>
       <div className="memory-game-info-container">
         <div className="memory-game-info">
-  <div className="tag is-large is-primary">{ data[incr].engWord } - {showCorrectWord ? <span className="has-text-info">{data[incr].rusWord}</span> : joinedStr }</div>
+          <div className="tag is-large is-primary">{ data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ data[incr].rusWord }</span> : joinedStr }</div>
         </div>
         <div className="memory-game-info">
           <div className="tag is-primary is-large">Points { points }</div>

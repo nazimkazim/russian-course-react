@@ -4,6 +4,7 @@ import pickup from '../../data/media/bonus-points.wav';
 import intro from '../../data/media/intro.wav';
 import crash from '../../data/media/crash.wav';
 import hornFail from '../../data/media/horn-fail.wav';
+
 import {
   CANVAS_SIZE,
   SNAKE_START,
@@ -12,6 +13,8 @@ import {
   SPEED,
   DIRECTIONS
 } from "./constants";
+
+//let img = require('../../images/ListenChooseRelevant/Lesson1.3/Images/angela_merkel.jpg');
 
 const App = ({ data }) => {
   const canvasRef = useRef();
@@ -49,11 +52,12 @@ const App = ({ data }) => {
   const moveSnake = ({ keyCode }) => setDir(DIRECTIONS[keyCode]);
 
   const checkCollision = (piece, snk = snake) => {
+    console.log(piece);
     if (
-      piece[0] * SCALE >= CANVAS_SIZE[0] ||
-      piece[0] < 0 ||
-      piece[1] * SCALE >= CANVAS_SIZE[1] ||
-      piece[1] < 0
+      piece.x * SCALE >= CANVAS_SIZE[0] ||
+      piece.x < 0 ||
+      piece.y * SCALE >= CANVAS_SIZE[1] ||
+      piece.y < 0
     ) {
       let crashSound = new Audio(crash);
       crashSound.play();
@@ -93,6 +97,10 @@ const App = ({ data }) => {
     return false;
   };
 
+  if (incr === data.length) {
+    setSpeed(null);
+  }
+
   if (data[incr].rusWord.split("").length === eatenLetters.length) {
     setIncr(incr + 1);
     let sound = new Audio(intro);
@@ -101,11 +109,17 @@ const App = ({ data }) => {
     setJoinedStr("");
   }
 
+  console.log(incr, data.length);
+
+
+
   const verifyWords = (letters) => {
     letters.forEach((letter, index) => {
       //console.log(letter)
       if (data[incr].rusWord[index] === letter[0][2]) {
-        //setPoints(points + 1)
+        setTimeout(() => {
+          setPoints(points + 1);
+        }, 0.1);
         let sound = new Audio(pickup);
         sound.play();
         return true;
@@ -124,9 +138,9 @@ const App = ({ data }) => {
   };
 
   const gameLoop = () => {
-    const letter = data[incr].rusWord[0]
+    const letter = data[incr].rusWord[0];
     const snakeCopy = JSON.parse(JSON.stringify(snake));
-    const newSnakeHead = {x:snakeCopy[0].x + dir[0], y:snakeCopy[0].y + dir[1], letter};
+    const newSnakeHead = { x: snakeCopy[0].x + dir[0], y: snakeCopy[0].y + dir[1], letter };
     const context = canvasRef.current.getContext("2d");
     context.fillStyle = "red";
     context.fillText(letter, newSnakeHead.x + 0.49, newSnakeHead.y + .8);
@@ -151,19 +165,19 @@ const App = ({ data }) => {
     const context = canvasRef.current.getContext("2d");
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    snake.forEach(({x, y,letter}) => {
+    snake.forEach(({ x, y, letter }) => {
       context.fillStyle = "pink";
       context.fillRect(x, y, 1, 1);
       context.fillStyle = "blue";
       context.fillText(letter, x + 0.49, y + .8);
-
-    })
+    });
     context.fillStyle = "lightblue";
     letters.forEach((letter) => {
       context.fillRect(letter[0], letter[1], 1, 1);
       context.font = "1px Arial";
       context.textAlign = "center";
       context.fillStyle = "red";
+      //context.drawImage(img, 10, 10);
       context.fillText(letter[2], letter[0] + 0.49, letter[1] + .8);
       context.fillStyle = "lightblue";
     });

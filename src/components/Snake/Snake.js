@@ -33,7 +33,7 @@ const App = ({ data }) => {
   useEffect(() => {
     const letters = data[incr].rusWord.split("").map((apple) => (
       [
-        Math.floor(Math.random() * 20), Math.floor(Math.random() * 20),
+        Math.floor(Math.random() * 15), Math.floor(Math.random() * 15),
         apple
       ]
     ));
@@ -109,7 +109,7 @@ const App = ({ data }) => {
     setJoinedStr("");
   }
 
-  console.log(incr, data.length);
+  //console.log(incr, data.length);
 
 
 

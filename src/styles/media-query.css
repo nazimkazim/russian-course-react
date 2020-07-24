@@ -51,7 +51,7 @@
   }
 
   .newSection {
-    padding: 5px;
+    padding: 5px !important;
   }
 
   .mtwp-card-container {

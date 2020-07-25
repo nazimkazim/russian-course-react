@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { LessonContext } from "../context";
 import Loading from "./Loading";
-import Flower from "./Lesson";
+import Lesson from "./Lesson";
 import Title from "./Title";
 
-export default class FeaturedFlowers extends Component {
+export default class FeaturedLessons extends Component {
   static contextType = LessonContext;
   render() {
     let { loading, lessons } = this.context;
     lessons = lessons.map(lesson => {
-      return <Flower key={lesson.id} lesson={lesson} />;
+      return <Lesson key={lesson.id} lesson={lesson} />;
     });
 
     return (

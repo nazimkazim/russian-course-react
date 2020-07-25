@@ -52,7 +52,7 @@ const App = ({ data }) => {
   const moveSnake = ({ keyCode }) => setDir(DIRECTIONS[keyCode]);
 
   const checkCollision = (piece, snk = snake) => {
-    console.log(piece);
+    //console.log(piece);
     if (
       piece.x * SCALE >= CANVAS_SIZE[0] ||
       piece.x < 0 ||
@@ -81,7 +81,7 @@ const App = ({ data }) => {
       if (newSnake[0].x === letter[0] && newSnake[0].y === letter[1]) {
         const newLetters = [...letters];
         const eatenLetter = newLetters.splice(index, 1);
-        console.log(eatenLetter);
+        //console.log(eatenLetter);
         setJoinedStr(joinedStr + eatenLetter[0][2]);
         //console.log(newEatenLetters)
         const newEatenLetters = [...eatenLetters];
@@ -97,17 +97,20 @@ const App = ({ data }) => {
     return false;
   };
 
+
   if (incr === data.length) {
+    setIncr(0);
     setSpeed(null);
+  } else {
+    if (data[incr].rusWord.split("").length === eatenLetters.length) {
+      setIncr(incr + 1);
+      let sound = new Audio(intro);
+      sound.play();
+      setEatenLetters([]);
+      setJoinedStr("");
+    }
   }
 
-  if (data[incr].rusWord.split("").length === eatenLetters.length) {
-    setIncr(incr + 1);
-    let sound = new Audio(intro);
-    sound.play();
-    setEatenLetters([]);
-    setJoinedStr("");
-  }
 
   //console.log(incr, data.length);
 
@@ -198,7 +201,7 @@ const App = ({ data }) => {
       </div>
       <div className="snake-container" role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
         <canvas
-          style={ { border: "2px solid black" } }
+          style={ { border: "1px solid black" } }
           ref={ canvasRef }
           width={ `${CANVAS_SIZE[0]}px` }
           height={ `${CANVAS_SIZE[1]}px` }

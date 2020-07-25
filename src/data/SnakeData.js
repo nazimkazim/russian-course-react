@@ -1,14 +1,14 @@
 export const snakeDataSet1 = [
   {
-    engWord:'House',
-    rusWord:'Дом'
+    engWord:'I',
+    rusWord:'Я'
   },
   {
-    engWord:'Car',
-    rusWord:'Машина'
+    engWord:'Yes',
+    rusWord:'Да'
   },
   {
-    engWord:'Mother',
-    rusWord:'Мама'
+    engWord:'No',
+    rusWord:'Нет'
   }
 ]

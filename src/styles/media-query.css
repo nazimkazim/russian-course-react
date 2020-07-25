@@ -46,8 +46,8 @@
 }
 
 @media screen and (max-width: 414px) {
-  .featured-flowers {
-    padding: 50px;
+  .featured-lessons {
+    padding: 25px !important;
   }
 
   .newSection {

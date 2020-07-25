@@ -162,6 +162,11 @@ const App = ({ data }) => {
     setDir([0, -1]);
     setSpeed(SPEED);
     setGameOver(false);
+    setPoints(0);
+    setIncr(0);
+    setJoinedStr("");
+    setEatenLetters([]);
+    setShowCorrectWord(false);
   };
 
   useEffect(() => {
@@ -190,7 +195,7 @@ const App = ({ data }) => {
     <>
       <div className="memory-game-info-container">
         <div className="memory-game-info">
-          <div className="tag is-large is-primary">{ data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ data[incr].rusWord }</span> : joinedStr }</div>
+          <div className="tag is-large is-primary">{ incr === data.length ? setIncr(0) : data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ incr === data.length ? setIncr(0) : data[incr].rusWord }</span> : joinedStr }</div>
         </div>
         <div className="memory-game-info">
           <div className="tag is-primary is-large">Points { points }</div>

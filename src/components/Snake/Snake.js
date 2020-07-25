@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useInterval } from "./useInterval";
 import pickup from '../../data/media/bonus-points.wav';
+import crawl from '../../data/media/crawl.wav';
 import intro from '../../data/media/intro.wav';
 import crash from '../../data/media/crash.wav';
 import hornFail from '../../data/media/horn-fail.wav';
+import { FaHotjar } from 'react-icons/fa';
 
 import {
   CANVAS_SIZE,
@@ -28,6 +30,8 @@ const App = ({ data }) => {
   const [joinedStr, setJoinedStr] = useState("");
   const [points, setPoints] = useState(0);
   const [showCorrectWord, setShowCorrectWord] = useState(false);
+  const [eatenWords, setEatenWords] = useState([]);
+  const [isModalActive, setModalActive] = useState(false);
 
 
   useEffect(() => {
@@ -103,11 +107,15 @@ const App = ({ data }) => {
     setSpeed(null);
   } else {
     if (data[incr].rusWord.split("").length === eatenLetters.length) {
+      let newEatenWords = [...eatenWords];
+      newEatenWords.push(data[incr].rusWord);
+      data[incr].correct = true;
+      setEatenWords(newEatenWords);
       setIncr(incr + 1);
-      let sound = new Audio(intro);
-      sound.play();
       setEatenLetters([]);
       setJoinedStr("");
+      let sound = new Audio(intro);
+      sound.play();
     }
   }
 
@@ -141,6 +149,8 @@ const App = ({ data }) => {
   };
 
   const gameLoop = () => {
+    let sound = new Audio(crawl);
+    sound.play();
     const letter = data[incr].rusWord[0];
     const snakeCopy = JSON.parse(JSON.stringify(snake));
     const newSnakeHead = { x: snakeCopy[0].x + dir[0], y: snakeCopy[0].y + dir[1], letter };
@@ -167,6 +177,10 @@ const App = ({ data }) => {
     setJoinedStr("");
     setEatenLetters([]);
     setShowCorrectWord(false);
+    setEatenWords([]);
+    data.map((word) => {
+      word.correct = false;
+    });
   };
 
   useEffect(() => {
@@ -198,23 +212,31 @@ const App = ({ data }) => {
           <div className="tag is-primary is-large">Points { points }</div>
         </div>
         <div className="memory-game-info">
+          <div className="tag is-primary is-large" onClick={ () => setModalActive(true) }>Show words</div>
+        </div>
+        <div className="memory-game-info">
           <button className="button is-primary" onClick={ startGame }>Start Game</button>
         </div>
       </div>
       <div className="snake-container" role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
-        <ul className="snake-game-list-of-words">
-          {/* <li>{ incr === data.length ? setIncr(0) : data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ incr === data.length ? setIncr(0) : data[incr].rusWord }</span> : joinedStr }</li> */}
-          {data.map((word, index) => (
-            <li>{word.engWord} - {index === incr ? joinedStr : ""}</li>
-          ))}
-        </ul>
+        <aside className=" menu snake-game-list-of-words">
+          {/* <li>{ incr === data.length ? setIncr(0) : data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ incr === data.length ? setIncr(0) : data[incr].rusWord }</span> : joinedStr }</li> */ }
+          <p className="menu-label">
+            Guess these words
+          </p>
+          <ul className="menu-list">
+            { data.map((word, index) => (
+              <li><a>{ word.engWord } - { index === incr ? joinedStr : eatenWords[index] } { word.correct && <FaHotjar /> }</a></li>
+            )) }
+          </ul>
+        </aside >
         <canvas
           style={ { border: "1px solid black" } }
           ref={ canvasRef }
           width={ `${CANVAS_SIZE[0]}px` }
           height={ `${CANVAS_SIZE[1]}px` }
         />
-        { gameOver && <div>GAME OVER!</div> }
+        { gameOver && <div className="snake-game-over">GAME OVER!</div> }
       </div>
     </>
   );

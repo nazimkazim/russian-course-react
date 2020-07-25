@@ -195,9 +195,6 @@ const App = ({ data }) => {
     <>
       <div className="memory-game-info-container">
         <div className="memory-game-info">
-          <div className="tag is-large is-primary">{ incr === data.length ? setIncr(0) : data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ incr === data.length ? setIncr(0) : data[incr].rusWord }</span> : joinedStr }</div>
-        </div>
-        <div className="memory-game-info">
           <div className="tag is-primary is-large">Points { points }</div>
         </div>
         <div className="memory-game-info">
@@ -205,6 +202,12 @@ const App = ({ data }) => {
         </div>
       </div>
       <div className="snake-container" role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
+        <ul className="snake-game-list-of-words">
+          {/* <li>{ incr === data.length ? setIncr(0) : data[incr].engWord } - { showCorrectWord ? <span className="has-text-info">{ incr === data.length ? setIncr(0) : data[incr].rusWord }</span> : joinedStr }</li> */}
+          {data.map((word, index) => (
+            <li>{word.engWord} - {index === incr ? joinedStr : ""}</li>
+          ))}
+        </ul>
         <canvas
           style={ { border: "1px solid black" } }
           ref={ canvasRef }

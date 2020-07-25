@@ -1,7 +1,14 @@
 .snake-container {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 60vh; 
   outline: hidden;
+}
+
+.snake-game-list-of-words {
+  top:5px;
+  left: 5px;
+  position: absolute;
 }

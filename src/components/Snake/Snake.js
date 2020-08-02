@@ -66,7 +66,7 @@ const App = ({ data }) => {
       let crashSound = new Audio(crash);
       crashSound.play();
       let hornFailSound = new Audio(hornFail);
-      setShowCorrectWord(true);
+      //setShowCorrectWord(true);
       setTimeout(() => {
         hornFailSound.play();
       }, 2000);
@@ -142,7 +142,7 @@ const App = ({ data }) => {
         setTimeout(() => {
           hornFailSound.play();
         }, 2000);
-        setShowCorrectWord(true);
+        //setShowCorrectWord(true);
       }
 
     });
@@ -176,7 +176,7 @@ const App = ({ data }) => {
     setIncr(0);
     setJoinedStr("");
     setEatenLetters([]);
-    setShowCorrectWord(false);
+    //setShowCorrectWord(false);
     setEatenWords([]);
     data.map((word) => {
       word.correct = false;
@@ -212,7 +212,7 @@ const App = ({ data }) => {
           <div className="tag is-primary is-large">Points { points }</div>
         </div>
         <div className="memory-game-info">
-          <div className="tag is-primary is-large" onClick={ () => setModalActive(true) }>Show words</div>
+          <div className="tag is-primary is-large">Show words</div>
         </div>
         <div className="memory-game-info">
           <button className="button is-primary" onClick={ startGame }>Start Game</button>

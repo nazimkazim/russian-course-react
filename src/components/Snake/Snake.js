@@ -29,9 +29,9 @@ const App = ({ data }) => {
   const [gameOver, setGameOver] = useState(false);
   const [joinedStr, setJoinedStr] = useState("");
   const [points, setPoints] = useState(0);
-  const [showCorrectWord, setShowCorrectWord] = useState(false);
+  //const [showCorrectWord, setShowCorrectWord] = useState(false);
   const [eatenWords, setEatenWords] = useState([]);
-  const [isModalActive, setModalActive] = useState(false);
+  //const [isModalActive, setModalActive] = useState(false);
 
 
   useEffect(() => {

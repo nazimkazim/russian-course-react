@@ -16,7 +16,11 @@ import { dialogue1 } from '../data/dialoguesData';
 import Quiz from '../components/Quiz';
 import appleImg from '../images/TextQuizzer/lesson1.1/apple-company.jpg';
 import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
-//import Snake from '../components/Snake/Snake'
+import MemoryGame from '../components/MemoryGame/MemoryContainer';
+import { MGdata0,MGdata01 } from '../data/MemoryGameData';
+import Snake from '../components/Snake/Snake';
+import { snakeDataSet1 } from '../data/SnakeData';
+
 
 export default class Lesson_1_1 extends Component {
   constructor (props) {
@@ -28,7 +32,7 @@ export default class Lesson_1_1 extends Component {
 
 
   componentDidMount() { }
-  
+
   render() {
 
     return (
@@ -105,14 +109,14 @@ export default class Lesson_1_1 extends Component {
           </div>
         </section>
         <div className="newSection">
-          <SectionHeader name="выучите слова(страны)" engName="learn by heart the words (countries)"/>
+          <SectionHeader name="выучите слова(страны)" engName="learn by heart the words (countries)" />
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">
-              <iframe src="https://quizlet.com/501391453/flashcards/embed?i=4bby1&x=1jj1" height="500" title="countries" width="100%" styles={ { "border": 0 } }></iframe>
+                <iframe src="https://quizlet.com/501391453/flashcards/embed?i=4bby1&x=1jj1" height="500" title="countries" width="100%" styles={ { "border": 0 } }></iframe>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
         <section className="newSection">
           <SectionHeader name="Практика говорения" engName="Speaking practice" />
@@ -125,7 +129,20 @@ export default class Lesson_1_1 extends Component {
             </div>
           </div>
         </section>
-        
+        <div className="newSection">
+          <SectionHeader name="Практика" engName="Practice" />
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="б" name="Соотнесите две карты" engName="Match two cards" />
+              <MemoryGame data={ [{ name: "Техника)", set: MGdata0 }, { name: "Страны", set: MGdata01 }] } />
+            </div>
+            <div className="column">
+              <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
+              <Snake data={ snakeDataSet1 } />
+            </div>
+          </div>
+        </div>
+
         {/* <section className="newSection">
           <Snake/>
         </section> */}

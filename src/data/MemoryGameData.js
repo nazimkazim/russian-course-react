@@ -7,6 +7,125 @@ import Musician from '../images/ListenChooseRelevant/Lesson1.3/Images/mozart.jpg
 const _ = require('lodash');
 
 
+// Lesson 1
+export const MGdata0 = _.shuffle([
+  {
+    value: "телевизор",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596370581/russian%20course/technology%20icons%20and%20pics/television.png'
+  },
+  {
+    value: "телевизор",
+    pic: ''
+  },
+  {
+    value: "телефон",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596370581/russian%20course/technology%20icons%20and%20pics/telephone.png'
+  },
+  {
+    value: "телефон",
+    pic: ''
+  },
+  {
+    value: "радио",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596370581/russian%20course/technology%20icons%20and%20pics/radio.png'
+  },
+  {
+    value: "радио",
+    pic: ''
+  },
+  {
+    value: "фотокамера",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596370581/russian%20course/technology%20icons%20and%20pics/camera.png"
+  },
+  {
+    value: "фотокамера",
+    pic: ''
+  },
+  {
+    value: "принтер",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596370580/russian%20course/technology%20icons%20and%20pics/printer.png"
+  },
+  {
+    value: "принтер",
+    pic: ''
+  },
+  {
+    value: "смартфон",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596370580/russian%20course/technology%20icons%20and%20pics/smartphone.png"
+  },
+  {
+    value: "смартфон",
+    pic: ''
+  },
+  {
+    value: "планшет",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596370580/russian%20course/technology%20icons%20and%20pics/tablet.png"
+  },
+  {
+    value: "планшет",
+    pic: ''
+  },
+  {
+    value: "компьютер",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596370580/russian%20course/technology%20icons%20and%20pics/computer.png"
+  },
+  {
+    value: "компьютер",
+    pic: ''
+  }
+]);
+
+export const MGdata01 = _.shuffle([
+  {
+    value: "франция",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596380247/russian%20course/countries%20flags/france.png'
+  },
+  {
+    value: "франция",
+    pic: ''
+  },
+  {
+    value: "китай",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596379923/russian%20course/countries%20flags/china.png'
+  },
+  {
+    value: "китай",
+    pic: ''
+  },
+  {
+    value: "россия",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596379923/russian%20course/countries%20flags/russia.png'
+  },
+  {
+    value: "россия",
+    pic: ''
+  },
+  {
+    value: "сша",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596379923/russian%20course/countries%20flags/usa.png"
+  },
+  {
+    value: "сша",
+    pic: ''
+  },
+  {
+    value: "япония",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596379923/russian%20course/countries%20flags/japan.png"
+  },
+  {
+    value: "япония",
+    pic: ''
+  },
+  {
+    value: "германия",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596379923/russian%20course/countries%20flags/germany.png"
+  },
+  {
+    value: "германия",
+    pic: ''
+  }
+]);
+
 // Lesson 2
 export const MGdata1 = _.shuffle([
   {
@@ -67,7 +186,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "я",
     pic: ''
-  }, 
+  },
   {
     value: "ты",
     pic: ''
@@ -75,7 +194,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "ты",
     pic: ''
-  }, 
+  },
   {
     value: "он",
     pic: ''
@@ -83,7 +202,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "он",
     pic: ''
-  }, 
+  },
   {
     value: "она",
     pic: ''
@@ -91,7 +210,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "она",
     pic: ''
-  }, 
+  },
   {
     value: "мы",
     pic: ''
@@ -99,7 +218,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "мы",
     pic: ''
-  }, 
+  },
   {
     value: "они",
     pic: ''
@@ -107,7 +226,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "они",
     pic: ''
-  }, 
+  },
   {
     value: "вы",
     pic: ''
@@ -115,7 +234,7 @@ export const MGdata2 = _.shuffle([
   {
     value: "вы",
     pic: ''
-  }, 
+  },
   {
     value: "оно",
     pic: ''
@@ -134,7 +253,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Один (1)",
     pic: ''
-  }, 
+  },
   {
     value: "Два (2)",
     pic: ''
@@ -142,7 +261,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Два (2)",
     pic: ''
-  }, 
+  },
   {
     value: "Три (3)",
     pic: ''
@@ -150,7 +269,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Три (3)",
     pic: ''
-  }, 
+  },
   {
     value: "Четыре (4)",
     pic: ''
@@ -158,7 +277,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Четыре (4)",
     pic: ''
-  }, 
+  },
   {
     value: "Пять (5)",
     pic: ''
@@ -166,7 +285,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Пять (5)",
     pic: ''
-  }, 
+  },
   {
     value: "Шесть (6)",
     pic: ''
@@ -174,7 +293,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Шесть (6)",
     pic: ''
-  }, 
+  },
   {
     value: "Семь (7)",
     pic: ''
@@ -182,7 +301,7 @@ export const MGdata3 = _.shuffle([
   {
     value: "Семь (7)",
     pic: ''
-  }, 
+  },
   {
     value: "Восемь (8)",
     pic: ''

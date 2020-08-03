@@ -126,6 +126,73 @@ export const MGdata01 = _.shuffle([
   }
 ]);
 
+export const MGdata02 = _.shuffle([
+  {
+    value: "фэйсбук",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596449655/russian%20course/brand%20logos/facebook.png'
+  },
+  {
+    value: "фэйсбук",
+    pic: ''
+  },
+  {
+    value: "самсунг",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596449660/russian%20course/brand%20logos/samsung.png'
+  },
+  {
+    value: "самсунг",
+    pic: ''
+  },
+  {
+    value: "гугл",
+    pic: 'https://res.cloudinary.com/nzmai/image/upload/v1596449659/russian%20course/brand%20logos/google.png'
+  },
+  {
+    value: "гугл",
+    pic: ''
+  },
+  {
+    value: "аппл",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596449659/russian%20course/brand%20logos/apple.png"
+  },
+  {
+    value: "аппл",
+    pic: ''
+  },
+  {
+    value: "тесла",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596449658/russian%20course/brand%20logos/tesla.png"
+  },
+  {
+    value: "тесла",
+    pic: ''
+  },
+  {
+    value: "майкрософт",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596449658/russian%20course/brand%20logos/microsoft.png"
+  },
+  {
+    value: "майкрософт",
+    pic: ''
+  },
+  {
+    value: "твиттер",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596449655/russian%20course/brand%20logos/twitter.png"
+  },
+  {
+    value: "твиттер",
+    pic: ''
+  },
+  {
+    value: "найк",
+    pic: "https://res.cloudinary.com/nzmai/image/upload/v1596449655/russian%20course/brand%20logos/nike.png"
+  },
+  {
+    value: "найк",
+    pic: ''
+  }
+]);
+
 // Lesson 2
 export const MGdata1 = _.shuffle([
   {

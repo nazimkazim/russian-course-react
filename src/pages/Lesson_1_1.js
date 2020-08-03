@@ -17,7 +17,7 @@ import Quiz from '../components/Quiz';
 import appleImg from '../images/TextQuizzer/lesson1.1/apple-company.jpg';
 import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
 import MemoryGame from '../components/MemoryGame/MemoryContainer';
-import { MGdata0,MGdata01 } from '../data/MemoryGameData';
+import { MGdata0, MGdata01, MGdata02 } from '../data/MemoryGameData';
 import Snake from '../components/Snake/Snake';
 import { snakeDataSet1 } from '../data/SnakeData';
 
@@ -134,7 +134,7 @@ export default class Lesson_1_1 extends Component {
           <div className="columns">
             <div className="column">
               <Instruction letter="б" name="Соотнесите две карты" engName="Match two cards" />
-              <MemoryGame data={ [{ name: "Техника)", set: MGdata0 }, { name: "Страны", set: MGdata01 }] } />
+              <MemoryGame data={ [{ name: "Technology", set: MGdata0 }, { name: "Countries", set: MGdata01 }, { name: 'Brands', set: MGdata02 }] } />
             </div>
             <div className="column">
               <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />

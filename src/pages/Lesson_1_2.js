@@ -176,7 +176,7 @@ export default class SingleFlower extends Component {
             </div>
             <div className="column">
               <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
-              <Snake data={ snakeDataSet1 } />
+              <Snake data={ [{ name: "Общие фразы (Basic Phrases)", set: snakeDataSet1 }] } />
             </div>
           </div>
         </div>

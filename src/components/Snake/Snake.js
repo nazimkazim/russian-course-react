@@ -29,20 +29,21 @@ const App = ({ data }) => {
   const [gameOver, setGameOver] = useState(false);
   const [joinedStr, setJoinedStr] = useState("");
   const [points, setPoints] = useState(0);
+  const [snakeGameSet, setSet] = useState(0);
   //const [showCorrectWord, setShowCorrectWord] = useState(false);
   const [eatenWords, setEatenWords] = useState([]);
   //const [isModalActive, setModalActive] = useState(false);
 
 
   useEffect(() => {
-    const letters = data[incr].rusWord.split("").map((apple) => (
+    const letters = data[snakeGameSet].set[incr].rusWord.split("").map((apple) => (
       [
         Math.floor(Math.random() * 15), Math.floor(Math.random() * 15),
         apple
       ]
     ));
     setLetters(letters);
-  }, [data, incr]);
+  }, [data, incr, snakeGameSet]);
 
   useInterval(() => gameLoop(), speed);
 
@@ -102,14 +103,14 @@ const App = ({ data }) => {
   };
 
 
-  if (incr === data.length) {
+  if (incr === data[snakeGameSet].length) {
     setIncr(0);
     setSpeed(null);
   } else {
-    if (data[incr].rusWord.split("").length === eatenLetters.length) {
+    if (data[snakeGameSet].set[incr].rusWord.split("").length === eatenLetters.length) {
       let newEatenWords = [...eatenWords];
-      newEatenWords.push(data[incr].rusWord);
-      data[incr].correct = true;
+      newEatenWords.push(data[snakeGameSet].set[incr].rusWord);
+      data[snakeGameSet].correct = true;
       setEatenWords(newEatenWords);
       setIncr(incr + 1);
       setEatenLetters([]);
@@ -127,7 +128,7 @@ const App = ({ data }) => {
   const verifyWords = (letters) => {
     letters.forEach((letter, index) => {
       //console.log(letter)
-      if (data[incr].rusWord[index] === letter[0][2]) {
+      if (data[snakeGameSet].set[incr].rusWord[index] === letter[0][2]) {
         setTimeout(() => {
           setPoints(points + 1);
         }, 0.1);
@@ -151,7 +152,7 @@ const App = ({ data }) => {
   const gameLoop = () => {
     let sound = new Audio(crawl);
     sound.play();
-    const letter = data[incr].rusWord[0];
+    const letter = data[snakeGameSet].set[incr].rusWord[0];
     const snakeCopy = JSON.parse(JSON.stringify(snake));
     const newSnakeHead = { x: snakeCopy[0].x + dir[0], y: snakeCopy[0].y + dir[1], letter };
     const context = canvasRef.current.getContext("2d");
@@ -178,7 +179,7 @@ const App = ({ data }) => {
     setEatenLetters([]);
     //setShowCorrectWord(false);
     setEatenWords([]);
-    data.map((word) => {
+    data[snakeGameSet].set.map((word) => {
       word.correct = false;
     });
   };
@@ -212,6 +213,21 @@ const App = ({ data }) => {
           <div className="tag is-primary is-large">Points { points }</div>
         </div>
         <div className="memory-game-info">
+          <div className="field">
+            <div className="control">
+              <div className="select is-primary">
+                <select onChange={ (e) => {
+                  setSet(e.target.value);
+                } }>
+                  { data.map((option, index) => (
+                    <option key={ index } value={ index }>{ option.name }</option>
+                  )) }
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="memory-game-info">
           <div className="tag is-primary is-large">Show words</div>
         </div>
         <div className="memory-game-info">
@@ -225,7 +241,7 @@ const App = ({ data }) => {
             Guess these words
           </p>
           <ul className="menu-list">
-            { data.map((word, index) => (
+            { data[snakeGameSet].set.map((word, index) => (
               <li><a>{ word.engWord } - { index === incr ? joinedStr : eatenWords[index] } { word.correct && <FaHotjar /> }</a></li>
             )) }
           </ul>

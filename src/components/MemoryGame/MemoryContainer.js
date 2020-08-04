@@ -87,7 +87,6 @@ function Index({ data }) {
 
   return (
     <div>
-
       <div className="memory-game-info-container">
         <div className="memory-game-info">
           <span className="tag is-link is-large">

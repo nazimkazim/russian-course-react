@@ -27,9 +27,11 @@ const App = ({ data }) => {
   const [speed, setSpeed] = useState(null);
   const [incr, setIncr] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [gameWon, setGameWon] = useState(false);
   const [joinedStr, setJoinedStr] = useState("");
   const [points, setPoints] = useState(0);
   const [snakeGameSet, setSet] = useState(0);
+  const [startGameBtnDisabled, setStartGameBtnDisabled] = useState(false);
   //const [showCorrectWord, setShowCorrectWord] = useState(false);
   const [eatenWords, setEatenWords] = useState([]);
   //const [isModalActive, setModalActive] = useState(false);
@@ -103,9 +105,11 @@ const App = ({ data }) => {
   };
 
 
-  if (incr === data[snakeGameSet].length) {
+  if (incr === data[snakeGameSet].set.length) {
     setIncr(0);
     setSpeed(null);
+    setGameWon(true);
+    setStartGameBtnDisabled(true);
   } else {
     if (data[snakeGameSet].set[incr].rusWord.split("").length === eatenLetters.length) {
       let newEatenWords = [...eatenWords];
@@ -184,6 +188,25 @@ const App = ({ data }) => {
     });
   };
 
+  const playAgain = () => {
+    setSnake(SNAKE_START);
+    setDir([0, -1]);
+    setGameOver(false);
+    setPoints(0);
+    setIncr(0);
+    setJoinedStr("");
+    setEatenLetters([]);
+    //setShowCorrectWord(false);
+    setSet(0);
+    setEatenWords([]);
+    setStartGameBtnDisabled(false);
+    setGameOver(false);
+    setGameWon(false)
+    data[snakeGameSet].set.map((word) => {
+      word.correct = false;
+    });
+  };
+
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
     context.setTransform(SCALE, 0, 0, SCALE, 0, 0);
@@ -231,7 +254,15 @@ const App = ({ data }) => {
           <div className="tag is-primary is-large">Show words</div>
         </div>
         <div className="memory-game-info">
-          <button className="button is-primary" onClick={ startGame }>Start Game</button>
+          <button className="button is-success" onClick={ playAgain }>
+            <span className="icon is-small">
+              <i className="fas fa-redo"></i>
+            </span>
+            <span>Start again</span>
+          </button>
+        </div>
+        <div className="memory-game-info">
+          <button className="button is-primary" disabled={ startGameBtnDisabled } onClick={ startGame }>Start Game</button>
         </div>
       </div>
       <div className="snake-container" role="button" tabIndex="0" onKeyDown={ e => moveSnake(e) }>
@@ -253,6 +284,7 @@ const App = ({ data }) => {
           height={ `${CANVAS_SIZE[1]}px` }
         />
         { gameOver && <div className="snake-game-over">GAME OVER!</div> }
+        { gameWon && <div className="snake-game-over snake-game-won">GREAT JOB!</div> }
       </div>
     </>
   );

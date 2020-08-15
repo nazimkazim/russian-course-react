@@ -1,5 +1,5 @@
 // Lesson 1_1
-export const snakeDataSet1 = [
+/* export const snakeDataSet1 = [
   {
     engWord:'Hello',
     rusWord:'Здравствуйте',
@@ -23,6 +23,19 @@ export const snakeDataSet1 = [
   {
     engWord:'Good',
     rusWord:'Хорошо',
+    correct:false
+  }
+] */
+
+export const snakeDataSet1 = [
+  {
+    engWord:'I',
+    rusWord:'Я',
+    correct:false
+  },
+  {
+    engWord:'He',
+    rusWord:'Он',
     correct:false
   }
 ]

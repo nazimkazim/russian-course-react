@@ -204,7 +204,7 @@ const App = ({ data }) => {
     setGameOver(false);
     setGameWon(false);
     data[snakeGameSet].set.map((word) => {
-      word.correct = false;
+      return word.correct = false;
     });
   };
 
@@ -251,7 +251,7 @@ const App = ({ data }) => {
                   setPoints(0)
                   setLetters(APPLE_START);
                   data[snakeGameSet].set.map((word) => {
-                    word.correct = false;
+                    return word.correct = false;
                   });
                 } }>
                   { data.map((option, index) => (

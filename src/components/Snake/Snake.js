@@ -283,7 +283,7 @@ const App = ({ data }) => {
           <p className="menu-label">
             Guess these words
           </p>
-          <ul className="menu-list">
+          <ul>
             { data[snakeGameSet].set.map((word, index) => (
               <li><a>{ word.engWord } - { index === incr ? joinedStr : eatenWords[index] } { word.correct && <FaHotjar /> }</a></li>
             )) }

@@ -184,12 +184,13 @@ const App = ({ data }) => {
     //setShowCorrectWord(false);
     setEatenWords([]);
     data[snakeGameSet].set.map((word) => {
-      word.correct = false;
+      return word.correct = false;
     });
   };
 
   const playAgain = () => {
     setSnake(SNAKE_START);
+    setLetters(letters);
     setDir([0, -1]);
     setGameOver(false);
     setPoints(0);
@@ -197,11 +198,11 @@ const App = ({ data }) => {
     setJoinedStr("");
     setEatenLetters([]);
     //setShowCorrectWord(false);
-    setSet(0);
+    setSet(snakeGameSet);
     setEatenWords([]);
     setStartGameBtnDisabled(false);
     setGameOver(false);
-    setGameWon(false)
+    setGameWon(false);
     data[snakeGameSet].set.map((word) => {
       word.correct = false;
     });
@@ -241,6 +242,17 @@ const App = ({ data }) => {
               <div className="select is-primary">
                 <select onChange={ (e) => {
                   setSet(e.target.value);
+                  setEatenLetters([]);
+                  setGameOver(false);
+                  setGameWon(false);
+                  setStartGameBtnDisabled(false);
+                  setJoinedStr("");
+                  setIncr(0);
+                  setPoints(0)
+                  setLetters(APPLE_START);
+                  data[snakeGameSet].set.map((word) => {
+                    word.correct = false;
+                  });
                 } }>
                   { data.map((option, index) => (
                     <option key={ index } value={ index }>{ option.name }</option>
@@ -250,9 +262,9 @@ const App = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="memory-game-info">
+        {/* <div className="memory-game-info">
           <div className="tag is-primary is-large">Show words</div>
-        </div>
+        </div> */}
         <div className="memory-game-info">
           <button className="button is-success" onClick={ playAgain }>
             <span className="icon is-small">

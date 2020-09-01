@@ -18,7 +18,10 @@ export const FIGOCset1 = _.shuffle([
         combination: "Лаура",
         answer: "она"
     }, {
-        combination: "Компьютер",
-        answer: "оно"
+        combination: "Компьютер (masculine)",
+        answer: "он"
+    }, {
+        combination: "Машина (feminine)",
+        answer: "она"
     }
 ]);

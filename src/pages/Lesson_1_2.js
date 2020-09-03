@@ -27,7 +27,7 @@ import { dialogue2, dialogue3 } from '../data/dialoguesData';
 import MemoryGame from '../components/MemoryGame/MemoryContainer';
 import { MGdata1, MGdata2, MGdata3 } from '../data/MemoryGameData';
 import Snake from '../components/Snake/Snake';
-import { snakeDataSet1 } from '../data/SnakeData';
+import { snakeDataSet3,snakeDataSet4 } from '../data/SnakeData';
 
 
 export default class SingleFlower extends Component {
@@ -175,8 +175,8 @@ export default class SingleFlower extends Component {
               <MemoryGame data={ [{ name: "Профессии (Professions)", set: MGdata1 }, { name: "Личные местоимения (Personal pronouns)", set: MGdata2 }, { name: "Цифры (Numbers)", set: MGdata3 }] } />
             </div>
             <div className="column">
-              <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
-              <Snake data={ [{ name: "Общие фразы (Basic Phrases)", set: snakeDataSet1 }] } />
+              <Instruction letter="б" name="Съедайте буквы по порядку" engName="Eat letters in order" />
+              <Snake data={ [{ name: "Профессии (Professions)", set: snakeDataSet3 },{ name: "Слова за юнит (Words for the unit)", set: snakeDataSet4 }] } />
             </div>
           </div>
         </div>

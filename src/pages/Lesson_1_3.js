@@ -54,11 +54,11 @@ class Lesson_1_3 extends Component {
               <div className="column">
                 <Instruction letter="a" name="Читаем по слогам" engName="Read by syllables" />
                 <SyllablePlate syllables={ syllableSet3 } />
-                <Instruction letter="a" name="Читаем по слогам" engName="Read by syllables" />
+                <Instruction letter="b" name="Личные местоимения в объектном падеже" engName="Personal pronoun in objective case" />
                 <ObjectPronounChart />
               </div>
               <div className="column">
-                <Instruction letter="b" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+                <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
                 <NewWordsBoard data={ NWset2 } />
                 <div className="marginBottom" />
                 <ScrambleWordsActivity data={ set3COSOC } />

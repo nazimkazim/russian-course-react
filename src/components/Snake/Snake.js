@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useInterval } from "./useInterval";
 import pickup from '../../data/media/bonus-points.wav';
-import crawl from '../../data/media/crawl.wav';
+//import crawl from '../../data/media/crawl.wav';
 import intro from '../../data/media/intro.wav';
 import crash from '../../data/media/crash.wav';
 import hornFail from '../../data/media/horn-fail.wav';
@@ -40,7 +40,7 @@ const App = ({ data }) => {
   useEffect(() => {
     const letters = data[snakeGameSet].set[incr].rusWord.split("").map((apple) => (
       [
-        Math.floor(Math.random() * 15), Math.floor(Math.random() * 15),
+        Math.floor(Math.random() * 14), Math.floor(Math.random() * 14),
         apple
       ]
     ));
@@ -154,8 +154,8 @@ const App = ({ data }) => {
   };
 
   const gameLoop = () => {
-    let sound = new Audio(crawl);
-    sound.play();
+    /* let sound = new Audio(crawl);
+    sound.play(); */
     const letter = data[snakeGameSet].set[incr].rusWord[0];
     const snakeCopy = JSON.parse(JSON.stringify(snake));
     const newSnakeHead = { x: snakeCopy[0].x + dir[0], y: snakeCopy[0].y + dir[1], letter };

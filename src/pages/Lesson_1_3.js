@@ -19,6 +19,12 @@ import ScrambleWordsWithPictureActivity from '../components/ScrambleWordsWithPic
 import { set4COSOC, set5COSOC } from '../data/ComposeOrderedSentOnClick';
 import DialogueContainer from "../components/dialoguesActivity/DialogueContainer";
 import { dialogue4 } from '../data/dialoguesData';
+import MemoryGame from '../components/MemoryGame/MemoryContainer';
+import { MGdata4, MGdata5 } from '../data/MemoryGameData';
+import Snake from '../components/Snake/Snake';
+import { snakeDataSet5 } from '../data/SnakeData';
+
+
 
 //import SortTableDragAndDrop from '../components/SortTableDragAndDrop/Index'
 //import {sortItems1} from '../data/SortItems'
@@ -141,6 +147,22 @@ class Lesson_1_3 extends Component {
                 <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
                 <DialogueContainer dialogues={ dialogue4 } />
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="newSection">
+          <SectionHeader name="Практика" engName="Practice" />
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="а" name="Соотнесите карты" engName="Match the cards" />
+              <MemoryGame data={ [
+              { name: "Местоимения (Subject/Object pronoun)", set: MGdata4 },
+              { name: "Профессии (professions)", set: MGdata5 }
+            ] } />
+            </div>
+            <div className="column">
+              <Instruction letter="б" name="Съедайте буквы по порядку" engName="Eat letters in order" />
+              <Snake data={ [{ name: "Слова за юнит 1 (Words for the unit 1)", set: snakeDataSet5 }] } />
             </div>
           </div>
         </div>

@@ -137,27 +137,27 @@ export const snakeDataSet4 = [
   },
   {
     engWord:'More than',
-    rusWord:'Артист ',
+    rusWord:'более',
     correct:false
   },
   {
     engWord:'first',
-    rusWord:'Балерина',
+    rusWord:'первый',
     correct:false
   },
   {
     engWord:'served',
-    rusWord:'Шофёр',
+    rusWord:'служил',
     correct:false
   },
   {
     engWord:'total',
-    rusWord:'Шофёр',
+    rusWord:'всего',
     correct:false
   },
   {
     engWord:'I drive',
-    rusWord:'Шофёр',
+    rusWord:'я вожу',
     correct:false
   },
   {
@@ -168,6 +168,55 @@ export const snakeDataSet4 = [
   {
     engWord:'Taxi',
     rusWord:'Такси',
+    correct:false
+  }
+]
+
+// Lesson 1_3
+export const snakeDataSet5 = [
+  {
+    engWord:'professional',
+    rusWord:'профессиональный',
+    correct:false
+  },
+  {
+    engWord:'country',
+    rusWord:'страна',
+    correct:false
+  },
+  {
+    engWord:'in my country',
+    rusWord:'в моей стране',
+    correct:false
+  },
+  {
+    engWord:'people',
+    rusWord:'люди',
+    correct:false
+  },
+  {
+    engWord:'very',
+    rusWord:'очень',
+    correct:false
+  },
+  {
+    engWord:'they love',
+    rusWord:'любят',
+    correct:false
+  },
+  {
+    engWord:'our',
+    rusWord:'наши',
+    correct:false
+  },
+  {
+    engWord:'just',
+    rusWord:'просто',
+    correct:false
+  },
+  {
+    engWord:'mad',
+    rusWord:'бешеные',
     correct:false
   }
 ]

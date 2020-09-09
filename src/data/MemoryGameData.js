@@ -4,6 +4,14 @@ import Journalist from '../images/ListenChooseRelevant/Lesson1.2/images/journali
 import President from '../images/ListenChooseRelevant/Lesson1.2/images/obama.jpg';
 import Boxer from '../images/ListenChooseRelevant/Lesson1.3/Images/boxing.jpg';
 import Musician from '../images/ListenChooseRelevant/Lesson1.3/Images/mozart.jpg';
+
+import Footballer from '../images/ListenChooseRelevant/Lesson1.3/Images/footballer.jpg';
+import Politiian from '../images/ListenChooseRelevant/Lesson1.3/Images/angela_merkel.jpg';
+import Conductor from '../images/ListenChooseRelevant/Lesson1.3/Images/conductor.jpg';
+import Physicist from '../images/ListenChooseRelevant/Lesson1.3/Images/einstein.jpg';
+import Arhitect from '../images/COSOC/Lesson 1.3/architect_man.jpg';
+import Photograph from '../images/COSOC/Lesson 1.3/photographer_woman.jpg';
+import Engineer from '../images/COSOC/Lesson 1.3/man_engineer.jpg';
 const _ = require('lodash');
 
 
@@ -383,6 +391,134 @@ export const MGdata3 = _.shuffle([
   },
   {
     value: "Девять (9)",
+    pic: ''
+  }
+]);
+
+// Lesson 3
+export const MGdata4 = _.shuffle([
+  {
+    value: "я (меня)",
+    pic: ''
+  },
+  {
+    value: "я (меня)",
+    pic: ''
+  },
+  {
+    value: "ты (тебя)",
+    pic: ''
+  },
+  {
+    value: "ты (тебя)",
+    pic: ''
+  },
+  {
+    value: "он (его)",
+    pic: ''
+  },
+  {
+    value: "он (его)",
+    pic: ''
+  },
+  {
+    value: "она (её)",
+    pic: ''
+  },
+  {
+    value: "она (её)",
+    pic: ''
+  },
+  {
+    value: "вы (вас)",
+    pic: ''
+  },
+  {
+    value: "вы (вас)",
+    pic: ''
+  },
+  {
+    value: "мы (нас)",
+    pic: ''
+  },
+  {
+    value: "мы (нас)",
+    pic: ''
+  },
+  {
+    value: "они (их)",
+    pic: ''
+  },
+  {
+    value: "они (их)",
+    pic: ''
+  },
+  {
+    value: "оно (его)",
+    pic: ''
+  },
+  {
+    value: "оно (его)",
+    pic: ''
+  }
+]);
+
+// Lesson 3
+export const MGdata5 = _.shuffle([
+  {
+    value: "футболист",
+    pic: Footballer
+  },
+  {
+    value: "футболист",
+    pic: ''
+  },
+  {
+    value: "Политик",
+    pic: Politiian
+  },
+  {
+    value: "Политик",
+    pic: ''
+  },
+  {
+    value: "Дирижёр",
+    pic: Conductor
+  },
+  {
+    value: "Дирижёр",
+    pic: ''
+  },
+  {
+    value: "Физик",
+    pic: Physicist
+  },
+  {
+    value: "Физик",
+    pic: ''
+  },
+  {
+    value: "Архитектор",
+    pic: Arhitect
+  },
+  {
+    value: "Архитектор",
+    pic: ''
+  },
+  {
+    value: "Фотограф",
+    pic: Photograph
+  },
+  {
+    value: "Фотограф",
+    pic: ''
+  },
+  {
+    value: "Инженер",
+    pic: Engineer
+  },
+  {
+    value: "Инженер",
     pic: ''
   }
 ]);

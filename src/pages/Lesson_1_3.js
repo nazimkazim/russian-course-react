@@ -162,7 +162,7 @@ class Lesson_1_3 extends Component {
             </div>
             <div className="column">
               <Instruction letter="б" name="Съедайте буквы по порядку" engName="Eat letters in order" />
-              <Snake data={ [{ name: "Слова за юнит 1 (Words for the unit 1)", set: snakeDataSet5 }] } />
+              <Snake data={ [{ name: "Слова за юнит (Words for the unit)", set: snakeDataSet5 }] } />
             </div>
           </div>
         </div>

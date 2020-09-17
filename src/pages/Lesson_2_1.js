@@ -29,7 +29,7 @@ export default function Lesson_2_1() {
           </div>
           <div className="columns">
             <div className="column">
-              <Instruction letter="a" name="Отгадайте фразу по картинке" engName="Guess phrases from pictures" />
+              <Instruction letter="a" name="Отгадайте значение выделенного слова" engName="Guess meaning of the bolded word" />
               <GuessPhraseFromPicture data={ GWFP1 } />
             </div>
           </div>

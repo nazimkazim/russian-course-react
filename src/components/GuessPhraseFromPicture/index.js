@@ -46,6 +46,9 @@ export default function GuessWordFromPicture(props) {
   const [expanded, setExpanded] = React.useState(false);
   const [data, setData] = useState(props.data);
   const [mixedEngPhrases, setMixedEngPhrases] = useState([]);
+  const [selectedWord, setSelectedWord] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentWord, setCurrentWord] = useState('');
 
   useEffect(() => {
     let mixedEngPhrases = [];
@@ -53,27 +56,42 @@ export default function GuessWordFromPicture(props) {
       return mixedEngPhrases.push(item.eng);
     });
     setMixedEngPhrases(_.shuffle(mixedEngPhrases));
+    setCurrentWord(data[currentIndex].eng);
   }, []);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
-  console.log('mixed', mixedEngPhrases);
+
+  //console.log('current word', currentWord);
+  if (currentWord === selectedWord) {
+    console.log('bingo');
+  }
 
   return (
     <Card className={ classes.root }>
       <CardHeader
-        title={ data[0].phrase }
+        title=
+        {
+          <>
+            <span className="strong-verb">
+              { data[currentIndex].phrase.split(" ")[0] }
+            </span>
+            { " " }
+            {data[currentIndex].phrase.split(" ")[1] }
+            { " " }
+            {data[currentIndex].phrase.split(" ")[2] && data[0].phrase.split(" ")[2] }
+          </>
+        }
       />
       <CardMedia
         className={ classes.media }
-        image={ data[0].pic }
-        title={ data[0].phrase }
+        image={ data[currentIndex].pic }
       />
       <CardContent>
         { mixedEngPhrases && mixedEngPhrases.map((phrase) => (
-          <Chip label={ phrase  } />
+          <Chip label={ phrase } setSelectedWord={ setSelectedWord } />
         )) }
 
       </CardContent>

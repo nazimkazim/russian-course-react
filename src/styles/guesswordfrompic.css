@@ -7,3 +7,24 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.strong-verb {
+  font-weight: bold;
+}
+
+.custom-chip {
+  padding: 16px;
+  border-radius: 16px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  background-color: #a8dadc;
+  cursor: pointer;
+  transition: .6s;
+  border: none;
+    outline:none;
+}
+
+.custom-chip:hover {
+  background-color: #8ACDD0;
+}
+

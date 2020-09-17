@@ -39,7 +39,7 @@ export default class Lesson_1_1 extends Component {
       <>
         <section>
           <div className="container is-fluid">
-            <LessonHeader topic="Известные брэнды" lesson="Урок 1.1" />
+            <LessonHeader topic="Известные брэнды" lesson="Урок 1" />
           </div>
         </section>
         <section className="newSection">

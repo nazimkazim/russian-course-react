@@ -50,7 +50,7 @@ class Lesson_1_3 extends Component {
       <>
         <section>
           <div className="container is-fluid">
-            <LessonHeader topic="Меня зовут Кхан" lesson="Урок 1.3" />
+            <LessonHeader topic="Меня зовут Кхан" lesson="Урок 3" />
           </div>
         </section>
         <section className="newSection">
@@ -109,7 +109,13 @@ class Lesson_1_3 extends Component {
             <div className="columns">
               <div className="column">
                 <Instruction letter="a" name="Выучите новые слова" engName="Learn new words" />
-                <iframe src="https://quizlet.com/508934398/flashcards/embed?i=4bby1&x=1jj1" height="500" width="100%" title="people" styles={ { "border": 0 } } />
+                <iframe
+                  src="https://quizlet.com/508934398/flashcards/embed?i=4bby1&x=1jj1"
+                  height="500"
+                  width="100%"
+                  title="people"
+                  styles={ "border: 0" }
+                 />
               </div>
             </div>
           </div>
@@ -123,21 +129,21 @@ class Lesson_1_3 extends Component {
                 <ScrambleWordsWithPictureActivity data={ set4COSOC } />
               </div>
               <div className="column">
-              <Instruction letter="a" name="Сделайте предложения по примеру: Это + пол. Её/Его зовут + имя. Он/Она + профессия"engName="Make a sentence: Это + sex. Её/Его зовут + name. Он/Она + profession" />
+                <Instruction letter="a" name="Сделайте предложения по примеру: Это + пол. Её/Его зовут + имя. Он/Она + профессия" engName="Make a sentence: Это + sex. Её/Его зовут + name. Он/Она + profession" />
                 <ScrambleWordsWithPictureActivity data={ set5COSOC } />
               </div>
             </div>
           </div>
         </div>
         <div className="newSection">
-          <SectionHeader name="повторите и выучите слова за юнит" engName="review and learn by heart the words of the unit"/>
+          <SectionHeader name="повторите и выучите слова за юнит" engName="review and learn by heart the words of the unit" />
           <div className="container is-fluid">
             <div className="columns">
               <div className="column">
-              <iframe src="https://quizlet.com/509881145/flashcards/embed?i=4bby1&x=1jj1" height="500" width="100%" title="words for the unit" styles={ { "border": 0 }}></iframe>
+                <iframe src="https://quizlet.com/509881145/flashcards/embed?i=4bby1&x=1jj1" height="500" width="100%" title="words for the unit" styles={ { "border": 0 } }></iframe>
               </div>
             </div>
-          </div>  
+          </div>
         </div>
         <div className="newSection">
           <SectionHeader name="Практика говорения" engName="Speaking practice" />
@@ -156,9 +162,9 @@ class Lesson_1_3 extends Component {
             <div className="column">
               <Instruction letter="а" name="Соотнесите карты" engName="Match the cards" />
               <MemoryGame data={ [
-              { name: "Местоимения (Subject/Object pronoun)", set: MGdata4 },
-              { name: "Профессии (professions)", set: MGdata5 }
-            ] } />
+                { name: "Местоимения (Subject/Object pronoun)", set: MGdata4 },
+                { name: "Профессии (professions)", set: MGdata5 }
+              ] } />
             </div>
             <div className="column">
               <Instruction letter="б" name="Съедайте буквы по порядку" engName="Eat letters in order" />

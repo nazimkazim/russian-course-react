@@ -53,7 +53,7 @@ export default class SingleFlower extends Component {
       <>
         <section>
           <div className="container is-fluid">
-            <LessonHeader topic="Много общего" lesson="Урок 1.2" />
+            <LessonHeader topic="Много общего" lesson="Урок 2" />
           </div>
         </section>
         <section className="newSection">

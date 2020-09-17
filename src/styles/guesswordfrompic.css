@@ -1,0 +1,9 @@
+.MuiCard-root {
+  margin: 0 auto;
+}
+
+.MuiCardContent-root {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}

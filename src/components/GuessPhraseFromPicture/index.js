@@ -52,7 +52,7 @@ export default function GuessWordFromPicture(props) {
   const [selectedWord, setSelectedWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState('');
-  const [correctAnswer, setCorrentAnswer] = useState(false);
+  const [correctAnswer, setCorrectAnswer] = useState(false);
   const [incorrectAnswer, setIncorrectAnswer] = useState(false);
   const [nextIsLoading, setNextIsLoading] = useState(false);
 
@@ -91,23 +91,35 @@ export default function GuessWordFromPicture(props) {
     }
   }, [correctAnswer]);
 
+  /* useEffect(() => {
+    setNextIsLoading(true)
+  }, [nextIsLoading]) */
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   const checkAnswer = () => {
     if (currentWord === selectedWord) {
-      setCorrentAnswer(true);
+      setCorrectAnswer(true);
       setIncorrectAnswer(false);
     } else {
-      setCorrentAnswer(false);
+      setCorrectAnswer(false);
       setIncorrectAnswer(true);
 
     }
   };
 
   const nextQuestion = () => {
-    setCurrentIndex(currentIndex + 1);
+    setNextIsLoading(true);
+    setInterval(() => {
+      setNextIsLoading(false);
+      setCorrectAnswer(false);
+      setIncorrectAnswer(false);
+      setDisabledNextButton(true);
+      setDisabledCheckButton(true);
+      setCurrentIndex(currentIndex + 1);
+    }, 1500);
   };
 
 
@@ -147,7 +159,7 @@ export default function GuessWordFromPicture(props) {
       </CardContent>
       <CardActions disableSpacing>
         <button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
-        <button onClick={ nextQuestion } className={ `button is-success is-rounded` } disabled={ disabledNextButton }>Next</button>
+        <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button>
         { correctAnswer && <span className="emoji">&#128170;</span> } { incorrectAnswer && <span className="emoji">&#128532;</span> }
         <IconButton
           className={ clsx(classes.expand, {

@@ -52,12 +52,24 @@ export default function GuessWordFromPicture(props) {
 
   useEffect(() => {
     let mixedEngPhrases = [];
+    let newData = [];
     props.data && props.data.map((item) => {
-      return mixedEngPhrases.push(item.eng);
+      return mixedEngPhrases.push({word:item.eng, active:false});
     });
     setMixedEngPhrases(_.shuffle(mixedEngPhrases));
     setCurrentWord(data[currentIndex].eng);
-  }, []);
+    props.data.map((item) => {
+      newData.push({
+        id: item.id,
+        pic: item.pic,
+        phrase: item.phrase,
+        eng: item.eng,
+        active: false
+      });
+    });
+    //console.log(newData);
+    setData(newData);
+  }, [currentIndex]);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -68,6 +80,9 @@ export default function GuessWordFromPicture(props) {
   if (currentWord === selectedWord) {
     console.log('bingo');
   }
+
+  //console.log(selectedWord);
+  //console.log(data[0].active);
 
   return (
     <Card className={ classes.root }>
@@ -91,7 +106,7 @@ export default function GuessWordFromPicture(props) {
       />
       <CardContent>
         { mixedEngPhrases && mixedEngPhrases.map((phrase) => (
-          <Chip label={ phrase } setSelectedWord={ setSelectedWord } />
+          <Chip label={ phrase.word } active={phrase.active} setSelectedWord={ setSelectedWord } setMixedEngPhrases = {setMixedEngPhrases} selectedWord={ selectedWord } engPhrases={ mixedEngPhrases } />
         )) }
 
       </CardContent>

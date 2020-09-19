@@ -19,16 +19,16 @@
   margin-bottom: 3px;
   background-color: #a8dadc;
   cursor: pointer;
-  transition: .6s;
+  transition: 0.2s;
   border: none;
-    outline:none;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .custom-chip:hover {
-  background-color: #8ACDD0;
+  background-color: #8acdd0;
 }
 
 .active {
-  background-color: black;
+  border: 1px solid #1d3557;
 }
-

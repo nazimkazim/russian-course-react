@@ -10,14 +10,15 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Chip from '../Chip';
 
 var _ = require('lodash');
 
 const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+  },
   root: {
     maxWidth: 600,
   },
@@ -44,6 +45,8 @@ const useStyles = makeStyles((theme) => ({
 export default function GuessWordFromPicture(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [disabledCheckButton, setDisabledCheckButton] = React.useState(true);
+  const [disabledNextButton, setDisabledNextButton] = React.useState(true);
   const [data, setData] = useState(props.data);
   const [mixedEngPhrases, setMixedEngPhrases] = useState([]);
   const [selectedWord, setSelectedWord] = useState('');
@@ -51,12 +54,7 @@ export default function GuessWordFromPicture(props) {
   const [currentWord, setCurrentWord] = useState('');
 
   useEffect(() => {
-    let mixedEngPhrases = [];
     let newData = [];
-    props.data && props.data.map((item) => {
-      return mixedEngPhrases.push({word:item.eng, active:false});
-    });
-    setMixedEngPhrases(_.shuffle(mixedEngPhrases));
     setCurrentWord(data[currentIndex].eng);
     props.data.map((item) => {
       newData.push({
@@ -69,7 +67,20 @@ export default function GuessWordFromPicture(props) {
     });
     //console.log(newData);
     setData(newData);
-  }, [currentIndex]);
+    if (selectedWord !== '') {
+      setDisabledCheckButton(false);
+    } else {
+      setDisabledCheckButton(true);
+    }
+  }, [currentIndex, selectedWord]);
+
+  useEffect(() => {
+    let mixedEngPhrases = [];
+    props.data && props.data.map((item) => {
+      return mixedEngPhrases.push({ word: item.eng, active: false });
+    });
+    setMixedEngPhrases(_.shuffle(mixedEngPhrases));
+  }, []);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -80,6 +91,9 @@ export default function GuessWordFromPicture(props) {
   if (currentWord === selectedWord) {
     console.log('bingo');
   }
+
+  console.log(disabledCheckButton);
+  console.log('selectedWord', selectedWord);
 
   //console.log(selectedWord);
   //console.log(data[0].active);
@@ -106,17 +120,13 @@ export default function GuessWordFromPicture(props) {
       />
       <CardContent>
         { mixedEngPhrases && mixedEngPhrases.map((phrase) => (
-          <Chip label={ phrase.word } active={phrase.active} setSelectedWord={ setSelectedWord } setMixedEngPhrases = {setMixedEngPhrases} selectedWord={ selectedWord } engPhrases={ mixedEngPhrases } />
+          <Chip label={ phrase.word } active={ phrase.active } setSelectedWord={ setSelectedWord } setMixedEngPhrases={ setMixedEngPhrases } selectedWord={ selectedWord } engPhrases={ mixedEngPhrases } selectedWord={ selectedWord } />
         )) }
 
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+        <button className={ `button is-small is-info ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
+        <button className={ `button is-small is-success` } disabled={ disabledNextButton }>Next</button>
         <IconButton
           className={ clsx(classes.expand, {
             [classes.expandOpen]: expanded,

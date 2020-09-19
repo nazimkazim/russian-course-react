@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 export default function ChipComponent(props) {
 
-
   const handleClick = (e) => {
     e.preventDefault();
     props.setSelectedWord(e.target.value);

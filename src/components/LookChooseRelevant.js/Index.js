@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Card from './Card';
 import Instruction from '../Instruction';
 import Notification from '../Notification';
+var _ = require('lodash');
+
 
 class Index extends Component {
     constructor (props) {
@@ -23,7 +25,7 @@ class Index extends Component {
             return numbersArr.push(item.answer);
         });
         this.setState({
-            numbers: numbersArr
+            numbers: _.shuffle(numbersArr)
         });
     }
 

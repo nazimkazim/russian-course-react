@@ -28,7 +28,7 @@ class LessonProvider extends Component {
         sortedLessons: lessons,
         loading: false
       });
-      console.log(lessons);
+      //console.log(lessons);
     } catch (error) {
       console.log(error);
     }

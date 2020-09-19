@@ -52,6 +52,9 @@ export default function GuessWordFromPicture(props) {
   const [selectedWord, setSelectedWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentWord, setCurrentWord] = useState('');
+  const [correctAnswer, setCorrentAnswer] = useState(false);
+  const [incorrectAnswer, setIncorrectAnswer] = useState(false);
+  const [nextIsLoading, setNextIsLoading] = useState(false);
 
   useEffect(() => {
     let newData = [];
@@ -82,18 +85,36 @@ export default function GuessWordFromPicture(props) {
     setMixedEngPhrases(_.shuffle(mixedEngPhrases));
   }, []);
 
+  useEffect(() => {
+    if (correctAnswer) {
+      setDisabledNextButton(false);
+    }
+  }, [correctAnswer]);
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const checkAnswer = () => {
+    if (currentWord === selectedWord) {
+      setCorrentAnswer(true);
+      setIncorrectAnswer(false);
+    } else {
+      setCorrentAnswer(false);
+      setIncorrectAnswer(true);
 
-  //console.log('current word', currentWord);
-  if (currentWord === selectedWord) {
-    console.log('bingo');
-  }
+    }
+  };
 
-  console.log(disabledCheckButton);
-  console.log('selectedWord', selectedWord);
+  const nextQuestion = () => {
+    setCurrentIndex(currentIndex + 1);
+  };
+
+
+
+
+  //console.log(disabledCheckButton);
+  //console.log('selectedWord', selectedWord);
 
   //console.log(selectedWord);
   //console.log(data[0].active);
@@ -120,13 +141,14 @@ export default function GuessWordFromPicture(props) {
       />
       <CardContent>
         { mixedEngPhrases && mixedEngPhrases.map((phrase) => (
-          <Chip label={ phrase.word } active={ phrase.active } setSelectedWord={ setSelectedWord } setMixedEngPhrases={ setMixedEngPhrases } selectedWord={ selectedWord } engPhrases={ mixedEngPhrases } selectedWord={ selectedWord } />
+          <Chip label={ phrase.word } key={ phrase.word } active={ phrase.active } setSelectedWord={ setSelectedWord } setMixedEngPhrases={ setMixedEngPhrases } selectedWord={ selectedWord } currentWord={ currentWord } engPhrases={ mixedEngPhrases } selectedWord={ selectedWord } correctAnswer={ correctAnswer } />
         )) }
 
       </CardContent>
       <CardActions disableSpacing>
-        <button className={ `button is-small is-info ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
-        <button className={ `button is-small is-success` } disabled={ disabledNextButton }>Next</button>
+        <button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
+        <button onClick={ nextQuestion } className={ `button is-success is-rounded` } disabled={ disabledNextButton }>Next</button>
+        { correctAnswer && <span className="emoji">&#128170;</span> } { incorrectAnswer && <span className="emoji">&#128532;</span> }
         <IconButton
           className={ clsx(classes.expand, {
             [classes.expandOpen]: expanded,

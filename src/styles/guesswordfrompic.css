@@ -32,3 +32,7 @@
 .active {
   border: 1px solid #1d3557;
 }
+
+.emoji {
+  font-size: 30px;
+}

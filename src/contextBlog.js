@@ -19,7 +19,7 @@ class BlogProvider extends Component {
       this.setState({
         blogs
       });
-      console.log(blogs);
+      //console.log(blogs);
     } catch (error) {
       console.log(error);
     }

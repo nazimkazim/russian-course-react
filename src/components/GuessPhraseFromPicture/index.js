@@ -127,17 +127,18 @@ export default function GuessWordFromPicture(props) {
     setDisabledNextButton(true);
     setDisabledCheckButton(true);
     setSelectedWord('');
-    setCorrectAnswer(false);
     setIncorrectAnswer(false);
     setIsNextQuestion(true);
     setTimeout(() => {
       setNextIsLoading(false);
+      setCorrectAnswer(true);
     }, 1500);
   };
 
   useEffect(() => {
     if (!nextIsLoading) {
       setCurrentIndex(currentIndex + 1);
+      setCorrectAnswer(false);
     }
   }, [nextIsLoading]);
 
@@ -170,7 +171,7 @@ export default function GuessWordFromPicture(props) {
             { " " }
             {data[currentIndex].phrase.split(" ")[1] }
             { " " }
-            {data[currentIndex].phrase.split(" ")[2] && data[0].phrase.split(" ")[2] }
+            {data[currentIndex].phrase.split(" ")[2] && data[currentIndex].phrase.split(" ")[2] }
           </>
         }
       />

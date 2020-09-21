@@ -55,10 +55,10 @@ export default function GuessWordFromPicture(props) {
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [incorrectAnswer, setIncorrectAnswer] = useState(false);
   const [nextIsLoading, setNextIsLoading] = useState(false);
+  const [isNextQuestion, setIsNextQuestion] = useState(false);
 
   useEffect(() => {
     let newData = [];
-    setCurrentWord(data[currentIndex].eng);
     props.data.map((item) => {
       newData.push({
         id: item.id,
@@ -70,12 +70,19 @@ export default function GuessWordFromPicture(props) {
     });
     //console.log(newData);
     setData(newData);
+  }, []);
+
+  useEffect(() => {
+    setCurrentWord(data[currentIndex].eng);
+  }, [currentIndex]);
+
+  useEffect(() => {
     if (selectedWord !== '') {
       setDisabledCheckButton(false);
     } else {
       setDisabledCheckButton(true);
     }
-  }, [currentIndex, selectedWord]);
+  }, [selectedWord]);
 
   useEffect(() => {
     let mixedEngPhrases = [];
@@ -89,6 +96,7 @@ export default function GuessWordFromPicture(props) {
     if (correctAnswer) {
       setDisabledNextButton(false);
     }
+
   }, [correctAnswer]);
 
   /* useEffect(() => {
@@ -106,21 +114,33 @@ export default function GuessWordFromPicture(props) {
     } else {
       setCorrectAnswer(false);
       setIncorrectAnswer(true);
-
     }
   };
 
   const nextQuestion = () => {
+    /* setNextIsLoading(true);
+    setCorrectAnswer(false);
+    setIncorrectAnswer(false);
+    setDisabledNextButton(false);
+    setDisabledCheckButton(false); */
+    setDisabledNextButton(true);
+    setDisabledCheckButton(true);
+    setSelectedWord('');
     setNextIsLoading(true);
-    setInterval(() => {
-      setNextIsLoading(false);
-      setCorrectAnswer(false);
-      setIncorrectAnswer(false);
-      setDisabledNextButton(true);
-      setDisabledCheckButton(true);
-      setCurrentIndex(currentIndex + 1);
-    }, 1500);
+    setNextIsLoading(false);
+    setCorrectAnswer(false);
+    setIncorrectAnswer(false);
+    setCurrentIndex(currentIndex + 1);
+    setIsNextQuestion(true);
   };
+
+
+  /* if (isNextQuestion) {
+    setCorrectAnswer(false);
+    setIncorrectAnswer(false);
+    setDisabledNextButton(false);
+    setDisabledCheckButton(false);
+  } */
 
 
 

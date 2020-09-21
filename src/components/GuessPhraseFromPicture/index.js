@@ -55,7 +55,7 @@ export default function GuessWordFromPicture(props) {
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [incorrectAnswer, setIncorrectAnswer] = useState(false);
   const [nextIsLoading, setNextIsLoading] = useState(false);
-  const [isNextQuestion, setIsNextQuestion] = useState(false);
+  const [gameIsFinished, setGameIsFinished] = useState(false);
 
   useEffect(() => {
     let newData = [];
@@ -74,6 +74,10 @@ export default function GuessWordFromPicture(props) {
 
   useEffect(() => {
     setCurrentWord(data[currentIndex].eng);
+    if (data.length <= currentIndex ) {
+      setCurrentIndex(currentIndex)
+      setGameIsFinished(true);
+    }
   }, [currentIndex]);
 
   useEffect(() => {
@@ -99,9 +103,6 @@ export default function GuessWordFromPicture(props) {
 
   }, [correctAnswer]);
 
-  /* useEffect(() => {
-    setNextIsLoading(true)
-  }, [nextIsLoading]) */
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -118,17 +119,11 @@ export default function GuessWordFromPicture(props) {
   };
 
   const nextQuestion = () => {
-    /* setNextIsLoading(true);
-    setCorrectAnswer(false);
-    setIncorrectAnswer(false);
-    setDisabledNextButton(false);
-    setDisabledCheckButton(false); */
     setNextIsLoading(true);
     setDisabledNextButton(true);
     setDisabledCheckButton(true);
     setSelectedWord('');
     setIncorrectAnswer(false);
-    setIsNextQuestion(true);
     setTimeout(() => {
       setNextIsLoading(false);
       setCorrectAnswer(true);
@@ -141,23 +136,6 @@ export default function GuessWordFromPicture(props) {
       setCorrectAnswer(false);
     }
   }, [nextIsLoading]);
-
-
-  /* if (isNextQuestion) {
-    setCorrectAnswer(false);
-    setIncorrectAnswer(false);
-    setDisabledNextButton(false);
-    setDisabledCheckButton(false);
-  } */
-
-
-
-
-  //console.log(disabledCheckButton);
-  //console.log('selectedWord', selectedWord);
-
-  //console.log(selectedWord);
-  //console.log(data[0].active);
 
   return (
     <Card className={ classes.root }>
@@ -183,12 +161,12 @@ export default function GuessWordFromPicture(props) {
         { mixedEngPhrases && mixedEngPhrases.map((phrase) => (
           <Chip label={ phrase.word } key={ phrase.word } active={ phrase.active } setSelectedWord={ setSelectedWord } setMixedEngPhrases={ setMixedEngPhrases } selectedWord={ selectedWord } currentWord={ currentWord } engPhrases={ mixedEngPhrases } selectedWord={ selectedWord } correctAnswer={ correctAnswer } />
         )) }
-
       </CardContent>
       <CardActions disableSpacing>
         <button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
         <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button>
         { correctAnswer && <span className="emoji">&#128170;</span> } { incorrectAnswer && <span className="emoji">&#128532;</span> }
+        { gameIsFinished && '<span>Great</span>' }
         <IconButton
           className={ clsx(classes.expand, {
             [classes.expandOpen]: expanded,

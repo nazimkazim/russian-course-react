@@ -123,16 +123,23 @@ export default function GuessWordFromPicture(props) {
     setIncorrectAnswer(false);
     setDisabledNextButton(false);
     setDisabledCheckButton(false); */
+    setNextIsLoading(true);
     setDisabledNextButton(true);
     setDisabledCheckButton(true);
     setSelectedWord('');
-    setNextIsLoading(true);
-    setNextIsLoading(false);
     setCorrectAnswer(false);
     setIncorrectAnswer(false);
-    setCurrentIndex(currentIndex + 1);
     setIsNextQuestion(true);
+    setTimeout(() => {
+      setNextIsLoading(false);
+    }, 1500);
   };
+
+  useEffect(() => {
+    if (!nextIsLoading) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  }, [nextIsLoading]);
 
 
   /* if (isNextQuestion) {

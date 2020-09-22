@@ -5,6 +5,7 @@
 .MuiCardContent-root {
   padding: 16px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -35,4 +36,10 @@
 
 .emoji {
   font-size: 30px;
+}
+
+.gwfp-end-game-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }

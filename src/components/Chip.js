@@ -14,12 +14,12 @@ export default function ChipComponent(props) {
         return Object.assign({}, item, { active: false });
       }
     });
-    props.setMixedEngPhrases(newData)
+    props.setMixedEngPhrases(newData);
   };
 
   return (
     <>
-      <button disabled={ props.correctAnswer } className={ `custom-chip ${props.active && 'active'}` } value={ props.label } onClick={ handleClick }>{ props.label }</button>
+      {!props.gameIsFinished && <button disabled={ props.correctAnswer } className={ `custom-chip ${props.active && 'active'}` } value={ props.label } onClick={ handleClick }>{ props.label }</button> }
     </>
   );
 }

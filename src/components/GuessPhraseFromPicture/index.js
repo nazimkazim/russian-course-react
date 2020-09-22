@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Chip from '../Chip';
+import EndGamePic from '../../images/GWFP/Lesson2.1/end-game-pic.gif';
 
 var _ = require('lodash');
 
@@ -56,6 +57,7 @@ export default function GuessWordFromPicture(props) {
   const [incorrectAnswer, setIncorrectAnswer] = useState(false);
   const [nextIsLoading, setNextIsLoading] = useState(false);
   const [gameIsFinished, setGameIsFinished] = useState(false);
+  const [itIsFirst, setItIsFirst] = useState(true);
 
   useEffect(() => {
     let newData = [];
@@ -73,9 +75,9 @@ export default function GuessWordFromPicture(props) {
   }, []);
 
   useEffect(() => {
-    setCurrentWord(data[currentIndex].eng);
-    if (data.length <= currentIndex ) {
-      setCurrentIndex(currentIndex)
+    if (currentIndex < 10) {
+      setCurrentWord(data[currentIndex].eng);
+    } else {
       setGameIsFinished(true);
     }
   }, [currentIndex]);
@@ -100,7 +102,6 @@ export default function GuessWordFromPicture(props) {
     if (correctAnswer) {
       setDisabledNextButton(false);
     }
-
   }, [correctAnswer]);
 
 
@@ -110,6 +111,7 @@ export default function GuessWordFromPicture(props) {
 
   const checkAnswer = () => {
     if (currentWord === selectedWord) {
+      setItIsFirst(false);
       setCorrectAnswer(true);
       setIncorrectAnswer(false);
     } else {
@@ -130,8 +132,13 @@ export default function GuessWordFromPicture(props) {
     }, 1500);
   };
 
-  useEffect(() => {
-    if (!nextIsLoading) {
+  useEffect(() => {/* 
+    if (currentIndex >= data.length) {
+      setCurrentIndex(0);
+      console.log(currentIndex);
+      setGameIsFinished(true);
+    } */
+    if (!nextIsLoading && !itIsFirst) {
       setCurrentIndex(currentIndex + 1);
       setCorrectAnswer(false);
     }
@@ -139,12 +146,12 @@ export default function GuessWordFromPicture(props) {
 
   return (
     <Card className={ classes.root }>
-      <CardHeader
+      {currentIndex >= data.length ? <span className="gwfp-end-game-title">Well done</span> : <CardHeader
         title=
         {
           <>
             <span className="strong-verb">
-              { data[currentIndex].phrase.split(" ")[0] }
+              { data[currentIndex].phrase && data[currentIndex].phrase.split(" ")[0] }
             </span>
             { " " }
             {data[currentIndex].phrase.split(" ")[1] }
@@ -152,21 +159,20 @@ export default function GuessWordFromPicture(props) {
             {data[currentIndex].phrase.split(" ")[2] && data[currentIndex].phrase.split(" ")[2] }
           </>
         }
-      />
+      /> }
       <CardMedia
         className={ classes.media }
-        image={ data[currentIndex].pic }
+        image={ currentIndex < 10 ? data[currentIndex].pic : EndGamePic }
       />
       <CardContent>
         { mixedEngPhrases && mixedEngPhrases.map((phrase) => (
-          <Chip label={ phrase.word } key={ phrase.word } active={ phrase.active } setSelectedWord={ setSelectedWord } setMixedEngPhrases={ setMixedEngPhrases } selectedWord={ selectedWord } currentWord={ currentWord } engPhrases={ mixedEngPhrases } selectedWord={ selectedWord } correctAnswer={ correctAnswer } />
+          <Chip label={ phrase.word } key={ phrase.word } active={ phrase.active } setSelectedWord={ setSelectedWord } setMixedEngPhrases={ setMixedEngPhrases } selectedWord={ selectedWord } currentWord={ currentWord } engPhrases={ mixedEngPhrases } selectedWord={ selectedWord } correctAnswer={ correctAnswer } gameIsFinished={ gameIsFinished } />
         )) }
       </CardContent>
       <CardActions disableSpacing>
-        <button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
-        <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button>
+        { !gameIsFinished ? (<><button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
+          <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button></>) : <button className={ `button is-info is-rounded` }>Start again</button>}
         { correctAnswer && <span className="emoji">&#128170;</span> } { incorrectAnswer && <span className="emoji">&#128532;</span> }
-        { gameIsFinished && '<span>Great</span>' }
         <IconButton
           className={ clsx(classes.expand, {
             [classes.expandOpen]: expanded,

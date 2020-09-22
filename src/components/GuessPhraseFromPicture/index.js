@@ -144,6 +144,37 @@ export default function GuessWordFromPicture(props) {
     }
   }, [nextIsLoading]);
 
+  const startAgain = () => {
+    let newData = [];
+    props.data.map((item) => {
+      newData.push({
+        id: item.id,
+        pic: item.pic,
+        phrase: item.phrase,
+        eng: item.eng,
+        active: false
+      });
+    });
+    setData(newData);
+
+    let mixedEngPhrases = [];
+    props.data && props.data.map((item) => {
+      return mixedEngPhrases.push({ word: item.eng, active: false });
+    });
+    setMixedEngPhrases(_.shuffle(mixedEngPhrases));
+    setDisabledCheckButton(true);
+    setDisabledNextButton(true);
+    setSelectedWord('');
+    setCurrentIndex(0);
+    setCurrentWord('');
+    setCorrectAnswer(false);
+    setIncorrectAnswer(false);
+    setNextIsLoading(false);
+    setGameIsFinished(false);
+    setItIsFirst(true);
+  };
+
+
   return (
     <Card className={ classes.root }>
       {currentIndex >= data.length ? <span className="gwfp-end-game-title">Well done</span> : <CardHeader
@@ -171,7 +202,7 @@ export default function GuessWordFromPicture(props) {
       </CardContent>
       <CardActions disableSpacing>
         { !gameIsFinished ? (<><button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
-          <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button></>) : <button className={ `button is-info is-rounded` }>Start again</button>}
+          <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button></>) : <button onClick={ startAgain } className={ `button is-info is-rounded` }>Start again</button> }
         { correctAnswer && <span className="emoji">&#128170;</span> } { incorrectAnswer && <span className="emoji">&#128532;</span> }
         <IconButton
           className={ clsx(classes.expand, {

@@ -4,7 +4,8 @@ import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import GuessPhraseFromPicture from '../components/GuessPhraseFromPicture';
 import { GWFP1 } from '../data/GuessWordFromPicture';
-import AccusativeCaseTable from '../components/Charts/AccusativeCaseTable';
+import CasesTemplate from '../components/Charts/CasesTemplate';
+import {accusativeData1} from '../data/CasesData';
 
 export default function Lesson_2_1() {
   return (
@@ -31,7 +32,13 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Отгадайте значение выделенного слова" engName="Guess meaning of the bolded word" />
-              <GuessPhraseFromPicture data={ GWFP1 } extra={<AccusativeCaseTable/>} />
+              <GuessPhraseFromPicture data={ GWFP1 } extra={<CasesTemplate data={accusativeData1}/>} />
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
+              <GuessPhraseFromPicture data={ GWFP1 } extra={<CasesTemplate data={accusativeData1}/>} />
             </div>
           </div>
         </div>

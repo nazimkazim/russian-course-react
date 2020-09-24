@@ -15,13 +15,13 @@ const data = [
         type: 'человек',
         rules: [
           `согласная + -а`,
-          `-й, -ь -> -я`,
+          `-й, -ь &#8594; -я`,
         ]
       },
       {
         type: 'вещь',
         rules: [
-          '<span>x</span>'
+          '&#10006;'
         ]
       }
 
@@ -39,14 +39,14 @@ const data = [
       {
         type: 'человек',
         rules: [
-          `-а -> -у`,
-          `-я -> -ю`,
+          `-а &#8594; -у`,
+          `-я &#8594; -ю`,
         ]
       },
       {
         type: 'вещь',
         rules: [
-          '-ь х'
+          '-ь &#10006;'
         ]
       }
 
@@ -65,7 +65,7 @@ const data = [
       {
         type: 'вещь',
         rules: [
-          'Х'
+          '&#10006;'
         ]
       }
 
@@ -82,7 +82,7 @@ const data = [
       {
         type: 'вещь',
         rules: [
-          'Х'
+          '&#10006;'
         ]
       }
     ]
@@ -97,10 +97,10 @@ const theme = {
   bg: '#E2EEF3',
   primaryColor: '#12242B',
   borderRadius: '8px',
-  iconSmall:'10%',
-  iconMedium:'20%',
-  iconLarge:'30%'
-};  
+  iconSmall: '10%',
+  iconMedium: '20%',
+  iconLarge: '30%'
+};
 
 const Container = styled.div`
   display:grid;
@@ -150,11 +150,13 @@ const Box2 = styled.div`
 const Box3 = styled.div`
   display:flex;
   flex-direction:column;
-  border:1px solid black;
+  align-item:flex-end;
+  border:2px solid ${theme.primaryColor};
+  border-radius:${theme.borderRadius};
   box-sizing:border-box;
-  padding:10px;
+  padding:5px;
   width:100%;
-  background-color:yellow;
+  background-color:${theme.bg};
 `;
 
 const Icon = styled.img`
@@ -162,15 +164,33 @@ const Icon = styled.img`
 `;
 
 const RuleContainer = styled.ul`
+  display:flex;
+  flex-direction:column;
+  padding:3px;
   width:100%;
+  height:100%;
   background-color:white;
+  align-items:center;
+  justify-content:center;
   border-radius:${theme.borderRadius};
-`
+`;
 
 const RuleItem = styled.li`
+  display:flex;
+  align-content:center;
+  justify-content:center;
+  margin-top:2px;
+  padding:2px;
+  height:auto;
   width:100%;
-  background-color:black;
-`
+  border-radius:${theme.borderRadius};
+  border:1px dashed ${theme.primaryColor};
+`;
+
+const Buffer = styled.hr`
+  border: 1px dashed ${theme.bg};
+  width:100%;
+`;
 
 export default function AccusativeCaseTable() {
   return (
@@ -179,43 +199,48 @@ export default function AccusativeCaseTable() {
         data.map(item => (
           <Column style={ { 'gridTemplateRows': 'repeat(3, minmax(100px, auto))' } }>
             <Box1>
-              <Icon src={ item.icon } size={theme.iconLarge} />
+              <Icon src={ item.icon } size={ theme.iconLarge } />
               <Header>{ item.gender }</Header>
             </Box1>
             <Box2>
-              { item.body.map((content) => (
-                <>
-                  <RuleContainer>
-                      { content.type === 'человек' && <Icon src={ MaleIcon } size={theme.iconMedium} /> }
-                      { content.type === 'человек' && content.rules.map((rule) => (
-                        <RuleItem>
-                          <ReactMarkdown
-                            source={ rule }
-                            escapeHtml={ false }
-                          />
-                        </RuleItem>
-                      ))
-                      }
-                  </RuleContainer>
-                  <RuleContainer>
-                      { content.type === 'вещь' && <Icon src={ ObjectIcon } size={theme.iconMedium} /> }
-                      { content.type === 'вещь' && content.rules.map((rule) => (
-                        <RuleItem>
-                          <ReactMarkdown
-                            source={ rule }
-                            escapeHtml={ false }
-                          />
-                        </RuleItem>
-                      ))
-                      }
-                  </RuleContainer>
-                </>
-              )) }
+              <RuleContainer>
+                { item.body.map((content) => (
+                  <>
+                    { content.type === 'человек' && <Icon src={ MaleIcon } size={ theme.iconMedium } /> }
+                    { content.type === 'человек' && content.rules.map((rule) => (
+                      <RuleItem>
+                        <ReactMarkdown
+                          source={ rule }
+                          escapeHtml={ false }
+                        />
+                      </RuleItem>
+                    ))
+                    }
+                  </>
+                )) }
+                <Buffer />
+                { item.body.map((content) => (
+                  <>
+                    { content.type === 'вещь' && <Icon src={ ObjectIcon } size={ theme.iconMedium } /> }
+                    { content.type === 'вещь' && content.rules.map((rule) => (
+                      <RuleItem>
+                        <ReactMarkdown
+                          source={ rule }
+                          escapeHtml={ false }
+                        />
+                      </RuleItem>
+                    ))
+                    }
+                  </>
+                )) }
+              </RuleContainer>
             </Box2>
             <Box3>
-              { item.examples.map((example) => (
-                <li>{ example }</li>
-              )) }
+              <RuleContainer>
+                { item.examples.map((example) => (
+                  <RuleItem>{ example }</RuleItem>
+                )) }
+              </RuleContainer>
             </Box3>
           </Column>
         ))

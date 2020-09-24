@@ -13,6 +13,7 @@
 @import "./snake-game.css";
 @import "./media-query.css";
 @import "./guesswordfrompic.css";
+@import "./casesChartTemplate.css";
 
 
 .level {

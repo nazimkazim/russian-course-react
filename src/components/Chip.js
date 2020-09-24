@@ -19,7 +19,7 @@ export default function ChipComponent(props) {
 
   return (
     <>
-      {!props.gameIsFinished && <button disabled={ props.correctAnswer } className={ `custom-chip ${props.active && 'active'}` } value={ props.label } onClick={ handleClick }>{ props.label }</button> }
+      {!props.gameIsFinished && <button disabled={ props.correctAnswer } className={ `custom-chip ${props.active ? 'active' :''}` } value={ props.label } onClick={ handleClick }>{ props.label }</button> }
     </>
   );
 }

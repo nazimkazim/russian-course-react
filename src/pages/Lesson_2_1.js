@@ -4,6 +4,7 @@ import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import GuessPhraseFromPicture from '../components/GuessPhraseFromPicture';
 import { GWFP1 } from '../data/GuessWordFromPicture';
+import AccusativeCaseTable from '../components/Charts/AccusativeCaseTable';
 
 export default function Lesson_2_1() {
   return (
@@ -30,7 +31,7 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Отгадайте значение выделенного слова" engName="Guess meaning of the bolded word" />
-              <GuessPhraseFromPicture data={ GWFP1 } />
+              <GuessPhraseFromPicture data={ GWFP1 } extra={<AccusativeCaseTable/>} />
             </div>
           </div>
         </div>

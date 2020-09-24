@@ -18,6 +18,10 @@ const Container = styled.div`
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width:100%;
+
+  @media (max-width: 414px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Column = styled.div`

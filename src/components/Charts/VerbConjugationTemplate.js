@@ -5,8 +5,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import BubbleChartIcon from '@material-ui/icons/BubbleChart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,18 +19,21 @@ function ListItemLink(props) {
   return <ListItem button component="a" { ...props } />;
 }
 
-export default function SimpleList() {
+export default function SimpleList({ set }) {
   const classes = useStyles();
 
   return (
     <div className={ classes.root }>
       <List component="nav" aria-label="main mailbox folders">
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
-          <ListItemText primary="Inbox" />
-        </ListItem>
+        { set.set.map(s => (
+          <ListItem button>
+            <ListItemIcon>
+              <BubbleChartIcon />
+            </ListItemIcon>
+            <ListItemText primary={s} />
+          </ListItem>
+        )) }
+
       </List>
       <Divider />
     </div>

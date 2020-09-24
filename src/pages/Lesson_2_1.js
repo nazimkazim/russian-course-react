@@ -5,7 +5,9 @@ import SectionHeader from '../components/SectionHeader';
 import GuessPhraseFromPicture from '../components/GuessPhraseFromPicture';
 import { GWFP1 } from '../data/GuessWordFromPicture';
 import CasesTemplate from '../components/Charts/CasesTemplate';
-import {accusativeData1} from '../data/CasesData';
+import { accusativeData1 } from '../data/CasesData';
+import { conjVerbsSet } from '../data/ConjugatedVerbs';
+import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 
 export default function Lesson_2_1() {
   return (
@@ -32,14 +34,16 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Отгадайте значение выделенного слова" engName="Guess meaning of the bolded word" />
-              <GuessPhraseFromPicture data={ GWFP1 } extra={<CasesTemplate data={accusativeData1}/>} />
+              <GuessPhraseFromPicture data={ GWFP1 } extra={ <CasesTemplate data={ accusativeData1 } /> } />
             </div>
           </div>
-          <div className="columns">
-            <div className="column">
-              <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
-              <GuessPhraseFromPicture data={ GWFP1 } extra={<CasesTemplate data={accusativeData1}/>} />
-            </div>
+          <div className="columns is-multiline">
+            {/* <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" /> */}
+            { conjVerbsSet.map(set => (
+              <div className="column is-3">
+                <VebConjugationTemplate set={ set } />
+              </div>
+            )) }
           </div>
         </div>
       </section>

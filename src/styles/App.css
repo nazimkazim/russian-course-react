@@ -166,3 +166,8 @@ td {
 .current {
   background-color: #282c34;
 }
+
+.custom-column-responsive {
+  display: flex;
+  flex-wrap: wrap;
+}

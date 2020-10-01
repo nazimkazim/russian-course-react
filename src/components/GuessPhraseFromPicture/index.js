@@ -205,25 +205,29 @@ export default function GuessWordFromPicture(props) {
         { !gameIsFinished ? (<><button onClick={ checkAnswer } className={ `button is-info is-rounded ${classes.margin}` } disabled={ disabledCheckButton }>Check</button>
           <button onClick={ nextQuestion } className={ `button is-success is-rounded ${nextIsLoading && 'is-loading'}` } disabled={ disabledNextButton }>Next</button></>) : <button onClick={ startAgain } className={ `button is-info is-rounded` }>Start again</button> }
         { correctAnswer && <span className="emoji">&#128170;</span> } { incorrectAnswer && <span className="emoji">&#128532;</span> }
-        <IconButton
-          className={ clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          }) }
-          onClick={ handleExpandClick }
-          aria-expanded={ expanded }
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
+        { props.extra && (
+          <IconButton
+            className={ clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            }) }
+            onClick={ handleExpandClick }
+            aria-expanded={ expanded }
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </IconButton>
+        ) }
+
       </CardActions>
-      <Collapse in={ expanded } timeout="auto" unmountOnExit>
+      {props.extra && <Collapse in={ expanded } timeout="auto" unmountOnExit>
         <CardContent>
-          {/* <Typography paragraph>Method:</Typography> */}
+          {/* <Typography paragraph>Method:</Typography> */ }
           <ContentShower>
-            {props.extra}
+            { props.extra }
           </ContentShower>
         </CardContent>
-      </Collapse>
+      </Collapse> }
+
     </Card>
   );
 }

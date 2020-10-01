@@ -34,7 +34,7 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Отгадайте значение выделенного слова" engName="Guess meaning of the bolded word" />
-              <GuessPhraseFromPicture data={ GWFP1 } extra={ <CasesTemplate data={ accusativeData1 } /> } />
+              <GuessPhraseFromPicture data={ GWFP1 } />
             </div>
           </div>
           <div className="columns is-multiline">

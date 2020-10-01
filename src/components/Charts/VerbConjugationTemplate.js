@@ -1,41 +1,67 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import BubbleChartIcon from '@material-ui/icons/BubbleChart';
+import styled from 'styled-components';
+import { speak } from '../RussianPronunciation';
+const ReactMarkdown = require('react-markdown');
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-}));
 
-function ListItemLink(props) {
-  return <ListItem button component="a" { ...props } />;
-}
+const Header = styled.div`
+  width:auto;
+  height:auto;
+  & > p {
+    font-size:26px;
+    font-weight:semi-bold;
+  }
+`;
 
-export default function SimpleList({ set }) {
-  const classes = useStyles();
+const SubjectPronounWrapper = styled.button`
+  width:auto;
+  height:auto;
+  padding:3px;
+  background: transparent;
+  background-color:#A8DADC;
+  margin-right:5px;
+  cursor:pointer;
+  border:0;
+  outline:none;
+  border-radius:2px;
+`;
 
+const Container = styled.ul`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  min-height:auto;
+  /* background-color:red; */
+  padding:10px;
+  border-radius:20px;
+  border:2px solid #F1FAEE;
+`;
+
+const Item = styled.li`
+  display:flex;
+  align-items:center;
+  width:100%;
+  height:auto;
+  padding:2px;
+  /* background-color:blue; */
+  margin-bottom:2px;
+  border-radius:5px;
+  border-bottom:2px solid #F1FAEE;
+  cursor:pointer;
+`;
+
+export default function VerbConjugationTemplate({ set }) {
   return (
-    <div className={ classes.root }>
-      <List component="nav" aria-label="main mailbox folders">
-        { set.set.map(s => (
-          <ListItem button>
-            <ListItemIcon>
-              <BubbleChartIcon />
-            </ListItemIcon>
-            <ListItemText primary={s} />
-          </ListItem>
-        )) }
-
-      </List>
-      <Divider />
-    </div>
+    <Container>
+      <Header><ReactMarkdown source={ set.verb } escapeHtml={ false } /></Header>
+      {set.set.map((s, i) => (
+        <Item key={ s + i }>
+          <SubjectPronounWrapper value={ s } onClick={ (e) => { speak(e, 'ru-RU'); } }>{ s.split(" ")[0] }</SubjectPronounWrapper>
+          <ReactMarkdown style={ { fontSize: '20px' } } source={ s.split(" ")[1] } escapeHtml={ false } />
+        </Item>
+      )) }
+    </Container>
   );
 }
+

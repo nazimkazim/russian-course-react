@@ -52,7 +52,7 @@ export default class Lesson_1_1 extends Component {
         <section className="newSection">
           <SectionHeader name="Читаем по слогам" engName="Read by syllables" />
           <div className="container is-fluid">
-            <div className="columns is-vcentered">
+            <div className="columns">
               <div className="column">
                 <Instruction letter="a" name="Нажмите на слог и повторяйте" engName="Click a syllable and repeat" />
                 <SyllablePlate syllables={ syllableSet1 } />
@@ -74,7 +74,7 @@ export default class Lesson_1_1 extends Component {
         <section className="newSection">
           <SectionHeader name="Упражнение (Техника и технология)" engName="Exercise (Machinery and technology)" />
           <div className="container is-fluid">
-            <div className="columns is-multiline is-vcentered">
+            <div className="columns is-multiline">
               <div className="column">
                 <Instruction letter="a" name="Научитесь печатать имена людей и компаний на русском" engName="Learn type people's names and companies's names in russian" />
                 <MatchTranscriptedWordToPicture data={ set1 } />

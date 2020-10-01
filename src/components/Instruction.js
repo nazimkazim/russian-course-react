@@ -5,8 +5,10 @@ const Text = styled.span`
     color:#212121;
     font-weight:bold;
     font-size:20px;
+    height:auto;
+    width:100%;
     margin-bottom:15px;
-    display:block;
+    display:flex;
     cursor:pointer;
 `;
 

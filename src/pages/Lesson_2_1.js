@@ -38,7 +38,7 @@ export default function Lesson_2_1() {
             </div>
           </div>
           <div className="columns is-multiline">
-            {/* <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" /> */}
+            <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
             { conjVerbsSet.map(set => (
               <div className="column is-3">
                 <VebConjugationTemplate set={ set } />

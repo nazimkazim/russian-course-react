@@ -5,11 +5,16 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Popper from './Popper';
+import styled from 'styled-components';
 const ReactMarkdown = require('react-markdown');
 
 const styles = {
   card: {
+    display:'flex',
+    flexDirection:'column',
+    margin:0,
     maxWidth: 275,
+
   },
   bullet: {
     display: 'inline-block',
@@ -22,16 +27,28 @@ const styles = {
   pos: {
     marginBottom: 12,
   },
+  content: {
+    display:'flex',
+    flexDirection:'column'
+  },
 };
 
+const Tag = styled.span`
+  display:flex;
+  margin-right:auto;
+  padding:8px;
+  color:white;
+  background-color:#3298DC;
+`
+
 function NewWordsBoard(props) {
-  console.log(props);
+  //console.log(props);
   const { classes } = props;
 
   return (
     <Card className={classes.card}>
-      <span className='tag is-info is-medium'>New words</span>
-      <CardContent>
+      <Tag>New Words</Tag>
+      <CardContent className={classes.content}>
         {props.data.map((item, i) => (
           <div key={i}>
             {item.rus && (

@@ -6,7 +6,7 @@ const Container = styled.div`
   flex-direction:column;
   width:900px;
   height:900px;
-  background-color:blue;
+  /* background-color:blue; */
 `;
 
 const ColumnTop = styled.div`
@@ -30,7 +30,7 @@ const BlockContainer = styled.div`
   flex-wrap:wrap;
   width:33.3333%;
   height:100%;
-  background-color:red;
+  /* background-color:red; */
 `;
 
 const Image = styled.button`
@@ -43,6 +43,13 @@ const Image = styled.button`
   background-size: 60px 60px;
   background-position: center;
 `;
+
+const SentenceContainer = styled.div`
+  min-width:100px;
+  min-height:30px;
+  padding:10px;
+  background-color:white;
+`
 
 
 
@@ -61,13 +68,13 @@ export default function Index({ data }) {
 
   const selectPlaceHandle = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectPlace(e.target.value);
   };
 
   const selectPronounHandle = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectPronoun(e.target.value);
   };
 
@@ -99,7 +106,6 @@ export default function Index({ data }) {
               {/* <img src={ place.picUrl } /> */ }
             </Image>
           )) }
-
         </BlockContainer>
         <BlockContainer>
           { subjectPronouns && subjectPronouns.map(pronoun => (
@@ -110,7 +116,7 @@ export default function Index({ data }) {
         </BlockContainer>
       </ColumnTop>
       <ColumnMiddle>
-        <div>{ selectPronoun && conjugatePronoun(selectPronoun) } { " " } { selectPlace && (`in the ${selectPlace}`) }</div>
+        <SentenceContainer>{ selectPronoun && conjugatePronoun(selectPronoun) } { " " } { selectPlace && (`in the ${selectPlace}`) }</SentenceContainer>
       </ColumnMiddle>
 
     </Container>

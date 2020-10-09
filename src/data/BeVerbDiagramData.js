@@ -114,19 +114,6 @@ export const diagramData = {
   ],
   tenses: [
     {
-      tense: "present",
-      expressions: [
-        {
-          name: "now / at the moment",
-          pics: [time.now, arrows.downArrow]
-        },
-        {
-          name: "today",
-          pics: [time.today, arrows.downArrow]
-        }
-      ]
-    },
-    {
       tense: "past",
       expressions: [
         {
@@ -144,6 +131,20 @@ export const diagramData = {
         {
           name: "last year",
           pics: [time.year, arrows.leftArrow]
+        }
+      ]
+    },
+    
+    {
+      tense: "present",
+      expressions: [
+        {
+          name: "now / at the moment",
+          pics: [time.now, arrows.downArrow]
+        },
+        {
+          name: "today",
+          pics: [time.today, arrows.downArrow]
         }
       ]
     },

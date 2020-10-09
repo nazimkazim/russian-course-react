@@ -18,6 +18,7 @@ const ColumnTop = styled.div`
 
 const ColumnMiddle = styled.div`
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
   width:100%;
@@ -49,7 +50,44 @@ const SentenceContainer = styled.div`
   min-height:30px;
   padding:10px;
   background-color:white;
+`;
+
+const TimeLineContainer = styled.div`
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  margin-top:10px;
+  width:500px;
+  height:16px;
+  background-color:red;
+`;
+
+const TimeLineArrow = styled.div`
+  position:absolute;
+  width:100%;
+  height:3px;
+  background-color:blue;
+`;
+
+const TimeLineMarksContainer = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin-top:20px;
+  width:auto;
+  height:auto;
+  padding:3px;
 `
+
+const TimeLineMarks = styled.button`
+  z-index:3;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:white;
+`;
 
 
 
@@ -57,14 +95,19 @@ const SentenceContainer = styled.div`
 export default function Index({ data }) {
   const [places, setPlaces] = useState(null);
   const [subjectPronouns, setSubjectPronouns] = useState(null);
+  const [tenses, setTenses] = useState(null);
   const [selectPlace, setSelectPlace] = useState('');
   const [selectPronoun, setSelectPronoun] = useState('');
+  const [selectTense, setSelectTense] = useState('');
+
   useEffect(() => {
     setPlaces(data.places);
     setSubjectPronouns(data.subjectPronouns);
-  }, [places, subjectPronouns]);
+    setTenses(data.tenses);
+  }, [places, subjectPronouns, tenses]);
 
-  //console.log(subjectPronouns);
+  console.log(tenses);
+  console.log(selectTense);
 
   const selectPlaceHandle = (e) => {
     e.preventDefault();
@@ -77,6 +120,26 @@ export default function Index({ data }) {
     //console.log(e.target.value);
     setSelectPronoun(e.target.value);
   };
+
+  const handleSelectTense = (e) => {
+    e.preventDefault();
+    setSelectTense(e.target.value)
+  }
+
+  const showExpressions = (tense) => {
+    if (tense) {
+      const expr = tenses && tenses.filter((item) => {
+        return item.tense === tense
+      })
+      //console.log(expr[0])
+      return expr[0].expressions
+    } else {
+      return ''
+    }
+    
+  }
+
+  //console.log(showExpressions())
 
   const conjugatePronoun = (pronoun) => {
     switch (pronoun) {
@@ -114,9 +177,23 @@ export default function Index({ data }) {
             </Image>
           )) }
         </BlockContainer>
+        <BlockContainer>
+            {showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
+              <li>{expr.name}</li>
+            ))}
+        </BlockContainer>
       </ColumnTop>
       <ColumnMiddle>
         <SentenceContainer>{ selectPronoun && conjugatePronoun(selectPronoun) } { " " } { selectPlace && (`in the ${selectPlace}`) }</SentenceContainer>
+        <TimeLineContainer>
+          <TimeLineArrow/>
+          { tenses && tenses.map((tense) => (
+            <TimeLineMarksContainer>
+              <TimeLineMarks value={tense.tense} onClick={(e) => {handleSelectTense(e)}} />
+              <span>{ tense.tense }</span>
+            </TimeLineMarksContainer>
+          )) }
+        </TimeLineContainer>
       </ColumnMiddle>
 
     </Container>

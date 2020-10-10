@@ -34,6 +34,41 @@ const BlockContainer = styled.div`
   /* background-color:red; */
 `;
 
+const ExpressionsContainer = styled.ul`
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  margin-top:30px;
+  width:100%;
+  height:100%;
+  background-color:brown;
+`;
+
+const ExpressionList = styled.li`
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  width:90%;
+  height:auto;
+  padding:10px;
+  background-color:grey;
+  margin-bottom:3px;
+`;
+
+const ExprImgContainer = styled.div`
+  display:flex;
+  width:auto;
+  height:100%;
+  background-color:blue;
+  padding:5px;
+  & > img {
+    width:30px;
+    cursor:pointer;
+  }
+
+`;
+
 const Image = styled.button`
   display:flex;
   flex:1 1 70px;
@@ -79,7 +114,7 @@ const TimeLineMarksContainer = styled.div`
   width:auto;
   height:auto;
   padding:3px;
-`
+`;
 
 const TimeLineMarks = styled.button`
   z-index:3;
@@ -123,21 +158,21 @@ export default function Index({ data }) {
 
   const handleSelectTense = (e) => {
     e.preventDefault();
-    setSelectTense(e.target.value)
-  }
+    setSelectTense(e.target.value);
+  };
 
   const showExpressions = (tense) => {
     if (tense) {
       const expr = tenses && tenses.filter((item) => {
-        return item.tense === tense
-      })
+        return item.tense === tense;
+      });
       //console.log(expr[0])
-      return expr[0].expressions
+      return expr[0].expressions;
     } else {
-      return ''
+      return '';
     }
-    
-  }
+
+  };
 
   //console.log(showExpressions())
 
@@ -178,18 +213,25 @@ export default function Index({ data }) {
           )) }
         </BlockContainer>
         <BlockContainer>
-            {showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
-              <li>{expr.name}</li>
-            ))}
+          <ExpressionsContainer>
+            { showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
+              <ExpressionList>
+                <ExprImgContainer>
+                  <img src={ expr.pics[0] } /> <img src={ expr.pics[1] } />
+                </ExprImgContainer>
+                { expr.name }
+              </ExpressionList>
+            )) }
+          </ExpressionsContainer>
         </BlockContainer>
       </ColumnTop>
       <ColumnMiddle>
         <SentenceContainer>{ selectPronoun && conjugatePronoun(selectPronoun) } { " " } { selectPlace && (`in the ${selectPlace}`) }</SentenceContainer>
         <TimeLineContainer>
-          <TimeLineArrow/>
+          <TimeLineArrow />
           { tenses && tenses.map((tense) => (
             <TimeLineMarksContainer>
-              <TimeLineMarks value={tense.tense} onClick={(e) => {handleSelectTense(e)}} />
+              <TimeLineMarks value={ tense.tense } onClick={ (e) => { handleSelectTense(e); } } />
               <span>{ tense.tense }</span>
             </TimeLineMarksContainer>
           )) }

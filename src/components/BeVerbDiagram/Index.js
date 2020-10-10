@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { speak } from '../Pronunciation';
 
 const Container = styled.div`
   display:flex;
@@ -26,6 +27,13 @@ const ColumnMiddle = styled.div`
   background-color:yellow;
 `;
 
+const ColumnBottom = styled.div`
+  display:flex;
+  width:100%;
+  height:33.3333%;
+  background-color:yellow;
+`;
+
 const BlockContainer = styled.div`
   display:flex;
   flex-wrap:wrap;
@@ -39,13 +47,13 @@ const ExpressionsContainer = styled.ul`
   flex-direction:column;
   justify-content:flex-start;
   align-items:center;
-  margin-top:30px;
+  margin-top:10px;
   width:100%;
   height:100%;
   background-color:brown;
 `;
 
-const ExpressionList = styled.li`
+const ExpressionList = styled.button`
   display:flex;
   justify-content:flex-start;
   align-items:center;
@@ -81,10 +89,13 @@ const Image = styled.button`
 `;
 
 const SentenceContainer = styled.div`
+  display:flex;
+  align-items:center;
   min-width:100px;
   min-height:30px;
   padding:10px;
   background-color:white;
+  margin-bottom:10px;
 `;
 
 const TimeLineContainer = styled.div`
@@ -124,6 +135,12 @@ const TimeLineMarks = styled.button`
   background-color:white;
 `;
 
+const SoundButton = styled.button`
+  width:20px;
+  height:20px;
+  background-color:black;
+`;
+
 
 
 
@@ -134,6 +151,7 @@ export default function Index({ data }) {
   const [selectPlace, setSelectPlace] = useState('');
   const [selectPronoun, setSelectPronoun] = useState('');
   const [selectTense, setSelectTense] = useState('');
+  const [selectExpression, setSelectExpression] = useState('');
 
   useEffect(() => {
     setPlaces(data.places);
@@ -148,17 +166,26 @@ export default function Index({ data }) {
     e.preventDefault();
     //console.log(e.target.value);
     setSelectPlace(e.target.value);
+    speak(e, 'en-EN');
   };
 
   const selectPronounHandle = (e) => {
     e.preventDefault();
     //console.log(e.target.value);
     setSelectPronoun(e.target.value);
+    speak(e, 'en-EN');
   };
 
   const handleSelectTense = (e) => {
     e.preventDefault();
     setSelectTense(e.target.value);
+    setSelectExpression('');
+  };
+
+  const handleExpressionList = (e) => {
+    e.preventDefault();
+    setSelectExpression(e.target.value);
+    speak(e, 'en-EN');
   };
 
   const showExpressions = (tense) => {
@@ -171,27 +198,57 @@ export default function Index({ data }) {
     } else {
       return '';
     }
+  };
 
+  const listenSentenceHandle = () => {
+    const str = conjugatePronoun(selectPronoun, selectTense);
   };
 
   //console.log(showExpressions())
 
-  const conjugatePronoun = (pronoun) => {
-    switch (pronoun) {
-      case "I":
-        return "I am";
-      case "You":
-        return "You are";
-      case "He":
-        return "He is";
-      case "She":
-        return "She is";
-      case "It":
-        return "It is";
-      case "We":
-        return "We are";
-      case "They":
-        return "They are";
+  const conjugatePronoun = (pronoun, tense) => {
+    if (pronoun === "I" && tense === "present") {
+      return "I am";
+    } else if (pronoun === "You" && tense === "present") {
+      return "You are";
+    } else if (pronoun === "He" && tense === "present") {
+      return "He is";
+    } else if (pronoun === "She" && tense === "present") {
+      return "She is";
+    } else if (pronoun === "We" && tense === "present") {
+      return "We are";
+    } else if (pronoun === "They" && tense === "present") {
+      return "They are";
+    } else if (pronoun === "It" && tense === "present") {
+      return "It is";
+    } else if (pronoun === "I" && tense === "past") {
+      return "I was";
+    } else if (pronoun === "You" && tense === "past") {
+      return "You were";
+    } else if (pronoun === "He" && tense === "past") {
+      return "He was";
+    } else if (pronoun === "She" && tense === "past") {
+      return "She was";
+    } else if (pronoun === "It" && tense === "past") {
+      return "It was";
+    } else if (pronoun === "They" && tense === "past") {
+      return "They were";
+    } else if (pronoun === "We" && tense === "past") {
+      return "We were";
+    } else if (pronoun === "I" && tense === "future") {
+      return "I will be";
+    } else if (pronoun === "You" && tense === "future") {
+      return "You will be";
+    } else if (pronoun === "He" && tense === "future") {
+      return "He will be";
+    } else if (pronoun === "She" && tense === "future") {
+      return "She will be";
+    } else if (pronoun === "It" && tense === "future") {
+      return "It will be";
+    } else if (pronoun === "We" && tense === "future") {
+      return "We will be";
+    } else if (pronoun === "They" && tense === "future") {
+      return "They will be";
     }
   };
 
@@ -208,14 +265,13 @@ export default function Index({ data }) {
         <BlockContainer>
           { subjectPronouns && subjectPronouns.map(pronoun => (
             <Image value={ pronoun.word } img={ pronoun.picUrl } onClick={ (e) => { selectPronounHandle(e); } }>
-              {/* <img src={ place.picUrl } /> */ }
             </Image>
           )) }
         </BlockContainer>
         <BlockContainer>
           <ExpressionsContainer>
             { showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
-              <ExpressionList>
+              <ExpressionList value={ expr.name } onClick={ (e) => { handleExpressionList(e); } }>
                 <ExprImgContainer>
                   <img src={ expr.pics[0] } /> <img src={ expr.pics[1] } />
                 </ExprImgContainer>
@@ -226,7 +282,10 @@ export default function Index({ data }) {
         </BlockContainer>
       </ColumnTop>
       <ColumnMiddle>
-        <SentenceContainer>{ selectPronoun && conjugatePronoun(selectPronoun) } { " " } { selectPlace && (`in the ${selectPlace}`) }</SentenceContainer>
+        <SentenceContainer>
+          <SoundButton onClick={ listenSentenceHandle } />
+          { selectPronoun && conjugatePronoun(selectPronoun, selectTense) } { " " } { selectPlace && (`in the ${selectPlace}`) } { selectExpression && selectExpression }
+        </SentenceContainer>
         <TimeLineContainer>
           <TimeLineArrow />
           { tenses && tenses.map((tense) => (
@@ -237,7 +296,11 @@ export default function Index({ data }) {
           )) }
         </TimeLineContainer>
       </ColumnMiddle>
-
+      <ColumnBottom>
+            <BlockContainer>
+              hf
+            </BlockContainer>
+      </ColumnBottom>
     </Container>
   );
 }

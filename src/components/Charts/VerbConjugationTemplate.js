@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { speak } from '../RussianPronunciation';
+import { speak } from '../Pronunciation';
 const ReactMarkdown = require('react-markdown');
 
 

@@ -60,7 +60,7 @@ export const diagramData = {
       "picUrl": "https://res.cloudinary.com/nzmai/image/upload/v1601886379/be-verb-diagram/places/supermarket.svg"
     },
     {
-      "word": "retaurant",
+      "word": "restaurant",
       "translation": "ресторан",
       "picUrl": "https://res.cloudinary.com/nzmai/image/upload/v1601886381/be-verb-diagram/places/restaurant.svg"
     },

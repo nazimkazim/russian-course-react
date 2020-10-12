@@ -59,23 +59,15 @@ const ExpressionList = styled.button`
   align-items:center;
   width:90%;
   height:auto;
-  padding:10px;
+  background:url(${props => props.img1}), url(${props => props.img2});
+  background-position: left center, center center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 180px 30px, 40px 30px;
+  padding:20px;
   background-color:grey;
   margin-bottom:3px;
 `;
 
-const ExprImgContainer = styled.div`
-  display:flex;
-  width:auto;
-  height:100%;
-  background-color:blue;
-  padding:5px;
-  & > img {
-    width:30px;
-    cursor:pointer;
-  }
-
-`;
 
 const Image = styled.button`
   display:flex;
@@ -271,11 +263,7 @@ export default function Index({ data }) {
         <BlockContainer>
           <ExpressionsContainer>
             { showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
-              <ExpressionList value={ expr.name } onClick={ (e) => { handleExpressionList(e); } }>
-                <ExprImgContainer>
-                  <img src={ expr.pics[0] } /> <img src={ expr.pics[1] } />
-                </ExprImgContainer>
-                { expr.name }
+              <ExpressionList value={ expr.name } img1={expr.pics[0]} img2={expr.pics[1]} onClick={ (e) => { handleExpressionList(e); } }>
               </ExpressionList>
             )) }
           </ExpressionsContainer>

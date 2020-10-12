@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { speak } from '../Pronunciation';
+import AnalogueClock from '../AnalogueClock'
 
 const Container = styled.div`
   display:flex;
@@ -38,6 +39,7 @@ const BlockContainer = styled.div`
   display:flex;
   flex-wrap:wrap;
   width:33.3333%;
+  padding:3px;
   height:100%;
   /* background-color:red; */
 `;
@@ -145,14 +147,16 @@ export default function Index({ data }) {
   const [selectTense, setSelectTense] = useState('');
   const [selectExpression, setSelectExpression] = useState('');
 
+  
+
   useEffect(() => {
     setPlaces(data.places);
     setSubjectPronouns(data.subjectPronouns);
     setTenses(data.tenses);
   }, [places, subjectPronouns, tenses]);
 
-  console.log(tenses);
-  console.log(selectTense);
+  //console.log(tenses);
+  //console.log(selectTense);
 
   const selectPlaceHandle = (e) => {
     e.preventDefault();
@@ -286,7 +290,7 @@ export default function Index({ data }) {
       </ColumnMiddle>
       <ColumnBottom>
             <BlockContainer>
-              hf
+              <AnalogueClock/>
             </BlockContainer>
       </ColumnBottom>
     </Container>

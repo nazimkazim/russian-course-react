@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Clock = styled.div`
@@ -37,6 +37,8 @@ const Hr = styled.div`
   position:absolute;
   width:160px;
   height:160px;
+  transition: all 0.3s ease-out;
+  transform: ${props => (props.deg && `rotate(${props.deg}deg)`)};
   &:before {
     content:'';
     position:absolute;
@@ -61,6 +63,8 @@ const Mn = styled.div`
   position:absolute;
   width:190px;
   height:190px;
+  transition: all 0.3s ease-out;
+  transform: ${props => (props.deg && `rotate(${props.deg}deg)`)};
   &:before {
     content:'';
     position:absolute;
@@ -72,28 +76,25 @@ const Mn = styled.div`
   }
 `;
 
-const Second = styled.div`
-  position:absolute;
-`;
-
-
 function AnalogueClock() {
-  const hourRef = useRef()
-  const dragHourArrow = () => {
-    console.log('dragg')
-    console.log(hourRef.current)
-    hourRef.current.style.transform = `rotateZ(15deg)`
-  }
+  const [hourArrowRotation, setHourArrowRotation] = useState(0);
+  const [minuteArrowRotation, setMinuteArrowRotation] = useState(0);
+  
+
+  console.log(hourArrowRotation)
+
   return (
     <Clock>
       <Hour>
-        <Hr id="hr" ref={hourRef} onClick={(e) => {dragHourArrow(e)}}></Hr>
+        <Hr deg={ hourArrowRotation } onClick={ () => { 
+          setHourArrowRotation(hourArrowRotation + 30)
+        } }></Hr>
       </Hour>
       <Minute>
-        <Mn></Mn>
+        <Mn deg={ minuteArrowRotation } onClick={ () => { 
+          setMinuteArrowRotation(minuteArrowRotation + 6)
+        } }></Mn>
       </Minute>
-      <Second>
-      </Second>
     </Clock>
   );
 }

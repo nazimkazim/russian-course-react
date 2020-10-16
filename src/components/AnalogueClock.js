@@ -5,6 +5,7 @@ const Clock = styled.div`
   width:100%;
   height:100%;
   display:flex;
+  position:relative;
   justify-content:center;
   align-items:center;
   background:#fff url('https://res.cloudinary.com/nzmai/image/upload/v1602513284/be-verb-diagram/clock.png');
@@ -28,6 +29,9 @@ const Hour = styled.div`
   position:absolute;
   width:160px;
   height:160px;
+  display:flex;
+  justify-content:center;
+  pointer-events: none; 
 `;
 
 const Hr = styled.div`
@@ -35,8 +39,8 @@ const Hr = styled.div`
   justify-content:center;
   border-radius:50%;
   position:absolute;
-  width:160px;
-  height:160px;
+  top:80px;
+  pointer-events: auto; 
   transition: all 0.3s ease-out;
   transform: ${props => (props.deg && `rotate(${props.deg}deg)`)};
   &:before {
@@ -47,6 +51,9 @@ const Hr = styled.div`
     background:#848484;
     z-index:10;
     border-radius:6px 6px 0 0;
+    &:hover {
+      background-color:yellow;
+    }
   }
 `;
 
@@ -54,6 +61,10 @@ const Minute = styled.div`
   position:absolute;
   width:190px;
   height:190px;
+  display:flex;
+  justify-content:center;
+  pointer-events: none; 
+
 `;
 
 const Mn = styled.div`
@@ -61,8 +72,8 @@ const Mn = styled.div`
   justify-content:center;
   border-radius:50%;
   position:absolute;
-  width:190px;
-  height:190px;
+  top:90px;
+  pointer-events: auto; 
   transition: all 0.3s ease-out;
   transform: ${props => (props.deg && `rotate(${props.deg}deg)`)};
   &:before {
@@ -76,23 +87,36 @@ const Mn = styled.div`
   }
 `;
 
-function AnalogueClock() {
-  const [hourArrowRotation, setHourArrowRotation] = useState(0);
-  const [minuteArrowRotation, setMinuteArrowRotation] = useState(0);
-  
+function AnalogueClock({setHour}) {
+  const [hourArrowRotation, setHourArrowRotation] = useState(180);
+  const [hourCounter, setHourCounter] = useState(0);
+  const [minuteArrowRotation, setMinuteArrowRotation] = useState(180);
+  const [mouseIsDown, setMouseIsDown] = useState(false);
 
-  console.log(hourArrowRotation)
+  const hours = ["twelve","one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"]
+  const minutes = ["","five", "ten", "fifteen", "twenty", "twenty five", "thirty", "thirty five", "forty", "forty five", "fifty", "fifty five"] 
+  
+  useEffect(() => {
+    setHourCounter(0)
+    setHour(hours[hourCounter])
+  }, [])
+
+  //console.log(hourArrowRotation % 180, minuteArrowRotation % 180)
+  console.log(hours[hourCounter])
 
   return (
     <Clock>
       <Hour>
-        <Hr deg={ hourArrowRotation } onClick={ () => { 
+        <Hr id="hr" deg={ hourArrowRotation } onClick={ () => { 
           setHourArrowRotation(hourArrowRotation + 30)
+          setHourCounter(hourCounter + 1)
+          setHour(hours[hourCounter])
         } }></Hr>
       </Hour>
       <Minute>
-        <Mn deg={ minuteArrowRotation } onClick={ () => { 
-          setMinuteArrowRotation(minuteArrowRotation + 6)
+        <Mn  id="mn" deg={ minuteArrowRotation } onClick={ () => {
+          setMouseIsDown(true)
+          if (mouseIsDown) setMinuteArrowRotation(minuteArrowRotation + 30)
         } }></Mn>
       </Minute>
     </Clock>

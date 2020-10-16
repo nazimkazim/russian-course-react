@@ -30,6 +30,7 @@ const ColumnMiddle = styled.div`
 
 const ColumnBottom = styled.div`
   display:flex;
+  justify-content:center;
   width:100%;
   height:33.3333%;
   background-color:yellow;
@@ -39,7 +40,6 @@ const BlockContainer = styled.div`
   display:flex;
   flex-wrap:wrap;
   width:33.3333%;
-  padding:3px;
   height:100%;
   /* background-color:red; */
 `;
@@ -135,12 +135,10 @@ const SoundButton = styled.button`
   background-color:black;
 `;
 
-
-
-
 export default function Index({ data }) {
   const [places, setPlaces] = useState(null);
   const [subjectPronouns, setSubjectPronouns] = useState(null);
+  const [hour, setHour] = useState('');
   const [tenses, setTenses] = useState(null);
   const [selectPlace, setSelectPlace] = useState('');
   const [selectPronoun, setSelectPronoun] = useState('');
@@ -153,7 +151,7 @@ export default function Index({ data }) {
     setPlaces(data.places);
     setSubjectPronouns(data.subjectPronouns);
     setTenses(data.tenses);
-  }, [places, subjectPronouns, tenses]);
+  }, [data.places, data.subjectPronouns, data.tenses]);
 
   //console.log(tenses);
   //console.log(selectTense);
@@ -276,7 +274,7 @@ export default function Index({ data }) {
       <ColumnMiddle>
         <SentenceContainer>
           <SoundButton onClick={ listenSentenceHandle } />
-          { selectPronoun && conjugatePronoun(selectPronoun, selectTense) } { " " } { selectPlace && (`in the ${selectPlace}`) } { selectExpression && selectExpression }
+          { selectPronoun && conjugatePronoun(selectPronoun, selectTense) } { " " } { selectPlace && (`in the ${selectPlace}`) } { selectExpression && selectExpression } {`at ${hour}`}
         </SentenceContainer>
         <TimeLineContainer>
           <TimeLineArrow />
@@ -290,7 +288,7 @@ export default function Index({ data }) {
       </ColumnMiddle>
       <ColumnBottom>
             <BlockContainer>
-              <AnalogueClock/>
+              <AnalogueClock setHour={setHour}/>
             </BlockContainer>
       </ColumnBottom>
     </Container>

@@ -12,7 +12,7 @@ const Clock = styled.div`
   background-size:cover;
   border-radius:50%;
   border:2px solid #fff;
-  box-shadow:inset 0 0 30px rgba(0,0,0,0.1), 0 20px 20px rgba(0,0,0,0.2), 0 0 4px rgba(255,255,255,1);
+  box-shadow:inset 0 0 30px rgba(0,0,0,0.1), 0 20px 20px rgba(0,0,0,0), 0 0 4px rgba(255,255,255,1);
   &::before {
     content:'';
     position:absolute;
@@ -35,6 +35,7 @@ const Hour = styled.div`
 `;
 
 const Hr = styled.div`
+  cursor:pointer;
   display:flex;
   justify-content:center;
   border-radius:50%;
@@ -68,6 +69,7 @@ const Minute = styled.div`
 `;
 
 const Mn = styled.div`
+  cursor:pointer;
   display:flex;
   justify-content:center;
   border-radius:50%;

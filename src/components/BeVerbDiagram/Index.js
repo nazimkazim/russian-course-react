@@ -79,10 +79,12 @@ const ExpressionList = styled.button`
 
 const Image = styled.button`
   display:flex;
+  cursor:pointer;
   flex:1 1 70px;
   height:auto;
   background-color:white;
-  border-radius:15px;
+  border-radius:5px;
+  outline: 1px solid #fff;
   background-image:url(${props => props.img});
   background-repeat: no-repeat;
   background-size: 60px 60px;
@@ -92,10 +94,12 @@ const Image = styled.button`
 const SentenceContainer = styled.div`
   display:flex;
   align-items:center;
-  min-width:100px;
-  min-height:30px;
+  justify-content:center;
+  min-width:600px;
+  min-height:100px;
   padding:10px;
-  background-color:white;
+  border-bottom:2px solid black;
+  /* background-color:black; */
   margin-bottom:10px;
 `;
 
@@ -129,6 +133,9 @@ const TimeLineMarksContainer = styled.div`
 `;
 
 const TimeLineMarks = styled.button`
+  cursor:pointer;
+  display:flex;
+  justify-self:flex-start;
   z-index:3;
   width:30px;
   height:30px;
@@ -137,9 +144,17 @@ const TimeLineMarks = styled.button`
 `;
 
 const SoundButton = styled.button`
-  width:20px;
-  height:20px;
-  background-color:black;
+  margin-right: auto;
+  cursor:pointer;
+  background-image:url('https://res.cloudinary.com/nzmai/image/upload/v1602920937/be-verb-diagram/time-expressions/microphone.svg');
+  background-repeat: no-repeat;
+  background-color:transparent;
+  border:none;
+  outline:none;
+  background-size: cover;
+  background-position: center;
+  width:60px;
+  height:60px;
 `;
 
 export default function Index({ data }) {

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Clock = styled.div`
@@ -87,36 +87,51 @@ const Mn = styled.div`
   }
 `;
 
-function AnalogueClock({setHour}) {
+function AnalogueClock({ setHour, setMinute }) {
   const [hourArrowRotation, setHourArrowRotation] = useState(180);
   const [hourCounter, setHourCounter] = useState(0);
+  const [minuteCounter, setMinuteCounter] = useState(0);
   const [minuteArrowRotation, setMinuteArrowRotation] = useState(180);
-  const [mouseIsDown, setMouseIsDown] = useState(false);
 
-  const hours = ["twelve","one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"]
-  const minutes = ["","five", "ten", "fifteen", "twenty", "twenty five", "thirty", "thirty five", "forty", "forty five", "fifty", "fifty five"] 
-  
+  const hours = ["twelve", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven"];
+  const minutes = ["", "five", "ten", "fifteen", "twenty", "twenty five", "thirty", "thirty five", "forty", "forty five", "fifty", "fifty five"];
+
   useEffect(() => {
-    setHourCounter(0)
-    setHour(hours[hourCounter])
-  }, [])
+    setHourCounter(1);
+    setHour(hours[hourCounter]);
+    setMinuteCounter(1);
+    setMinute(minutes[minuteCounter]);
+  }, []);
+
+  if (hourCounter >= 12) {
+    setHourCounter(0);
+  }
+
+  if (minuteCounter >= 13) {
+    setMinuteCounter(1);
+  }
 
   //console.log(hourArrowRotation % 180, minuteArrowRotation % 180)
-  console.log(hours[hourCounter])
+  //console.log(hourCounter, hours[hourCounter])
+  //console.log(minuteCounter, minutes[minuteCounter]);
+
+  
+
 
   return (
     <Clock>
       <Hour>
-        <Hr id="hr" deg={ hourArrowRotation } onClick={ () => { 
-          setHourArrowRotation(hourArrowRotation + 30)
-          setHourCounter(hourCounter + 1)
-          setHour(hours[hourCounter])
+        <Hr id="hr" deg={ hourArrowRotation } onClick={ () => {
+          setHourArrowRotation(hourArrowRotation + 30);
+          setHourCounter(hourCounter + 1);
+          setHour(hours[hourCounter]);
         } }></Hr>
       </Hour>
       <Minute>
-        <Mn  id="mn" deg={ minuteArrowRotation } onClick={ () => {
-          setMouseIsDown(true)
-          if (mouseIsDown) setMinuteArrowRotation(minuteArrowRotation + 30)
+        <Mn id="mn" deg={ minuteArrowRotation } onClick={ () => {
+          setMinuteArrowRotation(minuteArrowRotation + 30);
+          setMinuteCounter(minuteCounter + 1);
+          setMinute(minutes[minuteCounter]);
         } }></Mn>
       </Minute>
     </Clock>

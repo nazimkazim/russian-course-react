@@ -9,7 +9,7 @@ const Container = styled.div`
   padding:100px;
   width:100vw;
   min-height:100vh;
-  background-color:grey;
+  /* background-color:grey; */
 `
 
 export default function BeVerbDiagramPage() {

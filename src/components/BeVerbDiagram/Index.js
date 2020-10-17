@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { speak } from '../Pronunciation';
-import AnalogueClock from '../AnalogueClock'
+import { speak, speakStr } from '../Pronunciation';
+import AnalogueClock from '../AnalogueClock';
 
 const Container = styled.div`
   display:flex;
@@ -15,7 +15,7 @@ const ColumnTop = styled.div`
   display:flex;
   width:100%;
   height:33.3333%;
-  background-color:yellow;
+  /* background-color:yellow; */
 `;
 
 const ColumnMiddle = styled.div`
@@ -25,7 +25,9 @@ const ColumnMiddle = styled.div`
   align-items:center;
   width:100%;
   height:33.3333%;
-  background-color:yellow;
+  border-right:1px solid black;
+  border-left:1px solid black;
+  /* background-color:yellow; */
 `;
 
 const ColumnBottom = styled.div`
@@ -33,7 +35,8 @@ const ColumnBottom = styled.div`
   justify-content:center;
   width:100%;
   height:33.3333%;
-  background-color:yellow;
+  border:1px solid black;
+  /* background-color:yellow; */
 `;
 
 const BlockContainer = styled.div`
@@ -41,6 +44,9 @@ const BlockContainer = styled.div`
   flex-wrap:wrap;
   width:33.3333%;
   height:100%;
+  border: ${props => props.border && '1px solid black' };
+  border-right:${props => props.noSideBorderRight && 'none' };
+  border-left:${props => props.noSideBorderRight && 'none' };
   /* background-color:red; */
 `;
 
@@ -52,7 +58,7 @@ const ExpressionsContainer = styled.ul`
   margin-top:10px;
   width:100%;
   height:100%;
-  background-color:brown;
+  /* background-color:brown; */
 `;
 
 const ExpressionList = styled.button`
@@ -76,6 +82,7 @@ const Image = styled.button`
   flex:1 1 70px;
   height:auto;
   background-color:white;
+  border-radius:15px;
   background-image:url(${props => props.img});
   background-repeat: no-repeat;
   background-size: 60px 60px;
@@ -100,7 +107,7 @@ const TimeLineContainer = styled.div`
   margin-top:10px;
   width:500px;
   height:16px;
-  background-color:red;
+  /* background-color:red; */
 `;
 
 const TimeLineArrow = styled.div`
@@ -139,13 +146,14 @@ export default function Index({ data }) {
   const [places, setPlaces] = useState(null);
   const [subjectPronouns, setSubjectPronouns] = useState(null);
   const [hour, setHour] = useState('');
+  const [minute, setMinute] = useState('');
   const [tenses, setTenses] = useState(null);
   const [selectPlace, setSelectPlace] = useState('');
   const [selectPronoun, setSelectPronoun] = useState('');
   const [selectTense, setSelectTense] = useState('');
   const [selectExpression, setSelectExpression] = useState('');
 
-  
+
 
   useEffect(() => {
     setPlaces(data.places);
@@ -194,78 +202,102 @@ export default function Index({ data }) {
     }
   };
 
-  const listenSentenceHandle = () => {
-    const str = conjugatePronoun(selectPronoun, selectTense);
+  const formatTime = (hour, minute) => {
+    const prefix = 'at';
+    if (hour && minute === "") {
+      return `${prefix} ${hour} o'clock`;
+    }
+
+    if (hour && minute === 'five') {
+      return `${prefix} ${hour} o ${minute}`;
+    }
+
+    if (hour && minute) {
+      return `${prefix} ${hour} ${minute}`;
+    }
   };
+
+  const listenSentenceHandle = () => {
+    const beVerb = conjugatePronoun(selectPronoun, selectTense);
+    if (beVerb) {
+      let sentence = `${selectPronoun} ${beVerb} in the ${selectPlace} ${selectExpression && selectExpression} ${formatTime(hour, minute)}`;
+      console.log(sentence);
+      speakStr(sentence, 'en-En');
+    } else {
+      console.log('choose tense')
+    }
+  };
+
+
 
   //console.log(showExpressions())
 
   const conjugatePronoun = (pronoun, tense) => {
     if (pronoun === "I" && tense === "present") {
-      return "I am";
+      return "am";
     } else if (pronoun === "You" && tense === "present") {
-      return "You are";
+      return "are";
     } else if (pronoun === "He" && tense === "present") {
-      return "He is";
+      return "is";
     } else if (pronoun === "She" && tense === "present") {
-      return "She is";
+      return "is";
     } else if (pronoun === "We" && tense === "present") {
-      return "We are";
+      return "are";
     } else if (pronoun === "They" && tense === "present") {
-      return "They are";
+      return "are";
     } else if (pronoun === "It" && tense === "present") {
-      return "It is";
+      return "is";
     } else if (pronoun === "I" && tense === "past") {
-      return "I was";
+      return "was";
     } else if (pronoun === "You" && tense === "past") {
-      return "You were";
+      return "were";
     } else if (pronoun === "He" && tense === "past") {
-      return "He was";
+      return "was";
     } else if (pronoun === "She" && tense === "past") {
-      return "She was";
+      return "was";
     } else if (pronoun === "It" && tense === "past") {
-      return "It was";
+      return "was";
     } else if (pronoun === "They" && tense === "past") {
-      return "They were";
+      return "were";
     } else if (pronoun === "We" && tense === "past") {
-      return "We were";
+      return "were";
     } else if (pronoun === "I" && tense === "future") {
-      return "I will be";
+      return "will be";
     } else if (pronoun === "You" && tense === "future") {
-      return "You will be";
+      return "will be";
     } else if (pronoun === "He" && tense === "future") {
-      return "He will be";
+      return "will be";
     } else if (pronoun === "She" && tense === "future") {
-      return "She will be";
+      return "will be";
     } else if (pronoun === "It" && tense === "future") {
-      return "It will be";
+      return "will be";
     } else if (pronoun === "We" && tense === "future") {
-      return "We will be";
+      return "will be";
     } else if (pronoun === "They" && tense === "future") {
-      return "They will be";
+      return "will be";
     }
   };
 
   return (
     <Container>
       <ColumnTop>
-        <BlockContainer>
+        <BlockContainer border = {true}>
           { places && places.map(place => (
             <Image value={ place.word } img={ place.picUrl } onClick={ (e) => { selectPlaceHandle(e); } }>
               {/* <img src={ place.picUrl } /> */ }
             </Image>
           )) }
         </BlockContainer>
-        <BlockContainer>
+        <BlockContainer border = {true} noSideBorderRight={true}>
           { subjectPronouns && subjectPronouns.map(pronoun => (
             <Image value={ pronoun.word } img={ pronoun.picUrl } onClick={ (e) => { selectPronounHandle(e); } }>
             </Image>
           )) }
         </BlockContainer>
-        <BlockContainer>
+        <BlockContainer border = {true}>
           <ExpressionsContainer>
             { showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
-              <ExpressionList value={ expr.name } img1={expr.pics[0]} img2={expr.pics[1]} onClick={ (e) => { handleExpressionList(e); } }>
+              <ExpressionList value={ expr.name } img1={ expr.pics[0] } img2={ expr.pics[1] } onClick={ (e) => { handleExpressionList(e); } }>
               </ExpressionList>
             )) }
           </ExpressionsContainer>
@@ -274,7 +306,7 @@ export default function Index({ data }) {
       <ColumnMiddle>
         <SentenceContainer>
           <SoundButton onClick={ listenSentenceHandle } />
-          { selectPronoun && conjugatePronoun(selectPronoun, selectTense) } { " " } { selectPlace && (`in the ${selectPlace}`) } { selectExpression && selectExpression } {`at ${hour}`}
+          { selectPronoun && selectPronoun } { selectPronoun && conjugatePronoun(selectPronoun, selectTense) } { " " } { selectPlace && (`in the ${selectPlace}`) } { selectExpression && selectExpression } { formatTime(hour, minute) }
         </SentenceContainer>
         <TimeLineContainer>
           <TimeLineArrow />
@@ -287,9 +319,9 @@ export default function Index({ data }) {
         </TimeLineContainer>
       </ColumnMiddle>
       <ColumnBottom>
-            <BlockContainer>
-              <AnalogueClock setHour={setHour}/>
-            </BlockContainer>
+        <BlockContainer>
+          <AnalogueClock setHour={ setHour } setMinute={ setMinute } />
+        </BlockContainer>
       </ColumnBottom>
     </Container>
   );

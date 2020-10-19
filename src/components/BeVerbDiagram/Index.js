@@ -191,7 +191,8 @@ const Tag = styled.span`
   padding:10px;
   min-width:100px;
   height:50px;
-  font-size:20px;
+  font-size:22px;
+  font-weight:bold;
   background-color:#C2FFE2;
 `;
 

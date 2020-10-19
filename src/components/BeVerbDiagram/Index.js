@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { speak, speakStr } from '../Pronunciation';
 import AnalogueClock from '../AnalogueClock';
 
@@ -66,12 +66,13 @@ const ExpressionList = styled.button`
   justify-content:flex-start;
   align-items:center;
   width:90%;
+  cursor:pointer;
   height:auto;
   background:url(${props => props.img1}), url(${props => props.img2});
   background-position: left center, center center;
   background-repeat: no-repeat, no-repeat;
   background-size: 180px 30px, 40px 30px;
-  border:none;
+  border:2px solid #ADFFD8;
   border-radius:8px;
   padding:20px;
   background-color:#C2FFE2;
@@ -135,15 +136,34 @@ const TimeLineMarksContainer = styled.div`
   padding:3px;
 `;
 
+const rotate = keyframes`
+  from {
+    transform:rotate(0deg);
+  }
+
+  to {
+    transform:rotate(360deg);
+  }
+`;
+
+const background = keyframes`
+  from {background-color: #C2FFE3;}
+  to {background-color: #00B862;}
+`;
+
 const TimeLineMarks = styled.button`
   cursor:pointer;
   display:flex;
   justify-self:flex-start;
   z-index:3;
+  animation: ${props => props.highlighted && rotate} 2s infinite, ${props => props.highlighted && background} 2s infinite;
+  transition:background-color 2s ease-in-out;
+  transition:border 2s ease-in-out;
   width:30px;
   height:30px;
   border-radius:50%;
-  background-color:white;
+  background-color:#00CC69;
+  border:2px solid ${props => props.highlighted ? '00140B' : '#5CFFB0'};
 `;
 
 const SoundButton = styled.button`
@@ -164,6 +184,7 @@ const Tag = styled.span`
   display:flex;
   cursor:pointer;
   margin-right:10px;
+  border:2px solid #ADFFD8;
   border-radius:6px;
   justify-content:center;
   align-items:center;
@@ -184,6 +205,7 @@ export default function Index({ data }) {
   const [selectPronoun, setSelectPronoun] = useState('');
   const [selectTense, setSelectTense] = useState('');
   const [selectExpression, setSelectExpression] = useState('');
+  const [chooseTense, setChooseTense] = useState(false);
 
 
 
@@ -213,6 +235,7 @@ export default function Index({ data }) {
   const handleSelectTense = (e) => {
     e.preventDefault();
     setSelectTense(e.target.value);
+    setChooseTense(false);
     setSelectExpression('');
   };
 
@@ -253,10 +276,11 @@ export default function Index({ data }) {
     const beVerb = conjugatePronoun(selectPronoun, selectTense);
     if (beVerb) {
       let sentence = `${selectPronoun} ${beVerb} in the ${selectPlace} ${selectExpression && selectExpression} ${formatTime(hour, minute)}`;
-      console.log(sentence);
+      //console.log(sentence);
       speakStr(sentence, 'en-En');
+      setChooseTense(false);
     } else {
-      console.log('choose tense');
+      setChooseTense(true);
     }
   };
 
@@ -350,7 +374,7 @@ export default function Index({ data }) {
           <TimeLineArrow />
           { tenses && tenses.map((tense) => (
             <TimeLineMarksContainer>
-              <TimeLineMarks value={ tense.tense } onClick={ (e) => { handleSelectTense(e); } } />
+              <TimeLineMarks highlighted={ chooseTense } value={ tense.tense } onClick={ (e) => { handleSelectTense(e); } } />
               <span>{ tense.tense }</span>
             </TimeLineMarksContainer>
           )) }

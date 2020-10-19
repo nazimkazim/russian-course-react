@@ -44,9 +44,9 @@ const BlockContainer = styled.div`
   flex-wrap:wrap;
   width:33.3333%;
   height:100%;
-  border: ${props => props.border && '1px solid black' };
-  border-right:${props => props.noSideBorderRight && 'none' };
-  border-left:${props => props.noSideBorderRight && 'none' };
+  border: ${props => props.border && '1px solid black'};
+  border-right:${props => props.noSideBorderRight && 'none'};
+  border-left:${props => props.noSideBorderRight && 'none'};
   /* background-color:red; */
 `;
 
@@ -71,8 +71,10 @@ const ExpressionList = styled.button`
   background-position: left center, center center;
   background-repeat: no-repeat, no-repeat;
   background-size: 180px 30px, 40px 30px;
+  border:none;
+  border-radius:8px;
   padding:20px;
-  background-color:grey;
+  background-color:#C2FFE2;
   margin-bottom:3px;
 `;
 
@@ -94,11 +96,12 @@ const Image = styled.button`
 const SentenceContainer = styled.div`
   display:flex;
   align-items:center;
+  flex-wrap: wrap;
   justify-content:center;
   min-width:600px;
   min-height:100px;
   padding:10px;
-  border-bottom:2px solid black;
+  border-bottom:2px solid #C2FFE2;
   /* background-color:black; */
   margin-bottom:10px;
 `;
@@ -118,7 +121,7 @@ const TimeLineArrow = styled.div`
   position:absolute;
   width:100%;
   height:3px;
-  background-color:blue;
+  background-color:#001214;
 `;
 
 const TimeLineMarksContainer = styled.div`
@@ -155,6 +158,20 @@ const SoundButton = styled.button`
   background-position: center;
   width:60px;
   height:60px;
+`;
+
+const Tag = styled.span`
+  display:flex;
+  cursor:pointer;
+  margin-right:10px;
+  border-radius:6px;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  min-width:100px;
+  height:50px;
+  font-size:20px;
+  background-color:#C2FFE2;
 `;
 
 export default function Index({ data }) {
@@ -239,9 +256,11 @@ export default function Index({ data }) {
       console.log(sentence);
       speakStr(sentence, 'en-En');
     } else {
-      console.log('choose tense')
+      console.log('choose tense');
     }
   };
+
+
 
 
 
@@ -296,20 +315,20 @@ export default function Index({ data }) {
   return (
     <Container>
       <ColumnTop>
-        <BlockContainer border = {true}>
+        <BlockContainer border={ true }>
           { places && places.map(place => (
             <Image value={ place.word } img={ place.picUrl } onClick={ (e) => { selectPlaceHandle(e); } }>
               {/* <img src={ place.picUrl } /> */ }
             </Image>
           )) }
         </BlockContainer>
-        <BlockContainer border = {true} noSideBorderRight={true}>
+        <BlockContainer border={ true } noSideBorderRight={ true }>
           { subjectPronouns && subjectPronouns.map(pronoun => (
             <Image value={ pronoun.word } img={ pronoun.picUrl } onClick={ (e) => { selectPronounHandle(e); } }>
             </Image>
           )) }
         </BlockContainer>
-        <BlockContainer border = {true}>
+        <BlockContainer border={ true }>
           <ExpressionsContainer>
             { showExpressions(selectTense) && showExpressions(selectTense).map((expr) => (
               <ExpressionList value={ expr.name } img1={ expr.pics[0] } img2={ expr.pics[1] } onClick={ (e) => { handleExpressionList(e); } }>
@@ -321,7 +340,11 @@ export default function Index({ data }) {
       <ColumnMiddle>
         <SentenceContainer>
           <SoundButton onClick={ listenSentenceHandle } />
-          { selectPronoun && selectPronoun } { selectPronoun && conjugatePronoun(selectPronoun, selectTense) } { " " } { selectPlace && (`in the ${selectPlace}`) } { selectExpression && selectExpression } { formatTime(hour, minute) }
+          <Tag>{ selectPronoun && selectPronoun }</Tag>
+          <Tag>{ selectPronoun && conjugatePronoun(selectPronoun, selectTense) }</Tag>
+          <Tag>{ selectPlace && (`in the ${selectPlace}`) }</Tag>
+          <Tag>{ selectExpression && selectExpression }</Tag>
+          <Tag>{ formatTime(hour, minute) }</Tag>
         </SentenceContainer>
         <TimeLineContainer>
           <TimeLineArrow />

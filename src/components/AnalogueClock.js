@@ -23,6 +23,9 @@ const Clock = styled.div`
     z-index:10000;
     border-radius:50%;
   }
+  @media (max-width: 414px) {
+    width:100%;
+  }
 `;
 
 const Hour = styled.div`

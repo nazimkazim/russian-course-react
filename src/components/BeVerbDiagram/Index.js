@@ -8,6 +8,10 @@ const Container = styled.div`
   flex-direction:column;
   width:900px;
   height:900px;
+  @media (max-width: 414px) {
+    width:100%;
+    min-height:1200px !important;
+  }
   /* background-color:blue; */
 `;
 
@@ -16,6 +20,11 @@ const ColumnTop = styled.div`
   width:100%;
   height:33.3333%;
   /* background-color:yellow; */
+  @media (max-width: 414px) {
+    display:flex;
+    width:100% !important;
+    height:600px;
+  }
 `;
 
 const ColumnMiddle = styled.div`
@@ -37,6 +46,9 @@ const ColumnBottom = styled.div`
   height:33.3333%;
   border:1px solid black;
   /* background-color:yellow; */
+  @media (max-width: 414px) {
+    width:100%;
+  }
 `;
 
 const BlockContainer = styled.div`
@@ -48,6 +60,10 @@ const BlockContainer = styled.div`
   border-right:${props => props.noSideBorderRight && 'none'};
   border-left:${props => props.noSideBorderRight && 'none'};
   /* background-color:red; */
+  @media (max-width: 414px) {
+    width:100%;
+    justify-content:center;
+  }
 `;
 
 const ExpressionsContainer = styled.ul`
@@ -77,6 +93,12 @@ const ExpressionList = styled.button`
   padding:20px;
   background-color:#C2FFE2;
   margin-bottom:3px;
+  @media (max-width: 414px) {
+    width:95%;
+    background-position: left center, center right;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 117px 30px, 115px 30px;
+  }
 `;
 
 
@@ -92,6 +114,9 @@ const Image = styled.button`
   background-repeat: no-repeat;
   background-size: 60px 60px;
   background-position: center;
+  @media (max-width: 414px) {
+    background-size: 40px 40px;
+  }
 `;
 
 const SentenceContainer = styled.div`
@@ -105,6 +130,9 @@ const SentenceContainer = styled.div`
   border-bottom:2px solid #C2FFE2;
   /* background-color:black; */
   margin-bottom:10px;
+  @media (max-width: 414px) {
+    min-width:100% !important;
+  }
 `;
 
 const TimeLineContainer = styled.div`
@@ -116,6 +144,9 @@ const TimeLineContainer = styled.div`
   width:500px;
   height:16px;
   /* background-color:red; */
+  @media (max-width: 414px) {
+    max-width:90% !important;
+  }
 `;
 
 const TimeLineArrow = styled.div`
@@ -194,6 +225,11 @@ const Tag = styled.span`
   font-size:22px;
   font-weight:bold;
   background-color:#C2FFE2;
+  @media (max-width: 414px) {
+    padding:5px;
+    min-width:80px;
+    font-size:16px;
+  }
 `;
 
 export default function Index({ data }) {

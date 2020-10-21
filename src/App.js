@@ -3,6 +3,7 @@ import "./styles/App.css";
 import Home from "../src/pages/Home";
 import DiagramsPage from '../src/pages/Diagrams';
 import BeVerbPage from '../src/pages/BeVerbDiagramPage'
+import BeVerbPracticeQuestionsPage from '../src/pages/BeVerbPracticeQuetions'
 //import SingleFlower from "./pages/LessonHeaderTemplate";
 import Error from "../src/pages/Error";
 import NavBar from "../src/components/NavBar";
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/credits" component={ Credits } />
         <Route exact path="/diagrams" component={ DiagramsPage } />
         <Route exact path="/diagrams/be-verb" component={ BeVerbPage } />
+        <Route exact path="/diagrams/be-verb-practice-questions" component={ BeVerbPracticeQuestionsPage } />
         <Route exact path="/lessons/Известные брэнды" component={ Lesson_1_1 } />
         <Route exact path="/lessons/Много общего" component={ Lesson_1_2 } />
         <Route exact path="/lessons/Меня зовут Кхан" component={ Lesson_1_3 } />

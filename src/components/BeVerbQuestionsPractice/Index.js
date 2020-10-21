@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { beVerbQuestionsPracticeData1 } from '../../data/BeVerbQuestionsPractice';
+import { speak, speakStr } from '../Pronunciation';
 
 
-const questions = [
-  'What is your / his / her name?',
-  'How old is he / she?',
-  'What is his / her age?',
-  'What is his / her profession?',
-  'What is his / her favourite food?',
-  'What is his / her hobby?'
-];
+
+const togglePronouns = (adjectivePronoun, subjectPronoun) => {
+  const questions = [
+    `What is ${adjectivePronoun} name?`,
+    `How old is ${subjectPronoun}?`,
+    `What is ${adjectivePronoun} age?`,
+    `What is ${adjectivePronoun} profession?`,
+    `What is ${adjectivePronoun} favourite food?`,
+    `What is ${adjectivePronoun} hobby?`
+  ];
+  return  questions
+};
+
 
 const Content = styled.div`
   position:relative;
@@ -90,6 +96,9 @@ const QuestionsContainer = styled.div`
 `;
 
 const Cover = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
   position:absolute;
   border-radius:20px;
   top:0;
@@ -100,13 +109,20 @@ const Cover = styled.div`
   width:600px;
   height:350px;
   background:grey;
-`
+  & p {
+    font-size:2.3em;
+    color:#fff;
+    font-weight:bold;
+    visibility:${props => (!props.expanded ? 'visible' : 'hidden')};
+  }
+`;
 const Question = styled.span`
+  cursor:pointer;
   color:#fff;
   font-size:1.8em;
   font-weight:bold;
   transition: 3s;
-`
+`;
 
 const ToggleCover = styled.button`
   cursor:pointer;
@@ -116,6 +132,7 @@ const ToggleCover = styled.button`
   border:none;
   outline:none;
   height:50px;
+  background:transparent;
   top:5px;
   left:5px;
   transition:0.8s;
@@ -127,23 +144,23 @@ const ToggleCover = styled.button`
     -moz-box-shadow: -1px 7px 5px 0px rgba(0,0,0,0.75);
     box-shadow: -1px 7px 5px 0px rgba(0,0,0,0.75);
   }
-`
+`;
 
 
 function Index() {
-  const [expandQuestions, setExpandQuestions] = useState(false)
-  
+  const [expandQuestions, setExpandQuestions] = useState(false);
 
-  console.log(expandQuestions)
+
+  console.log(expandQuestions);
 
   return (
     <>
       <QuestionsContainer>
-        <Cover expanded={expandQuestions}/>
-        <ToggleCover onClick={e => setExpandQuestions(expandQuestions => !expandQuestions)}>Cl</ToggleCover>
-        {questions.map((question, i) => (
-          <Question key={i}>{question}</Question>
-        ))}
+        <Cover expanded={ expandQuestions }><p>Ask and answer the questions</p></Cover>
+        <ToggleCover onClick={ e => setExpandQuestions(expandQuestions => !expandQuestions) }>T</ToggleCover>
+        { togglePronouns('his', 'he').map((question, i) => (
+          <Question value={ question } key={ i } onClick={ (e) => speakStr(question) }>{ question }</Question>
+        )) }
       </QuestionsContainer>
       <Card>
         <Content>

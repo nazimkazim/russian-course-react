@@ -84,6 +84,7 @@ const expand = keyframes`
 
 const QuestionsContainer = styled.div`
   position:relative;
+  margin-right:10px;
   width:600px;
   height:350px;
   background-color:blue;
@@ -94,6 +95,27 @@ const QuestionsContainer = styled.div`
   border-radius:20px;
   background:linear-gradient(135deg, #d41e31, #491f8f);
 `;
+
+const PronounsTable = styled.div`
+  position:relative;
+  margin-right:10px;
+  width:600px;
+  height:350px;
+  background-color:blue;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:10px;
+  border-radius:20px;
+  background:linear-gradient(135deg, #d41e31, #491f8f);
+`;
+
+const Section = styled.div`
+  width:48%;
+  height:100%;
+  background:#fff;
+  border-radius:20px;
+`
 
 const Cover = styled.div`
   display:flex;
@@ -155,6 +177,14 @@ function Index() {
 
   return (
     <>
+      <PronounsTable>
+        <Section>
+
+        </Section>
+        <Section>
+
+        </Section>
+      </PronounsTable>
       <QuestionsContainer>
         <Cover expanded={ expandQuestions }><p>Ask and answer the questions</p></Cover>
         <ToggleCover onClick={ e => setExpandQuestions(expandQuestions => !expandQuestions) }>T</ToggleCover>

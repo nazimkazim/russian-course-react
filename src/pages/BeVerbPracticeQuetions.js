@@ -4,9 +4,10 @@ import BeVerbQuestionsPractice from '../components/BeVerbQuestionsPractice/Index
 
 const Container = styled.div`
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   align-items:center;
   justify-content:center;
+  flex-wrap:wrap;
   padding:100px;
   width:100vw;
   min-height:100vh;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { beVerbQuestionsPracticeData1 } from '../../data/BeVerbQuestionsPractice';
-import { speak, speakStr } from '../Pronunciation';
+import { speakStr } from '../Pronunciation';
 
 
 
@@ -10,13 +10,28 @@ const togglePronouns = (adjectivePronoun, subjectPronoun) => {
     `What is ${adjectivePronoun} name?`,
     `How old is ${subjectPronoun}?`,
     `What is ${adjectivePronoun} age?`,
+    `Where is ${subjectPronoun} from?`,
     `What is ${adjectivePronoun} profession?`,
     `What is ${adjectivePronoun} favourite food?`,
     `What is ${adjectivePronoun} hobby?`
   ];
-  return  questions
+  return questions;
 };
 
+const usefulPhrases = [
+  {
+    eng: 'I think it is',
+    rus: 'Я думаю это'
+  },
+  {
+    eng: 'I guess it is',
+    rus: 'Я полагаю это'
+  },
+  {
+    eng: `I don't know, but maybe it is`,
+    rus: 'Я не знаю, но может быть это'
+  }
+];
 
 const Content = styled.div`
   position:relative;
@@ -72,15 +87,6 @@ const Item = styled.span`
   display:block;
 `;
 
-const expand = keyframes`
-  from {
-    transform: scale(0.1)
-  }
-
-  to {
-    transform: scale(1)
-  }
-`;
 
 const QuestionsContainer = styled.div`
   position:relative;
@@ -99,7 +105,7 @@ const QuestionsContainer = styled.div`
 const PronounsTable = styled.div`
   position:relative;
   margin-right:10px;
-  width:600px;
+  width:300px;
   height:350px;
   background-color:blue;
   display:flex;
@@ -111,11 +117,46 @@ const PronounsTable = styled.div`
 `;
 
 const Section = styled.div`
-  width:48%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  width:100%;
   height:100%;
-  background:#fff;
+  background:#AFAFDC;
   border-radius:20px;
-`
+  overflow:hidden;
+`;
+
+const PTItem = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:10px;
+  /* background-color:lightgray; */
+  width:100%;
+  font-size:1.4em;
+  margin-bottom:5px;
+  border-bottom:1px solid #B7D3F2;
+`;
+
+const PTItemPhraseEng = styled.span`
+  cursor:pointer;
+  color:black;
+  padding:3px;
+  background-color:#B7D3F2;
+  border-radius:3px;
+  border:1px solid black;
+`;
+
+const PTItemPhraseRus = styled.span`
+  cursor:pointer;
+  color:black;
+  padding:3px;
+  background-color:#B7D3F2;
+  border-radius:3px;
+  border:1px solid black;
+`;
 
 const Cover = styled.div`
   display:flex;
@@ -130,7 +171,7 @@ const Cover = styled.div`
   transform:${props => (props.expanded ? 'scaleX(0)' : 'scaleX(1)')};
   width:600px;
   height:350px;
-  background:grey;
+  background:linear-gradient(135deg, #d41e31, #491f8f);
   & p {
     font-size:2.3em;
     color:#fff;
@@ -144,6 +185,10 @@ const Question = styled.span`
   font-size:1.8em;
   font-weight:bold;
   transition: 3s;
+  &:hover {
+    color:lightgray;
+    text-decoration:underline;
+  }
 `;
 
 const ToggleCover = styled.button`
@@ -168,9 +213,36 @@ const ToggleCover = styled.button`
   }
 `;
 
+const DotsContainer = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  min-width:100px;
+  min-height:20px;
+  background-color:#879AE4;
+  border-radius:30px;
+  top:3px;
+  left:20px;
+  padding:3px;
+  z-index:100;
+`;
+
+const Dot = styled.div`
+  cursor:pointer;
+  width:10px;
+  height:10px;
+  background-color:white;
+  border-radius:50%;
+  margin-right:5px;
+`;
+
+
+
 
 function Index() {
   const [expandQuestions, setExpandQuestions] = useState(false);
+  const [currentIdx, setCurrentIdx] = useState(0);
 
 
   console.log(expandQuestions);
@@ -179,34 +251,41 @@ function Index() {
     <>
       <PronounsTable>
         <Section>
-
-        </Section>
-        <Section>
-
+          { usefulPhrases.map((item, idx) => (
+            <PTItem key={ idx }>
+              <PTItemPhraseEng onClick={ () => { speakStr(item.eng, 'en-En'); } }>{ item.eng }</PTItemPhraseEng>
+              - <PTItemPhraseRus onClick={ () => { speakStr(item.rus, 'ru-RU'); } }>{ item.rus }</PTItemPhraseRus>
+            </PTItem>
+          )) }
         </Section>
       </PronounsTable>
       <QuestionsContainer>
         <Cover expanded={ expandQuestions }><p>Ask and answer the questions</p></Cover>
         <ToggleCover onClick={ e => setExpandQuestions(expandQuestions => !expandQuestions) }>T</ToggleCover>
-        { togglePronouns('his', 'he').map((question, i) => (
+        { togglePronouns(beVerbQuestionsPracticeData1[currentIdx].pronouns[0], beVerbQuestionsPracticeData1[currentIdx].pronouns[1]).map((question, i) => (
           <Question value={ question } key={ i } onClick={ (e) => speakStr(question) }>{ question }</Question>
         )) }
       </QuestionsContainer>
       <Card>
+        <DotsContainer>
+          { beVerbQuestionsPracticeData1.map((dot, idx) => (
+            <Dot key={ idx } onClick={ () => { setCurrentIdx(idx); } }></Dot>
+          )) }
+        </DotsContainer>
         <Content>
-          <Header>{ beVerbQuestionsPracticeData1[0].name } { beVerbQuestionsPracticeData1[0].surname }</Header>
-          <Item><strong>Age:</strong> { beVerbQuestionsPracticeData1[0].age }</Item>
-          <Item><strong>Country:</strong> { beVerbQuestionsPracticeData1[0].country }</Item>
-          <Item><strong>Profession:</strong> { beVerbQuestionsPracticeData1[0].profession }</Item>
-          <Item><strong>Favourite food:</strong> { beVerbQuestionsPracticeData1[0].food.map((food, i) => (
+          <Header>{ beVerbQuestionsPracticeData1[currentIdx].name } { beVerbQuestionsPracticeData1[currentIdx].surname }</Header>
+          <Item><strong>Age:</strong> { beVerbQuestionsPracticeData1[currentIdx].age }</Item>
+          <Item><strong>Country:</strong> { beVerbQuestionsPracticeData1[currentIdx].country }</Item>
+          <Item><strong>Profession:</strong> { beVerbQuestionsPracticeData1[currentIdx].profession }</Item>
+          <Item><strong>Favourite food:</strong> { beVerbQuestionsPracticeData1[currentIdx].food.map((food, i) => (
             <small key={ i }>{ food }{ " " }</small>
           )) }</Item>
-          <Item><strong>Hobbies:</strong> { beVerbQuestionsPracticeData1[0].hobbies.map((hobby, i) => (
+          <Item><strong>Hobbies:</strong> { beVerbQuestionsPracticeData1[currentIdx].hobbies.map((hobby, i) => (
             <small key={ i }>{ hobby }{ " " }</small>
           )) }
           </Item>
         </Content>
-        <img src={ beVerbQuestionsPracticeData1[0].image } />
+        <img src={ beVerbQuestionsPracticeData1[currentIdx].image } />
       </Card>
     </>
   );

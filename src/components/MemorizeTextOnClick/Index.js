@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
+import {speakStr} from '../Pronunciation'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(0.5),
     },
+  },
+  chip: {
+    padding:'20px'
   }
 }));
 
@@ -27,12 +31,14 @@ export default function Index(props) {
   //console.log(items);
   return (
     <div className={classes.root}>
+      {/* <small>{items[0].title}</small> */}
       {items.map((item, index) => (
         <Chip
           key={index}
+          className={classes.chip}
           size="medium"
           variant={!item.turned ? 'default' : 'outlined'}
-          avatar={<Avatar>{item.turned ? "eng" : "ru"}</Avatar>}
+          avatar={<Avatar onClick = {!item.turned ? speakStr(item.rus, 'ru-Ru') : undefined}>{item.turned ? "eng" : "ru"}</Avatar>}
           onClick={handleClick}
           id={item.id}
           value={item.id}

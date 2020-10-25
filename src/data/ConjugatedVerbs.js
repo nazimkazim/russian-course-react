@@ -1,5 +1,5 @@
 // lesson 2.1
-export const conjVerbsSet = [
+export const conjVerbsSet1 = [
   {
     verb: 'Помога<strong>ть</strong>',
     tense: 'Present tense',
@@ -149,5 +149,79 @@ export const conjVerbsSet = [
       'Они ремонтиру<strong>ют</strong>'
     ],
     'link': 'https://cooljugator.com/ru/%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C'
+  }
+];
+
+// conjVerbsSet2 - одеваться - раздеваться - мыться
+export const conjVerbsSet2 = [
+  {
+    verb: 'Одева<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я одева<strong>ю</strong>сь',
+      'Ты одева<strong>ешь</strong>ся',
+      'Он одева<strong>ет</strong>ся',
+      'Она одева<strong>ет</strong>ся',
+      'Оно одева<strong>ет</strong>ся',
+      'Вы одева<strong>ете</strong>сь',
+      'Мы одева<strong>ем</strong>ся',
+      'Они одева<strong>ют</strong>ся'
+    ]
+  },
+  {
+    verb: 'Одева<strong>ть</strong>ся',
+    tense: 'Future tense (imperfect)',
+    set: [
+      'Я(буду) одева<strong>ть</strong>ся',
+      'Ты(будешь) одева<strong>ть</strong>ся',
+      'Он(будет) одева<strong>ть</strong>ся',
+      'Она(будет) одева<strong>ть</strong>ся',
+      'Оно(будет) одева<strong>ть</strong>ся',
+      'Вы(будете) одева<strong>ть</strong>ся',
+      'Мы(будем) одева<strong>ть</strong>ся',
+      'Они(будут) одева<strong>ть</strong>ся'
+    ]
+  },
+  {
+    verb: 'Одева<strong>ть</strong>ся',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я оде<strong>ну</strong>сь',
+      'Ты оде<strong>нешь</strong>ся',
+      'Он оде<strong>нет</strong>ся',
+      'Она оде<strong>нет</strong>ся',
+      'Оно оде<strong>нет</strong>ся',
+      'Вы оде<strong>нете</strong>сь',
+      'Мы оде<strong>нем</strong>ся',
+      'Они оде<strong>нут</strong>ся'
+    ]
+  },
+  {
+    verb: 'Одева<strong>ть</strong>ся',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я оде<strong>вал</strong>ся',
+      'Ты оде<strong>вал</strong>ся',
+      'Он оде<strong>вал</strong>ся',
+      'Она оде<strong>вала</strong>сь',
+      'Оно оде<strong>вало</strong>сь',
+      'Вы оде<strong>вали</strong>сь',
+      'Мы оде<strong>вали</strong>сь',
+      'Они оде<strong>вали</strong>сь'
+    ]
+  },
+  {
+    verb: 'Одева<strong>ть</strong>ся',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я оде<strong>л</strong>ся',
+      'Ты оде<strong>л</strong>ся',
+      'Он оде<strong>л</strong>ся',
+      'Она оде<strong>ла</strong>сь',
+      'Оно оде<strong>ло</strong>сь',
+      'Вы оде<strong>ли</strong>сь',
+      'Мы оде<strong>ли</strong>сь',
+      'Они оде<strong>ли</strong>сь'
+    ]
   }
 ];

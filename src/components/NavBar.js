@@ -33,7 +33,7 @@ export default class NavBar extends Component {
                 <Link to="/credits">Credits</Link>
               </Navbar.Item>
               <Navbar.Item renderAs="div">
-                <Link to="/english">English Lessons</Link>
+                <Link to="/individual-lessons">Individual Lessons</Link>
               </Navbar.Item>
               <Navbar.Item renderAs="div">
                 <Link to="/diagrams">Diagrams</Link>

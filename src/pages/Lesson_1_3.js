@@ -115,7 +115,7 @@ class Lesson_1_3 extends Component {
                   width="100%"
                   title="people"
                   styles={ "border: 0" }
-                 />
+                />
               </div>
             </div>
           </div>

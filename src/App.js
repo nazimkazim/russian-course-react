@@ -12,6 +12,8 @@ import Lesson_1_1 from './pages/Lesson_1_1';
 import Lesson_1_2 from './pages/Lesson_1_2';
 import Lesson_1_3 from './pages/Lesson_1_3';
 import Lesson_2_1 from './pages/Lesson_2_1';
+import CustomLessons from './pages/CustomLessonsPage';
+import JonCustomLesson1 from './pages/JonCustomLesson1'
 import Credits from './pages/Credits';
 import { Route, Switch } from "react-router-dom";
 
@@ -23,6 +25,8 @@ function App() {
         <Route exact path="/" component={ Home } />
         <Route exact path="/credits" component={ Credits } />
         <Route exact path="/diagrams" component={ DiagramsPage } />
+        <Route exact path="/individual-lessons" component={ CustomLessons } />
+        <Route exact path="/individual-lessons/jon-custom-lesson1" component={ JonCustomLesson1 } />
         <Route exact path="/diagrams/be-verb" component={ BeVerbPage } />
         <Route exact path="/diagrams/be-verb-practice-questions" component={ BeVerbPracticeQuestionsPage } />
         <Route exact path="/lessons/Известные брэнды" component={ Lesson_1_1 } />

@@ -54,11 +54,14 @@ const Item = styled.li`
 export default function VerbConjugationTemplate({ set }) {
   return (
     <Container>
-      <Header><ReactMarkdown source={ set.verb } escapeHtml={ false } /></Header>
+      <Header>
+        <ReactMarkdown source={ set.verb } escapeHtml={ false } />
+        <small>{set.tense}</small>
+      </Header>
       {set.set.map((s, i) => (
         <Item key={ s + i }>
           <SubjectPronounWrapper value={ s } onClick={ (e) => { speak(e, 'ru-RU'); } }>{ s.split(" ")[0] }</SubjectPronounWrapper>
-          <ReactMarkdown style={ { fontSize: '20px' } } source={ s.split(" ")[1] } escapeHtml={ false } />
+          <ReactMarkdown style={ { fontSize: '20px' } } source={ s.split(" ")[1] && s.split(" ")[1] } escapeHtml={ false } />
         </Item>
       )) }
     </Container>

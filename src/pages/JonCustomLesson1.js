@@ -1,20 +1,14 @@
 import React from 'react';
-import LessonHeader from './LessonHeaderTemplate';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
-import GuessPhraseFromPicture from '../components/GuessPhraseFromPicture';
-import { GWFP1 } from '../data/GuessWordFromPicture';
-import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
+import { conjVerbsSet2 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
+import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3 } from '../data/MemorizeTextClick';
 
 export default function Lesson_2_1() {
   return (
     <>
-      <section>
-        <div className="container is-fluid">
-          <LessonHeader topic="Моя жизнь" lesson="Урок 4" />
-        </div>
-      </section>
       <section className="newSection">
         <SectionHeader name="Новые слова" engName="New words" />
         <div className="container is-fluid">
@@ -22,26 +16,36 @@ export default function Lesson_2_1() {
             <div className="column">
               <Instruction letter="a" name="Посмотрите на слова и попытайтесь отгадать значение этих слов. Слушайте и повторяйте за учителем слова" engName="Look through the words and try to understand their meaning. Listen and repeat the words after your teacher" />
               <iframe
-                src="https://quizlet.com/526861202/flashcards/embed?i=4bby1&x=1jj1"
+                src="https://quizlet.com/540301456/flashcard/embed?i=4bby1&x=1jj1"
                 height="500"
                 width="100%"
                 title="new words 1"
                 styles={ "border:0" }></iframe>
             </div>
           </div>
-          <div className="columns">
-            <div className="column">
-              <Instruction letter="a" name="Отгадайте значение выделенного слова" engName="Guess meaning of the bolded word" />
-              <GuessPhraseFromPicture data={ GWFP1 } />
-            </div>
-          </div>
           <div className="columns is-multiline">
             <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
-            { conjVerbsSet1.map(set => (
+            { conjVerbsSet2.map(set => (
               <div className="column is-3">
                 <VebConjugationTemplate set={ set } />
               </div>
             )) }
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Новые слова" engName="New words" />
+
+        <div className="columns">
+          <div className="column">
+            <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash1, MTCTextCustomJon1dash2 } />
+            <hr />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash2 } />
+            <hr />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash3 } />
+            <hr />
+            
           </div>
         </div>
       </section>

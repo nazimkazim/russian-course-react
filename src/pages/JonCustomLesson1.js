@@ -39,7 +39,7 @@ export default function Lesson_2_1() {
         <div className="columns">
           <div className="column">
             <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
-            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash1, MTCTextCustomJon1dash2 } />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash1 } />
             <hr />
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash2 } />
             <hr />

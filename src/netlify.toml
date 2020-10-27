@@ -2,5 +2,3 @@
 from = "/*"
 to = "/index.html"
 status = 200
-publish="build/"
-NODE_VERSION="14"

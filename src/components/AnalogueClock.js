@@ -106,7 +106,7 @@ function AnalogueClock({ setHour, setMinute }) {
     setHour(hours[hourCounter]);
     setMinuteCounter(1);
     setMinute(minutes[minuteCounter]);
-  });
+  },[]);
 
   if (hourCounter >= 12) {
     setHourCounter(0);

@@ -30,7 +30,7 @@ export const beVerbQuestionsPracticeData1 = [
     country:'USA',
     profession:'Actor',
     food:['pizza', 'pasta'],
-    hobbies:['Cooking', 'playstation',, 'snowboarding'],
+    hobbies:['Cooking', 'playstation', 'snowboarding'],
     age:dt.getFullYear() - 1967,
     pronouns:['his', 'he']
   },

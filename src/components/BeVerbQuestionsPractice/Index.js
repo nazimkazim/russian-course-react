@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { beVerbQuestionsPracticeData1 } from '../../data/BeVerbQuestionsPractice';
 import { speakStr } from '../Pronunciation';
 
@@ -285,7 +285,7 @@ function Index() {
           )) }
           </Item>
         </Content>
-        <img src={ beVerbQuestionsPracticeData1[currentIdx].image } />
+        <img src={ beVerbQuestionsPracticeData1[currentIdx].image } alt=""/>
       </Card>
     </>
   );

@@ -69,10 +69,11 @@ export default function GuessWordFromPicture(props) {
         eng: item.eng,
         active: false
       });
+      return newData
     });
     //console.log(newData);
     setData(newData);
-  }, []);
+  }, [props.data]);
 
   useEffect(() => {
     if (currentIndex < 10) {
@@ -80,7 +81,7 @@ export default function GuessWordFromPicture(props) {
     } else {
       setGameIsFinished(true);
     }
-  }, [currentIndex]);
+  }, [currentIndex, data]);
 
   useEffect(() => {
     if (selectedWord !== '') {
@@ -96,7 +97,7 @@ export default function GuessWordFromPicture(props) {
       return mixedEngPhrases.push({ word: item.eng, active: false });
     });
     setMixedEngPhrases(_.shuffle(mixedEngPhrases));
-  }, []);
+  }, [props.data]);
 
   useEffect(() => {
     if (correctAnswer) {

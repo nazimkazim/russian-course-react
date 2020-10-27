@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { speak, speakStr } from '../Pronunciation';
 import AnalogueClock from '../AnalogueClock';
 

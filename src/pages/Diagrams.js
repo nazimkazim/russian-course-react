@@ -26,7 +26,7 @@ const Container = styled.div`
   align-items:flex-start;
   width:100vw;
   min-height:100vh;
-  padding:100px;
+  margin-top:100px;
 `;
 
 const Title = styled.span`
@@ -67,7 +67,6 @@ const ListContainer = styled.div`
   justify-content:flex-start;
   align-items:center;
   width:80vw;
-  padding:100px;
   min-height:100vh;
   /* background-color:${styles.listContanerBckColor}; */
 `;

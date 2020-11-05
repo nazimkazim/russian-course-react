@@ -478,7 +478,7 @@ export const MTCTextCustomJon1dash4 = [
         turned: true
     },
     {
-        eng: "In out times we dressed the way simplier ",
+        eng: "In our time we dressed the way simplier ",
         rus: "В наше время мы одевались намного проще ",
         id: nextId('MTCText1-4-id-'),
         turned: true

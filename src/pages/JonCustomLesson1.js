@@ -46,13 +46,13 @@ export default function Lesson_2_1() {
             <TenseDescriptionBox word='Одеваться' tense='Future Tense (Imperfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash2 } />
             <hr />
-            <TenseDescriptionBox word='Одеваться' tense='Future Tense (Perfect)'/>
+            <TenseDescriptionBox word='Одеться' tense='Future Tense (Perfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash3 } />
             <hr />
             <TenseDescriptionBox word='Одеваться' tense='Past Tense (Imperfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash4 } />
             <hr />
-            <TenseDescriptionBox word='Одеваться' tense='Past Tense (Perfect)'/>
+            <TenseDescriptionBox word='Одеться' tense='Past Tense (Perfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash5 } />
             <hr />
           </div>

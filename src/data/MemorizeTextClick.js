@@ -320,6 +320,9 @@ export const MTCText9 = [
 ];
 
 // Custom Jon Lesson 1
+
+// Одеваться
+// present tense (perfect)
 export const MTCTextCustomJon1dash1 = [
     {
         eng: "I usually  get dressed very long ",
@@ -359,6 +362,8 @@ export const MTCTextCustomJon1dash1 = [
     }
 ];
 
+// Одеваться
+// future tense (imperfect)
 export const MTCTextCustomJon1dash2 = [
     {
         eng: "When I am rich I will dress in expensive stores ",
@@ -398,6 +403,8 @@ export const MTCTextCustomJon1dash2 = [
     }
 ];
 
+// Одеваться
+// future tense (perfect)
 export const MTCTextCustomJon1dash3 = [
     {
         eng: "As I said to you, by 4 o'clock I will have already got dressed ",
@@ -433,6 +440,100 @@ export const MTCTextCustomJon1dash3 = [
         eng: "They will get dressed stylishly to attract investors ",
         rus: "Они оденутся стильно, чтобы привлечь инвесторов ",
         id: nextId('MTCText1-3-id-'),
+        turned: true
+    }
+];
+
+// Одеваться
+// past tense (imperfect)
+export const MTCTextCustomJon1dash4 = [
+    {
+        eng: "I was getting dressed in my room, when the phone rang ",
+        rus: "Я одевался в своей комнате когда телефон позвонил ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "When you were getting dressed, the thief stole your wallet ",
+        rus: "Когда ты одевался вор украл твой кошелёк ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "While he was getting dressed, he forgot everything he wanted to say ",
+        rus: "В то время как он одевался, он забыл все что хотел сказать ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "While she was getting dressed, children were playing noisily ",
+        rus: "В то время как она одевалась дети играли шумно ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "I saw how you (plural) were getting dressed hastily  ",
+        rus: "Я видел как вы одевались в спешке ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "In out times we dressed the way simplier ",
+        rus: "В наше время мы одевались намного проще ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "In 20th century men in England dressed formally ",
+        rus: "В 20-ом веке мужчины в Англии одевались формально ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    }
+];
+
+// Одеваться
+// past tense (perfect)
+export const MTCTextCustomJon1dash5 = [
+    {
+        eng: "I have already got dressed and waiting for you ",
+        rus: "Я уже оделся и жду тебя ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "Have you got dressed yet? ",
+        rus: "Ты уже оделся? ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "He got dressed quickly and went to work ",
+        rus: "Он быстро оделся и пошёл на работу ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "She got dressed and went to the shop ",
+        rus: "Она оделась и пошла в магазин ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "I hope you have already got dressed, bucause we are getting late for the bus  ",
+        rus: "Я надеюсь вы уже оделись потому что мы опаздываем на автобус ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "We have just got dressed ",
+        rus: "Мы только что оделись ",
+        id: nextId('MTCText1-4-id-'),
+        turned: true
+    },
+    {
+        eng: "Mother wanted us to dress like Marvel superheroes ",
+        rus: "Мама хотела, чтобы мы оделись как супергерои марвела ",
+        id: nextId('MTCText1-4-id-'),
         turned: true
     }
 ];

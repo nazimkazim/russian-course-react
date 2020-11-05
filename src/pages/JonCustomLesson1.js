@@ -4,7 +4,8 @@ import SectionHeader from '../components/SectionHeader';
 import { conjVerbsSet2 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5 } from '../data/MemorizeTextClick';
+import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
   return (
@@ -39,13 +40,21 @@ export default function Lesson_2_1() {
         <div className="columns">
           <div className="column">
             <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
+            <TenseDescriptionBox word='Одеваться' tense='Present Tense (Imperfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash1 } />
             <hr />
+            <TenseDescriptionBox word='Одеваться' tense='Future Tense (Imperfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash2 } />
             <hr />
+            <TenseDescriptionBox word='Одеваться' tense='Future Tense (Perfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash3 } />
             <hr />
-            
+            <TenseDescriptionBox word='Одеваться' tense='Past Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash4 } />
+            <hr />
+            <TenseDescriptionBox word='Одеваться' tense='Past Tense (Perfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash5 } />
+            <hr />
           </div>
         </div>
       </section>

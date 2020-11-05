@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   chip: {
-    padding:'20px'
+    padding:'5px' 
   }
 }));
 

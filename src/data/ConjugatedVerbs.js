@@ -152,7 +152,7 @@ export const conjVerbsSet1 = [
   }
 ];
 
-// conjVerbsSet2 - одеваться - раздеваться - мыться
+// conjVerbsSet2 - одеваться
 export const conjVerbsSet2 = [
   {
     verb: 'Одева<strong>ть</strong>ся',
@@ -183,7 +183,7 @@ export const conjVerbsSet2 = [
     ]
   },
   {
-    verb: 'Одева<strong>ть</strong>ся',
+    verb: 'Оде<strong>ть</strong>ся',
     tense: 'Future tense (perfect)',
     set: [
       'Я оде<strong>ну</strong>сь',
@@ -211,7 +211,7 @@ export const conjVerbsSet2 = [
     ]
   },
   {
-    verb: 'Одева<strong>ть</strong>ся',
+    verb: 'Оде<strong>ть</strong>ся',
     tense: 'Past tense (perfect)',
     set: [
       'Я оде<strong>л</strong>ся',

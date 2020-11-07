@@ -225,3 +225,77 @@ export const conjVerbsSet2 = [
     ]
   }
 ];
+
+// conjVerbsSet3 - мыться/помыться
+export const conjVerbsSet3 = [
+  {
+    verb: 'Мы<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я мо<strong>ю</strong>сь',
+      'Ты мо<strong>ешь</strong>ся',
+      'Он мо<strong>ет</strong>ся',
+      'Она мо<strong>ет</strong>ся',
+      'Оно мо<strong>ет</strong>ся',
+      'Вы мо<strong>ете</strong>сь',
+      'Мы мо<strong>ем</strong>ся',
+      'Они мо<strong>ют</strong>ся'
+    ]
+  },
+  {
+    verb: 'Мы<strong>ть</strong>ся',
+    tense: 'Future tense (imperfect)',
+    set: [
+      'Я(буду) мы<strong>ть</strong>ся',
+      'Ты(будешь) мы<strong>ть</strong>ся',
+      'Он(будет) мы<strong>ть</strong>ся',
+      'Она(будет) мы<strong>ть</strong>ся',
+      'Оно(будет) мы<strong>ть</strong>ся',
+      'Вы(будете) мы<strong>ть</strong>ся',
+      'Мы(будем) мы<strong>ть</strong>ся',
+      'Они(будут) мы<strong>ть</strong>ся'
+    ]
+  },
+  {
+    verb: 'Помы<strong>ть</strong>ся',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я помо<strong>ю</strong>сь',
+      'Ты помо<strong>ешь</strong>ся',
+      'Он помо<strong>ет</strong>ся',
+      'Она помо<strong>ет</strong>ся',
+      'Оно помо<strong>ет</strong>ся',
+      'Вы помо<strong>ете</strong>сь',
+      'Мы помо<strong>ем</strong>ся',
+      'Они помо<strong>ют</strong>ся'
+    ]
+  },
+  {
+    verb: 'Мы<strong>ть</strong>ся',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я мы<strong>л</strong>ся',
+      'Ты мы<strong>л</strong>ся',
+      'Он мы<strong>л</strong>ся',
+      'Она мы<strong>ла</strong>сь',
+      'Оно мы<strong>ло</strong>сь',
+      'Вы мы<strong>ли</strong>сь',
+      'Мы мы<strong>ли</strong>сь',
+      'Они мы<strong>ли</strong>сь'
+    ]
+  },
+  {
+    verb: 'Помы<strong>ть</strong>ся',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я помы<strong>л</strong>ся',
+      'Ты помы<strong>л</strong>ся',
+      'Он помы<strong>л</strong>ся',
+      'Она помы<strong>ла</strong>сь',
+      'Оно помы<strong>ло</strong>сь',
+      'Вы помы<strong>ли</strong>сь',
+      'Мы помы<strong>ли</strong>сь',
+      'Они помы<strong>ли</strong>сь'
+    ]
+  }
+];

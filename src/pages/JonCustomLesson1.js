@@ -1,10 +1,10 @@
 import React from 'react';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
-import { conjVerbsSet2 } from '../data/ConjugatedVerbs';
+import { conjVerbsSet2, conjVerbsSet3 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
@@ -35,8 +35,7 @@ export default function Lesson_2_1() {
         </div>
       </section>
       <section className="newSection">
-        <SectionHeader name="Новые слова" engName="New words" />
-
+        <SectionHeader name="Практикуйте слово (Одеваться)" engName="Practice the word (get dressed)" />
         <div className="columns">
           <div className="column">
             <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
@@ -55,6 +54,37 @@ export default function Lesson_2_1() {
             <TenseDescriptionBox word='Одеться' tense='Past Tense (Perfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash5 } />
             <hr />
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Практикуйте слово (Мыться/Помыться)" engName="Practice the word (to wash oneself)" />
+        <div className="columns is-multiline">
+            <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
+            { conjVerbsSet3.map(set => (
+              <div className="column is-3">
+                <VebConjugationTemplate set={ set } />
+              </div>
+            )) }
+          </div>
+        <div className="columns">
+          <div className="column">
+            <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
+            <TenseDescriptionBox word='Мыться' tense='Present Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash6 } />
+            <hr />
+            <TenseDescriptionBox word='Мыться' tense='Future Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash7 } />
+            {/* <hr />
+            <TenseDescriptionBox word='Помыться' tense='Future Tense (Perfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash3 } />
+            <hr />
+            <TenseDescriptionBox word='Мыться' tense='Past Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash4 } />
+            <hr />
+            <TenseDescriptionBox word='Помыться' tense='Past Tense (Perfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash5 } />
+            <hr /> */}
           </div>
         </div>
       </section>

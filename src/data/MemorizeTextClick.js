@@ -537,3 +537,98 @@ export const MTCTextCustomJon1dash5 = [
         turned: true
     }
 ];
+
+
+// Мыться
+// present tense (imperfect)
+export const MTCTextCustomJon1dash6 = [
+    {
+        eng: "I wash myself 8 times a month ",
+        rus: "Я моюсь восемь раз в месяц ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    },
+    {
+        eng: "How do you feel yourself when you wash yourself at guest? ",
+        rus: "Как ты себя чувствуешь когда моешься в гостях? ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    },
+    {
+        eng: "He does not wash himself at work because it is dirty there ",
+        rus: "Он не моется на работе, потому что там грязно ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    },
+    {
+        eng: "I do not like that she washes herself so often ",
+        rus: "Мне не нравится, что она моется так часто ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    },
+    {
+        eng: "Do you listen to music when you wash yourself?  ",
+        rus: "Вы слушаете музыку когда моетесь? ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    },
+    {
+        eng: "We do not wash ourselves in sauna, because we have a heart condition ",
+        rus: "Мы не моемся в бане, потому что у нас больное сердце ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    },
+    {
+        eng: "Please wait for them, they are still washing themsleves ",
+        rus: "Пожалуйста подожди их, они еще моются ",
+        id: nextId('MTCText1-6-id-'),
+        turned: true
+    }
+];
+
+// Мыться
+// future tense (imperfect)
+export const MTCTextCustomJon1dash7 = [
+    {
+        eng: "I will wash myself, please, watch nobody comes in ",
+        rus: "Я буду мыться пожалуйста посмотри чтобы никто не зашёл ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Will you wash yourself in the evening? ",
+        rus: "Ты будешь мыться вечером? ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He will wash himself only if there is hot water in the tap",
+        rus: "Он будет мыться только, если есть горячая вода в кране ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Do not occupy the bathroom she will wash herself ",
+        rus: "Не занимай ванную она будет мыться ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you wash yourself, make sure that there is hot water in the tap ",
+        rus: "Когда вы будете мыться убедитесь, что в кране есть горячая вода ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We will wash ourself only if there is cold water ",
+        rus: "Мы будем мыться только если будет холодная вода ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Ask them will they wash themselves? ",
+        rus: "Спроси у них они будут мыться? ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

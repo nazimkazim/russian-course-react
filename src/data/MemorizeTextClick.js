@@ -590,25 +590,25 @@ export const MTCTextCustomJon1dash6 = [
 // future tense (imperfect)
 export const MTCTextCustomJon1dash7 = [
     {
-        eng: "I will wash myself, please, watch nobody comes in ",
+        eng: "I will be washing myself, please, watch nobody comes in ",
         rus: "Я буду мыться пожалуйста посмотри чтобы никто не зашёл ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "Will you wash yourself in the evening? ",
+        eng: "Will you be washing yourself in the evening? ",
         rus: "Ты будешь мыться вечером? ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "He will wash himself only if there is hot water in the tap",
+        eng: "He will be washing himself only if there is hot water in the tap",
         rus: "Он будет мыться только, если есть горячая вода в кране ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "Do not occupy the bathroom she will wash herself ",
+        eng: "Do not occupy the bathroom she will be washing herself ",
         rus: "Не занимай ванную она будет мыться ",
         id: nextId('MTCText1-7-id-'),
         turned: true
@@ -620,14 +620,109 @@ export const MTCTextCustomJon1dash7 = [
         turned: true
     },
     {
-        eng: "We will wash ourself only if there is cold water ",
+        eng: "We will be washing ourself only if there is cold water ",
         rus: "Мы будем мыться только если будет холодная вода ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "Ask them will they wash themselves? ",
+        eng: "Ask them will they be washing themselves? ",
         rus: "Спроси у них они будут мыться? ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+
+// Мыться
+// future tense (perfect)
+export const MTCTextCustomJon1dash8 = [
+    {
+        eng: "I will wash myself if it is possible ",
+        rus: "Я помоюсь если можно ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "As soon as you wash yourself, let me know, I need to check water ",
+        rus: "Как только ты помоешься дай мне знать, мне нужно проверить воду ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He will wash himself and then he will go to the shop to buy some bread",
+        rus: "Он помоется а затем пойдет в магазин купить хлеб ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "She decided that she will wash herself at 4, since the bathroom will be occupied ",
+        rus: "Она решила что помоется в 4, так как ванная комната будет занята ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you will have washed youself, please turn the light off ",
+        rus: "Когда вы помоетесь, пожалуйста выключите свет ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Let them wash themselves, otherwise they will be angry ",
+        rus: "Пусть они помоются, иначе они будут злые ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They will wash themselves and they will go to bed ",
+        rus: "Они помоются и пойдут спать ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Мыться
+// past tense (imperfect)
+export const MTCTextCustomJon1dash9 = [
+    {
+        eng: "I will wash myself if it is possible ",
+        rus: "Я помоюсь если можно ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "As soon as you wash yourself, let me know, I need to check water ",
+        rus: "Как только ты помоешься дай мне знать, мне нужно проверить воду ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He will wash himself and then he will go to the shop to buy some bread",
+        rus: "Он помоется а затем пойдет в магазин купить хлеб ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "She decided that she will wash herself at 4, since the bathroom will be occupied ",
+        rus: "Она решила что помоется в 4, так как ванная комната будет занята ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you will have washed youself, please turn the light off ",
+        rus: "Когда вы помоетесь, пожалуйста выключите свет ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Let them wash themselves, otherwise they will be angry ",
+        rus: "Пусть они помоются, иначе они будут злые ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They will wash themselves and they will go to bed ",
+        rus: "Они помоются и пойдут спать ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     }

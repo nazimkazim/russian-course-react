@@ -4,7 +4,7 @@ import SectionHeader from '../components/SectionHeader';
 import { conjVerbsSet2, conjVerbsSet3 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
@@ -80,10 +80,10 @@ export default function Lesson_2_1() {
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash8 } />
             <hr />
             <TenseDescriptionBox word='Мыться' tense='Past Tense (Imperfect)'/>
-            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash4 } />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash9 } />
             <hr />
             <TenseDescriptionBox word='Помыться' tense='Past Tense (Perfect)'/>
-            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash5 } />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash10 } />
             <hr />
           </div>
         </div>

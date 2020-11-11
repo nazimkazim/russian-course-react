@@ -685,44 +685,91 @@ export const MTCTextCustomJon1dash8 = [
 // past tense (imperfect)
 export const MTCTextCustomJon1dash9 = [
     {
-        eng: "I will wash myself if it is possible ",
-        rus: "Я помоюсь если можно ",
+        eng: "I was washing myself unhurriedly, thought there is still time ",
+        rus: "Я мылся неспеша, думал, что есть еще время ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "As soon as you wash yourself, let me know, I need to check water ",
-        rus: "Как только ты помоешься дай мне знать, мне нужно проверить воду ",
+        eng: "When you were washing yourself in bathroom, thieves entered the house ",
+        rus: "Когда ты мылся в ванной, воры проникли в дом ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "He will wash himself and then he will go to the shop to buy some bread",
-        rus: "Он помоется а затем пойдет в магазин купить хлеб ",
+        eng: "We knew that he was washing himself so we didn't call ",
+        rus: "Мы знали что он мылся поэтому мы не звонили ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "She decided that she will wash herself at 4, since the bathroom will be occupied ",
-        rus: "Она решила что помоется в 4, так как ванная комната будет занята ",
+        eng: "She was washing herself under the shower, and thought about her problems ",
+        rus: "Она мылась под душем, и думала о своих проблемах ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "When you will have washed youself, please turn the light off ",
-        rus: "Когда вы помоетесь, пожалуйста выключите свет ",
+        eng: "When was the last time you washed? ",
+        rus: "Когда вы мылись в последний раз ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "Let them wash themselves, otherwise they will be angry ",
-        rus: "Пусть они помоются, иначе они будут злые ",
+        eng: "We were washing so we didn't hear the knock on the door ",
+        rus: "Мы мылись поэтому мы не слышали стук в дверь ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
     {
-        eng: "They will wash themselves and they will go to bed ",
-        rus: "Они помоются и пойдут спать ",
+        eng: "When they washed, they usually used a mesh brush, soap and shampoo ",
+        rus: "Когда они мылись они обычно использовали вихотку, мыло и шампунь ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Мыться
+// past tense (perfect)
+export const MTCTextCustomJon1dash10 = [
+    {
+        eng: "I have already washed you can come in ",
+        rus: "Я уже помылся вы можете зайти ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "People are interested, whether you have already washed yourself ",
+        rus: "Люди интересуются, ты уже помылся ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He has not yet washed, although in the bathroom for 2 hours ",
+        rus: "Он еще не помылся хотя в ванной 2 часа ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I didn't notice that she had already washed ",
+        rus: "Я не заметил что она уже помылась ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Sorry to bother you, but have you showered yet? ",
+        rus: "Извините за беспокойство, но вы уже помылись? ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We washed 20 minutes ago and immediately went to eat ",
+        rus: "Мы помылись 20 минут назад и сразу пошли кушать ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They washed and immediately went to the concert ",
+        rus: "Они помылись и сразу пошли на концерт ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     }

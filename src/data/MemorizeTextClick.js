@@ -721,8 +721,8 @@ export const MTCTextCustomJon1dash9 = [
         turned: true
     },
     {
-        eng: "When they washed, they usually used a mesh brush, soap and shampoo ",
-        rus: "Когда они мылись они обычно использовали вихотку, мыло и шампунь ",
+        eng: "When they washed, they usually used a washcloth, soap and shampoo ",
+        rus: "Когда они мылись они обычно использовали мочалка, мыло и шампунь ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     }

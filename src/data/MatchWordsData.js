@@ -1,13 +1,13 @@
 // Lesson 2.1 matching activity
 export const matchingWordsData1 = [
   {
-    word1:'Банкир',
-    word2:'Банк',
+    word1:'Банк',
+    word2:'Банкир',
     pair:['Банкир', 'Банк']
   },
   {
-    word1:'Актёр',
-    word2:'Театр',
+    word1:'Театр',
+    word2:'Актёр',
     pair:['Актёр', 'Театр']
   },
   {

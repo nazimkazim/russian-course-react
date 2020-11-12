@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { uid } from 'react-uid';
+import {speakStr} from '../components/Pronunciation';
 let _ = require("lodash");
 
 
@@ -61,11 +62,12 @@ function MatchWords({ data }) {
   }, []);
   //console.log(data);
   console.log(wordsOne);
-  //console.log(wordsTwo);
+  console.log(wordsTwo);
 
   const onClickWordsOne = (e) => {
     const val = e.target.value;
     const id = e.target.id;
+    speakStr(val, 'ru-Ru')
     const newWordsOneArr = [...wordsOne].map((item) => {
       if (item.id === id) {
         console.log('true');

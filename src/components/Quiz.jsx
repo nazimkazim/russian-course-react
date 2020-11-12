@@ -100,8 +100,6 @@ class Quiz extends Component {
     return a.sort().toString() === b.sort().toString() 
   };
 
-
-
   render() {
     //console.log(this.state.mixedWords);
     //console.log(this.state.myanswers);

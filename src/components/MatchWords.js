@@ -70,7 +70,7 @@ function MatchWords({ data }) {
   console.log(wordsOne);
   console.log(wordsTwo);
   //console.log(allPairs);
-  //console.log(selectedWords);
+  console.log(selectedWords);
   //console.log(isMatch);
 
   useEffect(() => {
@@ -88,6 +88,8 @@ function MatchWords({ data }) {
 
   useEffect(() => {
     if (isMatch) {
+      setSelectedWords([])
+      setIsMatch(false)
       const newWordsOneArr = [...wordsOne].map((item) => {
         if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
           console.log('true93');
@@ -107,6 +109,9 @@ function MatchWords({ data }) {
       });
       setWordsOne(newWordsOneArr);
       setWordsTwo(newWordsTwoArr);
+    } else {
+      setIsMatch(false)
+      setSelectedWords([])
     }
   }, [isMatch]);
 

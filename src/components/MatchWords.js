@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { uid } from 'react-uid';
-import {speakStr} from '../components/Pronunciation';
+import { speakStr } from '../components/Pronunciation';
 let _ = require("lodash");
 
 
@@ -39,7 +39,7 @@ const Word = styled.button`
   font-size:14px;
   outline:none;
   border-radius:6px;
-  background-color:${(props) => props.clicked ? '#AFCEFE' : '' };
+  background-color:${(props) => props.clicked ? '#AFCEFE' : ''};
   margin-top:2px;
   &:hover {
     background-color:#C3DBFE;
@@ -50,43 +50,105 @@ const Word = styled.button`
 function MatchWords({ data }) {
   const [wordsOne, setWordsOne] = useState([]);
   const [wordsTwo, setWordsTwo] = useState([]);
+  const [allPairs, setAllPairs] = useState([]);
+  const [selectedWords, setSelectedWords] = useState([]);
+  const [isMatch, setIsMatch] = useState(false);
   useEffect(() => {
     const wordsOneArr = [];
     const wordsTwoArr = [];
+    const allPairs = [];
     data.forEach((obj) => {
-      wordsOneArr.push({ word: obj.word1, id: `p-${uid(obj)}`, clicked: false });
-      wordsTwoArr.push({ word: obj.word2, id: `s-${uid(obj)}`, clicked: false });
+      wordsOneArr.push({ word: obj.word1, id: `p-${uid(obj)}`, clicked: false, disabled: false });
+      wordsTwoArr.push({ word: obj.word2, id: `s-${uid(obj)}`, clicked: false, disabled: false });
+      allPairs.push(obj.pair);
     });
     setWordsOne(_.shuffle(wordsOneArr));
     setWordsTwo(_.shuffle(wordsTwoArr));
+    setAllPairs(allPairs);
   }, []);
   //console.log(data);
   console.log(wordsOne);
   console.log(wordsTwo);
+  //console.log(allPairs);
+  //console.log(selectedWords);
+  //console.log(isMatch);
+
+  useEffect(() => {
+    if (selectedWords.length > 1) {
+      const arraysEqual = (a, b) => {
+        return a.sort().toString() === b.sort().toString();
+      };
+      allPairs.forEach(pair => {
+        if (arraysEqual(pair, selectedWords)) {
+          setIsMatch(true);
+        }
+      });
+    }
+  }, [selectedWords]);
+
+  useEffect(() => {
+    if (isMatch) {
+      const newWordsOneArr = [...wordsOne].map((item) => {
+        if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
+          console.log('true93');
+          return Object.assign({}, item, { disabled: true });
+        } else {
+          return item;
+        }
+      });
+
+      const newWordsTwoArr = [...wordsTwo].map((item) => {
+        if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
+          console.log('true102');
+          return Object.assign({}, item, { disabled: true });
+        } else {
+          return item;
+        }
+      });
+      setWordsOne(newWordsOneArr);
+      setWordsTwo(newWordsTwoArr);
+    }
+  }, [isMatch]);
 
   const onClickWordsOne = (e) => {
     const val = e.target.value;
     const id = e.target.id;
-    speakStr(val, 'ru-Ru')
+    speakStr(val, 'ru-Ru');
     const newWordsOneArr = [...wordsOne].map((item) => {
       if (item.id === id) {
-        console.log('true');
+        //console.log('true');
         return Object.assign({}, item, { clicked: true });
       } else {
-        return item
+        return item;
       }
     });
-    /* newWordsOneArr.map((item) => item.id === id ? Object.assign({}, item, { clicked:true }) : item) */
-
     setWordsOne(newWordsOneArr);
+    setSelectedWords(words => [...words, val]);
   };
+
+  const onClickWordsTwo = (e) => {
+    const val = e.target.value;
+    const id = e.target.id;
+    speakStr(val, 'ru-Ru');
+    const newWordsTwoArr = [...wordsTwo].map((item) => {
+      if (item.id === id) {
+        //console.log('true');
+        return Object.assign({}, item, { clicked: true });
+      } else {
+        return item;
+      }
+    });
+    setWordsTwo(newWordsTwoArr);
+    setSelectedWords(words => [...words, val]);
+  };
+
   return (
     <Container>
       <Half>{ wordsOne.map((word) => (
-        <Word key={ word.id } clicked={word.clicked} value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsOne(e); } }>{ word.word }</Word>
+        <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsOne(e); } } disabled={word.disabled}>{ word.word }</Word>
       )) }</Half>
       <Half>{ wordsTwo.map((word) => (
-        <Word key={ word.id }>{ word.word }</Word>
+        <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsTwo(e); } } disabled={word.disabled}>{ word.word }</Word>
       )) }</Half>
     </Container>
   );

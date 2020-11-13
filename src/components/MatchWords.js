@@ -48,15 +48,18 @@ const Word = styled.button`
 `;
 
 function MatchWords({ data }) {
+
   const [wordsOne, setWordsOne] = useState([]);
   const [wordsTwo, setWordsTwo] = useState([]);
   const [allPairs, setAllPairs] = useState([]);
   const [selectedWords, setSelectedWords] = useState([]);
   const [isMatch, setIsMatch] = useState(false);
+
   useEffect(() => {
     const wordsOneArr = [];
     const wordsTwoArr = [];
     const allPairs = [];
+
     data.forEach((obj) => {
       wordsOneArr.push({ word: obj.word1, id: `p-${uid(obj)}`, clicked: false, disabled: false });
       wordsTwoArr.push({ word: obj.word2, id: `s-${uid(obj)}`, clicked: false, disabled: false });
@@ -74,17 +77,22 @@ function MatchWords({ data }) {
   //console.log(isMatch);
 
   useEffect(() => {
+    // check only if length of selectedWords array equal 2
     if (selectedWords.length === 2) {
+      // function to check if arrays are equal, returns boolean
       const arraysEqual = (a, b) => {
         return a.sort().toString() === b.sort().toString();
       };
+      // iterate through all pairs, if if selected pair is equal to one of the pairs
+      // set isMatch to true, else restore disabled and clicked properties of unmatched to false
+      // for newWordsOneArr and newWordsTwoArr
       allPairs.forEach(pair => {
         if (arraysEqual(pair, selectedWords)) {
           setIsMatch(true);
         } else {
           const newWordsOneArr = [...wordsOne].map((item) => {
             if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
-              console.log('true93');
+              //console.log('true93');
               return Object.assign({}, item, { disabled: false, clicked: false });
             } else {
               return item;
@@ -93,14 +101,18 @@ function MatchWords({ data }) {
 
           const newWordsTwoArr = [...wordsTwo].map((item) => {
             if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
-              console.log('true102');
+              //console.log('true102');
               return Object.assign({}, item, { disabled: false, clicked: false });
             } else {
               return item;
             }
           });
+          // set state to new objects
           setWordsOne(newWordsOneArr);
           setWordsTwo(newWordsTwoArr);
+          setTimeout(() => {
+            setSelectedWords([])
+          },0.1)
         }
       });
     }
@@ -108,13 +120,16 @@ function MatchWords({ data }) {
 
 
   useEffect(() => {
+    // if match set selected words to empty array and isMatch back to false
     if (isMatch) {
       setSelectedWords([]);
       setIsMatch(false);
+      //if match disabled and clicked properties set to true for newWordsTwoArr and newWordsOneArr  
+      // otherwise set isMatch to false and selected words to empty array
       const newWordsOneArr = [...wordsOne].map((item) => {
         if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
           console.log('true93');
-          return Object.assign({}, item, { disabled: true, clicked:true });
+          return Object.assign({}, item, { disabled: true, clicked: true });
         } else {
           return item;
         }
@@ -123,7 +138,7 @@ function MatchWords({ data }) {
       const newWordsTwoArr = [...wordsTwo].map((item) => {
         if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
           console.log('true102');
-          return Object.assign({}, item, { disabled: true, clicked:true });
+          return Object.assign({}, item, { disabled: true, clicked: true });
         } else {
           return item;
         }

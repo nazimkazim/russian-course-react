@@ -104,11 +104,8 @@ function MatchWords({ data }) {
         }
       });
     }
-
-    if (selectedWords.length > 2) {
-      setSelectedWords([]);
-    }
   }, [selectedWords]);
+
 
   useEffect(() => {
     if (isMatch) {
@@ -138,6 +135,13 @@ function MatchWords({ data }) {
       setSelectedWords([]);
     }
   }, [isMatch]);
+
+  /* useEffect(() => {
+    if (selectedWords.length === 2 && isMatch) {
+      setIsMatch(false);
+      setSelectedWords([]);
+    }
+  }, [selectedWords, isMatch]) */
 
   const onClickWordsOne = (e) => {
     const val = e.target.value;

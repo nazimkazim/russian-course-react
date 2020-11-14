@@ -89,3 +89,87 @@ export const accusativeData1 = [
     ]
   }
 ];
+
+export const prepositionalCaseData1 = [
+  {
+    gender: 'он',
+    icon: MaleIcon,
+    body: [
+      {
+        type: 'человек',
+        rules: [
+          `&#10006;`
+        ]
+      },
+      {
+        type: 'вещь',
+        rules: [
+          'согласная + е',
+          '-й, -ь &#8594; -е'
+        ]
+      }
+    ]
+    ,
+    examples: [
+      'Я работаю в театре',
+      'Он работает в парламенте'
+    ]
+  },
+  {
+    gender: 'она',
+    icon: FemaleIcon,
+    body: [
+      {
+        type: 'человек',
+        rules: [
+          `&#10006;`
+        ]
+      },
+      {
+        type: 'вещь',
+        rules: [
+          '-а, -я &#8594; -е'
+        ]
+      }
+
+    ]
+    ,
+    examples: [
+      'Мы работаем в больнице',
+      'Они работают в школе'
+    ]
+  },
+  {
+    gender: 'оно',
+    icon: ObjectIcon,
+    body: [
+      {
+        type: 'вещь',
+        rules: [
+          '-о, -е &#8594; -е'
+        ]
+      }
+
+    ]
+    ,
+    examples: [
+      'Ты работаешь в кафе'
+    ]
+  },
+  {
+    gender: 'они',
+    icon: PluralIcon,
+    body: [
+      {
+        type: 'вещь',
+        rules: [
+          '&#10006;'
+        ]
+      }
+    ]
+    ,
+    examples: [
+     
+    ]
+  }
+];

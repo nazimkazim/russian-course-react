@@ -7,7 +7,7 @@ import { matchingWordsData1 } from '../data/MatchWordsData';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate'
-import {accusativeData1} from '../data/CasesData'
+import {prepositionalCaseData1} from '../data/CasesData'
 
 
 
@@ -64,7 +64,7 @@ export default function Lesson_2_1() {
             )) }
           </div>
           <div className="columns">
-            <CasesTemplate data={accusativeData1}/>
+            <CasesTemplate centered={true} data={prepositionalCaseData1}/>
           </div>
         </div>
       </section>

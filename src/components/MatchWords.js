@@ -6,6 +6,7 @@ let _ = require("lodash");
 
 
 const Container = styled.div`
+  position:relative;
   display:flex;
   max-width:320px;
   border-radius:16px;
@@ -18,6 +19,10 @@ const Container = styled.div`
   /* background-color:blue; */
 `;
 const Half = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
   flex:0.5;
   height:100%;
   padding:3px;
@@ -33,6 +38,7 @@ const Word = styled.button`
   border-bottom:2px solid #1CB0F6;
   border-left:1px solid #1CB0F6;
   border-right:1px solid #1CB0F6;
+  text-decoration: ${(props) => props.disabled ? 'line-through' : ''};
   width:100%;
   height:auto;
   padding:5px;
@@ -44,6 +50,43 @@ const Word = styled.button`
   &:hover {
     background-color:#C3DBFE;
     transition:.6s;
+  }
+`;
+
+const Header = styled.p`
+  font-size:16px;
+  font-weight:bold;
+`;
+
+const Restart = styled.button`
+  display:flex;
+  justify-content:center;
+  align-center:center;
+  position:absolute;
+  width:25px;
+  height:25px;
+  border-radius:50%;
+  margin-left:auto;
+  margin-right:auto;
+  left:0;
+  right:0;
+  outline:none;
+  border:none;
+  cursor:pointer;
+  background-image:url('https://res.cloudinary.com/nzmai/image/upload/v1595334222/icons/restart.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border:1px solid #1CB0F6;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75); 
+
+  &:hover {
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    transition:0.6s;
   }
 `;
 
@@ -70,10 +113,10 @@ function MatchWords({ data }) {
     setAllPairs(allPairs);
   }, []);
   //console.log(data);
-  console.log(wordsOne);
-  console.log(wordsTwo);
+  //console.log(wordsOne);
+  //console.log(wordsTwo);
   //console.log(allPairs);
-  console.log(selectedWords);
+  //console.log(selectedWords);
   //console.log(isMatch);
 
   useEffect(() => {
@@ -111,8 +154,8 @@ function MatchWords({ data }) {
           setWordsOne(newWordsOneArr);
           setWordsTwo(newWordsTwoArr);
           setTimeout(() => {
-            setSelectedWords([])
-          },0.1)
+            setSelectedWords([]);
+          }, 0.1);
         }
       });
     }
@@ -128,7 +171,7 @@ function MatchWords({ data }) {
       // otherwise set isMatch to false and selected words to empty array
       const newWordsOneArr = [...wordsOne].map((item) => {
         if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
-          console.log('true93');
+          //console.log('true93');
           return Object.assign({}, item, { disabled: true, clicked: true });
         } else {
           return item;
@@ -137,7 +180,7 @@ function MatchWords({ data }) {
 
       const newWordsTwoArr = [...wordsTwo].map((item) => {
         if (item.word === selectedWords[0] || item.word === selectedWords[1]) {
-          console.log('true102');
+          //console.log('true102');
           return Object.assign({}, item, { disabled: true, clicked: true });
         } else {
           return item;
@@ -190,14 +233,37 @@ function MatchWords({ data }) {
     setSelectedWords(words => [...words, val]);
   };
 
+  const restartActivity = () => {
+    const wordsOneArr = [];
+    const wordsTwoArr = [];
+    const allPairs = [];
+
+    data.forEach((obj) => {
+      wordsOneArr.push({ word: obj.word1, id: `p-${uid(obj)}`, clicked: false, disabled: false });
+      wordsTwoArr.push({ word: obj.word2, id: `s-${uid(obj)}`, clicked: false, disabled: false });
+      allPairs.push(obj.pair);
+    });
+    setWordsOne(_.shuffle(wordsOneArr));
+    setWordsTwo(_.shuffle(wordsTwoArr));
+    setAllPairs(allPairs);
+    setSelectedWords([])
+    setIsMatch(false)
+  }
+
   return (
     <Container>
-      <Half>{ wordsOne.map((word) => (
-        <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsOne(e); } } disabled={ word.disabled }>{ word.word }</Word>
-      )) }</Half>
-      <Half>{ wordsTwo.map((word) => (
-        <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsTwo(e); } } disabled={ word.disabled }>{ word.word }</Word>
-      )) }</Half>
+      <Restart onClick={() => {restartActivity()}}></Restart>
+      <Half>
+        <Header>Places</Header>
+        { wordsOne.map((word) => (
+          <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsOne(e); } } disabled={ word.disabled }>{ word.word }</Word>
+        )) }
+      </Half>
+      <Half>
+        <Header>Jobs</Header>
+        { wordsTwo.map((word) => (
+          <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsTwo(e); } } disabled={ word.disabled }>{ word.word }</Word>
+        )) }</Half>
     </Container>
   );
 }

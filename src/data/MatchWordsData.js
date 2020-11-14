@@ -22,8 +22,8 @@ export const matchingWordsData1 = [
   },
   {
     word1:'Больница',
-    word2:'Врач',
-    pair:['Больница', 'Врач']
+    word2:'Доктор',
+    pair:['Больница', 'Доктор']
   },
   {
     word1:'Университет',

@@ -3,7 +3,7 @@ import LessonHeader from './LessonHeaderTemplate';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import MatchingActivity from '../components/MatchWords';
-import { matchingWordsData1 } from '../data/MatchWordsData';
+import { matchingWordsData1, matchingWordsData2 } from '../data/MatchWordsData';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate'
@@ -48,7 +48,7 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Сопоставьте профессии с местом" engName="Match professions with places" />
-              <MatchingActivity data={ matchingWordsData1 } />
+              <MatchingActivity headerLeft="Places" headerRight="Jobs" data={ matchingWordsData1 } />
             </div>
           </div>
         </div>
@@ -57,6 +57,7 @@ export default function Lesson_2_1() {
         <SectionHeader name="Спряжения глагола" engName="Verb conjugation" />
         <div className="container is-fluid">
           <div className="columns is-multiline">
+            <Instruction letter="a" name="Слушайте и повторяйте спряжение" engName="Lsten and repeat conjugation" />
             { conjVerbsSet1.map(set => (
               <div className="column is-3">
                 <VebConjugationTemplate centered={true} set={ set } />
@@ -64,7 +65,14 @@ export default function Lesson_2_1() {
             )) }
           </div>
           <div className="columns">
-            <CasesTemplate centered={true} data={prepositionalCaseData1}/>
+            <div className="column">
+              <Instruction letter="a" name="Узнайте о предложном падеже" engName="Learn about prepositional case" />
+              <CasesTemplate centered={true} data={prepositionalCaseData1}/>
+            </div>
+            <div className="column">
+              <Instruction letter="a" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData2 } />
+            </div>
           </div>
         </div>
       </section>

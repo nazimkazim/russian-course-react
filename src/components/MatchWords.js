@@ -91,7 +91,7 @@ const Restart = styled.button`
   }
 `;
 
-function MatchWords({ data }) {
+function MatchWords({ data, headerLeft, headerRight }) {
 
   const [wordsOne, setWordsOne] = useState([]);
   const [wordsTwo, setWordsTwo] = useState([]);
@@ -255,13 +255,13 @@ function MatchWords({ data }) {
     <Container>
       <Restart onClick={() => {restartActivity()}}></Restart>
       <Half>
-        <Header>Places</Header>
+        <Header>{headerLeft}</Header>
         { wordsOne.map((word) => (
           <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsOne(e); } } disabled={ word.disabled }>{ word.word }</Word>
         )) }
       </Half>
       <Half>
-        <Header>Jobs</Header>
+        <Header>{headerRight}</Header>
         { wordsTwo.map((word) => (
           <Word key={ word.id } clicked={ word.clicked } value={ word.word } id={ word.id } onClick={ (e) => { onClickWordsTwo(e); } } disabled={ word.disabled }>{ word.word }</Word>
         )) }</Half>

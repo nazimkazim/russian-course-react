@@ -1,4 +1,4 @@
-// Lesson 2.1 matching activity
+// Lesson 2.1 matching activity jobs - places
 export const matchingWordsData1 = [
   {
     word1:'Банк',
@@ -34,5 +34,39 @@ export const matchingWordsData1 = [
     word1:'Парламент',
     word2:'Депутат',
     pair:['Парламент', 'Депутат']
+  }
+]
+
+// Lesson 2.1 matching activity "Работать verb conjugation"
+export const matchingWordsData2 = [
+  {
+    word1:'Я',
+    word2:'Работаю',
+    pair:['Работаю', 'Я']
+  },
+  {
+    word1:'Ты',
+    word2:'Работаешь',
+    pair:['Работаешь', 'Ты']
+  },
+  {
+    word1:'Он/Она/Оно',
+    word2:'Работает',
+    pair:['Он/Она/Оно', 'Работает']
+  },
+  {
+    word1:'Мы',
+    word2:'Работаем',
+    pair:['Мы', 'Работаем']
+  },
+  {
+    word1:'Вы',
+    word2:'Работаете',
+    pair:['Вы', 'Работаете']
+  },
+  {
+    word1:'Они',
+    word2:'Работают',
+    pair:['Они', 'Работают']
   }
 ]

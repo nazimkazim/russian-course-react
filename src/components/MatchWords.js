@@ -8,6 +8,7 @@ let _ = require("lodash");
 const Container = styled.div`
   position:relative;
   display:flex;
+  margin:0 auto;
   max-width:320px;
   border-radius:16px;
   height:auto;
@@ -73,7 +74,7 @@ const Restart = styled.button`
   outline:none;
   border:none;
   cursor:pointer;
-  background-image:url('https://res.cloudinary.com/nzmai/image/upload/v1595334222/icons/restart.png');
+  background-image:url('https://res.cloudinary.com/nzmai/image/upload/v1605329799/icons/update.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 18px;

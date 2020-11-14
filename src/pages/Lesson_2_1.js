@@ -2,8 +2,13 @@ import React from 'react';
 import LessonHeader from './LessonHeaderTemplate';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
-import MatchingActivity from '../components/MatchWords'
-import {matchingWordsData1} from '../data/MatchWordsData'
+import MatchingActivity from '../components/MatchWords';
+import { matchingWordsData1 } from '../data/MatchWordsData';
+import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
+import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
+import CasesTemplate from '../components/Charts/CasesTemplate'
+import {accusativeData1} from '../data/CasesData'
+
 
 
 
@@ -43,8 +48,23 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Сопоставьте профессии с местом" engName="Match professions with places" />
-              <MatchingActivity data={matchingWordsData1}/>
+              <MatchingActivity data={ matchingWordsData1 } />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Спряжения глагола" engName="Verb conjugation" />
+        <div className="container is-fluid">
+          <div className="columns is-multiline">
+            { conjVerbsSet1.map(set => (
+              <div className="column is-3">
+                <VebConjugationTemplate centered={true} set={ set } />
+              </div>
+            )) }
+          </div>
+          <div className="columns">
+            <CasesTemplate data={accusativeData1}/>
           </div>
         </div>
       </section>

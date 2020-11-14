@@ -29,6 +29,7 @@ const SubjectPronounWrapper = styled.button`
 const Container = styled.ul`
   display:flex;
   flex-direction:column;
+  margin:${props => props.centered ? '0 auto' : ''};
   align-items:center;
   width:100%;
   min-height:auto;

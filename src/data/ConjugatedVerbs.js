@@ -205,3 +205,77 @@ export const conjVerbsSet3 = [
     ]
   }
 ];
+
+// conjVerbsSet3 - бриться/побриться
+export const conjVerbsSet4 = [
+  {
+    verb: 'Бри<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я бре<strong>ю</strong>сь',
+      'Ты бре<strong>ешь</strong>ся',
+      'Он бре<strong>ет</strong>ся',
+      'Она бре<strong>ет</strong>ся',
+      'Оно бре<strong>ет</strong>ся',
+      'Вы бре<strong>ете</strong>сь',
+      'Мы бре<strong>ем</strong>ся',
+      'Они бре<strong>ют</strong>ся'
+    ]
+  },
+  {
+    verb: 'Бри<strong>ть</strong>ся',
+    tense: 'Future tense (imperfect)',
+    set: [
+      'Я(буду) бри<strong>ть</strong>ся',
+      'Ты(будешь) бри<strong>ть</strong>ся',
+      'Он(будет) бри<strong>ть</strong>ся',
+      'Она(будет) бри<strong>ть</strong>ся',
+      'Оно(будет) бри<strong>ть</strong>ся',
+      'Вы(будете) бри<strong>ть</strong>ся',
+      'Мы(будем) бри<strong>ть</strong>ся',
+      'Они(будут) бри<strong>ть</strong>ся'
+    ]
+  },
+  {
+    verb: 'Побри<strong>ть</strong>ся',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я побре<strong>ю</strong>сь',
+      'Ты побре<strong>ешь</strong>ся',
+      'Он побре<strong>ет</strong>ся',
+      'Она побре<strong>ет</strong>ся',
+      'Оно побре<strong>ет</strong>ся',
+      'Вы побре<strong>ете</strong>сь',
+      'Мы побре<strong>ем</strong>ся',
+      'Они побре<strong>ют</strong>ся'
+    ]
+  },
+  {
+    verb: 'Бри<strong>ть</strong>ся',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я бри<strong>л</strong>ся',
+      'Ты бри<strong>л</strong>ся',
+      'Он бри<strong>л</strong>ся',
+      'Она бри<strong>ла</strong>сь',
+      'Оно бри<strong>ло</strong>сь',
+      'Вы бри<strong>ли</strong>сь',
+      'Мы бри<strong>ли</strong>сь',
+      'Они бри<strong>ли</strong>сь'
+    ]
+  },
+  {
+    verb: 'Побри<strong>ть</strong>ся',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я побри<strong>л</strong>ся',
+      'Ты побри<strong>л</strong>ся',
+      'Он побри<strong>л</strong>ся',
+      'Она побри<strong>ла</strong>сь',
+      'Оно побри<strong>ло</strong>сь',
+      'Вы побри<strong>ли</strong>сь',
+      'Мы побри<strong>ли</strong>сь',
+      'Они побри<strong>ли</strong>сь'
+    ]
+  }
+];

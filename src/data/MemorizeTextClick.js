@@ -774,3 +774,97 @@ export const MTCTextCustomJon1dash10 = [
         turned: true
     }
 ];
+
+// Бриться
+// present tense (imperfect)
+export const MTCTextCustomJon1dash11 = [
+    {
+        eng: "I shave every day because my beard grows fast ",
+        rus: "Я бреюсь каждый день,потому что моя борода растет быстро ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you shave do you use an electric shaver? ",
+        rus: "Когда ты бреешься ты используешь электробритву? ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He shaves not so often, so his stubble grows back after two days ",
+        rus: "Он бреется не так часто, поэтому у него отрастает щетина после двух дней ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Despite the fact that she is a woman, she grows a mustache ",
+        rus: "Несмотря на то что она женщина, у неё растут усы ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Do you shave to smooth skin? ",
+        rus: "Вы бреетесь до гладкой кожи? ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We don’t shave to look more brutal ",
+        rus: "Мы не бреемся, чтобы выглядеть более брутально ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Today's young people don't shave, this is becoming a trend ",
+        rus: "Современные молодые люди не бреются, это становится трэндом ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Бриться
+// future tense (imperfect)
+export const MTCTextCustomJon1dash12 = [
+    {
+        eng: "Son, free the bathroom, I'll shave ",
+        rus: "Сынок освободи ванную я буду бриться ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "You said you'd shave, but instead you bathe ",
+        rus: "Ты сказал что будешь бриться, а вместо этого ты купаешься ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Mark won't shave he grows a beard ",
+        rus: "Марк не будет бриться он отращивает бороду ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Anna won't shave she has no problem with testerone ",
+        rus: "Анна не будет бриться у ней нет проблем с тестестероном ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I'll give you shaving foam if you shave ",
+        rus: "Я дам вам пену для бритья если вы будете бриться ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We'll shave to look younger ",
+        rus: "Мы будем бриться чтобы выглядеть моложе ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Men will shave less in the future, according to a recent study ",
+        rus: "Согласно недавнему исследованию, мужчины будут меньше бриться в будущем ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

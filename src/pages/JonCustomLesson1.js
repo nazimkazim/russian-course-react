@@ -1,10 +1,10 @@
 import React from 'react';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
-import { conjVerbsSet2, conjVerbsSet3 } from '../data/ConjugatedVerbs';
+import { conjVerbsSet2, conjVerbsSet3, conjVerbsSet4 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
@@ -84,6 +84,28 @@ export default function Lesson_2_1() {
             <hr />
             <TenseDescriptionBox word='Помыться' tense='Past Tense (Perfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash10 } />
+            <hr />
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Практикуйте слово (Бриться/Побриться)" engName="Practice the word (to wash oneself)" />
+        <div className="columns is-multiline">
+            <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
+            { conjVerbsSet4.map(set => (
+              <div className="column is-3">
+                <VebConjugationTemplate set={ set } />
+              </div>
+            )) }
+          </div>
+        <div className="columns">
+          <div className="column">
+            <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
+            <TenseDescriptionBox word='Бриться' tense='Present Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash11 } />
+            <hr />
+            <TenseDescriptionBox word='Бриться' tense='Future Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash12 } />
             <hr />
           </div>
         </div>

@@ -14,6 +14,7 @@ const styles = {
     flexDirection:'column',
     margin:0,
     maxWidth: 275,
+    marginBottom:30
 
   },
   bullet: {

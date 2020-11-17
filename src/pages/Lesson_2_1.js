@@ -7,10 +7,10 @@ import { matchingWordsData1, matchingWordsData2 } from '../data/MatchWordsData';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate';
-import { prepositionalCaseData1 } from '../data/CasesData';
+import { prepositionalCaseData1, instrumentalCaseData1 } from '../data/CasesData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
 import { set6COSOC } from '../data/ComposeOrderedSentOnClick';
-import { NWset4 } from '../data/newWords';
+import { NWset4, NWset5, NWset6 } from '../data/newWords';
 import NewWordsBoard from '../components/NewWordsBoard';
 
 
@@ -58,7 +58,7 @@ export default function Lesson_2_1() {
         </div>
       </section>
       <section className="newSection">
-        <SectionHeader name="Спряжения глагола" engName="Verb conjugation" />
+        <SectionHeader name="Спряжения глагола. Предложный падеж" engName="Verb conjugation. Prepositional case" />
         <div className="container is-fluid">
           <div className="columns is-multiline">
             <Instruction letter="a" name="Слушайте и повторяйте спряжение" engName="Lsten and repeat conjugation" />
@@ -71,6 +71,7 @@ export default function Lesson_2_1() {
           <div className="columns is-multiline">
             <div className="column is-half">
               <Instruction letter="a" name="Узнайте о предложном падеже" engName="Learn about prepositional case" />
+              <NewWordsBoard data={ NWset5 } />
               <CasesTemplate centered={ true } data={ prepositionalCaseData1 } />
             </div>
             <div className="column is-half">
@@ -78,6 +79,23 @@ export default function Lesson_2_1() {
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData2 } />
             </div>
             <div className="column">
+              <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+              <NewWordsBoard data={ NWset4 } />
+              <ScrambleWordsActivity data={ set6COSOC } />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Спряжения глагола. Творительный падеж" engName="Verb conjugation. Instrumental case" />
+        <div className="container is-fluid">
+          <div className="columns is-multiline">
+            <div className="column is-half">
+              <Instruction letter="a" name="Узнайте о творительном падеже" engName="Learn about instrumental case" />
+              <NewWordsBoard data={ NWset6 } />
+              <CasesTemplate centered={ true } data={ instrumentalCaseData1 } />
+            </div>
+            <div className="column is-half">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
               <NewWordsBoard data={ NWset4 } />
               <ScrambleWordsActivity data={ set6COSOC } />

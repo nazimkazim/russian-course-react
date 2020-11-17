@@ -169,7 +169,92 @@ export const prepositionalCaseData1 = [
     ]
     ,
     examples: [
-     
+
+    ]
+  }
+];
+
+export const instrumentalCaseData1 = [
+  {
+    gender: 'он',
+    icon: MaleIcon,
+    body: [
+      {
+        type: 'человек',
+        rules: [
+          `&#10006;`
+        ]
+      },
+      {
+        type: 'вещь',
+        rules: [
+          'согласная + ом',
+          '-й, -ь &#8594; -ем'
+        ]
+      }
+    ]
+    ,
+    examples: [
+      'Я работаю доктором',
+      'Он работает секретарём'
+    ]
+  },
+  {
+    gender: 'она',
+    icon: FemaleIcon,
+    body: [
+      {
+        type: 'человек',
+        rules: [
+          `&#10006;`
+        ]
+      },
+      {
+        type: 'вещь',
+        rules: [
+          '-а &#8594; -ой',
+          '-я &#8594; -ей',
+          '-ь + ю',
+        ]
+      }
+
+    ]
+    ,
+    examples: [
+      'Она работает медсестрой'
+    ]
+  },
+  {
+    gender: 'оно',
+    icon: ObjectIcon,
+    body: [
+      {
+        type: 'вещь',
+        rules: [
+          '-о &#8594; -ом',
+          '-е &#8594; -ем'
+        ]
+      }
+
+    ]
+    ,
+    examples: [
+    ]
+  },
+  {
+    gender: 'они',
+    icon: PluralIcon,
+    body: [
+      {
+        type: 'вещь',
+        rules: [
+          '&#10006;'
+        ]
+      }
+    ]
+    ,
+    examples: [
+
     ]
   }
 ];

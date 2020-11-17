@@ -6,8 +6,12 @@ import MatchingActivity from '../components/MatchWords';
 import { matchingWordsData1, matchingWordsData2 } from '../data/MatchWordsData';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
-import CasesTemplate from '../components/Charts/CasesTemplate'
-import {prepositionalCaseData1} from '../data/CasesData'
+import CasesTemplate from '../components/Charts/CasesTemplate';
+import { prepositionalCaseData1 } from '../data/CasesData';
+import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
+import { set6COSOC } from '../data/ComposeOrderedSentOnClick';
+import { NWset4 } from '../data/newWords';
+import NewWordsBoard from '../components/NewWordsBoard';
 
 
 
@@ -60,18 +64,23 @@ export default function Lesson_2_1() {
             <Instruction letter="a" name="Слушайте и повторяйте спряжение" engName="Lsten and repeat conjugation" />
             { conjVerbsSet1.map(set => (
               <div className="column is-3">
-                <VebConjugationTemplate centered={true} set={ set } />
+                <VebConjugationTemplate centered={ true } set={ set } />
               </div>
             )) }
           </div>
-          <div className="columns">
-            <div className="column">
+          <div className="columns is-multiline">
+            <div className="column is-half">
               <Instruction letter="a" name="Узнайте о предложном падеже" engName="Learn about prepositional case" />
-              <CasesTemplate centered={true} data={prepositionalCaseData1}/>
+              <CasesTemplate centered={ true } data={ prepositionalCaseData1 } />
+            </div>
+            <div className="column is-half">
+              <Instruction letter="b" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData2 } />
             </div>
             <div className="column">
-              <Instruction letter="a" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
-              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData2 } />
+              <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+              <NewWordsBoard data={ NWset4 } />
+              <ScrambleWordsActivity data={ set6COSOC } />
             </div>
           </div>
         </div>

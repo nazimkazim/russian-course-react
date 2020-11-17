@@ -9,6 +9,7 @@ export const NWset1 = [
 }
 ]
 
+
 export const NWset2 = [
   {
   rus:'Меня зовут',
@@ -26,5 +27,15 @@ export const NWset3 = [
   {
     rus:'Узнать данные',
     eng:'Get data'
+  }
+]
+
+
+// Lesson 2.1
+export const NWset4 = [
+  {
+    rus:'год',
+    eng:'year',
+    note:`When we talk about duration, we use <strong>год</strong> with number 1. For example, <strong>1 год</strong>. With numbers 2,3,4 we use <strong>года</strong>. And for numbers 5 and more we use <strong>лет</strong>. For instance, <strong>5 лет</strong>,<strong>6 лет</strong>,<strong>7 лет</strong>,<strong>8 лет</strong> etc. Depending on what number is the last we use respective word. For exapmle 2<strong>1</strong> год, 2<strong>3</strong> года, 3<strong>5</strong> лет `
   }
 ]

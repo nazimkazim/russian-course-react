@@ -119,6 +119,7 @@ export const set3COSOC = _.shuffle([
     }
 ]);
 
+// Lesson 1.3
 export const set4COSOC = _.shuffle([
     {
         photo:KateWoman,
@@ -158,7 +159,7 @@ export const set4COSOC = _.shuffle([
     }
 ]);
 
-
+// Lesson 1.3
 export const set5COSOC = _.shuffle([
     {
         photo:man_chauffeur,
@@ -197,3 +198,36 @@ export const set5COSOC = _.shuffle([
         attr:'<a href="https://www.flickr.com/photos/eager/15948604750/in/photolist-qijLxY-bW9RFC-bW9SQb-bW9Qyq-bW9WNy-bW9PDU-bW9XLw-bRkSi4-bRm44c-bCr8uo-bRkXJ2-bCrb3J-bCrfXJ-bCrw3Q-bCrdx9-bCruG3-bCriUb-bRm9Mg-bCrnGS-bCrkKW-bRkVin-bCrtW7-bRm6Jk-bRm8xV-8wqkTh-bauPJv-2gWayYb-aQDW8X-qzGZBp-RK8c2-bv1HV5-bDD9Ds-2j3oMyp-qmtrA-7qaJT-8JQSe5-pCSMjS-DBSnrS-orxqo8-orwYPA-6Lwzi4-aLoCET-oHZPYm-orwTYT-oFZSry-2ikkw93-orxpuz-DvuLp4-orwX5T-orxo2e" target="_blank">"Alvaro Siza - architect portrait"</a> by <a href="https://www.flickr.com/photos/eager/" target="_blank">準建築人手札網站 Forgemind ArchiMedia</a>, <a>russian-course</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>'
     }
 ])
+
+
+// Lesson 2.1
+export const set6COSOC = _.shuffle([
+    {
+        eng: "I am a banker. I have worked in the bank for 1 year ",
+        rus: "Я банкир. Я работаю в банке один год"
+    },
+    {
+        eng: "You are an actor. You have worked in the theater for 2 years",
+        rus: "Ты актёр. Ты работаешь в театре два года"
+    },
+    {
+        eng: "She is a secretary. She has worked in the office for 3 years",
+        rus: "Она секретарь. Она работает в офисе три года"
+    },
+    {
+        eng: "He is a professor. He has worked in the university for 4 years",
+        rus: "Он профессор. Он работает в университете четыре года"
+    },
+    {
+        eng: "You are a deputy. You have worked in the parliament for 5 years",
+        rus: "Вы депутат. Вы работаете в парламенте пять лет"
+    },
+    {
+        eng: "I am a doctor. I have worked in the hospital for six years",
+        rus: "Я доктор. Я работаю в больнице шесть лет"
+    },
+    {
+        eng: "He is a teacher. He has worked at school for seven years",
+        rus: "Он учитель. Он работает в школе семь лет"
+    }
+]);

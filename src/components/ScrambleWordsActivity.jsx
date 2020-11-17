@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import click from "../data/media/click.wav";
-import denied from "../data/media/denied.mp3";
-import correct from "../data/media/correct.wav";
-import ProgressBar from "../components/ProgressBar";
-var _ = require("lodash");
+import React, { Component } from 'react';
+import click from '../data/media/click.wav';
+import denied from '../data/media/denied.mp3';
+import correct from '../data/media/correct.wav';
+import ProgressBar from '../components/ProgressBar';
+var _ = require('lodash');
 
 class ScrambleWordsActivity extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class ScrambleWordsActivity extends Component {
       data: [],
       answer: [],
       index: 0,
-      length:0,
+      length: 0,
       activityIsFinished: false,
     };
   }
@@ -28,12 +28,12 @@ class ScrambleWordsActivity extends Component {
     });
     this.setState({
       data: arr,
-      length:arr.length
+      length: arr.length,
     });
   }
 
   randomize = (str) => {
-    let splitted = str.split(" ");
+    let splitted = str.split(' ');
     let shuffled = _.shuffle(splitted);
     return shuffled;
   };
@@ -42,14 +42,14 @@ class ScrambleWordsActivity extends Component {
     let sound = new Audio(click);
     sound.play();
     let word = e.target.value;
-    let obj = {...this.state.data}
+    let obj = { ...this.state.data };
 
     let index = obj[this.state.index].scrambled.indexOf(word);
-    let scrambledArr = obj[this.state.index].scrambled
+    let scrambledArr = obj[this.state.index].scrambled;
     scrambledArr.splice(index, 1);
     this.setState({
       answer: this.state.answer.concat(word),
-      data:{...obj, scrambled:obj[this.state.index].scrambledArr}
+      data: { ...obj, scrambled: obj[this.state.index].scrambledArr },
     });
   };
 
@@ -60,37 +60,39 @@ class ScrambleWordsActivity extends Component {
     let word = e.target.value;
     const index = array.indexOf(word);
 
-    let obj = {...this.state.data}
-    let scrambledArr = obj[this.state.index].scrambled
-    scrambledArr.push(word)
+    let obj = { ...this.state.data };
+    let scrambledArr = obj[this.state.index].scrambled;
+    scrambledArr.push(word);
 
     if (index > -1) {
       array.splice(index, 1);
-      this.setState({ 
+      this.setState({
         answer: array,
-        data:{...obj, scrambled:obj[this.state.index].scrambledArr}
+        data: { ...obj, scrambled: obj[this.state.index].scrambledArr },
       });
     }
   };
 
   handleCheck = () => {
-    let answer = this.state.answer.join(" ");
+    let answer = this.state.answer.join(' ');
     if (answer === this.state.data[this.state.index].rus) {
       let sound = new Audio(correct);
       sound.play();
-      this.setState(
-        {
-          index: this.state.index + 1,
-          answer: [],
-        },
-        () => {
-          if (this.state.index === this.state.length) {
-            this.setState({
-              activityIsFinished: true,
-            });
+      setTimeout(() => {
+        this.setState(
+          {
+            index: this.state.index + 1,
+            answer: [],
+          },
+          () => {
+            if (this.state.index === this.state.length) {
+              this.setState({
+                activityIsFinished: true,
+              });
+            }
           }
-        }
-      );
+        );
+      }, 1000);
     } else {
       let sound = new Audio(denied);
       sound.play();
@@ -102,10 +104,10 @@ class ScrambleWordsActivity extends Component {
       data: [],
       answer: [],
       index: 0,
-      length:0,
+      length: 0,
       activityIsFinished: false,
     });
-    this.update()
+    this.update();
   };
 
   update = () => {
@@ -128,22 +130,27 @@ class ScrambleWordsActivity extends Component {
     //console.log(this.state.answer);
     //console.log(this.state.index === this.state.data.length);
     return (
-      <div className="card mtwp-card-container">
-        <div className="card-content scramble-words-activity-image">
-          <div className="scramble-words-activity-image-sent">
-            {this.state.activityIsFinished
-              ? <div className="centered-item">Good Job</div>
-              : this.state.data[this.state.index] &&
-                <div className="centered-item sm-font-title">{this.state.data[this.state.index].eng}</div>}
+      <div className='card mtwp-card-container'>
+        <div className='card-content scramble-words-activity-image'>
+          <div className='scramble-words-activity-image-sent'>
+            {this.state.activityIsFinished ? (
+              <div className='centered-item'>Good Job</div>
+            ) : (
+              this.state.data[this.state.index] && (
+                <div className='centered-item sm-font-title'>
+                  {this.state.data[this.state.index].eng}
+                </div>
+              )
+            )}
           </div>
         </div>
-        <div className="card-content card-content-answer-container">
-          <div className="media">
-            <div className="media-content">
-              <p className="title is-4">
+        <div className='card-content card-content-answer-container'>
+          <div className='media'>
+            <div className='media-content'>
+              <p className='title is-4'>
                 {this.state.answer.map((word) => (
                   <button
-                    className="tag is-info is-medium"
+                    className='tag is-info is-medium'
                     value={word}
                     onClick={this.handleRemove}>
                     {word}
@@ -153,15 +160,15 @@ class ScrambleWordsActivity extends Component {
             </div>
           </div>
         </div>
-        <div className="card-content">
-          <div className="media">
-            <div className="media-content">
-              <span className="tags">
+        <div className='card-content'>
+          <div className='media'>
+            <div className='media-content'>
+              <span className='tags'>
                 {this.state.data[this.state.index] &&
-                  this.state.data[this.state.index].scrambled.map((item,i) => (
+                  this.state.data[this.state.index].scrambled.map((item, i) => (
                     <button
                       key={i}
-                      className="tag is-info is-medium"
+                      className='tag is-info is-medium'
                       value={item}
                       onClick={this.handleAnswer}>
                       {item}
@@ -169,24 +176,21 @@ class ScrambleWordsActivity extends Component {
                   ))}
               </span>
               {this.state.activityIsFinished ? (
-                <button className="button is-success" onClick={this.startAgain}>
-                  <span class="icon is-small">
-                    <i className="fas fa-redo"></i>
+                <button className='button is-success' onClick={this.startAgain}>
+                  <span class='icon is-small'>
+                    <i className='fas fa-redo'></i>
                   </span>
                 </button>
               ) : (
                 <button
-                  className="button is-success"
+                  className='button is-success'
                   onClick={this.handleCheck}
                   disabled={this.state.answer.length < 1}>
                   Check
                 </button>
               )}
               <hr />
-              <ProgressBar
-                value={this.state.index}
-                max={this.state.length}
-              />
+              <ProgressBar value={this.state.index} max={this.state.length} />
               <hr />
             </div>
           </div>

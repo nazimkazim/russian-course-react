@@ -892,7 +892,7 @@ export const MTCTextCustomJon1dash13 = [
     },
     {
         eng: "Sarah said she needed a shave, honestly I was a little shocked ",
-        rus: "Сара сказала что ей нужно побриться, честное слово я был неменного в шоке ",
+        rus: "Сара сказала что ей нужно побриться, честное слово я был немного в шоке ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
@@ -997,7 +997,7 @@ export const MTCTextCustomJon1dash15 = [
         turned: true
     },
     {
-        eng: "They do not shaved since the store was not the blade",
+        eng: "They did not shave since there was not a blade in the store",
         rus: "Они не побрились, так как в магазине не было лезвий",
         id: nextId('MTCText1-7-id-'),
         turned: true

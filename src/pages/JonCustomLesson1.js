@@ -4,7 +4,7 @@ import SectionHeader from '../components/SectionHeader';
 import { conjVerbsSet2, conjVerbsSet3, conjVerbsSet4 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
@@ -106,6 +106,12 @@ export default function Lesson_2_1() {
             <hr />
             <TenseDescriptionBox word='Бриться' tense='Future Tense (Imperfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash12 } />
+            <hr />
+            <TenseDescriptionBox word='Побриться' tense='Future Tense (perfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash13 } />
+            <hr />
+            <TenseDescriptionBox word='Бриться' tense='Past Tense (imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash14 } />
             <hr />
           </div>
         </div>

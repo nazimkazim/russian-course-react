@@ -868,3 +868,97 @@ export const MTCTextCustomJon1dash12 = [
         turned: true
     }
 ];
+
+// Побриться
+// future tense (perfect)
+export const MTCTextCustomJon1dash13 = [
+    {
+        eng: "I'll have myself shaved by lunchtime, so don't worry ",
+        rus: "К обеду я уже побреюсь, так что не волнуйся",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I think by evening you will have shaved, otherwise we will waste a lot of time ",
+        rus: "Я думаю к вечеру ты уже побреешься, а то мы потеряем много времени ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He didn't say that he would shave, he just said that he would tidy up the mustache ",
+        rus: "Он не сказал что побреется, он просто сказал что приведет в порядок усы ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Sarah said she needed a shave, honestly I was a little shocked ",
+        rus: "Сара сказала что ей нужно побриться, честное слово я был неменного в шоке ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "A beard suits you so well, if you shave I won't talk to you anymore ",
+        rus: "Вам так идёт борода, если вы бреетесь я больше не буду с вами разговаривать ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We will shave and put on a new suit to impress the opposite sex ",
+        rus: "Мы побреемся и оденем новый костюм чтобы впечатлить противоположный пол ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They will shave and then go to guests ",
+        rus: "Они побреются а затем пойдут в гости ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Бриться
+// Past tense (imperfect)
+export const MTCTextCustomJon1dash14 = [
+    {
+        eng: "I was shaving for about 30 minutes ",
+        rus: "Я брился примерно 30 минут",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "While you were shaving, the kettle boiled ",
+        rus: "В то время пока ты брился, чайник закипел ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He was shaving and thought about the upcoming meeting ",
+        rus: "Он брился и думал о предстоящей встрече ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "She didn’t shave as she was a woman ",
+        rus: "Она не брилась так как была женщиной ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you were shaving, I was cooking dinner and your wife was watching TV. ",
+        rus: "Когда вы брились я готовил ужин, а ваша жена смотрела телевизор ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We weren't shaving last night, we were playing football ",
+        rus: "Вчера вечером мы не брились, мы играли футбол ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I know for sure that they were shaving, since I heard the sound of an electric shaver ",
+        rus: "Я точно знаю что они брились, так как я слышал звук электробритвы ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

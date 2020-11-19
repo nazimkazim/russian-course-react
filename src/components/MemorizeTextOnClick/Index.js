@@ -14,7 +14,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   chip: {
-    padding:'5px' 
+    padding:'5px',
+    maxWidth:'375px',
+    minHeight:'100px',
+    "& > *": {
+      whiteSpace:'normal',
+      fontSize:'18px'
+    } 
   }
 }));
 

@@ -898,7 +898,7 @@ export const MTCTextCustomJon1dash13 = [
     },
     {
         eng: "A beard suits you so well, if you shave I won't talk to you anymore ",
-        rus: "Вам так идёт борода, если вы бреетесь я больше не буду с вами разговаривать ",
+        rus: "Вам так идёт борода, если вы побреетесь я больше не буду с вами разговаривать ",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
@@ -958,6 +958,47 @@ export const MTCTextCustomJon1dash14 = [
     {
         eng: "I know for sure that they were shaving, since I heard the sound of an electric shaver ",
         rus: "Я точно знаю что они брились, так как я слышал звук электробритвы ",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Пориться
+// Past tense (perfect)
+export const MTCTextCustomJon1dash15 = [
+    {
+        eng: "I shaved and now I can sleep well",
+        rus: "Я побрился и теперь могу спать спокойно",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "If you shaved, she would recognize you",
+        rus: "Если бы ты побрился, она бы тебя узнала",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He didn't shave because he wants to look like Harden",
+        rus: "Он не побрился так как хочет выглядеть как Харден",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "You have already shaved, I urgently need a bathroom",
+        rus: "Вы уже побрились, мне срочно нужна ванная",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We finally shaved, after 10 years in the forest",
+        rus: "Мы наконец-то побрились, после 10 лет в лесу",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They do not shaved since the store was not the blade",
+        rus: "Они не побрились, так как в магазине не было лезвий",
         id: nextId('MTCText1-7-id-'),
         turned: true
     }

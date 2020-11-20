@@ -1,0 +1,60 @@
+export const data = [
+{
+  "city":"Kyalorda",
+  "regions": [
+    {
+      "id":1,
+      "region":'Kyzylorda',
+      "auls":[
+        {
+          "id":1,
+          "aul":"Taksbergen"
+        },
+        { 
+          "id":2,
+          "aul":"Nauryz"
+        },{
+          "id":3,
+          "aul":"Karauyl"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "region":'Aral',
+      "auls":[
+        {
+          "id":1,
+          "aul":"Soltrest"
+        },
+        { 
+          "id":2,
+          "aul":"Shizhaga"
+        },{
+          "id":3,
+          "aul":"Aralkum"
+        }
+      ]
+    },
+    {
+      "id":3,
+      "region":'Karamshi',
+      "auls":[
+        {
+          "id":1,
+          "aul":"Akzhar"
+        },
+        { 
+          "id":2,
+          "aul":"Turmagambet"
+        },{
+          "id":3,
+          "aul":"Zhanakala"
+        }
+      ]
+    }
+  ]
+}
+]
+  
+

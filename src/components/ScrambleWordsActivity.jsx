@@ -3,6 +3,7 @@ import click from '../data/media/click.wav';
 import denied from '../data/media/denied.mp3';
 import correct from '../data/media/correct.wav';
 import ProgressBar from '../components/ProgressBar';
+import {speakStr} from './Pronunciation'
 var _ = require('lodash');
 
 class ScrambleWordsActivity extends Component {
@@ -39,9 +40,9 @@ class ScrambleWordsActivity extends Component {
   };
 
   handleAnswer = (e) => {
-    let sound = new Audio(click);
-    sound.play();
+    
     let word = e.target.value;
+    speakStr(word, 'ru-RU')
     let obj = { ...this.state.data };
 
     let index = obj[this.state.index].scrambled.indexOf(word);
@@ -54,8 +55,6 @@ class ScrambleWordsActivity extends Component {
   };
 
   handleRemove = (e) => {
-    let sound = new Audio(click);
-    sound.play();
     let array = [...this.state.answer];
     let word = e.target.value;
     const index = array.indexOf(word);

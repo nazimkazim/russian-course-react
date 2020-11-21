@@ -231,3 +231,35 @@ export const set6COSOC = _.shuffle([
         rus: "Он учитель. Он работает в школе семь лет"
     }
 ]);
+
+// Lesson 2.1
+export const set7COSOC = _.shuffle([
+    {
+        eng: "I work as a banker in a bank",
+        rus: "Я работаю банкиром в банке"
+    },
+    {
+        eng: "You work as an actor in the theatre",
+        rus: "Ты работаешь актёром в театре"
+    },
+    {
+        eng: "She works as a secretary in the office",
+        rus: "Она работает секретарём в офисе"
+    },
+    {
+        eng: "He works as a professor in the university",
+        rus: "Он работает профессором в университете"
+    },
+    {
+        eng: "You work as a deputy in the parliament",
+        rus: "Вы работаете депутатом в парламенте"
+    },
+    {
+        eng: "They work as doctors in the hospital",
+        rus: "Они работают врачами в больнице"
+    },
+    {
+        eng: "We work as teachers at the school",
+        rus: "Мы работаем учителями в школе"
+    }
+]);

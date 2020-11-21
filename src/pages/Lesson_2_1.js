@@ -9,7 +9,7 @@ import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate';
 import { prepositionalCaseData1, instrumentalCaseData1 } from '../data/CasesData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
-import { set6COSOC } from '../data/ComposeOrderedSentOnClick';
+import { set6COSOC, set7COSOC } from '../data/ComposeOrderedSentOnClick';
 import { NWset4, NWset5, NWset6 } from '../data/newWords';
 import NewWordsBoard from '../components/NewWordsBoard';
 
@@ -98,7 +98,7 @@ export default function Lesson_2_1() {
             <div className="column is-half">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
               <NewWordsBoard data={ NWset4 } />
-              <ScrambleWordsActivity data={ set6COSOC } />
+              <ScrambleWordsActivity data={ set7COSOC } />
             </div>
           </div>
         </div>

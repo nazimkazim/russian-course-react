@@ -70,3 +70,105 @@ export const matchingWordsData2 = [
     pair:['Они', 'Работают']
   }
 ]
+
+// Lesson 2.1 matching activity "Завтракать verb conjugation"
+export const matchingWordsData3 = [
+  {
+    word1:'Я',
+    word2:'Завтракаю',
+    pair:['Завтракаю', 'Я']
+  },
+  {
+    word1:'Ты',
+    word2:'Завтракаешь',
+    pair:['Завтракаешь', 'Ты']
+  },
+  {
+    word1:'Он/Она/Оно',
+    word2:'Завтракает',
+    pair:['Он/Она/Оно', 'Завтракает']
+  },
+  {
+    word1:'Мы',
+    word2:'Завтракаем',
+    pair:['Мы', 'Завтракаем']
+  },
+  {
+    word1:'Вы',
+    word2:'Завтракаете',
+    pair:['Вы', 'Завтракаете']
+  },
+  {
+    word1:'Они',
+    word2:'Завтракают',
+    pair:['Они', 'Завтракают']
+  }
+]
+
+// Lesson 2.1 matching activity "Обедать verb conjugation"
+export const matchingWordsData4 = [
+  {
+    word1:'Я',
+    word2:'Обедаю',
+    pair:['Обедаю', 'Я']
+  },
+  {
+    word1:'Ты',
+    word2:'Обедаешь',
+    pair:['Обедаешь', 'Ты']
+  },
+  {
+    word1:'Он/Она/Оно',
+    word2:'Обедает',
+    pair:['Он/Она/Оно', 'Обедает']
+  },
+  {
+    word1:'Мы',
+    word2:'Обедаем',
+    pair:['Мы', 'Обедаем']
+  },
+  {
+    word1:'Вы',
+    word2:'Обедаете',
+    pair:['Вы', 'Обедаете']
+  },
+  {
+    word1:'Они',
+    word2:'Обедают',
+    pair:['Они', 'Обедают']
+  }
+]
+
+// Lesson 2.1 matching activity "Ужинать verb conjugation"
+export const matchingWordsData5 = [
+  {
+    word1:'Я',
+    word2:'Ужинаю',
+    pair:['Ужинаю', 'Я']
+  },
+  {
+    word1:'Ты',
+    word2:'Ужинаешь',
+    pair:['Ужинаешь', 'Ты']
+  },
+  {
+    word1:'Он/Она/Оно',
+    word2:'Ужинает',
+    pair:['Он/Она/Оно', 'Ужинает']
+  },
+  {
+    word1:'Мы',
+    word2:'Ужинаем',
+    pair:['Мы', 'Ужинаем']
+  },
+  {
+    word1:'Вы',
+    word2:'Ужинаете',
+    pair:['Вы', 'Ужинаете']
+  },
+  {
+    word1:'Они',
+    word2:'Ужинают',
+    pair:['Они', 'Ужинают']
+  }
+]

@@ -319,6 +319,59 @@ export const MTCText9 = [
     }
 ];
 
+// Lesson 2.1 Работать
+export const MTCText10 = [
+    {
+        eng: "I work as a banker in the bank",
+        rus: "Я работаю банкиром в банке",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "Do you work as an actor in the theatre?",
+        rus: "Ты работаешь в театре актёром?",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "He works as a doctor in the hospital",
+        rus: "Он работает доктором в больнице ",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "She works as a secretary in the office",
+        rus: "Она работает секретарём в офисе",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "You work as a deputy in the parliament",
+        rus: "Вы работаете депутатом в парламенте",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "We work as teachers at the school",
+        rus: "Мы работаем учителями в школе",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "They work as professors at the university",
+        rus: "Они работают профессорами в университете",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    },
+    {
+        eng: "and I founded own company ",
+        rus: "а я основал свою компанию ",
+        id: nextId('MTCText2-id-'),
+        turned: true
+    }
+];
+
+
 // Custom Jon Lesson 1
 
 // Одеваться

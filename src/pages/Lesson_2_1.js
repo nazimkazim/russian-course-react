@@ -3,7 +3,7 @@ import LessonHeader from './LessonHeaderTemplate';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import MatchingActivity from '../components/MatchWords';
-import { matchingWordsData1, matchingWordsData2 } from '../data/MatchWordsData';
+import { matchingWordsData1, matchingWordsData2, matchingWordsData3, matchingWordsData4, matchingWordsData5 } from '../data/MatchWordsData';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate';
@@ -12,6 +12,8 @@ import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
 import { set6COSOC, set7COSOC } from '../data/ComposeOrderedSentOnClick';
 import { NWset4, NWset5, NWset6 } from '../data/newWords';
 import NewWordsBoard from '../components/NewWordsBoard';
+import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
+import { MTCText10 } from '../data/MemorizeTextClick';
 
 
 
@@ -99,6 +101,46 @@ export default function Lesson_2_1() {
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
               <NewWordsBoard data={ NWset4 } />
               <ScrambleWordsActivity data={ set7COSOC } />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Отработка предложений. Работать" engName="Sentence drill. Work" />
+        <div className="container is-fluid">
+          <div className="columns is-multiline">
+            <div className="column">
+              <Instruction letter="a" name="Попытайтесь сказать предложения на Русском" engName="Try to say the sentences in Russian" />
+              <MemorizeOnClickActivity data={ MTCText10 } />
+              <hr />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Новые слова" engName="New words" />
+        <div className="container is-fluid">
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="a" name="Выучите новые слова. Места покушать" engName="Learn new words. Places to eat" />
+              <iframe
+                src="https://quizlet.com/549416320/flashcards/embed?i=4bby1&x=1jj1"
+                height="500"
+                width="100%"
+                title="new words 1"
+                styles={ "border:0" }></iframe>
+            </div>
+          </div>
+          <div className="columns is-multiline">
+            <Instruction letter="b" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
+            <div className="column">
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData3 } />
+            </div>
+            <div className="column">
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData4 } />
+            </div>
+            <div className="column">
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData5 } />
             </div>
           </div>
         </div>

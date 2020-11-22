@@ -9,7 +9,7 @@ import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate';
 import { prepositionalCaseData1, instrumentalCaseData1 } from '../data/CasesData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
-import { set6COSOC, set7COSOC } from '../data/ComposeOrderedSentOnClick';
+import { set6COSOC, set7COSOC,set8COSOC } from '../data/ComposeOrderedSentOnClick';
 import { NWset4, NWset5, NWset6 } from '../data/newWords';
 import NewWordsBoard from '../components/NewWordsBoard';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
@@ -141,6 +141,13 @@ export default function Lesson_2_1() {
             </div>
             <div className="column">
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData5 } />
+            </div>
+          </div>
+          <div className="columns">
+          <div className="column">
+              <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+              <NewWordsBoard data={ NWset4 } />
+              <ScrambleWordsActivity data={ set8COSOC } />
             </div>
           </div>
         </div>

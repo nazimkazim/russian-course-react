@@ -263,3 +263,31 @@ export const set7COSOC = _.shuffle([
         rus: "Мы работаем учителями в школе"
     }
 ]);
+
+// Lesson 2.1
+export const set8COSOC = _.shuffle([
+    {
+        eng: "I have breakfast at home, have lunch at the cafe, and have dinner at the bar",
+        rus: "Я завтракаю дома, обедаю в кафе и ужинаю в баре"
+    },
+    {
+        eng: "You have breakfast at work, have lunch at the food court, and have dinner at the cafe",
+        rus: "Ты завтракаешь на работе, обедаешь в фудкорте и ужинаешь в кафе"
+    },
+    {
+        eng: "He has breakfast at the pizzeria, has lunch at the restaurant, and has dinner at home",
+        rus: "Он завтракает в пицерии, обедает в ресторане и ужинает дома"
+    },
+    {
+        eng: "You have breakfast at work, have lunch at the cafe shop, and have dinner at the restaurant",
+        rus: "Вы завтракаете на работе, обедаете в кафешопе и ужинаете в ресторане"
+    },
+    {
+        eng: "We have breakfast at the restaurant, have lunch at the cafeteria, and have dinner at the pizzeria",
+        rus: "Мы завтракаем в ресторане, обедаем в кафетерии и ужинаем в пицерии"
+    },
+    {
+        eng: "They have breakfast at the cafe shop, have lunch at the canteen, and have dinner at the bar",
+        rus: "Они завтракают в кафешопе, обедают в столовой и ужинают в баре"
+    }
+]);

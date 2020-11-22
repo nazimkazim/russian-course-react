@@ -9,11 +9,11 @@ import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate';
 import { prepositionalCaseData1, instrumentalCaseData1 } from '../data/CasesData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
-import { set6COSOC, set7COSOC,set8COSOC } from '../data/ComposeOrderedSentOnClick';
-import { NWset4, NWset5, NWset6 } from '../data/newWords';
+import { set6COSOC, set7COSOC, set8COSOC } from '../data/ComposeOrderedSentOnClick';
+import { NWset4, NWset5, NWset6, NWset7 } from '../data/newWords';
 import NewWordsBoard from '../components/NewWordsBoard';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCText10 } from '../data/MemorizeTextClick';
+import { MTCText10, MTCText11 } from '../data/MemorizeTextClick';
 
 
 
@@ -144,10 +144,19 @@ export default function Lesson_2_1() {
             </div>
           </div>
           <div className="columns">
-          <div className="column">
+            <div className="column">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
-              <NewWordsBoard data={ NWset4 } />
+              <NewWordsBoard data={ NWset7 } />
               <ScrambleWordsActivity data={ set8COSOC } />
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+            <div className="column">
+              <Instruction letter="a" name="Попытайтесь сказать предложения на Русском" engName="Try to say the sentences in Russian" />
+              <MemorizeOnClickActivity data={ MTCText11 } />
+              <hr />
+            </div>
             </div>
           </div>
         </div>

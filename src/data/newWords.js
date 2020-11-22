@@ -60,3 +60,17 @@ export const NWset6 = [
     note:`We use the verbs <strong>быть</strong> (to be), <strong>стать</strong> (to become) and <strong>работать</strong> (to work) with the Instrumental case`
   }
 ]
+
+// Lesson 2.1
+// Explanation of using prepositional case with "home" and "work"
+export const NWset7 = [
+  {
+    rus:'Дома',
+    eng:'at home'  
+  },
+  {
+    rus:'На работе',
+    eng:'at work',
+    note:`We use **дома** *not* **в доме** to say that we eat there, and the same with **на работе** *not* **в работе**`
+  }
+]

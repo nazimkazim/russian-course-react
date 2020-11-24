@@ -279,3 +279,76 @@ export const conjVerbsSet4 = [
     ]
   }
 ];
+
+export const conjVerbsSet5 = [
+  {
+    verb: 'Краси<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я краш<strong>у</strong>сь',
+      'Ты крас<strong>ишь</strong>ся',
+      'Он крас<strong>ит</strong>ся',
+      'Она крас<strong>ит</strong>ся',
+      'Оно крас<strong>ит</strong>ся',
+      'Вы крас<strong>ите</strong>сь',
+      'Мы крас<strong>им</strong>ся',
+      'Они крас<strong>ят</strong>ся'
+    ]
+  },
+  {
+    verb: 'Краси<strong>ть</strong>ся',
+    tense: 'Future tense (imperfect)',
+    set: [
+      'Я(буду) краси<strong>ть</strong>ся',
+      'Ты(будешь) краси<strong>ть</strong>ся',
+      'Он(будет) краси<strong>ть</strong>ся',
+      'Она(будет) краси<strong>ть</strong>ся',
+      'Оно(будет) краси<strong>ть</strong>ся',
+      'Вы(будете) краси<strong>ть</strong>ся',
+      'Мы(будем) краси<strong>ть</strong>ся',
+      'Они(будут) краси<strong>ть</strong>ся'
+    ]
+  },
+  {
+    verb: 'Покраси<strong>ть</strong>ся',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я покраш<strong>у</strong>сь',
+      'Ты покрас<strong>ишь</strong>ся',
+      'Он покрас<strong>ит</strong>ся',
+      'Она покрас<strong>ит</strong>ся',
+      'Оно покрас<strong>ит</strong>ся',
+      'Вы покрас<strong>ите</strong>сь',
+      'Мы покрас<strong>им</strong>ся',
+      'Они покрас<strong>ят</strong>ся'
+    ]
+  },
+  {
+    verb: 'Краси<strong>ть</strong>ся',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я краси<strong>л</strong>ся',
+      'Ты краси<strong>л</strong>ся',
+      'Он краси<strong>л</strong>ся',
+      'Она краси<strong>ла</strong>сь',
+      'Оно краси<strong>ло</strong>сь',
+      'Вы краси<strong>ли</strong>сь',
+      'Мы краси<strong>ли</strong>сь',
+      'Они краси<strong>ли</strong>сь'
+    ]
+  },
+  {
+    verb: 'Покраси<strong>ть</strong>ся',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я покраси<strong>л</strong>ся',
+      'Ты покраси<strong>л</strong>ся',
+      'Он покраси<strong>л</strong>ся',
+      'Она покраси<strong>ла</strong>сь',
+      'Оно покраси<strong>ло</strong>сь',
+      'Вы покраси<strong>ли</strong>сь',
+      'Мы покраси<strong>ли</strong>сь',
+      'Они покраси<strong>ли</strong>сь'
+    ]
+  }
+];

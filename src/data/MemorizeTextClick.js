@@ -1078,7 +1078,7 @@ export const MTCTextCustomJon1dash14 = [
     }
 ];
 
-// Пориться
+// Побриться
 // Past tense (perfect)
 export const MTCTextCustomJon1dash15 = [
     {
@@ -1119,3 +1119,49 @@ export const MTCTextCustomJon1dash15 = [
     }
 ];
 
+// Краситься
+// Present tense (imperfect)
+export const MTCTextCustomJon1dash16 = [
+    {
+        eng: "I put on make up every day to look beautiful",
+        rus: "Я крашусь каждый день чтобы выглядеть красиво",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Despite the fact that you put on make up you do not become prettier",
+        rus: "Несмотря на то что ты красишься ты не становишься красивее",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He does wear make up although he is a man. Something is wrong with him",
+        rus: "Он красится хотя он мужчина. Что-то с ним не так",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When she puts on make up it is very difficult to recognize her",
+        rus: "Когда она красится очень трудно её узнать",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you put on make up what products do you use?",
+        rus: "Когда вы краситесь, какую продукцию вы используете?",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We don't wear makeup because we want to look natural",
+        rus: "Мы не красимся потому что мы хотим выглядеть естественно",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Why do they put on make up if it doesn't help them anyway?",
+        rus: "Для чего они красятся если все равно это им не помогает?",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

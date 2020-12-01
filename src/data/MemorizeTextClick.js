@@ -1165,3 +1165,50 @@ export const MTCTextCustomJon1dash16 = [
         turned: true
     }
 ];
+
+// Краситься
+// Future tense (imperfect)
+export const MTCTextCustomJon1dash17 = [
+    {
+        eng: "I will put on makeup when I want and where I want",
+        rus: "Я буду краситься когда захочу и где захочу",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you put on makeup, please don't keep your mouth open",
+        rus: "Когда ты будешь краситься пожалуйста не держи рот открытым",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He will be wearing makeup for a new show in which he will play a woman",
+        rus: "Он будет краситься для нового шоу, в котором будет играть женщину",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Tomorrow she will get up early, because in the morning she will be putting on makeup",
+        rus: "Завтра она встанет пораньше, так как утром она будет краситься",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Why will you put on makeup if you know that paint causes allergies?",
+        rus: "Зачем вы будете краситься, если знаете что краска вызывает аллергию?",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We will not put on makeup paint, because we are beautiful enough without paint",
+        rus: "Мы не будем краситься, так как и без краски мы достаточно красивые",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "If I knew that they would put on makeup, I would buy cosmetics",
+        rus: "Если бы я знал что они будут краситься, я бы купил косметику",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

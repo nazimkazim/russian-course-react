@@ -4,7 +4,7 @@ import SectionHeader from '../components/SectionHeader';
 import { conjVerbsSet2, conjVerbsSet3, conjVerbsSet4, conjVerbsSet5 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1,MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8,MTCTextCustomJon1dash9,MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16,MTCTextCustomJon1dash17 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
@@ -134,6 +134,8 @@ export default function Lesson_2_1() {
             <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
             <TenseDescriptionBox word='Краситься' tense='Present Tense (Imperfect)'/>
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash16 } />
+            <TenseDescriptionBox word='Краситься' tense='Future Tense (Imperfect)'/>
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash17 } />
             <hr />
           </div>
         </div>

@@ -1200,8 +1200,8 @@ export const MTCTextCustomJon1dash17 = [
         turned: true
     },
     {
-        eng: "We will not put on makeup paint, because we are beautiful enough without paint",
-        rus: "Мы не будем краситься, так как и без краски мы достаточно красивые",
+        eng: "We will not put on makeup, because we are beautiful enough without cosmetics",
+        rus: "Мы не будем краситься, так как и без косметики мы достаточно красивые",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },

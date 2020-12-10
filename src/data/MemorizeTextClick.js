@@ -1212,3 +1212,50 @@ export const MTCTextCustomJon1dash17 = [
         turned: true
     }
 ];
+
+// Покраситься
+// Future tense (perfect)
+export const MTCTextCustomJon1dash18 = [
+    {
+        eng: "Give me the cosmetics, I'll put on makeup and go",
+        rus: "Подай мне косметику я накрашусь и пойду",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I didn't think you'd put on your makeup so vulgarly",
+        rus: "Я не думал что ты накрасишься так вульгарно",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Sarah will put on makeup to seduce her colleague",
+        rus: "Сара накрасится для того чтобы соблазнить своего коллегу",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Maria offered to put on makeup for her grandmother, but she refused",
+        rus: "Мария предложила накраситься своей бабушке, но та отказалась",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "As soon as you put on your makeup, call me it is very urgent",
+        rus: "Как только вы накраситесь, позвоните мне это очень срочно",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We'll put on makeup, or maybe the party will be canceled, and then what will we do",
+        rus: "Мы накрасимся, а может быть вечеринку отменят, и что мы потом будем делать",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Schoolgirls will put on makeup and take the stage in five minutes",
+        rus: "Школьницы накрасятся и через пять минут выйдут на сцену",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

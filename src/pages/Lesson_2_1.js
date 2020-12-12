@@ -14,6 +14,8 @@ import { NWset4, NWset5, NWset6, NWset7 } from '../data/newWords';
 import NewWordsBoard from '../components/NewWordsBoard';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText10, MTCText11 } from '../data/MemorizeTextClick';
+import { generateText1 } from '../data/TextGenerator';
+import TextGenerator from '../components/TextGenerator/index';
 
 
 
@@ -185,11 +187,15 @@ export default function Lesson_2_1() {
           </div>
           <div className="columns is-multiline">
             <Instruction letter="b" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
-            <div className="column">
+            <div className="column is-6">
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData6 } />
             </div>
-            <div className="column">
+            <div className="column is-6">
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData7 } />
+            </div>
+            <div className="column">
+              <Instruction letter="c" name="Прочтите тексты" engName="Read texts" />
+              <TextGenerator text={ generateText1 } />
             </div>
           </div>
         </div>

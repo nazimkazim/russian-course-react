@@ -15,7 +15,7 @@ import Engineer from '../images/COSOC/Lesson 1.3/man_engineer.jpg';
 const _ = require('lodash');
 
 
-// Lesson 1
+// Lesson 1.1
 export const MGdata0 = _.shuffle([
   {
     value: "телевизор",
@@ -201,7 +201,7 @@ export const MGdata02 = _.shuffle([
   }
 ]);
 
-// Lesson 2
+// Lesson 1.2
 export const MGdata1 = _.shuffle([
   {
     value: "балерина",
@@ -395,7 +395,7 @@ export const MGdata3 = _.shuffle([
   }
 ]);
 
-// Lesson 3
+// Lesson 1.3
 export const MGdata4 = _.shuffle([
   {
     value: "я (меня)",
@@ -463,7 +463,6 @@ export const MGdata4 = _.shuffle([
   }
 ]);
 
-// Lesson 3
 export const MGdata5 = _.shuffle([
   {
     value: "футболист",
@@ -522,3 +521,241 @@ export const MGdata5 = _.shuffle([
     pic: ''
   }
 ]);
+
+// Lesson 2.1
+export const MGdata6 = _.shuffle([
+  {
+    value: "учитель/школа",
+    pic: ''
+  },
+  {
+    value: "учитель/школа",
+    pic: ''
+  },
+  {
+    value: "профессор/университет",
+    pic: ''
+  },
+  {
+    value: "профессор/университет",
+    pic: ''
+  },
+  {
+    value: "доктор/больница",
+    pic: ''
+  },
+  {
+    value: "доктор/больница",
+    pic: ''
+  },
+  {
+    value: "депутат/парламент",
+    pic: ''
+  },
+  {
+    value: "депутат/парламент",
+    pic: ''
+  },
+  {
+    value: "банкир/банк",
+    pic: ''
+  },
+  {
+    value: "банкир/банк",
+    pic: ''
+  },
+  {
+    value: "актёр/театр",
+    pic: ''
+  },
+  {
+    value: "актёр/театр",
+    pic: ''
+  },
+  {
+    value: "секретарь/офис",
+    pic: ''
+  },
+  {
+    value: "секретарь/офис",
+    pic: ''
+  }
+]);
+
+export const MGdata7 = _.shuffle([
+  {
+    value: "Я работаю",
+    pic: ''
+  },
+  {
+    value: "Я работаю",
+    pic: ''
+  },
+  {
+    value: "Ты работаешь",
+    pic: ''
+  },
+  {
+    value: "Ты работаешь",
+    pic: ''
+  },
+  {
+    value: "Он работает",
+    pic: ''
+  },
+  {
+    value: "Он работает",
+    pic: ''
+  },
+  {
+    value: "Она работает",
+    pic: ''
+  },
+  {
+    value: "Она работает",
+    pic: ''
+  },
+  {
+    value: "Вы работаете",
+    pic: ''
+  },
+  {
+    value: "Вы работаете",
+    pic: ''
+  },
+  {
+    value: "Мы работаем",
+    pic: ''
+  },
+  {
+    value: "Мы работаем",
+    pic: ''
+  },
+  {
+    value: "Они работают",
+    pic: ''
+  },
+  {
+    value: "Они работают",
+    pic: ''
+  }
+]);
+
+export const MGdata8 = _.shuffle([
+  {
+    value: "Я встаю",
+    pic: ''
+  },
+  {
+    value: "Я встаю",
+    pic: ''
+  },
+  {
+    value: "Ты встаёшь",
+    pic: ''
+  },
+  {
+    value: "Ты встаёшь",
+    pic: ''
+  },
+  {
+    value: "Он встаёт",
+    pic: ''
+  },
+  {
+    value: "Он встаёт",
+    pic: ''
+  },
+  {
+    value: "Она встаёт",
+    pic: ''
+  },
+  {
+    value: "Она встаёт",
+    pic: ''
+  },
+  {
+    value: "Вы встаёте",
+    pic: ''
+  },
+  {
+    value: "Вы встаёте",
+    pic: ''
+  },
+  {
+    value: "Мы встаёте",
+    pic: ''
+  },
+  {
+    value: "Мы встаёте",
+    pic: ''
+  },
+  {
+    value: "Они встают",
+    pic: ''
+  },
+  {
+    value: "Они встают",
+    pic: ''
+  }
+]);
+
+export const MGdata9 = _.shuffle([
+  {
+    value: "Я иду",
+    pic: ''
+  },
+  {
+    value: "Я иду",
+    pic: ''
+  },
+  {
+    value: "Ты идёшь",
+    pic: ''
+  },
+  {
+    value: "Ты идёшь",
+    pic: ''
+  },
+  {
+    value: "Он идёт",
+    pic: ''
+  },
+  {
+    value: "Он идёт",
+    pic: ''
+  },
+  {
+    value: "Она идёт",
+    pic: ''
+  },
+  {
+    value: "Она идёт",
+    pic: ''
+  },
+  {
+    value: "Вы идёте",
+    pic: ''
+  },
+  {
+    value: "Вы идёте",
+    pic: ''
+  },
+  {
+    value: "Мы идём",
+    pic: ''
+  },
+  {
+    value: "Мы идём",
+    pic: ''
+  },
+  {
+    value: "Они идут",
+    pic: ''
+  },
+  {
+    value: "Они идут",
+    pic: ''
+  }
+]);
+

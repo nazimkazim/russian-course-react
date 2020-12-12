@@ -16,6 +16,10 @@ import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import { MTCText10, MTCText11 } from '../data/MemorizeTextClick';
 import { generateText1 } from '../data/TextGenerator';
 import TextGenerator from '../components/TextGenerator/index';
+import MemoryGame from '../components/MemoryGame/MemoryContainer';
+import { MGdata6, MGdata7, MGdata8, MGdata9 } from '../data/MemoryGameData';
+import Snake from '../components/Snake/Snake';
+import { snakeDataSet6, snakeDataSet7, snakeDataSet8 } from '../data/SnakeData';
 
 
 
@@ -193,13 +197,35 @@ export default function Lesson_2_1() {
             <div className="column is-6">
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData7 } />
             </div>
-            <div className="column">
-              <Instruction letter="c" name="Прочтите тексты" engName="Read texts" />
+            <div className="column is-6">
+              <Instruction letter="c" name="Прочтите тексты, как минимум 3 раза" engName="Read texts at least 3 times" />
               <TextGenerator text={ generateText1 } />
             </div>
           </div>
         </div>
       </section>
+      <div className="newSection">
+        <SectionHeader name="Практика" engName="Practice" />
+        <div className="columns">
+          <div className="column">
+            <Instruction letter="а" name="Соотнесите карты" engName="Match the cards" />
+            <MemoryGame data={ [
+              { name: "Профессия/Место работы (Profession/Work place)", set: MGdata6 },
+              { name: "Спряжение глагола РАБОТАТЬ (Verb conjugation РАБОТАТЬ)", set: MGdata7 },
+              { name: "Спряжение глагола ВСТАТЬ (Verb conjugation ВСТАТЬ)", set: MGdata8 },
+              { name: "Спряжение глагола ИДТИ (Verb conjugation ИДТИ)", set: MGdata9 }
+            ] } />
+          </div>
+          <div className="column">
+            <Instruction letter="б" name="Съедайте буквы по порядку" engName="Eat letters in order" />
+            <Snake data={ [
+              { name: "Места покушать (Places to eat)", set: snakeDataSet6 },
+              { name: "Места работы (Work places)", set: snakeDataSet7 },
+              { name: "Профессии (Professions)", set: snakeDataSet8 }
+              ] } />
+          </div>
+        </div>
+      </div>
     </>
   );
 }

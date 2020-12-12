@@ -220,3 +220,123 @@ export const snakeDataSet5 = [
     correct:false
   }
 ]
+
+// Lesson 2_1
+export const snakeDataSet6 = [
+  {
+    engWord:'restaurant',
+    rusWord:'ресторан',
+    correct:false
+  },
+  {
+    engWord:'cafe',
+    rusWord:'кафе',
+    correct:false
+  },
+  {
+    engWord:'food-court',
+    rusWord:'фуд-корт',
+    correct:false
+  },
+  {
+    engWord:'cafeteria',
+    rusWord:'кафетерий',
+    correct:false
+  },
+  {
+    engWord:'pizzeria',
+    rusWord:'пиццерия',
+    correct:false
+  },
+  {
+    engWord:'coffeeshop',
+    rusWord:'кофешоп',
+    correct:false
+  },
+  {
+    engWord:'bar',
+    rusWord:'бар',
+    correct:false
+  },
+  {
+    engWord:'canteen',
+    rusWord:'столовая',
+    correct:false
+  }
+]
+
+export const snakeDataSet7 = [
+  {
+    engWord:'hospital',
+    rusWord:'больница',
+    correct:false
+  },
+  {
+    engWord:'parliament',
+    rusWord:'парламент',
+    correct:false
+  },
+  {
+    engWord:'office',
+    rusWord:'офис',
+    correct:false
+  },
+  {
+    engWord:'school',
+    rusWord:'школа',
+    correct:false
+  },
+  {
+    engWord:'university',
+    rusWord:'университет',
+    correct:false
+  },
+  {
+    engWord:'bank',
+    rusWord:'банк',
+    correct:false
+  },
+  {
+    engWord:'theatre',
+    rusWord:'театр',
+    correct:false
+  }
+]
+
+export const snakeDataSet8 = [
+  {
+    engWord:'banker',
+    rusWord:'банкир',
+    correct:false
+  },
+  {
+    engWord:'secretary',
+    rusWord:'секретарь',
+    correct:false
+  },
+  {
+    engWord:'teacher',
+    rusWord:'учитель',
+    correct:false
+  },
+  {
+    engWord:'deputy',
+    rusWord:'депутат',
+    correct:false
+  },
+  {
+    engWord:'professor',
+    rusWord:'профессор',
+    correct:false
+  },
+  {
+    engWord:'doctor',
+    rusWord:'доктор',
+    correct:false
+  },
+  {
+    engWord:'actor',
+    rusWord:'актёр',
+    correct:false
+  }
+]

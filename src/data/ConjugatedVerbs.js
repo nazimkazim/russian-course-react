@@ -58,6 +58,38 @@ export const conjVerbsSet1 = [
   }
 ];
 
+// lesson 2.1
+export const conjVerbsSet1_2 = [
+  {
+    verb: 'Ид<strong>ти</strong>',
+    tense: 'Present tense',
+    set: [
+      'Я ид<strong>у</strong>',
+      'Ты ид<strong>ёшь</strong>',
+      'Он ид<strong>ет</strong>',
+      'Она ид<strong>ет</strong>',
+      'Оно ид<strong>ет</strong>',
+      'Вы ид<strong>ёте</strong>',
+      'Мы ид<strong>ём</strong>',
+      'Они ид<strong>ут</strong>'
+    ]
+  },
+  {
+    verb: 'Встава<strong>ть</strong>',
+    tense: 'Present tense',
+    set: [
+      'Я вста<strong>ю</strong>',
+      'Ты вста<strong>ёшь</strong>',
+      'Он вста<strong>ёт</strong>',
+      'Она вста<strong>ёт</strong>',
+      'Оно вста<strong>ёт</strong>',
+      'Вы вста<strong>ёте</strong>',
+      'Мы вста<strong>ём</strong>',
+      'Они вста<strong>ют</strong>'
+    ]
+  }
+];
+
 // conjVerbsSet2 - одеваться
 export const conjVerbsSet2 = [
   {

@@ -3,9 +3,9 @@ import LessonHeader from './LessonHeaderTemplate';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import MatchingActivity from '../components/MatchWords';
-import { matchingWordsData1, matchingWordsData2, matchingWordsData3, matchingWordsData4, matchingWordsData5 } from '../data/MatchWordsData';
+import { matchingWordsData1, matchingWordsData2, matchingWordsData3, matchingWordsData4, matchingWordsData5, matchingWordsData6, matchingWordsData7 } from '../data/MatchWordsData';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
-import { conjVerbsSet1 } from '../data/ConjugatedVerbs';
+import { conjVerbsSet1, conjVerbsSet1_2 } from '../data/ConjugatedVerbs';
 import CasesTemplate from '../components/Charts/CasesTemplate';
 import { prepositionalCaseData1, instrumentalCaseData1 } from '../data/CasesData';
 import ScrambleWordsActivity from '../components/ScrambleWordsActivity';
@@ -152,11 +152,44 @@ export default function Lesson_2_1() {
           </div>
           <div className="columns">
             <div className="column">
-            <div className="column">
-              <Instruction letter="a" name="Попытайтесь сказать предложения на Русском" engName="Try to say the sentences in Russian" />
-              <MemorizeOnClickActivity data={ MTCText11 } />
-              <hr />
+              <div className="column">
+                <Instruction letter="a" name="Попытайтесь сказать предложения на Русском" engName="Try to say the sentences in Russian" />
+                <MemorizeOnClickActivity data={ MTCText11 } />
+                <hr />
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Новые слова" engName="New words" />
+        <div className="container is-fluid">
+          <div className="columns is-multiline">
+            <Instruction letter="a" name="Слушайте и повторяйте спряжение" engName="Lsten and repeat conjugation" />
+            { conjVerbsSet1_2.map(set => (
+              <div className="column is-6">
+                <VebConjugationTemplate centered={ true } set={ set } />
+              </div>
+            )) }
+          </div>
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="a" name="Выучите новые фразы со словами ИДТИ и ВСТАВАТЬ" engName="Learn new phrases with words ИДТИ и ВСТАВАТЬ" />
+              <iframe
+                src="https://quizlet.com/555496386/flashcards/embed?i=4bby1&x=1jj1"
+                height="500"
+                width="100%"
+                title="new words 1"
+                styles={ "border:0" }></iframe>
+            </div>
+          </div>
+          <div className="columns is-multiline">
+            <Instruction letter="b" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
+            <div className="column">
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData6 } />
+            </div>
+            <div className="column">
+              <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData7 } />
             </div>
           </div>
         </div>

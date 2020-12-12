@@ -159,8 +159,12 @@ export default function Lesson_2_1() {
             <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
             <TenseDescriptionBox word='Краситься' tense='Present Tense (Imperfect)' />
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash16 } />
+            <hr />
             <TenseDescriptionBox word='Краситься' tense='Future Tense (Imperfect)' />
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash17 } />
+            <hr />
+            <TenseDescriptionBox word='Накраситься' tense='Future Tense (perfect)' />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash18 } />
             <hr />
           </div>
         </div>

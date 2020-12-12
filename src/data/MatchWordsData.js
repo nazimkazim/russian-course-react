@@ -172,3 +172,71 @@ export const matchingWordsData5 = [
     pair:['Они', 'Ужинают']
   }
 ]
+
+// Lesson 2.1 matching activity "Идти verb conjugation"
+export const matchingWordsData6 = [
+  {
+    word1:'Я',
+    word2:'Иду',
+    pair:['Иду', 'Я']
+  },
+  {
+    word1:'Ты',
+    word2:'Идёшь',
+    pair:['Идёшь', 'Ты']
+  },
+  {
+    word1:'Он/Она/Оно',
+    word2:'Идёт',
+    pair:['Он/Она/Оно', 'Идёт']
+  },
+  {
+    word1:'Мы',
+    word2:'Идём',
+    pair:['Мы', 'Идём']
+  },
+  {
+    word1:'Вы',
+    word2:'Идёте',
+    pair:['Вы', 'Идёте']
+  },
+  {
+    word1:'Они',
+    word2:'Идут',
+    pair:['Они', 'Идут']
+  }
+]
+
+// Lesson 2.1 matching activity "Вставать verb conjugation"
+export const matchingWordsData7 = [
+  {
+    word1:'Я',
+    word2:'Встаю',
+    pair:['Встаю', 'Я']
+  },
+  {
+    word1:'Ты',
+    word2:'Встаёшь',
+    pair:['Встаёшь', 'Ты']
+  },
+  {
+    word1:'Он/Она/Оно',
+    word2:'Встаёт',
+    pair:['Он/Она/Оно', 'Встаёт']
+  },
+  {
+    word1:'Мы',
+    word2:'Встаём',
+    pair:['Мы', 'Встаём']
+  },
+  {
+    word1:'Вы',
+    word2:'Встаёте',
+    pair:['Вы', 'Встаёте']
+  },
+  {
+    word1:'Они',
+    word2:'Встают',
+    pair:['Они', 'Встают']
+  }
+]

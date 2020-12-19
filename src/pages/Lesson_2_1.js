@@ -20,6 +20,8 @@ import MemoryGame from '../components/MemoryGame/MemoryContainer';
 import { MGdata6, MGdata7, MGdata8, MGdata9 } from '../data/MemoryGameData';
 import Snake from '../components/Snake/Snake';
 import { snakeDataSet6, snakeDataSet7, snakeDataSet8 } from '../data/SnakeData';
+import CaseQuiz from '../components/CaseQuiz/Index'
+import {PrepositionalCaseQuiz} from '../data/CaseQuiz'
 
 
 
@@ -86,7 +88,12 @@ export default function Lesson_2_1() {
               <Instruction letter="b" name="Сопоставьте местоимение с глаголом" engName="Match subjects with verbs" />
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData2 } />
             </div>
-            <div className="column">
+            <div className="column is-half">
+              <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+              <NewWordsBoard data={ NWset4 } />
+              <CaseQuiz data={PrepositionalCaseQuiz}/>
+            </div>
+            <div className="column is-half">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
               <NewWordsBoard data={ NWset4 } />
               <ScrambleWordsActivity data={ set6COSOC } />
@@ -198,7 +205,7 @@ export default function Lesson_2_1() {
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData7 } />
             </div>
             <div className="column is-6">
-              <Instruction letter="c" name="Прочтите тексты, как минимум 3 раза" engName="Read texts at least 3 times" />
+              <Instruction letter="c" name="Прочтите тексты, как минимум 3 раза, и затем расскажите о своем дне" engName="Read texts at least 3 times, and then tell about your own day. You may record a video and upload to Youtube and share a link in disscussion" />
               <TextGenerator text={ generateText1 } />
             </div>
           </div>

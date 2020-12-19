@@ -370,17 +370,17 @@ export const conjVerbsSet5 = [
     ]
   },
   {
-    verb: 'Покраси<strong>ть</strong>ся',
+    verb: 'Накраси<strong>ть</strong>ся',
     tense: 'Past tense (perfect)',
     set: [
-      'Я покраси<strong>л</strong>ся',
-      'Ты покраси<strong>л</strong>ся',
-      'Он покраси<strong>л</strong>ся',
-      'Она покраси<strong>ла</strong>сь',
-      'Оно покраси<strong>ло</strong>сь',
-      'Вы покраси<strong>ли</strong>сь',
-      'Мы покраси<strong>ли</strong>сь',
-      'Они покраси<strong>ли</strong>сь'
+      'Я накраси<strong>л</strong>ся',
+      'Ты накраси<strong>л</strong>ся',
+      'Он накраси<strong>л</strong>ся',
+      'Она накраси<strong>ла</strong>сь',
+      'Оно накраси<strong>ло</strong>сь',
+      'Вы накраси<strong>ли</strong>сь',
+      'Мы накраси<strong>ли</strong>сь',
+      'Они накраси<strong>ли</strong>сь'
     ]
   }
 ];

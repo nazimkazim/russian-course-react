@@ -1213,7 +1213,7 @@ export const MTCTextCustomJon1dash17 = [
     }
 ];
 
-// Покраситься
+// Накраситься
 // Future tense (perfect)
 export const MTCTextCustomJon1dash18 = [
     {
@@ -1235,8 +1235,8 @@ export const MTCTextCustomJon1dash18 = [
         turned: true
     },
     {
-        eng: "Maria offered to put on makeup for her grandmother, but she refused",
-        rus: "Мария предложила накраситься своей бабушке, но та отказалась",
+        eng: "Maria will put on makeup for her grandmother, because she wants to see her in different style",
+        rus: "Мария накрасится для своей бабушке, потому что она хочет видеть её в другом стиле",
         id: nextId('MTCText1-7-id-'),
         turned: true
     },
@@ -1255,6 +1255,53 @@ export const MTCTextCustomJon1dash18 = [
     {
         eng: "Schoolgirls will put on makeup and take the stage in five minutes",
         rus: "Школьницы накрасятся и через пять минут выйдут на сцену",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Накраситься
+// Past tense (imperfect)
+export const MTCTextCustomJon1dash19 = [
+    {
+        eng: "I was putting on makeup in the basement of our studio and it was hot there",
+        rus: "Я красилась в подвале нашей студии и там было жарко",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Honey, when you were putting on makeup, I forgot to turn off the gas-stove and all the food burned",
+        rus: "Дорогая, когда ты красилась, я забыл выключить газ-плиту и вся еда сгорела",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When I entered his room, he was putting on makeup, and then abruptly hid his makeup",
+        rus: "Когда я вошел в его комнату он красился, а потом резко спрятал косметику",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Maria used to wear makeup every day, but now her skin does not perceive cosmetics",
+        rus: "Мария раньше красилась каждый день, но сейчас её кожа не воспринимает косметику",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Why did you wear makeup so bright, it annoyed me",
+        rus: "Почему вы красились так ярко, меня это раздражало",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We wore makeup because it was fashionable, but now we understand that it was stupid",
+        rus: "Мы красились потому что это было модно, но сейчас понимаем, что это было глупо",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Before, the secretaries used to put makeup less provocative and looked decent",
+        rus: "Раньше секретарши красились менее вызывающе, и выглядели достойно",
         id: nextId('MTCText1-7-id-'),
         turned: true
     }

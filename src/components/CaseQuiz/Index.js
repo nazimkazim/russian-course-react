@@ -98,7 +98,7 @@ const Status = styled.div`
   color:white;
   font-size:26px;
   border-radius:50%;
-`
+`;
 
 const Button = styled.button`
   border:none;
@@ -121,7 +121,7 @@ function Index({ data }) {
   const [correct, setCorrect] = useState(false);
   const [incorrect, setIncorrect] = useState(false);
 
-  
+
   const chooseAnswer = (e) => {
     //console.log(e.target.value, e.target.name);
     //console.log(`option1 ${option1}`,`option2 ${option2}`);
@@ -160,11 +160,11 @@ function Index({ data }) {
   const checkAnswer = () => {
     if (answer.join('') === correctAnswer().join('')) {
       setNextBtnDisabled(false);
-      setCorrect(true)
-      setIncorrect(false)
+      setCorrect(true);
+      setIncorrect(false);
     } else {
-      setIncorrect(true)
-      setCorrect(false)
+      setIncorrect(true);
+      setCorrect(false);
     }
   };
 
@@ -176,8 +176,8 @@ function Index({ data }) {
       setNextBtnDisabled(true);
       setOption1('');
       setOption2('');
-      setCorrect(false)
-      setIncorrect(false)
+      setCorrect(false);
+      setIncorrect(false);
       if (index === data.length - 1) {
         setIsFinished(true);
       }
@@ -185,14 +185,21 @@ function Index({ data }) {
   };
 
   const startAgain = () => {
-    return;
+    setIndex(0);
+    setAnswer([]);
+    setOption1('');
+    setOption2('');
+    setIsFinished(false);
+    setNextBtnDisabled(true);
+    setCorrect(false);
+    setIncorrect(false);
   };
   return (
     <Continer>
       <Incrementer>{ index }/{ data.length }</Incrementer>
       <Status>
-       {incorrect && '😨' }  
-       {correct && '👍' }  
+        { incorrect && '😨' }
+        { correct && '👍' }
       </Status>
       {data[index] && <Word>{ data[index].word }</Word> }
       {!isFinished ? <OptionContainer>

@@ -90,7 +90,6 @@ export default function Lesson_2_1() {
             </div>
             <div className="column is-half">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
-              <NewWordsBoard data={ NWset4 } />
               <CaseQuiz data={PrepositionalCaseQuiz}/>
             </div>
             <div className="column is-half">

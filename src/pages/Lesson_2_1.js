@@ -89,7 +89,7 @@ export default function Lesson_2_1() {
               <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData2 } />
             </div>
             <div className="column is-half">
-              <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+              <Instruction letter="c" name="Сделайте викторину" engName="Do the quiz" />
               <CaseQuiz data={PrepositionalCaseQuiz}/>
             </div>
             <div className="column is-half">

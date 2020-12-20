@@ -8,7 +8,7 @@ const Continer = styled.div`
   justify-content:center;
   align-items:center;
   max-width:600px;
-  min-height:200px;
+  min-height:450px;
   border-radius:6px;
   background: rgb(34,193,195);
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(238,237,233,1) 100%);
@@ -26,7 +26,7 @@ const OptionContainer = styled.div`
 const OptionName = styled.h1`
   font-size:16px;
   font-weight:bold;
-`
+`;
 
 const Rules = styled.div`
   display:flex;
@@ -37,7 +37,7 @@ const Rules = styled.div`
 const Word = styled.h1`
   font-size:20px;
   text-transform:uppercase;
-`
+`;
 
 const Rule = styled.div`
   display:flex;
@@ -86,14 +86,42 @@ const Incrementer = styled.div`
   border-radius:50%;
 `;
 
+const Status = styled.div`
+  position:absolute;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top:5px;
+  right:5px;
+  min-width:40px;
+  min-height:40px;
+  color:white;
+  font-size:26px;
+  border-radius:50%;
+`
+
+const Button = styled.button`
+  border:none;
+  background-color:#FFA700;
+  margin-bottom:10px;
+  padding:10px;
+  font-size:16px;
+  text-transform:uppercase;
+  cursor:pointer;
+  border-radius:3px;
+`;
+
 function Index({ data }) {
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState([]);
   const [option1, setOption1] = useState('');
   const [option2, setOption2] = useState('');
   const [isFinished, setIsFinished] = useState(false);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
+  const [correct, setCorrect] = useState(false);
+  const [incorrect, setIncorrect] = useState(false);
 
-
+  
   const chooseAnswer = (e) => {
     //console.log(e.target.value, e.target.name);
     //console.log(`option1 ${option1}`,`option2 ${option2}`);
@@ -127,25 +155,46 @@ function Index({ data }) {
     return arr;
   };
   //console.log(correctAnswer());
-  console.log(index, data.length, data.length === index, isFinished);
+  //console.log(index, data.length, data.length === index, isFinished);
 
   const checkAnswer = () => {
     if (answer.join('') === correctAnswer().join('')) {
-      console.log('ok');
-      if (index <= data.length - 1) {
+      setNextBtnDisabled(false);
+      setCorrect(true)
+      setIncorrect(false)
+    } else {
+      setIncorrect(true)
+      setCorrect(false)
+    }
+  };
+
+  const nextQuestion = () => {
+    if (index <= data.length - 1) {
+      setTimeout(() => {
         setIndex(index + 1);
-        setOption1('');
-        setOption2('');
-        if (index === data.length - 1) {
-          setIsFinished(true);
-        }
+      }, 500);
+      setNextBtnDisabled(true);
+      setOption1('');
+      setOption2('');
+      setCorrect(false)
+      setIncorrect(false)
+      if (index === data.length - 1) {
+        setIsFinished(true);
       }
     }
+  };
+
+  const startAgain = () => {
+    return;
   };
   return (
     <Continer>
       <Incrementer>{ index }/{ data.length }</Incrementer>
-      {data[index] && <Word>{data[index].word}</Word> }
+      <Status>
+       {incorrect && '😨' }  
+       {correct && '👍' }  
+      </Status>
+      {data[index] && <Word>{ data[index].word }</Word> }
       {!isFinished ? <OptionContainer>
         { data[index].choices.map((choice) => (
           <>
@@ -160,9 +209,9 @@ function Index({ data }) {
             )) }</Rules>
           </>
         )) }
-      </OptionContainer> : <p>Game is finished</p> }
-
-      {!isFinished ? <button onClick={ checkAnswer }>Check answer</button> : <button onClick={ checkAnswer }>Start again</button> }
+      </OptionContainer> : <Word>Game is finished</Word> }
+      {!isFinished ? <Button onClick={ checkAnswer }>Check answer</Button> : <Button onClick={ startAgain }>Start again</Button> }
+      {!isFinished && <Button disabled={ nextBtnDisabled } onClick={ nextQuestion }>Next Question</Button> }
     </Continer>
   );
 }

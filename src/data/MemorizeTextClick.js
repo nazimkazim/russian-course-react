@@ -1347,3 +1347,50 @@ export const MTCTextCustomJon1dash20 = [
         turned: true
     }
 ];
+
+// Собираться/Собраться
+// Present tense (imperfect)
+export const MTCTextCustomJon1dash21 = [
+    {
+        eng: "I'm getting ready for a trip, so don't bother me to pack my suitcases",
+        rus: "Я собираюсь в дорогу, так что не мешай мне упаковывать чемоданы",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Are you going to tell him the truth at last?",
+        rus: "Ты собираешься сказать ему правду наконец?",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He's going to buy a car to work as a taxi driver",
+        rus: "Он собирается купить машину, чтобы работать таксистом",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "She is not going to appeal despite the unfair outcome",
+        rus: "Она не собирается подавать апелляцию, несмотря на несправедливый результат",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "It seems to me that you are going to tell me something, am I right?",
+        rus: "Мне кажется, что вы собираетесь, что-то мне сказать, я права?",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We are going to buy a house in New Orleans as my husband will work there",
+        rus: "Мы собираемся купить дом в Новом Орлеане, так как мой муж будет там работать",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Tom and Jessica are getting married in September while the weather is warm",
+        rus: "Том и Джессика собираются пожениться в Сентябре, пока погода теплая",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

@@ -384,3 +384,76 @@ export const conjVerbsSet5 = [
     ]
   }
 ];
+
+export const conjVerbsSet6 = [
+  {
+    verb: 'Собира<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я собира<strong>ю</strong>сь',
+      'Ты собира<strong>ешь</strong>ся',
+      'Он собира<strong>ет</strong>ся',
+      'Она собира<strong>ет</strong>ся',
+      'Оно собира<strong>ет</strong>ся',
+      'Вы собира<strong>ете</strong>сь',
+      'Мы собира<strong>ем</strong>ся',
+      'Они собира<strong>ют</strong>ся'
+    ]
+  },
+  {
+    verb: 'Собира<strong>ть</strong>ся',
+    tense: 'Future tense (imperfect)',
+    set: [
+      'Я(буду) собира<strong>ть</strong>ся',
+      'Ты(будешь) собира<strong>ть</strong>ся',
+      'Он(будет) собира<strong>ть</strong>ся',
+      'Она(будет) собира<strong>ть</strong>ся',
+      'Оно(будет) собира<strong>ть</strong>ся',
+      'Вы(будете) собира<strong>ть</strong>ся',
+      'Мы(будем) собира<strong>ть</strong>ся',
+      'Они(будут) собира<strong>ть</strong>ся'
+    ]
+  },
+  {
+    verb: 'Собра<strong>ть</strong>ся',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я собер<strong>у</strong>сь',
+      'Ты собер<strong>ешь</strong>ся',
+      'Он собер<strong>ет</strong>ся',
+      'Она собер<strong>ет</strong>ся',
+      'Оно собер<strong>ет</strong>ся',
+      'Вы собер<strong>ете</strong>сь',
+      'Мы собер<strong>ем</strong>ся',
+      'Они собер<strong>ут</strong>ся'
+    ]
+  },
+  {
+    verb: 'Собира<strong>ть</strong>ся',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я собира<strong>л</strong>ся',
+      'Ты собира<strong>л</strong>ся',
+      'Он собира<strong>л</strong>ся',
+      'Она собира<strong>ла</strong>сь',
+      'Оно собира<strong>ло</strong>сь',
+      'Вы собира<strong>ли</strong>сь',
+      'Мы собира<strong>ли</strong>сь',
+      'Они собира<strong>ли</strong>сь'
+    ]
+  },
+  {
+    verb: 'Собра<strong>ть</strong>ся',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я собра<strong>л</strong>ся',
+      'Ты собра<strong>л</strong>ся',
+      'Он собра<strong>л</strong>ся',
+      'Она собра<strong>ла</strong>сь',
+      'Оно собра<strong>ло</strong>сь',
+      'Вы собра<strong>ли</strong>сь',
+      'Мы собра<strong>ли</strong>сь',
+      'Они собра<strong>ли</strong>сь'
+    ]
+  }
+];

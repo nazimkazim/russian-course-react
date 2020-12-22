@@ -1260,7 +1260,7 @@ export const MTCTextCustomJon1dash18 = [
     }
 ];
 
-// Накраситься
+// Краситься
 // Past tense (imperfect)
 export const MTCTextCustomJon1dash19 = [
     {
@@ -1302,6 +1302,47 @@ export const MTCTextCustomJon1dash19 = [
     {
         eng: "Before, the secretaries used to put makeup less provocative and looked decent",
         rus: "Раньше секретарши красились менее вызывающе, и выглядели достойно",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];
+
+// Накраситься
+// Past tense (perfect)
+export const MTCTextCustomJon1dash20 = [
+    {
+        eng: "I put on makeup in advance and waited for the guests, but unfortunately they did not come",
+        rus: "Я накрасилась заранее и ждала гостей, но к сожалению они не пришли",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I know you put on makeup to piss me off",
+        rus: "Я же знаю, что ты накрасилась, чтобы разозлить меня",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "He had to put on makeup as he wanted to please them",
+        rus: "Ему пришлось накраситься, так как он хотел угодить им",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Why did you put on makeup, did you not know that we would not go to the wedding?",
+        rus: "Зачем вы накрасились, вы что не знали, что мы не пойдем на свадьбу?",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We put on makeup like princesses and they rejected us",
+        rus: "Мы накрасились как принцессы, а они нас отвергли",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They put on makeup and are ready to go on stage, I hope everything goes according to plan",
+        rus: "Они накрасились и уже готовы выйти на сцену, надеюсь все пойдет по плану",
         id: nextId('MTCText1-7-id-'),
         turned: true
     }

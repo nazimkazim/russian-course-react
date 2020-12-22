@@ -20,8 +20,8 @@ import MemoryGame from '../components/MemoryGame/MemoryContainer';
 import { MGdata6, MGdata7, MGdata8, MGdata9 } from '../data/MemoryGameData';
 import Snake from '../components/Snake/Snake';
 import { snakeDataSet6, snakeDataSet7, snakeDataSet8 } from '../data/SnakeData';
-import CaseQuiz from '../components/CaseQuiz/Index'
-import {PrepositionalCaseQuiz} from '../data/CaseQuiz'
+import CaseQuiz from '../components/CaseQuiz/Index';
+import { PrepositionalCaseQuiz } from '../data/CaseQuiz';
 
 
 
@@ -71,7 +71,7 @@ export default function Lesson_2_1() {
         <SectionHeader name="Спряжения глагола. Предложный падеж" engName="Verb conjugation. Prepositional case" />
         <div className="container is-fluid">
           <div className="columns is-multiline">
-            <Instruction letter="a" name="Слушайте и повторяйте спряжение" engName="Lsten and repeat conjugation" />
+            <Instruction name="Слушайте и повторяйте спряжение" engName="Lsten and repeat conjugation" />
             { conjVerbsSet1.map(set => (
               <div className="column is-3">
                 <VebConjugationTemplate centered={ true } set={ set } />
@@ -90,10 +90,10 @@ export default function Lesson_2_1() {
             </div>
             <div className="column is-half">
               <Instruction letter="c" name="Сделайте викторину" engName="Do the quiz" />
-              <CaseQuiz data={PrepositionalCaseQuiz}/>
+              <CaseQuiz data={ PrepositionalCaseQuiz } />
             </div>
             <div className="column is-half">
-              <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
+              <Instruction letter="d" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
               <NewWordsBoard data={ NWset4 } />
               <ScrambleWordsActivity data={ set6COSOC } />
             </div>
@@ -110,6 +110,12 @@ export default function Lesson_2_1() {
               <CasesTemplate centered={ true } data={ instrumentalCaseData1 } />
             </div>
             <div className="column is-half">
+              <Instruction letter="b" name="Сделайте викторину" engName="Do the quiz" />
+              <CaseQuiz data={ PrepositionalCaseQuiz } />
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
               <NewWordsBoard data={ NWset4 } />
               <ScrambleWordsActivity data={ set7COSOC } />
@@ -228,7 +234,7 @@ export default function Lesson_2_1() {
               { name: "Места покушать (Places to eat)", set: snakeDataSet6 },
               { name: "Места работы (Work places)", set: snakeDataSet7 },
               { name: "Профессии (Professions)", set: snakeDataSet8 }
-              ] } />
+            ] } />
           </div>
         </div>
       </div>

@@ -21,7 +21,7 @@ import { MGdata6, MGdata7, MGdata8, MGdata9 } from '../data/MemoryGameData';
 import Snake from '../components/Snake/Snake';
 import { snakeDataSet6, snakeDataSet7, snakeDataSet8 } from '../data/SnakeData';
 import CaseQuiz from '../components/CaseQuiz/Index';
-import { PrepositionalCaseQuiz } from '../data/CaseQuiz';
+import { PrepositionalCaseQuiz, InstrumentalCaseQuiz } from '../data/CaseQuiz';
 
 
 
@@ -111,7 +111,7 @@ export default function Lesson_2_1() {
             </div>
             <div className="column is-half">
               <Instruction letter="b" name="Сделайте викторину" engName="Do the quiz" />
-              <CaseQuiz data={ PrepositionalCaseQuiz } />
+              <CaseQuiz data={ InstrumentalCaseQuiz } />
             </div>
           </div>
           <div className="columns">

@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
   chip: {
     padding: '5px',
     maxWidth: '375px',
-    minHeight: '100px',
+    minHeight: '120px',
     "& > *": {
       whiteSpace: 'normal',
-      fontSize: '18px'
+      fontSize: '16px'
     }
   }
 }));

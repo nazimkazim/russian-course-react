@@ -1394,3 +1394,50 @@ export const MTCTextCustomJon1dash21 = [
         turned: true
     }
 ];
+
+// Собираться/Собраться
+// Future tense (imperfect)
+export const MTCTextCustomJon1dash22 = [
+    {
+        eng: "I'll be packing for the road, make sure all my things are in my bag",
+        rus: "Я буду собираться в дорогу, убедись, что все мои вещи в сумке",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "When you are going to pack for England, please call John in advance to meet you.",
+        rus: "Когда ты будешь собираться в Англию, пожалуйста, позвони заранее Джону, чтобы он тебя встретил",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Alex will be getting ready for school and will be in a hurry, so he may forget some things",
+        rus: "Алекс будет собираться в школу и спешить, поэтому он может забыть некоторые вещи",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Nastya will be getting ready for the road tonight, she said she will take two heavy bags",
+        rus: "Настя будет собираться в дорогу сегодня вечером, она сказала,что возьмет две тяжелые сумки",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I heard that you will be meeting at John's house, I advise you to cancel the meeting due to coronavirus restrictions",
+        rus: "Я слышал, что вы будете собираться у Джона дома, советую отменить встречу из-за короновирусных ограничений",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We will meet at Tom's, as he has a big, luxurious house by the sea",
+        rus: "Мы будем собираться у Тома, так как у него большой, раскошный дом на берегу моря",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Harry and Megan will be getting ready for Europe, now they are preparing a large list of documents",
+        rus: "Гарри и Меган будут собираться в Европу, сейчас они готовят большой список документов",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

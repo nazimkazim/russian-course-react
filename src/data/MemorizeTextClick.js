@@ -1441,3 +1441,50 @@ export const MTCTextCustomJon1dash22 = [
         turned: true
     }
 ];
+
+// Собираться/Собраться
+// Future tense (perfect)
+export const MTCTextCustomJon1dash23 = [
+    {
+        eng: "By this time, I'll be ready and will be waiting for you",
+        rus: "К этому времени я уже соберусь и буду ждать тебя",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I hope you will compose yourself and correct the mistake",
+        rus: "Я надеюсь ты соберешься и исправишь ошибку",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I believe that he will collect his thoughts and come to the right decision",
+        rus: "Я верю что он соберется с мыслями и придет к правильному решению",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Anna will get ready by noon and immediately order a taxi to the airport",
+        rus: "Анна соберется к обеду и сразу закажет такси до аэропорта",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I heard that you will meet at the building by 9 o'clock for a demonstration",
+        rus: "Я слышал что вы соберетесь у здания к 9 часам для демонстрации",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "We decided that we will meet at John's house and celebrate the successful completion of the project",
+        rus: "Мы решили что мы соберемся у Джона дома и отметим успешное окончание проекта",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "I know that the demonstrators will gather in the square and shout slogans",
+        rus: "Я знаю что демонстранты соберутся на площади и будут кричать лозунги",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

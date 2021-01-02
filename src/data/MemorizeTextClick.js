@@ -1488,3 +1488,50 @@ export const MTCTextCustomJon1dash23 = [
         turned: true
     }
 ];
+
+// Собираться/Собраться
+// Past tense (imperfect)
+export const MTCTextCustomJon1dash24 = [
+    {
+        eng: "I was going to visit my mom, but then I remembered about meeting with the dentist",
+        rus: "К этому времени я уже соберусь и буду ждать тебяЯ собирался посететь маму, но потом вспомнил о встрече с дантистом",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "As far as I know you were going to buy a premium car this year",
+        rus: "Насколько я знаю ты собирался купить машину премиум класса в этом году",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "John was getting ready for the trip, and had already packed his suitcase, then he remembered that he had not put the comb",
+        rus: "Джон собирался в дорогу, и уже упаковал чемодан, потом вспомнил, что не положил расческу",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "She was going to tell him everything, but because of excitement she could not find the right words",
+        rus: "Она собиралась все ему рассказть, но из-за волнения не могла подобрать нужные слова",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "Last year, we were going to conquer Mont Blanc, but due to a serious injury, we remained in the city",
+        rus: "В прошлом году, мы собирались покорить Монблан, но ввиду тяжелой травмы остались в городе",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "According to media reports, you gathered at the casino for three weeks in a row, despite the strict restrictions",
+        rus: "По информации СМИ, вы собирались в казино три недели подряд, несмотря на строгие ограничения",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They were going to attack the police from behind, but one awkward movement ruined their plans",
+        rus: "Они собирались атаковать неожиданно полицейских сзади, но одно неловкое движение разрушило из планы",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

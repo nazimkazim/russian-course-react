@@ -12,6 +12,7 @@ import Lesson_1_1 from './pages/Lesson_1_1';
 import Lesson_1_2 from './pages/Lesson_1_2';
 import Lesson_1_3 from './pages/Lesson_1_3';
 import Lesson_2_1 from './pages/Lesson_2_1';
+import Lesson_2_2 from './pages/Lesson_2_2'
 import CustomLessons from './pages/CustomLessonsPage';
 import JonCustomLesson1 from './pages/JonCustomLesson1'
 import Credits from './pages/Credits';
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/lessons/Много общего" component={ Lesson_1_2 } />
         <Route exact path="/lessons/Меня зовут Кхан" component={ Lesson_1_3 } />
         <Route exact path="/lessons/Моя жизнь" component={ Lesson_2_1 } />
+        <Route exact path="/lessons/Моя семья" component={ Lesson_2_2 } />
         <Route exact component={ Error } />
       </Switch>
       <Footer />

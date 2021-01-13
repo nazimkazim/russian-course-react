@@ -2,6 +2,7 @@ import React from 'react';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import LessonHeader from './LessonHeaderTemplate';
+import DragAndDrop from '../components/DragAndDrop/Container'
 
 function Lesson_2_2() {
   return (
@@ -23,6 +24,12 @@ function Lesson_2_2() {
                 width="100%"
                 title="new words 1"
                 styles={ "border:0" }></iframe>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="a" name="Распределите слова в правильные группы" engName="Distribute the words in the correct bords" />
+              <DragAndDrop/>
             </div>
           </div>
         </div>

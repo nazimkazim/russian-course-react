@@ -2,7 +2,8 @@ import React from 'react';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
 import LessonHeader from './LessonHeaderTemplate';
-import DragAndDrop from '../components/DragAndDrop/Container'
+import DragAndDrop from '../components/DragAndDrop/Container';
+import {DnDSet1} from '../data/DragAndDrop'
 
 function Lesson_2_2() {
   return (
@@ -29,7 +30,7 @@ function Lesson_2_2() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Распределите слова в правильные группы" engName="Distribute the words in the correct bords" />
-              <DragAndDrop/>
+              <DragAndDrop data={DnDSet1}/>
             </div>
           </div>
         </div>

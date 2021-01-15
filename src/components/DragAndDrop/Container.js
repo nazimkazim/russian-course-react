@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Board from './Board';
 import Card from './Card';
+import Plate from './Plate'
 import './styles.css';
+const _ = require('lodash');
 
-function Container() {
+function Container({ data }) {
+  //console.log(data["Male"]);
+  const [formattedArr, setFormattedArr] = useState([]);
+  useEffect(() => {
+    let arr = [];
+    arr.push(data["set1"]);
+    arr.push(data["set2"]);
+    setFormattedArr(_.shuffle(arr.flat()));
+  }, []);
+  //console.log(formattedArr);
   return (
     <div className="flexbox">
       <Board id="board-1" className="board">
-        <Card id="card-2" className="card" draggable="true">
-          <p>Card two</p>
-        </Card>
-        <Card id="card-1" className="card" draggable="true">
-          <p>Card one</p>
-        </Card>
+        { formattedArr.map(item => (
+          <Card id={item} className="card" draggable="true">
+            <p>{item}</p>
+          </Card>
+        )) }
       </Board>
       <Board id="board-2" className="board">
+        <Plate name='мужчины'/>
       </Board>
       <Board id="board-3" className="board">
+      <Plate name='женщины'/>
       </Board>
     </div>
   );

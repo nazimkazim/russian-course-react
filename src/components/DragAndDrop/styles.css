@@ -17,11 +17,12 @@
 
 .flexbox .board {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   max-width: 300px;
   height: 100%;
-  background-color: #313131;
+  background-color: #28151E;
   padding: 15px;
   margin-left: 5px;
   margin-right: 5px;
@@ -37,4 +38,16 @@
   background-color: #f3f3f3;
   cursor: pointer;
   margin-bottom: 5px;
+  border-radius: 3px;
+}
+
+.plate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60px;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 3px;
 }

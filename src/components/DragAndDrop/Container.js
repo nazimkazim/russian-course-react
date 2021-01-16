@@ -3,6 +3,7 @@ import Board from './Board';
 import Card from './Card';
 import Plate from './Plate';
 import styled from 'styled-components';
+import './styles.css'
 const _ = require('lodash');
 
 const Root = styled.div`
@@ -31,7 +32,7 @@ const BoardsContainer = styled.div`
   height:100%;
 `
 
-const Button = styled.button`
+/* const Button = styled.button`
   display:flex;
   justify-content:center;
   align-items:center;
@@ -46,7 +47,7 @@ const Button = styled.button`
   text-transform:uppercase;
   border:none;
   outline:none;
-`
+` */
 
 function Container({ data, name1, name2, img1, img2 }) {
   const [formattedArr, setFormattedArr] = useState([]);
@@ -62,6 +63,10 @@ function Container({ data, name1, name2, img1, img2 }) {
     }
     //console.log(males, females, formattedArr);
   }, [males, females]);
+
+  useEffect(() => {
+    setBtnDisabled(true)
+  }, [])
 
   const handleAppendToMales = (cardId) => {
     setMales((prevCards) => [...prevCards, cardId]);
@@ -108,7 +113,7 @@ function Container({ data, name1, name2, img1, img2 }) {
         <Plate name={ name2 } img={ img2 } />
       </Board>
       </BoardsContainer>
-      <button class="button is-info" title="Disabled button" disabled={`${btnDisabled}`}>проверить</button>
+      <button class="button is-info" disabled={btnDisabled}>проверить</button>
     </Root>
   );
 }

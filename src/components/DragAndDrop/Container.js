@@ -1,38 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import Board from './Board';
 import Card from './Card';
-import Plate from './Plate'
-import './styles.css';
+import Plate from './Plate';
+import styled from 'styled-components';
 const _ = require('lodash');
+
+const Root = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 768px;
+  height: 500px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 15px;
+  border: 1px solid #fef8eb;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(232, 208, 232, 1);
+  -moz-box-shadow: 0px 0px 13px 2px rgba(232, 208, 232, 1);
+  box-shadow: 0px 0px 13px 2px rgba(232, 208, 232, 1);
+  border-radius: 18px;
+`;
 
 function Container({ data, name1, name2, img1, img2 }) {
   const [formattedArr, setFormattedArr] = useState([]);
+  const [males, setMales] = useState([]);
+  const [females, setFemales] = useState([]);
+  const [btnDisabled, setBtnDisabled] = useState(false)
 
-  const [ males, setMales ] = useState([]);
-  const [ females, setFemales ] = useState([]);
+  useEffect(() => {
+    if (males.length + females.length === formattedArr.length) {
+      console.log('you can press the button');
+    } else {
+      console.log('no you cant do it');
+    }
+    //console.log(males, females, formattedArr);
+  }, [males, females]);
 
   const handleAppendToMales = (cardId) => {
     setMales((prevCards) => [...prevCards, cardId]);
     setFemales((prevCards) => prevCards.filter((card) => card !== cardId));
-  }
+  };
 
   const handleAppendToFemales = (cardId) => {
     setFemales((prevCards) => [...prevCards, cardId]);
     setMales((prevCards) => prevCards.filter((card) => card !== cardId));
-  }
+  };
 
   const handleAppendToCardsHolder = (cardId) => {
     setFemales((prevCards) => prevCards.filter((card) => card !== cardId));
     setMales((prevCards) => prevCards.filter((card) => card !== cardId));
-  }
+  };
 
-  useEffect(() => {
-    console.log({ males, females, formattedArr })
-  }, [males, females])
- 
-  console.log(data);
-  const set1 = Object.keys(data)[0]
-  const set2 = Object.keys(data)[1]
+  //console.log(data);
+  //const set1 = Object.keys(data)[0]
+  //const set2 = Object.keys(data)[1]
   //console.log(set1);
   //console.log(Object.keys(data));
   useEffect(() => {
@@ -43,21 +65,21 @@ function Container({ data, name1, name2, img1, img2 }) {
   }, []);
   //console.log(formattedArr);
   return (
-    <div className="flexbox">
-      <Board id="board-1" handleCardAppend={handleAppendToCardsHolder} overflowed={true}>
+    <Root className="flexbox">
+      <Board id="board-1" handleCardAppend={ handleAppendToCardsHolder } overflowed={ true }>
         { formattedArr.map(item => (
-          <Card id={item} className="card" draggable="true">
-            <p>{item}</p>
+          <Card id={ item } className="card" draggable="true">
+            <p>{ item }</p>
           </Card>
         )) }
       </Board>
-      <Board id="board-2" handleCardAppend={handleAppendToMales} >
-        <Plate name={name1} img={img1}/>
+      <Board id="board-2" handleCardAppend={ handleAppendToMales } >
+        <Plate name={ name1 } img={ img1 } />
       </Board>
-      <Board id="board-3" handleCardAppend={handleAppendToFemales} >
-      <Plate name={name2} img={img2}/>
+      <Board id="board-3" handleCardAppend={ handleAppendToFemales } >
+        <Plate name={ name2 } img={ img2 } />
       </Board>
-    </div>
+    </Root>
   );
 }
 

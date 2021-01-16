@@ -19,7 +19,7 @@ const Root = styled.div`
 function Card(props) {
   const dragStart = e => {
     const target = e.target;
-    console.log(target.dataset.type);
+    //console.log(target.dataset.type);
     e.dataTransfer.setData('card_id', target.id);
     setTimeout(() => {
       target.style.display = 'none';
@@ -31,7 +31,7 @@ function Card(props) {
 
   };
   return (
-    <Root id={ props.id } data-type="cars" onDragStart={ dragStart } onDragOver={ dragOver } className={ props.className } draggable={ props.draggable }>
+    <Root id={ props.id } onDragStart={ dragStart } onDragOver={ dragOver } className={ props.className } draggable={ props.draggable }>
       <img src='https://res.cloudinary.com/nzmai/image/upload/v1610789164/russian%20course/general/cursor.png'/>{props.children }
     </Root>
   );

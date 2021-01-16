@@ -34,8 +34,8 @@ function Lesson_2_2() {
                 data={ DnDSet1 }
                 name1="Мужчины"
                 name2="Женщины"
-                img1="https://res.cloudinary.com/nzmai/image/upload/v1610786479/russian%20course/general/female-worker.png"
-                img2="https://res.cloudinary.com/nzmai/image/upload/v1610786476/russian%20course/general/male-user.png" />
+                img1="https://res.cloudinary.com/nzmai/image/upload/v1610786476/russian%20course/general/male-user.png "
+                img2="https://res.cloudinary.com/nzmai/image/upload/v1610786479/russian%20course/general/female-worker.png" />
             </div>
           </div>
         </div>

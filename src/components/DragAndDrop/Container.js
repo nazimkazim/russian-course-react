@@ -3,7 +3,7 @@ import Board from './Board';
 import Card from './Card';
 import Plate from './Plate';
 import styled from 'styled-components';
-import './styles.css'
+import './styles.css';
 const _ = require('lodash');
 
 const Root = styled.div`
@@ -30,7 +30,7 @@ const BoardsContainer = styled.div`
   justify-content: space-between;
   width:100%;
   height:100%;
-`
+`;
 
 /* const Button = styled.button`
   display:flex;
@@ -51,36 +51,49 @@ const BoardsContainer = styled.div`
 
 function Container({ data, name1, name2, img1, img2 }) {
   const [formattedArr, setFormattedArr] = useState([]);
-  const [males, setMales] = useState([]);
-  const [females, setFemales] = useState([]);
-  const [btnDisabled, setBtnDisabled] = useState(true)
+  const [set1, setSet1] = useState([]);
+  const [set2, setSet2] = useState([]);
+  const [btnDisabled, setBtnDisabled] = useState(true);
 
   useEffect(() => {
-    if (males.length + females.length === formattedArr.length) {
-      setBtnDisabled(false)
+    if (set1.length + set2.length === formattedArr.length) {
+      setBtnDisabled(false);
     } else {
-      setBtnDisabled(true)
+      setBtnDisabled(true);
     }
     //console.log(males, females, formattedArr);
-  }, [males, females]);
+  }, [set1, set2]);
 
   useEffect(() => {
-    setBtnDisabled(true)
-  }, [])
+    setBtnDisabled(true);
+  }, []);
 
-  const handleAppendToMales = (cardId) => {
-    setMales((prevCards) => [...prevCards, cardId]);
-    setFemales((prevCards) => prevCards.filter((card) => card !== cardId));
+  const handleAppendToSet1 = (cardId) => {
+    setSet1((prevCards) => [...prevCards, cardId]);
+    setSet2((prevCards) => prevCards.filter((card) => card !== cardId));
   };
 
-  const handleAppendToFemales = (cardId) => {
-    setFemales((prevCards) => [...prevCards, cardId]);
-    setMales((prevCards) => prevCards.filter((card) => card !== cardId));
+  const handleAppendToSet2 = (cardId) => {
+    setSet2((prevCards) => [...prevCards, cardId]);
+    setSet1((prevCards) => prevCards.filter((card) => card !== cardId));
   };
 
   const handleAppendToCardsHolder = (cardId) => {
-    setFemales((prevCards) => prevCards.filter((card) => card !== cardId));
-    setMales((prevCards) => prevCards.filter((card) => card !== cardId));
+    setSet2((prevCards) => prevCards.filter((card) => card !== cardId));
+    setSet1((prevCards) => prevCards.filter((card) => card !== cardId));
+  };
+
+  const checkAnswer = () => {
+    console.log(set1.sort());
+    console.log(set2.sort());
+    let set1_origin = data["set1"].sort();
+    let set2_origin = data["set2"].sort();
+    console.log(set1_origin, set2_origin);
+    if (_.isEqual(set1.sort(), set1_origin.sort()) && _.isEqual(set2.sort(), set2_origin.sort())) {
+      console.log('this is correct');
+    } else {
+      console.log('this is not correct');
+    }
   };
 
   //console.log(data);
@@ -88,7 +101,7 @@ function Container({ data, name1, name2, img1, img2 }) {
   //const set2 = Object.keys(data)[1]
   //console.log(set1);
   //console.log(Object.keys(data));
-  
+
   useEffect(() => {
     let arr = [];
     arr.push(data["set1"]);
@@ -99,21 +112,21 @@ function Container({ data, name1, name2, img1, img2 }) {
   return (
     <Root className="flexbox">
       <BoardsContainer>
-      <Board id="board-1" handleCardAppend={ handleAppendToCardsHolder } overflowed={ true }>
-        { formattedArr.map(item => (
-          <Card id={ item } className="card" draggable="true">
-            <p>{ item }</p>
-          </Card>
-        )) }
-      </Board>
-      <Board id="board-2" handleCardAppend={ handleAppendToMales } >
-        <Plate name={ name1 } img={ img1 } />
-      </Board>
-      <Board id="board-3" handleCardAppend={ handleAppendToFemales } >
-        <Plate name={ name2 } img={ img2 } />
-      </Board>
+        <Board id="board-1" handleCardAppend={ handleAppendToCardsHolder } overflowed={ true }>
+          { formattedArr.map(item => (
+            <Card id={ item } className="card" draggable="true">
+              <p>{ item }</p>
+            </Card>
+          )) }
+        </Board>
+        <Board id="board-2" handleCardAppend={ handleAppendToSet1 } >
+          <Plate name={ name1 } img={ img1 } />
+        </Board>
+        <Board id="board-3" handleCardAppend={ handleAppendToSet2 } >
+          <Plate name={ name2 } img={ img2 } />
+        </Board>
       </BoardsContainer>
-      <button class="button is-info" disabled={btnDisabled}>проверить</button>
+      <button class="button is-info" disabled={ btnDisabled } onClick={ checkAnswer }>проверить</button>
     </Root>
   );
 }

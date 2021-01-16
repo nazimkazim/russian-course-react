@@ -5,8 +5,11 @@ import Plate from './Plate'
 import './styles.css';
 const _ = require('lodash');
 
-function Container({ data }) {
-  //console.log(data["Male"]);
+function Container({ data, name1, name2, img1, img2 }) {
+  const set1 = Object.keys(data)[0]
+  const set2 = Object.keys(data)[1]
+  //console.log(set1);
+  //console.log(Object.keys(data));
   const [formattedArr, setFormattedArr] = useState([]);
   useEffect(() => {
     let arr = [];
@@ -25,10 +28,10 @@ function Container({ data }) {
         )) }
       </Board>
       <Board id="board-2" className="board">
-        <Plate name='мужчины'/>
+        <Plate name={name1} img={img1}/>
       </Board>
       <Board id="board-3" className="board">
-      <Plate name='женщины'/>
+      <Plate name={name2} img={img2}/>
       </Board>
     </div>
   );

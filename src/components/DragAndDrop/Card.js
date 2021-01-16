@@ -28,7 +28,6 @@ function Card(props) {
 
   const dragOver = e => {
     e.stopPropagation();
-
   };
   return (
     <Root id={ props.id } onDragStart={ dragStart } onDragOver={ dragOver } className={ props.className } draggable={ props.draggable }>

@@ -19,16 +19,12 @@ const Root = styled.div`
   border-radius: 3px;
 `
 function Board(props) {
-  // const [cards, setCards] = useState([]);
-  // console.log({cards}, props.set);
-
   const drop = e => {
     e.preventDefault();
     const card_id = e.dataTransfer.getData('card_id');
     const card = document.getElementById(card_id);
     card.style.display = 'flex';
     e.target.appendChild(card);
-    // setCards([...cards, card_id]);
     props.handleCardAppend(card_id);
   };
 
@@ -38,7 +34,6 @@ function Board(props) {
   return (
     <Root id={ props.id } onDrop={ drop } onDragOver={ dragOver } className={ props.className }>
       {props.children }
-      
     </Root>
   );
 }

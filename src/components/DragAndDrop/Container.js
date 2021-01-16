@@ -84,30 +84,49 @@ function Container({ data, name1, name2, img1, img2 }) {
   };
 
   const checkAnswer = () => {
-    console.log(set1.sort());
-    console.log(set2.sort());
+    //console.log(set1.sort());
+    //console.log(set2.sort());
+    //console.log(set1_origin, set2_origin);
     let set1_origin = data["set1"].sort();
     let set2_origin = data["set2"].sort();
-    console.log(set1_origin, set2_origin);
     if (_.isEqual(set1.sort(), set1_origin.sort()) && _.isEqual(set2.sort(), set2_origin.sort())) {
-      console.log('this is correct');
+      //console.log('this is correct');
     } else {
-      console.log('this is not correct');
+      //console.log('this is not correct');
     }
   };
+
+  const startAgain = () => {
+    formSets();
+    setSet1([]);
+    setSet2([]);
+    setBtnDisabled(true);
+    const board1 = document.getElementById("board-2")
+    const board2 = document.getElementById("board-3")
+    console.log(board1.children);
+    console.log(board2.children);
+    for (let index = 0; index < board1.children.length; index++) {
+      const element = board1.children[index];
+      console.dir(element);
+    }
+  };
+
+  const formSets = () => {
+    let arr = [];
+    arr.push(data["set1"]);
+    arr.push(data["set2"]);
+    setFormattedArr(_.shuffle(arr.flat()));
+  };
+
+  useEffect(() => {
+    formSets();
+  }, []);
 
   //console.log(data);
   //const set1 = Object.keys(data)[0]
   //const set2 = Object.keys(data)[1]
   //console.log(set1);
   //console.log(Object.keys(data));
-
-  useEffect(() => {
-    let arr = [];
-    arr.push(data["set1"]);
-    arr.push(data["set2"]);
-    setFormattedArr(_.shuffle(arr.flat()));
-  }, []);
   //console.log(formattedArr);
   return (
     <Root className="flexbox">
@@ -126,7 +145,8 @@ function Container({ data, name1, name2, img1, img2 }) {
           <Plate name={ name2 } img={ img2 } />
         </Board>
       </BoardsContainer>
-      <button class="button is-info" disabled={ btnDisabled } onClick={ checkAnswer }>проверить</button>
+      <button className="button is-success" onClick={ checkAnswer } onClick={ startAgain }>start again</button>
+      <button className="button is-info" disabled={ btnDisabled } onClick={ checkAnswer }>check</button>
     </Root>
   );
 }

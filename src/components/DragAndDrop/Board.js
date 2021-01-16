@@ -38,6 +38,7 @@ function Board(props) {
   return (
     <Root id={ props.id } onDrop={ drop } onDragOver={ dragOver } className={ props.className }>
       {props.children }
+      
     </Root>
   );
 }

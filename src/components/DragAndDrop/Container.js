@@ -32,24 +32,8 @@ const BoardsContainer = styled.div`
   height:100%;
 `;
 
-/* const Button = styled.button`
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:30px;
-  width:100px;
-  height:20px;
-  background-color:#00b4d8;
-  color:white;
-  padding:18px;
-  border-radius:3px;
-  cursor:pointer;
-  text-transform:uppercase;
-  border:none;
-  outline:none;
-` */
 
-function Container({ data, name1, name2, img1, img2 }) {
+const Container = ({ data, name1, name2, img1, img2 }) => {
   const [formattedArr, setFormattedArr] = useState([]);
   const [set1, setSet1] = useState([]);
   const [set2, setSet2] = useState([]);
@@ -101,17 +85,26 @@ function Container({ data, name1, name2, img1, img2 }) {
     setSet1([]);
     setSet2([]);
     setBtnDisabled(true);
-    const board1 = document.getElementById("board-2")
-    const board2 = document.getElementById("board-3")
-    console.log(board1.children);
-    console.log(board2.children);
+    const board1 = document.getElementById("board-1");
+    const board2 = document.getElementById("board-2");
+    const board3 = document.getElementById("board-3");
     for (let index = 0; index < board1.children.length; index++) {
-      const element = board1.children[index];
-      console.dir(element);
-    }
+      board1.children[index].style.display = 'none';
+    };
+    hideCards(board2);
+    hideCards(board3);
+  };
+
+  const hideCards = (board) => {
+    for (let index = 0; index < board.children.length; index++) {
+      if (index !== 0) {
+        board.children[index].style.display = 'none';
+      }
+    };
   };
 
   const formSets = () => {
+    setFormattedArr([]);
     let arr = [];
     arr.push(data["set1"]);
     arr.push(data["set2"]);
@@ -127,12 +120,12 @@ function Container({ data, name1, name2, img1, img2 }) {
   //const set2 = Object.keys(data)[1]
   //console.log(set1);
   //console.log(Object.keys(data));
-  //console.log(formattedArr);
+  console.log(formattedArr);
   return (
     <Root className="flexbox">
       <BoardsContainer>
         <Board id="board-1" handleCardAppend={ handleAppendToCardsHolder } overflowed={ true }>
-          { formattedArr.map(item => (
+          { formattedArr && formattedArr.map(item => (
             <Card id={ item } className="card" draggable="true">
               <p>{ item }</p>
             </Card>
@@ -149,6 +142,6 @@ function Container({ data, name1, name2, img1, img2 }) {
       <button className="button is-info" disabled={ btnDisabled } onClick={ checkAnswer }>check</button>
     </Root>
   );
-}
+};
 
 export default Container;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Root = styled.div`
   display: flex;
@@ -14,9 +14,10 @@ const Root = styled.div`
     height:20px;
     margin-right:5px;
   }
-`
+`;
 
-function Card(props) {
+function Card({ id, className, draggable, isCorrect, children, isNotCorrect }) {
+  let drop = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611066440/russian%20course/Sound/sound_ex_machina_Button_Tick.mp3')
   const dragStart = e => {
     const target = e.target;
     //console.log(target.dataset.type);
@@ -24,14 +25,17 @@ function Card(props) {
     setTimeout(() => {
       target.style.display = 'none';
     }, 0);
+    drop.play()
   };
 
   const dragOver = e => {
     e.stopPropagation();
   };
   return (
-    <Root id={ props.id } onDragStart={ dragStart } onDragOver={ dragOver } className={ props.className } draggable={ props.draggable }>
-      <img src='https://res.cloudinary.com/nzmai/image/upload/v1610789164/russian%20course/general/cursor.png'/>{props.children }
+    <Root id={ id } onDragStart={ dragStart } onDragOver={ dragOver } className={ className } draggable={ draggable }>
+      {isCorrect ? <img src='https://res.cloudinary.com/nzmai/image/upload/v1611065237/russian%20course/general/checked.png' /> : <img src='https://res.cloudinary.com/nzmai/image/upload/v1610789164/russian%20course/general/cursor.png' /> && isNotCorrect ? <img src='https://res.cloudinary.com/nzmai/image/upload/v1611065236/russian%20course/general/cancel.png' /> : <img src='https://res.cloudinary.com/nzmai/image/upload/v1610789164/russian%20course/general/cursor.png' /> }
+      {children }
+      { }
     </Root>
   );
 }

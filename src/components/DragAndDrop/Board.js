@@ -7,7 +7,7 @@ const Root = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 300px;
-  height: 100%;
+  min-height: 100%;
   background-color: #28151E;
   padding: 15px;
   overflow:'scroll';

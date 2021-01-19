@@ -13,7 +13,7 @@ const Root = styled.div`
   flex-direction:column;
   width: 100%;
   max-width: 768px;
-  height: 500px;
+  min-height: 500px;
   overflow: hidden;
   margin: 0 auto;
   padding: 15px;
@@ -26,10 +26,9 @@ const Root = styled.div`
 
 const BoardsContainer = styled.div`
   display:flex;
-  align-items:center;
   justify-content: space-between;
   width:100%;
-  height:100%;
+  min-height:100%;
 `;
 
 
@@ -38,6 +37,12 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
   const [set1, setSet1] = useState([]);
   const [set2, setSet2] = useState([]);
   const [btnDisabled, setBtnDisabled] = useState(true);
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [isNotCorrect, setIsNotCorrect] = useState(false);
+  //console.log(formattedArr);
+
+  let win = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611066674/russian%20course/Sound/little_robot_sound_factory_Jingle_Win_Synth_00.mp3')
+  let lose = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611067160/russian%20course/Sound/multimedia_game_sound_retro_lose_tone_002_52984.mp3')
 
   useEffect(() => {
     if (set1.length + set2.length === formattedArr.length) {
@@ -51,6 +56,8 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
   useEffect(() => {
     setBtnDisabled(true);
   }, []);
+
+  console.log(isCorrect, isNotCorrect);
 
   const handleAppendToSet1 = (cardId) => {
     setSet1((prevCards) => [...prevCards, cardId]);
@@ -75,12 +82,17 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
     let set2_origin = data["set2"].sort();
     if (_.isEqual(set1.sort(), set1_origin.sort()) && _.isEqual(set2.sort(), set2_origin.sort())) {
       //console.log('this is correct');
+      setIsCorrect(true);
+      win.play()
     } else {
       //console.log('this is not correct');
+      setIsNotCorrect(true)
+      lose.play()
     }
   };
 
   const startAgain = () => {
+    setFormattedArr([]);
     formSets();
     setSet1([]);
     setSet2([]);
@@ -93,6 +105,7 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
     };
     hideCards(board2);
     hideCards(board3);
+    window.location.reload();
   };
 
   const hideCards = (board) => {
@@ -104,7 +117,6 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
   };
 
   const formSets = () => {
-    setFormattedArr([]);
     let arr = [];
     arr.push(data["set1"]);
     arr.push(data["set2"]);
@@ -120,13 +132,13 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
   //const set2 = Object.keys(data)[1]
   //console.log(set1);
   //console.log(Object.keys(data));
-  console.log(formattedArr);
+  //console.log(formattedArr);
   return (
     <Root className="flexbox">
       <BoardsContainer>
         <Board id="board-1" handleCardAppend={ handleAppendToCardsHolder } overflowed={ true }>
           { formattedArr && formattedArr.map(item => (
-            <Card id={ item } className="card" draggable="true">
+            <Card isCorrect={isCorrect} isNotCorrect={isNotCorrect} id={ item } className="card" draggable="true">
               <p>{ item }</p>
             </Card>
           )) }

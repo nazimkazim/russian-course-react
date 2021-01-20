@@ -4,6 +4,7 @@ function PersonalPronounsChart() {
     return (
         <table className="table is-bordered is-striped is-narrow is-hoverable">
             <thead>
+                <img src="https://res.cloudinary.com/nzmai/image/upload/v1610786476/russian%20course/general/male-user.png"/>
                 <tr>
                     <th>Eng</th>
                     <th>Rus</th>

@@ -18,7 +18,9 @@ function PossessivePronounsChart() {
           <th>
             <Image src="https://res.cloudinary.com/nzmai/image/upload/v1610786479/russian%20course/general/female-worker.png" />
           </th>
-          <th>Eng</th>
+          <th>
+            <Image src="https://res.cloudinary.com/nzmai/image/upload/v1611147921/russian%20course/countries%20flags/united-kingdom.png"/>
+          </th>
           <th>Examples</th>
         </tr>
       </thead>

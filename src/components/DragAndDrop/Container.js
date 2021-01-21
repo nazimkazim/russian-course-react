@@ -57,7 +57,7 @@ const Container = ({ data, name1, name2, img1, img2 }) => {
     setBtnDisabled(true);
   }, []);
 
-  console.log(isCorrect, isNotCorrect);
+  //console.log(isCorrect, isNotCorrect);
 
   const handleAppendToSet1 = (cardId) => {
     setSet1((prevCards) => [...prevCards, cardId]);

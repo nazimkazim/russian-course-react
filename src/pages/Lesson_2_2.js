@@ -5,6 +5,8 @@ import LessonHeader from './LessonHeaderTemplate';
 import DragAndDrop from '../components/DragAndDrop/Container';
 import { DnDSet1 } from '../data/DragAndDrop';
 import PossessivePronounsChart from '../components/Charts/PossessivePronouns'
+import SentenceWithOptions from '../components/SentenceWithOptions/Index'
+import {chooseOptionSet1} from '../data/ChooseOption'
 
 function Lesson_2_2() {
   return (
@@ -46,17 +48,12 @@ function Lesson_2_2() {
         <div className="container is-fluid">
           <div className="columns">
             <div className="column">
-              <Instruction letter="a" name="Выучите новые слова. Профессии" engName="Learn new words. Professions" />
+              <Instruction letter="a" name="Грамматика. Притягательные местоимения" engName="Grammar. Possessive pronouns" />
               <PossessivePronounsChart/>
             </div>
             <div className="column">
               <Instruction letter="a" name="Распределите слова в правильные группы" engName="Distribute the words in the correct bords" />
-              <DragAndDrop
-                data={ DnDSet1 }
-                name1="Мужчины"
-                name2="Женщины"
-                img1="https://res.cloudinary.com/nzmai/image/upload/v1610786476/russian%20course/general/male-user.png "
-                img2="https://res.cloudinary.com/nzmai/image/upload/v1610786479/russian%20course/general/female-worker.png" />
+              <SentenceWithOptions data={chooseOptionSet1}/>
             </div>
           </div>
         </div>

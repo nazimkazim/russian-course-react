@@ -1535,3 +1535,50 @@ export const MTCTextCustomJon1dash24 = [
         turned: true
     }
 ];
+
+// Собираться/Собраться
+// Past tense (perfect)
+export const MTCTextCustomJon1dash25 = [
+    {
+        eng: "I got ready to go to the gym, but realised my membership had expired",
+        rus: " Я собрался в спортзал, но осознал, что срок моего членства истек",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "You got ready for the 20 hour journey to Aberdeen through Istanbul and London",
+        rus: "Вы собрался к 20-часовой поездке в Абердин через Стамбул и Лондон",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "Jon was about to buy a toy for his daughter, but realised, that he did not take money",
+        rus: "Джон собрался купить игрушку для своей дочки, но осознал, что забыл взять деньги",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "So she packed up and moved out, and when she went to collect it, it wasn't there",
+        rus: "Поэтому она собралась и съехала с квартиры, а когда зашла в банк за чеком, его там не оказалось",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "Today we are gathered to celebrate the life of Charles Van Der Elst",
+        rus: "Сегодня мы собрались чтобы отпраздновать жизнь Чарльза Ван Дер Элста",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "I was afraid you were going to abandon me, like so many others",
+        rus: "Я боялся, что вы собрались отвернуться от меня, как и многие другие",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    },
+    {
+        eng: "They gathered in the lobby to say goodbye to you",
+        rus: "Они собрались в холле и хотят попрощаться с вами",
+        id: nextId('MTCText1-7-id-'),
+        turned: true
+    }
+];

@@ -28,7 +28,7 @@ const ButtonHolder = styled.div`
   align-items:center;
   width:100%;
   height:20%;
-  border-top:1px solid black;
+  border-top:3px solid #264653;
 `;
 
 const Label = styled.label`
@@ -40,12 +40,13 @@ const Label = styled.label`
   border-bottom:3px solid #264653;
   margin-right:3px;
   font-size:18px;
+  border-radius:3px;
 `;
 
 const Phrase = styled.div`
   cursor:pointer;
   padding:5px;
-  border:2px solid #d8e2dc;
+  /* border:2px solid #d8e2dc; */
   margin-right:3px;
   font-size:18px;
 `
@@ -93,8 +94,7 @@ function Index({ data }) {
         <Phrase>{ data[0].end }</Phrase>
       </ContentHolder>
       <ButtonHolder>
-
-        <button className="button" onClick={ checkAnswer }>Check</button>
+        <button className="button is-primary" onClick={ checkAnswer }>Check</button>
       </ButtonHolder>
     </Root>
 

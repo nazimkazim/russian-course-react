@@ -1547,7 +1547,7 @@ export const MTCTextCustomJon1dash25 = [
     },
     {
         eng: "You got ready for the 20 hour journey to Aberdeen through Istanbul and London",
-        rus: "Вы собрался к 20-часовой поездке в Абердин через Стамбул и Лондон",
+        rus: "Ты собрался к 20-часовой поездке в Абердин через Стамбул и Лондон",
         id: nextId('MTCText1-8-id-'),
         turned: true
     },
@@ -1559,7 +1559,7 @@ export const MTCTextCustomJon1dash25 = [
     },
     {
         eng: "So she packed up and moved out, and when she went to collect it, it wasn't there",
-        rus: "Поэтому она собралась и съехала с квартиры, а когда зашла в банк за чеком, его там не оказалось",
+        rus: "Поэтому она собралась и съехала с квартиры, а когда пошла забрать его, его там не было оказалось",
         id: nextId('MTCText1-8-id-'),
         turned: true
     },

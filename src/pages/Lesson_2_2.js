@@ -52,7 +52,7 @@ function Lesson_2_2() {
               <PossessivePronounsChart/>
             </div>
             <div className="column">
-              <Instruction letter="a" name="Распределите слова в правильные группы" engName="Distribute the words in the correct bords" />
+              <Instruction letter="a" name="Выберите правильный вариант" engName="Choose a correct option" />
               <SentenceWithOptions data={chooseOptionSet1}/>
             </div>
           </div>

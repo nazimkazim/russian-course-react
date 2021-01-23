@@ -15,12 +15,25 @@ const Root = styled.div`
 
 const ContentHolder = styled.div`
   display:flex;
-  justify-content:center;
+  /* flex-wrap: wrap; */
+  justify-content:start;
   align-items:center;
   /* background-color:blue; */
   width:100%;
   height:80%;
 `;
+
+const FinishGameContainer = styled.div`
+  display:flex;
+  /* flex-wrap: wrap; */
+  justify-content:center;
+  align-items:center;
+  /* background-color:blue; */
+  width:100%;
+  height:80%;
+  font-weight:bold;
+  font-size:24px;
+`
 
 const ButtonHolder = styled.div`
   display:flex;
@@ -49,52 +62,84 @@ const Phrase = styled.div`
   /* border:2px solid #d8e2dc; */
   margin-right:3px;
   font-size:18px;
-`
+`;
 
 
 function Index({ data }) {
   //console.log(data);
   const [option1, setOption1] = React.useState([]);
   const [option2, setOption2] = React.useState([]);
+  const [buttonDisabled, setButtonDisabled] = React.useState(true);
+  let [currentIndex, setCurrentIndex] = React.useState(0);
+  const [isCorrect, setIsCorrect] = React.useState(false);
+  const [isNotCorrect, setIsNotCorrect] = React.useState(false);
+  const winSound = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611066674/russian%20course/Sound/little_robot_sound_factory_Jingle_Win_Synth_00.mp3');
+  const loseSound = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611067160/russian%20course/Sound/multimedia_game_sound_retro_lose_tone_002_52984.mp3');
+
 
   //console.log(answer);
-  const checkAnswer = () => {
-    const option1Ans = data[0].options1.find(({ id }) => id === option1);
-    const status1 = option1Ans && option1Ans.status;
-    const option2Ans = data[0].options2.find(({ id }) => id === option2);
-    const status2 = option2Ans && option2Ans.status;
+  const checkAnswer = (status1, status2) => {
     if (status1 && status2) {
-      console.log('you won');
+      winSound.play();
+      setIsCorrect(true);
+      setIsNotCorrect(false);
     }
+    if (status1 === false && status2 === true || status2 === false && status1 === true || status2 === false && status1 === false) {
+      loseSound.play();
+      setIsNotCorrect(true);
+      setIsCorrect(false);
+    }
+  };
+
+  React.useEffect(() => {
+    const option1Ans = data[currentIndex].options1.find(({ id }) => id === option1);
+    const status1 = option1Ans && option1Ans.status;
+    const option2Ans = data[currentIndex].options2.find(({ id }) => id === option2);
+    const status2 = option2Ans && option2Ans.status;
+    if (status1 && status2 || status1 === true && status2 === false || status2 === false && status1 === false) {
+      setButtonDisabled(false);
+    }
+    checkAnswer(status1, status2);
+  }, [option1, option2]);
+
+
+  const goToNext = () => {
+    setCurrentIndex(currentIndex += 1);
+    setButtonDisabled(true);
+    setIsCorrect(false);
+    setIsNotCorrect(false);
   };
 
 
   return (
     <Root>
-      <ContentHolder>
-        <Phrase>{ data[0].start }</Phrase>
-        <div class="control">
-          { data[0].options1.map(option => {
-            //console.log(option1 === option.id);
-            return (
-              <Label checkedItem={ option1 === option.id }>
-                <input type="radio" name="option1" onChange={ (e) => setOption1(option.id) } checked={ option1 === option.id } />
-                { option.word }
-              </Label>
-            );
-          }) }
-        </div>
-        <Phrase>{ data[0].middle }</Phrase>
-        { data[0].options2.map(option => (
+      <progress class="progress is-primary" value={ currentIndex } max={ data.length }></progress>
+      {isCorrect && '😄 Good Job' }
+      {isNotCorrect && '😥 Try Again' }
+      {currentIndex >= data.length ? (<FinishGameContainer>Amazing!!! 👏👏👏</FinishGameContainer>) : (<ContentHolder>
+        <Phrase>{ data[currentIndex].start }</Phrase>
+        { data[currentIndex].options1.map(option => {
+          //console.log(option1 === option.id);
+          return (
+            <Label checkedItem={ option1 === option.id }>
+              <input type="radio" name="option1" onChange={ (e) => setOption1(option.id) } checked={ option1 === option.id } />
+              { option.word }
+            </Label>
+          );
+        }) }
+
+        <Phrase>{ data[currentIndex].middle }</Phrase>
+        { data[currentIndex].options2.map(option => (
           <Label checkedItem={ option2 === option.id }>
             <input type="radio" name="option2" onChange={ (e) => setOption2(option.id) } checked={ option2 === option.id } />
             { option.word }
           </Label>
         )) }
-        <Phrase>{ data[0].end }</Phrase>
-      </ContentHolder>
+        <Phrase>{ data[currentIndex].end }</Phrase>
+      </ContentHolder>)}
+      
       <ButtonHolder>
-        <button className="button is-primary" onClick={ checkAnswer }>Check</button>
+        <button className="button is-primary" disabled={ buttonDisabled } onClick={ goToNext }>Next</button>
       </ButtonHolder>
     </Root>
 

@@ -193,5 +193,69 @@ export const chooseOptionSet1 =  _.shuffle([
     }
     ],
     end: 'зовут Наташа.'
+  },
+  {
+    start: 'Это',
+    options1:
+      [{
+        word: 'наш',
+        id: uuidv4(),
+        status: true,
+        checked: false
+      },
+      {
+        word: 'наша',
+        id: uuidv4(),
+        status: false,
+        checked: false
+      }
+      ],
+    middle: 'сын.',
+    options2: [{
+      word: 'Её',
+      id: uuidv4(),
+      status: false,
+      checked: false
+    },
+    {
+      word: 'Его',
+      id: uuidv4(),
+      status: true,
+      checked: false
+    }
+    ],
+    end: 'зовут Роман.'
+  },
+  {
+    start: 'Это',
+    options1:
+      [{
+        word: 'ваша',
+        id: uuidv4(),
+        status: true,
+        checked: false
+      },
+      {
+        word: 'ваш',
+        id: uuidv4(),
+        status: false,
+        checked: false
+      }
+      ],
+    middle: 'внучка.',
+    options2: [{
+      word: 'Её',
+      id: uuidv4(),
+      status: true,
+      checked: false
+    },
+    {
+      word: 'Его',
+      id: uuidv4(),
+      status: false,
+      checked: false
+    }
+    ],
+    end: 'зовут Лаура.'
   }
 ]);

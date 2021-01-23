@@ -33,7 +33,7 @@ const FinishGameContainer = styled.div`
   height:80%;
   font-weight:bold;
   font-size:24px;
-`
+`;
 
 const ButtonHolder = styled.div`
   display:flex;
@@ -70,14 +70,28 @@ function Index({ data }) {
   const [option1, setOption1] = React.useState([]);
   const [option2, setOption2] = React.useState([]);
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
-  let [currentIndex, setCurrentIndex] = React.useState(0);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isCorrect, setIsCorrect] = React.useState(false);
   const [isNotCorrect, setIsNotCorrect] = React.useState(false);
+  const [gameISFinished, setGameIsFinished] = React.useState(false);
   const winSound = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611066674/russian%20course/Sound/little_robot_sound_factory_Jingle_Win_Synth_00.mp3');
   const loseSound = new Audio('https://res.cloudinary.com/nzmai/video/upload/v1611067160/russian%20course/Sound/multimedia_game_sound_retro_lose_tone_002_52984.mp3');
 
 
   //console.log(answer);
+  React.useEffect(() => {
+    const option1Ans = data[currentIndex].options1.find(({ id }) => id === option1);
+    const status1 = option1Ans && option1Ans.status;
+    const option2Ans = data[currentIndex].options2.find(({ id }) => id === option2);
+    const status2 = option2Ans && option2Ans.status;
+    if (status1 && status2 || status1 === true && status2 === false || status2 === false && status1 === false || status1 === false && status2 === true) {
+      setButtonDisabled(false);
+    }
+
+    checkAnswer(status1, status2);
+
+  }, [option1, option2]);
+
   const checkAnswer = (status1, status2) => {
     if (status1 && status2) {
       winSound.play();
@@ -91,37 +105,37 @@ function Index({ data }) {
     }
   };
 
-  React.useEffect(() => {
-    const option1Ans = data[currentIndex].options1.find(({ id }) => id === option1);
-    const status1 = option1Ans && option1Ans.status;
-    const option2Ans = data[currentIndex].options2.find(({ id }) => id === option2);
-    const status2 = option2Ans && option2Ans.status;
-    if (status1 && status2 || status1 === true && status2 === false || status2 === false && status1 === false) {
-      setButtonDisabled(false);
-    }
-    checkAnswer(status1, status2);
-  }, [option1, option2]);
-
-
   const goToNext = () => {
-    setCurrentIndex(currentIndex += 1);
+    setCurrentIndex(prevState => prevState + 1);
+    if (currentIndex >= data.length - 1) {
+      setGameIsFinished(true);
+    }
     setButtonDisabled(true);
     setIsCorrect(false);
     setIsNotCorrect(false);
+    console.log(currentIndex, data.length - 1, currentIndex === data.length - 1);
   };
-
+  
+  const startAgain = () => {
+    setCurrentIndex(0)
+    setOption1([])
+    setOption2([])
+    setIsCorrect(false)
+    setIsNotCorrect(false)
+    setGameIsFinished(false)
+  }
 
   return (
     <Root>
       <progress class="progress is-primary" value={ currentIndex } max={ data.length }></progress>
       {isCorrect && '😄 Good Job' }
       {isNotCorrect && '😥 Try Again' }
-      {currentIndex >= data.length ? (<FinishGameContainer>Amazing!!! 👏👏👏</FinishGameContainer>) : (<ContentHolder>
+      {gameISFinished ? (<FinishGameContainer>Amazing!!! 👏👏👏</FinishGameContainer>) : (<ContentHolder>
         <Phrase>{ data[currentIndex].start }</Phrase>
         { data[currentIndex].options1.map(option => {
           //console.log(option1 === option.id);
           return (
-            <Label checkedItem={ option1 === option.id }>
+            <Label key={ option.id } checkedItem={ option1 === option.id }>
               <input type="radio" name="option1" onChange={ (e) => setOption1(option.id) } checked={ option1 === option.id } />
               { option.word }
             </Label>
@@ -130,16 +144,16 @@ function Index({ data }) {
 
         <Phrase>{ data[currentIndex].middle }</Phrase>
         { data[currentIndex].options2.map(option => (
-          <Label checkedItem={ option2 === option.id }>
+          <Label key={ option.id } checkedItem={ option2 === option.id }>
             <input type="radio" name="option2" onChange={ (e) => setOption2(option.id) } checked={ option2 === option.id } />
             { option.word }
           </Label>
         )) }
         <Phrase>{ data[currentIndex].end }</Phrase>
-      </ContentHolder>)}
-      
+      </ContentHolder>) }
+
       <ButtonHolder>
-        <button className="button is-primary" disabled={ buttonDisabled } onClick={ goToNext }>Next</button>
+        { !gameISFinished ? <button className="button is-primary" disabled={ buttonDisabled } onClick={ goToNext }>Next</button> : <button className="button is-success" onClick={startAgain} >Start again</button>}
       </ButtonHolder>
     </Root>
 

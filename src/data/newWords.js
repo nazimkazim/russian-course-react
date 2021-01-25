@@ -76,25 +76,44 @@ export const NWset7 = [
 ];
 
 // Unit 5 section reading - моя внучка
-export const newSet8 = [
+
+
+// Unit 5 section reading - мой папа
+export const newSet9 = [
   {
-    rus: 'Управляет',
-    eng: 'Manages'
+    rus: 'Конкуренция',
+    eng: 'Competition'
   },
   {
-    rus: 'В этом году',
-    eng: 'This year'
+    rus: 'Поэтому',
+    eng: 'Therefore'
   },
   {
-    rus: 'Из-за',
-    eng: 'Because of'
+    rus: 'Помогает',
+    eng: '(It) helps'
+  }
+];
+
+// Unit 5 section reading - моя мама
+export const newSet10 = [
+  {
+    rus: 'Кстати',
+    eng: 'By the way'
   },
   {
-    rus: 'Но я надеюсь',
-    eng: 'But I hope'
+    rus: 'Так как',
+    eng: 'Because'
   },
   {
-    rus: 'На следующий год',
-    eng: 'Next year'
+    rus: 'Узнавать',
+    eng: 'Find out'
+  },
+  {
+    rus: 'Недавно',
+    eng: 'Recently'
+  },
+  {
+    rus: 'Которые существуют',
+    eng: 'That exists'
   }
 ];

@@ -4,9 +4,11 @@ import SectionHeader from '../components/SectionHeader';
 import LessonHeader from './LessonHeaderTemplate';
 import DragAndDrop from '../components/DragAndDrop/Container';
 import { DnDSet1 } from '../data/DragAndDrop';
-import PossessivePronounsChart from '../components/Charts/PossessivePronouns'
-import SentenceWithOptions from '../components/SentenceWithOptions/Index'
-import {chooseOptionSet1} from '../data/ChooseOption'
+import PossessivePronounsChart from '../components/Charts/PossessivePronouns';
+import SentenceWithOptions from '../components/SentenceWithOptions/Index';
+import { chooseOptionSet1 } from '../data/ChooseOption';
+import { set4TextQuizzer } from '../data/TextQuizzerData';
+import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 
 function Lesson_2_2() {
   return (
@@ -49,11 +51,26 @@ function Lesson_2_2() {
           <div className="columns">
             <div className="column">
               <Instruction letter="a" name="Грамматика. Притягательные местоимения" engName="Grammar. Possessive pronouns" />
-              <PossessivePronounsChart/>
+              <PossessivePronounsChart />
             </div>
             <div className="column">
               <Instruction letter="a" name="Выберите правильный вариант" engName="Choose a correct option" />
-              <SentenceWithOptions data={chooseOptionSet1}/>
+              <SentenceWithOptions data={ chooseOptionSet1 } />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Чтение" engName="Reading" />
+        <div className="container is-fluid">
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="a" name="Читайте тексты, и отгадайте новые слова" engName="Read texts and guess new words" />
+              <ActivityContainer data={ set4TextQuizzer } />
+            </div>
+            <div className="column">
+              <Instruction letter="a" name="Выберите правильный вариант" engName="Choose a correct option" />
+              <SentenceWithOptions data={ chooseOptionSet1 } />
             </div>
           </div>
         </div>

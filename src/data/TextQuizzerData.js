@@ -337,69 +337,160 @@ export const set3TextQuizzer = {
 };
 
 // unit 5
-export const set4TextQuizzer = [
-    {
-        text: `<p>Моя внучка менеджер. Её зовут Ольга. Она управляет <strong>успешной</strong> компанией <strong>из списка</strong> Форбс. В её компании работают 200 человек <strong>из разных стран</strong>, например, Индия, Бразилия, Россия, Мексика. В этом году, из-за Ковид-19 результаты компании <strong>ухудшились</strong>, но я надеюсь, что на следующий год <strong>все будет хорошо</strong>.</p>`,
-        title: 'Моя внучка',
-        audio: KhasanShash,
-        quiz: [
-            {
-                word: "успешной",
-                pair: ["successful", "успешной"],
-                translation: "successful"
-            },
-            {
-                word: "из списка",
-                pair: ["from the list", "из списка"],
-                translation: "from the list"
-            },
-            {
-                word: "из разных стран",
-                pair: ["from different countries", "из разных стран"],
-                translation: "from different countries"
-            },
-            {
-                word: "ухудшилась",
-                pair: ["got worse", "ухудшилась"],
-                translation: "got worse"
-            },
-            {
-                word: "все будет хорошо",
-                pair: ["everything will be allright", "все будет хорошо"],
-                translation: "everything will be allright"
-            }
-        ]
-    },
-    {
-        text: `<p>Мой папа успешный <strong>предприниматель</strong>, в его бизнесе очень <strong>жёсткая</strong> конкуренция. Поэтому он работает очень <strong>усердно</strong>. Он идёт на работу в 7 часов и приходит <strong>только</strong> в 9 вечера. Он говорит, что тайм-менеджмент помогает ему быть <strong>конкурентноспособным</strong>. Я очень <strong>уважаю</strong> папу.</p>`,
-        title: 'Мой папа',
-        audio: KhasanShash,
-        quiz: [
-            {
-                word: "предприниматель",
-                pair: ["entrepreneur", "предприниматель"],
-                translation: "entrepreneur"
-            },
-            {
-                word: "жёсткая",
-                pair: ["tough", "жёсткая"],
-                translation: "tough"
-            },
-            {
-                word: "усердно",
-                pair: ["hard", "усердно"],
-                translation: "hard"
-            },
-            {
-                word: "конкурентноспособным",
-                pair: ["competitive", "конкурентноспособным"],
-                translation: "competitive"
-            },
-            {
-                word: "уважаю",
-                pair: ["respect", "уважаю"],
-                translation: "respect"
-            }
-        ]
-    }
-];
+export const set4TextQuizzer = {
+    texts: [
+        {
+            text: `<p>Моя внучка менеджер. Её зовут Ольга. Она управляет <strong>успешной</strong> компанией <strong>из списка</strong> Форбс. В её компании работают 200 человек <strong>из разных стран</strong>, например, Индия, Бразилия, Россия, Мексика. В этом году, из-за Ковид-19 результаты компании <strong>ухудшились</strong>, но я надеюсь, что на следующий год <strong>все будет хорошо</strong>.</p>`,
+            title: 'Моя внучка',
+            audio: KhasanShash,
+            newWords: [
+                {
+                    rus: 'Управляет',
+                    eng: 'Manages'
+                },
+                {
+                    rus: 'В этом году',
+                    eng: 'This year'
+                },
+                {
+                    rus: 'Из-за',
+                    eng: 'Because of'
+                },
+                {
+                    rus: 'Но я надеюсь',
+                    eng: 'But I hope'
+                },
+                {
+                    rus: 'На следующий год',
+                    eng: 'Next year'
+                }
+            ],
+            quiz: [
+                {
+                    word: "успешной",
+                    pair: ["successful", "успешной"],
+                    translation: "successful"
+                },
+                {
+                    word: "из списка",
+                    pair: ["from the list", "из списка"],
+                    translation: "from the list"
+                },
+                {
+                    word: "из разных стран",
+                    pair: ["from different countries", "из разных стран"],
+                    translation: "from different countries"
+                },
+                {
+                    word: "ухудшилась",
+                    pair: ["got worse", "ухудшилась"],
+                    translation: "got worse"
+                },
+                {
+                    word: "все будет хорошо",
+                    pair: ["everything will be allright", "все будет хорошо"],
+                    translation: "everything will be allright"
+                }
+            ]
+        },
+        {
+            text: `<p>Мой папа успешный <strong>предприниматель</strong> его зовут Рашид, в его бизнесе очень <strong>жёсткая</strong> конкуренция. Поэтому он работает очень <strong>усердно</strong>. Он идёт на работу в 7 часов и приходит <strong>только</strong> в 9 вечера. Он говорит, что тайм-менеджмент помогает ему быть <strong>конкурентноспособным</strong>. Я очень <strong>уважаю</strong> папу.</p>`,
+            title: 'Мой папа',
+            audio: KhasanShash,
+            newWords: [
+                {
+                    rus: 'Конкуренция',
+                    eng: 'Competition'
+                },
+                {
+                    rus: 'Поэтому',
+                    eng: 'Therefore'
+                },
+                {
+                    rus: 'Помогает',
+                    eng: '(It) helps'
+                }
+            ],
+            quiz: [
+                {
+                    word: "предприниматель",
+                    pair: ["entrepreneur", "предприниматель"],
+                    translation: "entrepreneur"
+                },
+                {
+                    word: "жёсткая",
+                    pair: ["tough", "жёсткая"],
+                    translation: "tough"
+                },
+                {
+                    word: "усердно",
+                    pair: ["hard", "усердно"],
+                    translation: "hard"
+                },
+                {
+                    word: "конкурентноспособным",
+                    pair: ["competitive", "конкурентноспособным"],
+                    translation: "competitive"
+                },
+                {
+                    word: "уважаю",
+                    pair: ["respect", "уважаю"],
+                    translation: "respect"
+                }
+            ]
+        },
+        {
+            text: `<p>Моя мама не работает, она <strong>домохозяйка</strong>. Кстати, её зовут Лена. Она очень <strong>умная</strong> женщина. Она много читает и <strong>изучает</strong> разные языки. Она любит изучать языки, так как это помогает ей узнавать о культурах и традициях разных <strong>народов</strong>. Например, недавно она узнала, что аборигены Австралии имеют <strong>уникальные</strong> музыкальные инструменты, которые существуют только в их культуре</p>`,
+            title: 'Мой мама',
+            audio: KhasanShash,
+            newWords:[
+                {
+                  rus: 'Кстати',
+                  eng: 'By the way'
+                },
+                {
+                  rus: 'Так как',
+                  eng: 'Because'
+                },
+                {
+                  rus: 'Узнавать',
+                  eng: 'Find out'
+                },
+                {
+                  rus: 'Недавно',
+                  eng: 'Recently'
+                },
+                {
+                  rus: 'Которые существуют',
+                  eng: 'That exists'
+                }
+              ],
+            quiz: [
+                {
+                    word: "домохозяйка",
+                    pair: ["a housewife", "домохозяйка"],
+                    translation: "a housewife"
+                },
+                {
+                    word: "умная",
+                    pair: ["clever", "умная"],
+                    translation: "clever"
+                },
+                {
+                    word: "изучает",
+                    pair: ["learn", "изучает"],
+                    translation: "learn"
+                },
+                {
+                    word: "уникальные",
+                    pair: ["unique", "уникальные"],
+                    translation: "unique"
+                },
+                {
+                    word: "народов",
+                    pair: ["nations", "народов"],
+                    translation: "nations"
+                }
+            ]
+        }]
+};

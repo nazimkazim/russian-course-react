@@ -457,3 +457,34 @@ export const conjVerbsSet6 = [
     ]
   }
 ];
+
+export const conjVerbsSet7 = [
+  {
+    verb: 'Сади<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я саж<strong>у</strong>сь',
+      'Ты сад<strong>ишь</strong>ся',
+      'Он сад<strong>ит</strong>ся',
+      'Она сад<strong>ит</strong>ся',
+      'Оно сад<strong>ит</strong>ся',
+      'Вы сад<strong>ите</strong>сь',
+      'Мы сад<strong>им</strong>ся',
+      'Они сад<strong>ят</strong>ся'
+    ]
+  },
+  {
+    verb: 'Сади<strong>ть</strong>ся',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я(буду) сади<strong>ть</strong>ся',
+      'Ты(будешь) сади<strong>ть</strong>ся',
+      'Он(будет) сади<strong>ть</strong>ся',
+      'Она(будет) сади<strong>ть</strong>ся',
+      'Оно(будет) сади<strong>ть</strong>ся',
+      'Вы(будете) сади<strong>ть</strong>сь',
+      'Мы(будем) сади<strong>ть</strong>ся',
+      'Они(будут) сади<strong>ть</strong>ся'
+    ]
+  }
+];

@@ -1582,3 +1582,96 @@ export const MTCTextCustomJon1dash25 = [
         turned: true
     }
 ];
+
+
+//Present tense садиться (imperfect)
+export const MTCTextCustomJon1dash26 = [
+    {
+        eng: "I am sitting down I realise,that the woman next to me is an old jealous girlfriend",
+        rus: "Я сажусь и осознаю, что женщина возле меня, старая, завистливая девушка",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "You are sitting  down on the wrong side of the church",
+        rus: "Ты садишься на неправильную сторону церкви",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "He is sitting down in the road. Why would he do that?",
+        rus: "Он садится на дорогу, зачем ему это делать?",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "She is sitting down on the wrong bike. That does not belong to her",
+        rus: "Она садится на ошибочный велосипед. Он не принадлежит ей",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "We are sitting down together",
+        rus: "Мы садимся вместе",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "You sit down when you feel tired or if you feel dizzy",
+        rus: "Вы садитесь когда чувствуете усталость или головокружение",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "They are sitting down together after a long days skiing",
+        rus: "Они садятся вместе после долгих дней катания на лыжах",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    }
+];
+
+//Future tense садиться (imperfect)
+export const MTCTextCustomJon1dash27 = [
+    {
+        eng: "I will be sitting down everytime I hear the music stop",
+        rus: "Я буду садиться каждый раз, когда буду слышать, что музыка остановилась",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "You will be sitting down when we pass the low bridges",
+        rus: "Ты будешь садиться когда мы будем проходить по низким мостам",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "He will be sitting down as the train pulls away",
+        rus: "Он будет садиться в то время как поезд будет отъезжать",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "She will be sitting down during the long speech because she is pregnant",
+        rus: "Она будет садиться во время долгого выступления, потому что она беременная",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "We will be sitting down as the whistle blows",
+        rus: "Мы будем садиться когда будет свистеть свисток",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "You will be sitting down during the service because it last 2 hours",
+        rus: "Вы будете садиться во время обслуживания, потому что оно длится 2 часа",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    },
+    {
+        eng: "They will be sitting down as the carousel speedsup",
+        rus: "Они будут садиться по мере того, как карусель будет ускоряться",
+        id: nextId('MTCText1-8-id-'),
+        turned: true
+    }
+];

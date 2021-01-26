@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Instruction from '../components/Instruction';
 import SectionHeader from '../components/SectionHeader';
-import { conjVerbsSet2, conjVerbsSet3, conjVerbsSet4, conjVerbsSet5, conjVerbsSet6 } from '../data/ConjugatedVerbs';
+import { conjVerbsSet2, conjVerbsSet3, conjVerbsSet4, conjVerbsSet5, conjVerbsSet6, conjVerbsSet7 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18,MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18,MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25,MTCTextCustomJon1dash26, MTCTextCustomJon1dash27 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
@@ -18,7 +18,7 @@ export default function Lesson_2_1() {
     setChosenSentence(randomSentence)
   };
   useEffect(() => {
-    setRandomSentence([MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18, MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25]);
+    setRandomSentence([MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18, MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25, MTCTextCustomJon1dash26, MTCTextCustomJon1dash27]);
   }, []);
   //console.log(chosenSentence);
   return (
@@ -202,6 +202,28 @@ export default function Lesson_2_1() {
             <hr />
             <TenseDescriptionBox word='Собраться' tense='Past Tense (perfect)' />
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash25 } />
+            <hr />
+          </div>
+        </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Практикуйте слово (Садиться/Сесть)" engName="Practice the word (to sit down)" />
+        <div className="columns is-multiline">
+          <Instruction letter="a" name="Слушайте и повторяйте спряжение глаголов" engName="Listen and repeat conjugation of verbs" />
+          { conjVerbsSet7.map(set => (
+            <div className="column is-3">
+              <VebConjugationTemplate set={ set } />
+            </div>
+          )) }
+        </div>
+        <div className="columns">
+          <div className="column">
+            <Instruction letter="b" name="Читайте на английском и постарайтесь сказать на русском" engName="Read English version and try to tell in Russian" />
+            <TenseDescriptionBox word='Садиться' tense='Present Tense (Imperfect)' />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash26 } />
+            <hr />
+            <TenseDescriptionBox word='Садиться' tense='Future Tense (Imperfect)' />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash27 } />
             <hr />
           </div>
         </div>

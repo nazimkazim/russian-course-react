@@ -10,8 +10,11 @@ import AngelaMerkel from '../images/ListenChooseRelevant/Lesson1.3/Audio/merkel.
 import Mozart from '../images/ListenChooseRelevant/Lesson1.3/Audio/mozart.wav';
 import CIA_agent from '../images/ListenChooseRelevant/Lesson1.3/Audio/cia_agent.wav';
 import Klitchko from '../images/ListenChooseRelevant/Lesson1.3/Audio/klitchko.wav';
-//let _ = require("lodash");
 
+// unit 5
+const myGrandDaughter = 'https://res.cloudinary.com/nzmai/video/upload/v1611715470/russian%20course/Sound/unit5/my_granddaughter.wav'
+const myDad = 'https://res.cloudinary.com/nzmai/video/upload/v1611716550/russian%20course/Sound/unit5/my_dad.wav'
+const myMother = 'https://res.cloudinary.com/nzmai/video/upload/v1611716953/russian%20course/Sound/unit5/my_mother.wav'
 
 
 export const set1TextQuizzer = {
@@ -342,7 +345,7 @@ export const set4TextQuizzer = {
         {
             text: `<p>Моя внучка менеджер. Её зовут Ольга. Она управляет <strong>успешной</strong> компанией <strong>из списка</strong> Форбс. В её компании работают 200 человек <strong>из разных стран</strong>, например, Индия, Бразилия, Россия, Мексика. В этом году, из-за Ковид-19 результаты компании <strong>ухудшились</strong>, но я надеюсь, что на следующий год <strong>все будет хорошо</strong>.</p>`,
             title: 'Моя внучка',
-            audio: KhasanShash,
+            audio: myGrandDaughter,
             newWords: [
                 {
                     rus: 'Управляет',
@@ -388,15 +391,15 @@ export const set4TextQuizzer = {
                 },
                 {
                     word: "все будет хорошо",
-                    pair: ["everything will be allright", "все будет хорошо"],
-                    translation: "everything will be allright"
+                    pair: ["everything will be alright", "все будет хорошо"],
+                    translation: "everything will be alright"
                 }
             ]
         },
         {
             text: `<p>Мой папа успешный <strong>предприниматель</strong> его зовут Рашид, в его бизнесе очень <strong>жёсткая</strong> конкуренция. Поэтому он работает очень <strong>усердно</strong>. Он идёт на работу в 7 часов и приходит <strong>только</strong> в 9 вечера. Он говорит, что тайм-менеджмент помогает ему быть <strong>конкурентноспособным</strong>. Я очень <strong>уважаю</strong> папу.</p>`,
             title: 'Мой папа',
-            audio: KhasanShash,
+            audio: myDad,
             newWords: [
                 {
                     rus: 'Конкуренция',
@@ -442,7 +445,7 @@ export const set4TextQuizzer = {
         {
             text: `<p>Моя мама не работает, она <strong>домохозяйка</strong>. Кстати, её зовут Лена. Она очень <strong>умная</strong> женщина. Она много читает и <strong>изучает</strong> разные языки. Она любит изучать языки, так как это помогает ей узнавать о культурах и традициях разных <strong>народов</strong>. Например, недавно она узнала, что аборигены Австралии имеют <strong>уникальные</strong> музыкальные инструменты, которые существуют только в их культуре</p>`,
             title: 'Мой мама',
-            audio: KhasanShash,
+            audio: myMother,
             newWords:[
                 {
                   rus: 'Кстати',

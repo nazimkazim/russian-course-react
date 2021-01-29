@@ -1,5 +1,5 @@
 import nextId from "react-id-generator";
-
+import { v4 as uuidv4 } from 'uuid';
 // Lesson 1.2
 export const MTCText1 = [
 
@@ -365,7 +365,7 @@ export const MTCText10 = [
     }
 ];
 
-// Lesson 2.1 Завтракать Обедать Ужинать
+// Lesson 2.1 Завтракать Обедать Ужинать Unit 4
 export const MTCText11 = [
     {
         eng: "I have breakfast at home, have lunch at the cafe, and have dinner at the bar",
@@ -405,34 +405,110 @@ export const MTCText11 = [
     }
 ];
 
-/* // Lesson 2.1
-export const set8COSOC = _.shuffle([
+// Lesson 2.2 Unit 5
+export const MTCText12 = [
     {
-        eng: "I have breakfast at home, have lunch at the cafe, and have dinner at the bar",
-        rus: "Я завтракаю дома, обедаю в кафе и ужинаю в баре"
-    },
-    {
-        eng: "You have breakfast at work, have lunch at the food court, and have dinner at the cafe",
-        rus: "Ты завтракаешь на работе, обедаешь в фудкорте и ужинаешь в кафе"
-    },
-    {
-        eng: "He has breakfast at the pizzeria, has lunch at the restaurant, and has dinner at home",
-        rus: "Он завтракает в пицерии, обедает в ресторане и ужинает дома"
-    },
-    {
-        eng: "You have breakfast at work, have lunch at the cafe shop, and have dinner at the restaurant",
-        rus: "Вы завтракаете на работе, обедаете в кафешопе и ужинаете в ресторане"
-    },
-    {
-        eng: "We have breakfast at the restaurant, have lunch at the cafeteria, and have dinner at the pizzeria",
-        rus: "Мы завтракаем в ресторане, обедаем в кафетерии и ужинаем в пицерии"
-    },
-    {
-        eng: "They have breakfast at the cafe shop, have lunch at the canteen, and have dinner at the bar",
-        rus: "Они завтракают в кафешопе, обедают в столовой и ужинают в баре"
+        eng: "My granddaughter is a manager",
+        rus: "Моя внучка менеджер",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "She manages a successful company from the list of Forbes",
+        rus: "Она управляет успешной компанией из списка Форбс",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "In her company work 200 people from different countries",
+        rus: "В её компании работают 200 человек из разных стран",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "This year because of COVID-19 results of the company got worse",
+        rus: "В этом году, из-за Ковид-19 результаты компании ухудшились",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "But I hope, that next year everything will be well",
+        rus: "Но я надеюсь, что на следующий год все будет хорошо",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "My father is a successful enterpreneur his name is Rashid",
+        rus: "Мой папа успешный предприниматель его зовут Рашид",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "In his business very taugh competiton",
+        rus: "В его бизнесе очень жёсткая конкуренция",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "Therefore he works very hard",
+        rus: "Поэтому он работает очень усердно",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "He goes to work at 7 and comes (home) only at 9 of evening",
+        rus: "Он идёт на работу в 7 часов и приходит только в 9 вечера",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "He says, that time-management helps him to be competitive",
+        rus: "Он говорит, что тайм-менеджмент помогает ему быть конкурентноспособным",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "I respect dad very much",
+        rus: "Я очень уважаю папу",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "My mother does not work, she is a housewife",
+        rus: "Моя мама не работает, она домохозяйка",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "By the way her name is Lena",
+        rus: "Кстати, её зовут Лена",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "She is a very clever woman",
+        rus: "Она очень умная женщина",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "She reads a lot and learn different languages",
+        rus: "Она много читает и изучает разные языки",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "She likes to learn languages",
+        rus: "Она любит изучать языки",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "Because this helps her find out about cultures and traditions of different nations",
+        rus: "Так как это помогает ей узнавать о культурах и традициях разных народов",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "For example, recently she found out",
+        rus: "Например, недавно она узнала",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "Aborigines of Australia have unique musical instruments",
+        rus: "Аборигены Австралии имеют уникальные музыкальные инструменты",
+        id: uuidv4(),
+        turned: true
+    }, {
+        eng: "Which exist only in their culture",
+        rus: "Которые существуют только в их культуре",
+        id: uuidv4(),
+        turned: true
     }
-]); */
-
+];
 
 // Custom Jon Lesson 1
 

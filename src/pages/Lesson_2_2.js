@@ -9,6 +9,9 @@ import SentenceWithOptions from '../components/SentenceWithOptions/Index';
 import { chooseOptionSet1 } from '../data/ChooseOption';
 import { set4TextQuizzer } from '../data/TextQuizzerData';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
+import { MTCText12 } from '../data/MemorizeTextClick';
+import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
+
 
 function Lesson_2_2() {
   return (
@@ -69,10 +72,21 @@ function Lesson_2_2() {
               <ActivityContainer data={ set4TextQuizzer } />
             </div>
             <div className="column">
-              <Instruction letter="a" name="Выберите правильный вариант" engName="Choose a correct option" />
-              <SentenceWithOptions data={ chooseOptionSet1 } />
+              <Instruction letter="a" name="Выучите слова из предыдущего упражнения" engName="Learn the words from the previous exercise" />
+              <iframe
+                src="https://quizlet.com/564892257/flashcards/embed?i=4bby1&x=1jj1"
+                height="500"
+                width="100%"
+                title="new words 1"
+                styles={ "border:0" }></iframe>
             </div>
           </div>
+          <div className="columns">
+              <div className="column">
+                <Instruction letter="a" name="Читайте и переводите предложения" engName="Read and translate the sentences" />
+                <MemorizeOnClickActivity data={ MTCText12 } />
+              </div>
+            </div>
         </div>
       </section>
     </>

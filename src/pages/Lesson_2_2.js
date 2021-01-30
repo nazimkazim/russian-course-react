@@ -11,6 +11,7 @@ import { set4TextQuizzer } from '../data/TextQuizzerData';
 import ActivityContainer from '../components/comprehendTextActivity/ActivityContainer';
 import { MTCText12 } from '../data/MemorizeTextClick';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
+import NumbersFrom10To100 from '../components/Charts/NumbersFrom10To100'
 
 
 function Lesson_2_2() {
@@ -88,6 +89,19 @@ function Lesson_2_2() {
               </div>
             </div>
         </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Learning and Practice numbers from 10-100" engName="Изучение и практика чисел от 10 до 100" />
+          <div className="columns">
+            <div className="column">
+              <Instruction letter="a" name="Читайте тексты, и отгадайте новые слова" engName="Read texts and guess new words" />
+              <NumbersFrom10To100 marginTop="30px"/>
+            </div>
+            <div className="column">
+              <Instruction letter="a" name="Выучите слова из предыдущего упражнения" engName="Learn the words from the previous exercise" />
+              
+            </div>
+          </div>
       </section>
     </>
   );

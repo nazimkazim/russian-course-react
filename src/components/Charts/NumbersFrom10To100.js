@@ -1,8 +1,9 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-import './NumbersFrom10To100.css'
+import ReactHtmlParser from 'react-html-parser';
+import './NumbersFrom10To100.css';
+import { speakStr } from '../Pronunciation';
 
 const numData = {
   "1to9": [
@@ -158,15 +159,15 @@ const ListContainer = styled.ul`
   height:100%;
   overflow:hidden !important;
   padding-left:25px;
-`
+`;
 
 const ListItem = styled.li`
   display:flex;
-  font-size:18px;
+  font-size:20px;
   margin-top:5px;
-`
+`;
 
-const Digit = styled.div`
+const Digit = styled.button`
   display:flex;
   align-items:center;
   justify-content:center;
@@ -179,16 +180,21 @@ const Digit = styled.div`
   margin-right:10px;
   margin-bottom:5px;
   padding:6px;
-`
-const Highlighted = styled.span`
-  color:red;
-`
+  cursor:pointer;
+  &&:focus {
+    outline:0;
+  }
+`;
+
+const onClickHandler = (e) => {
+  speakStr(e.target.value, 'ru-Ru');
+};
 
 
 
-function NumbersFrom10To100({marginTop}) {
+function NumbersFrom10To100({ marginTop }) {
   return (
-    <Columns className="columns" marginTopProp = {marginTop}>
+    <Columns className="columns" marginTopProp={ marginTop }>
       <Column
         borderTopLeftRadius="24px"
         borderBottomLeftRadius="24px"
@@ -198,7 +204,7 @@ function NumbersFrom10To100({marginTop}) {
       >
         <ListContainer>
           { numData['1to9'].map(num => (
-            <ListItem key={ num.id }><Digit>{ num.num }</Digit> {ReactHtmlParser(num.word)}</ListItem>
+            <ListItem key={ num.id }><Digit value={ num.word } onClick={ (e) => onClickHandler(e) }>{ num.num }</Digit>{ ReactHtmlParser(num.word) }</ListItem>
           )) }
         </ListContainer>
       </Column>
@@ -209,11 +215,11 @@ function NumbersFrom10To100({marginTop}) {
       >
         <ListContainer>
           { numData['10to19'].map(num => (
-            <ListItem key={ num.id }><Digit>{ num.num }</Digit> {ReactHtmlParser(num.word)}</ListItem>
+            <ListItem key={ num.id }><Digit value={ num.word } onClick={ (e) => onClickHandler(e) }>{ num.num }</Digit> {ReactHtmlParser(num.word) }</ListItem>
           )) }
         </ListContainer>
       </Column>
-      <Column 
+      <Column
         className="column"
         bgColor="#f4d35e"
         borderTopRightRadius="24px"
@@ -221,7 +227,7 @@ function NumbersFrom10To100({marginTop}) {
       >
         <ListContainer>
           { numData['20to90'].map(num => (
-            <ListItem key={ num.id }><Digit>{ num.num }</Digit> {ReactHtmlParser(num.word)}</ListItem>
+            <ListItem key={ num.id }><Digit value={ num.word } onClick={ (e) => onClickHandler(e) }>{ num.num }</Digit> {ReactHtmlParser(num.word) }</ListItem>
           )) }
         </ListContainer>
       </Column>

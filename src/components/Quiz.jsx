@@ -1,6 +1,5 @@
 /* eslint-disable no-extend-native */
 import React, { Component } from 'react';
-import click from '../data/media/click.wav';
 import correct from '../data/media/correct.wav';
 import denied from '../data/media/denied.mp3';
 import Notification from './Notification';

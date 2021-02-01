@@ -98,13 +98,13 @@ function Lesson_2_2() {
         <div className="columns">
           <div className="column">
             <Instruction letter="a" name="Нажмите на цифру, послушайте и повторите" engName="Click a digit, listen and repeat" />
-            <NumbersFrom10To100 marginTop="30px" />
+            <NumbersFrom10To100 />
           </div>
         </div>
         <div className="columns">
           <div className="column">
-            <Instruction letter="a" name="Читайте тексты, и отгадайте новые слова" engName="Read texts and guess new words" />
-            <ChooseNumberOptions data={numData1} />
+            <Instruction letter="a" name="Угадайте цифры" engName="Guess digits" />
+            <ChooseNumberOptions data={numData1} marginTop="30" />
           </div>
           <div className="column">
             <Instruction letter="a" name="Выучите слова из предыдущего упражнения" engName="Learn the words from the previous exercise" />

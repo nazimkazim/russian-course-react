@@ -13,7 +13,9 @@ import { MTCText12 } from '../data/MemorizeTextClick';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
 import NumbersFrom10To100 from '../components/Charts/NumbersFrom10To100';
 import ChooseNumberOptions from '../components/ChooseNumberOptions/Index';
-import {numData1} from '../components/ChooseNumberOptions/data'
+import { numData1 } from '../components/ChooseNumberOptions/data';
+import MatchingActivity from '../components/MatchWords';
+import { matchingWordsData8 } from '../data/MatchWordsData';
 
 
 
@@ -104,11 +106,16 @@ function Lesson_2_2() {
         <div className="columns">
           <div className="column">
             <Instruction letter="a" name="Угадайте цифры" engName="Guess digits" />
-            <ChooseNumberOptions data={numData1} marginTop="30" />
+            <ChooseNumberOptions data={ numData1 } marginTop="30" />
           </div>
           <div className="column">
-            <Instruction letter="a" name="Выучите слова из предыдущего упражнения" engName="Learn the words from the previous exercise" />
-            
+            <Instruction letter="a" name="Сопоставьте цифры" engName="Match the digits" />
+            <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData8 } />
+          </div>
+        </div>
+        <div className="columns">
+          <div className="column">
+          
           </div>
         </div>
       </section>

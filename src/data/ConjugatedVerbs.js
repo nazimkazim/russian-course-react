@@ -475,7 +475,7 @@ export const conjVerbsSet7 = [
   },
   {
     verb: 'Сади<strong>ть</strong>ся',
-    tense: 'Present tense (imperfect)',
+    tense: 'Future tense (imperfect)',
     set: [
       'Я(буду) сади<strong>ть</strong>ся',
       'Ты(будешь) сади<strong>ть</strong>ся',
@@ -485,6 +485,48 @@ export const conjVerbsSet7 = [
       'Вы(будете) сади<strong>ть</strong>сь',
       'Мы(будем) сади<strong>ть</strong>ся',
       'Они(будут) сади<strong>ть</strong>ся'
+    ]
+  },
+  {
+    verb: 'Сес<strong>ть</strong>',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я сяд<strong>у</strong>',
+      'Ты сяд<strong>ешь</strong>',
+      'Он сяд<strong>ет</strong>',
+      'Она сяд<strong>ет</strong>',
+      'Оно сяд<strong>ет</strong>',
+      'Вы сяд<strong>ите</strong>',
+      'Мы сяд<strong>ем</strong>',
+      'Они сяд<strong>ут</strong>'
+    ]
+  },
+  {
+    verb: 'Сади<strong>ть</strong>ся',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я сад<strong>ил</strong>ся',
+      'Ты сад<strong>ил</strong>ся',
+      'Он сад<strong>ил</strong>ся',
+      'Она сад<strong>ила</strong>сь',
+      'Оно сад<strong>ило</strong>сь',
+      'Вы сад<strong>или</strong>сь',
+      'Мы сад<strong>или</strong>сь',
+      'Они сад<strong>или</strong>сь'
+    ]
+  },
+  {
+    verb: 'Сес<strong>ть</strong>',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я сел(а)',
+      'Ты сел(а)',
+      'Он сел',
+      'Она сел<strong>а</strong>',
+      'Оно сел<strong>о</strong>',
+      'Вы сел<strong>и</strong>',
+      'Мы сел<strong>и</strong>',
+      'Они сел<strong>и</strong>'
     ]
   }
 ];

@@ -1751,3 +1751,141 @@ export const MTCTextCustomJon1dash27 = [
         turned: true
     }
 ];
+
+// Садиться (Future perfect)
+export const MTCTextCustomJon1dash28 = [
+    {
+        eng: "I will sit down when I have finished the argument",
+        rus: "Я сяду когда закончу спор",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You will sitdown after the singer has finished her first song",
+        rus: "Ты сядешь после того, как певица закончит её первую песню",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "He will sit down after the toasts",
+        rus: "Он сядет после нескольких тостов",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "She will sit down before starts to paint",
+        rus: "Она сядет перед тем как начнет красить",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "We will sit down to plan next years trip",
+        rus: "Мы сядем чтобы распланировать поездку на следующий год",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You will sit down and fasten your setbelts before I start the car",
+        rus: "Вы сядете и пристегнёте ваши ремни безопасности до того как я заведу машину",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "They will sit down in the big armchairs to watch the three hour movie",
+        rus: "Они сядут на большое кресло чтобы посмотреть трёх часовой фильм",
+        id: uuidv4(),
+        turned: true
+    }
+]
+
+// Садиться (Past perfect)
+export const MTCTextCustomJon1dash29 = [
+    {
+        eng: "I was sitting down when I heard them celebrating",
+        rus: "Я садился когда слышал как они праздновали",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You were sitting down when she made the mistake of complaining about the food",
+        rus: "Ты садился когда она сделала ошибку пожаловшись на еду",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "He was sitting down when he heard his trousers rip",
+        rus: "Он садился когда услышал как его штаны порвались",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "She was sitting down thinking about her revenge",
+        rus: "Она садилась, думая о мести",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "We were sitting down together when the bench broke",
+        rus: "Мы садились вместе когда скамейка сломалась",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You were sitting down  and talking so you missed the joke",
+        rus: "Вы садились и разговаривали поэтому вы не поняли шутку",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "They were just sitting down when the car jumped forward",
+        rus: "Они садились когда машина прыгнула вперёд",
+        id: uuidv4(),
+        turned: true
+    }
+]
+
+// Сесть (Past perfect)
+export const MTCTextCustomJon1dash30 = [
+    {
+        eng: "I sat down in frustration  because of the endless arguments",
+        rus: "Я сел в отчаянии из-за бесконечных споров",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You sat down exhausted and immediately fell asleep",
+        rus: "Ты сел сильно уставшим и сразу заснул",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "He sat down because he wanted to kiss his wife",
+        rus: "Он сел, потому что хотел поцеловать жену",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "She sat down next to her daughter who was hugging the dog",
+        rus: "Она села рядом с дочерью, которая обнимала собаку",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "We sat down around the round table and started laughing and drinking together",
+        rus: "Мы сели за круглый стол и начали вместе смеяться и пить",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You can not believe you sat down before the guests. I hope they are not offended",
+        rus: "Вы не можете поверить, что сели раньше гостей. Надеюсь они не обиделись",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "They sat down without hesitation because they wanted to hear the story",
+        rus: "Они сели без раздумий, потому что хотели услышать историю",
+        id: uuidv4(),
+        turned: true
+    }
+]

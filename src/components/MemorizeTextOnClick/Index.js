@@ -47,7 +47,7 @@ export default function Index({ data, randomMode, randSent }) {
     setRandomItemSwitch(newObj);
   };
 
-  console.log(randomItem);
+  //console.log(randomItem);
 
   return (
     <div className={ classes.root }>

@@ -16,7 +16,7 @@ import ChooseNumberOptions from '../components/ChooseNumberOptions/Index';
 import { numData1 } from '../components/ChooseNumberOptions/data';
 import MatchingActivity from '../components/MatchWords';
 import { matchingWordsData8 } from '../data/MatchWordsData';
-
+import CVTemplate from '../components/CVTemplate/Index';
 
 
 function Lesson_2_2() {
@@ -115,7 +115,7 @@ function Lesson_2_2() {
         </div>
         <div className="columns">
           <div className="column">
-          
+            <CVTemplate />
           </div>
         </div>
       </section>

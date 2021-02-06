@@ -1,11 +1,12 @@
 import React from 'react';
 import { generateCV } from './data';
 import styled from 'styled-components'
-import PersonIcon from '@material-ui/icons/Person';
 import PlaceIcon from '@material-ui/icons/Place';
 import HomeIcon from '@material-ui/icons/Home';
 import EventIcon from '@material-ui/icons/Event';
 import RowingIcon from '@material-ui/icons/Rowing';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
+import GTranslateIcon from '@material-ui/icons/GTranslate';
 
 const Root = styled.div`
   display:flex;
@@ -89,18 +90,18 @@ const Info = styled.div`
 const ListItem = styled.div`
   display:flex;
   width:100%;
-  min-height:24px;
-  height:3px;
+  min-height:${props => props.forList ? '50px' : '24px'} !important;
   /* background-color:yellow; */
   margin-top:10px;
+  cursor:pointer;
 `
 
 const ListItemHalf = styled.div`  
   display:flex;
-  flex-direction:${props => props.flexDirection ? 'column' : 'row'};
-  align-items:center;
+  flex-direction:${props => props.forList ? 'column' : 'row'};
+  align-items:${props => props.forList ? 'start' : 'center'};
   flex:0.5;
-  min-height:100%;
+  height:100%;
   font-weight:${props => props.fontWeight};
   padding-left:${props => props.paddingLeft};
   color:white;
@@ -137,7 +138,7 @@ function Index() {
         <Header fontSize="24px" stringCase="uppercase" marginTop="20px">
           {data.name}
         </Header>
-        <Header fontSize="14px" marginBottom="40px">
+        <Header fontSize="18px" marginBottom="40px">
           {data.occupation} {data.likeOrNot === 'no' ? <Emoji>😞</Emoji> : <Emoji>😃</Emoji>}
         </Header>
       </Side>
@@ -158,15 +159,23 @@ function Index() {
             <ListItemHalf fontWeight="bold"><Icon><EventIcon/></Icon>Возраст</ListItemHalf>
             <ListItemHalf paddingLeft="10px" fontWeight="normal">: {data.age}</ListItemHalf>
           </ListItem>
-          <ListItem>
+          <ListItem forList={true}>
             <ListItemHalf fontWeight="bold"><Icon><RowingIcon/></Icon>Хобби</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal">: {data.hobbies && data.hobbies.map(item => (
+            <ListItemHalf paddingLeft="10px" forList={true} fontWeight="normal"> {data.hobbies && data.hobbies.map(item => (
               <p>{item}</p>
             ))}</ListItemHalf>
           </ListItem>
-          <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><PersonIcon/></Icon>Месторождение</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal">: {data.birthPlace}</ListItemHalf>
+          <ListItem forList={true}>
+            <ListItemHalf fontWeight="bold"><Icon><EqualizerIcon/></Icon>Навыки</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={true}>{data.skills && data.skills.map(item => (
+              <p>{item}</p>
+            ))}</ListItemHalf>
+          </ListItem>
+          <ListItem forList={true}>
+            <ListItemHalf fontWeight="bold"><Icon><GTranslateIcon/></Icon>Языки</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={true}>{data.languages && data.languages.map(item => (
+              <p>{item}</p>
+            ))}</ListItemHalf>
           </ListItem>
         </Info>
       </Side>

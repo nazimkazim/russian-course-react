@@ -165,8 +165,16 @@ function Index() {
         } }>
           { data.name && data.name.word }
         </Header>
-        <Header fontSize="18px" marginBottom="40px">
-          { data.occupation } { data.likeOrNot === 'no' ? <Emoji>😞</Emoji> : <Emoji>😃</Emoji> }
+        <Header fontSize="18px" marginBottom="40px" onClick={ () => {
+          setPrompt(
+            {
+              question: data.occupation.question,
+              answer: data.occupation.answer
+            }
+          );
+          setIsActive('is-active');
+        } }>
+          { data.occupation && data.occupation.word } { data.likeOrNot === 'no' ? <Emoji>😞</Emoji> : <Emoji>😃</Emoji> }
         </Header>
       </Side>
       <Side verticalAlignment="start">
@@ -175,20 +183,52 @@ function Index() {
         </SideHeader>
         <Info>
           <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><HomeIcon /></Icon>Месторождение</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal">: { data.birthPlace }</ListItemHalf>
+            <ListItemHalf fontWeight="bold" onClick={ () => {
+          setPrompt(
+            {
+              question: data.birthPlace.question,
+              answer: data.birthPlace.answer
+            }
+          );
+          setIsActive('is-active');
+        } }><Icon><HomeIcon /></Icon>Месторождение</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal">: { data.birthPlace && data.birthPlace.word }</ListItemHalf>
           </ListItem>
           <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><PlaceIcon /></Icon>Местопроживание</ListItemHalf>
-            <ListItemHalf paddingLeft="15px" fontWeight="normal">: { data.currentPlace }</ListItemHalf>
+            <ListItemHalf fontWeight="bold" onClick={ () => {
+          setPrompt(
+            {
+              question: data.currentPlace.question,
+              answer: data.currentPlace.answer
+            }
+          );
+          setIsActive('is-active');
+        } }><Icon><PlaceIcon /></Icon>Местопроживание</ListItemHalf>
+            <ListItemHalf paddingLeft="15px" fontWeight="normal">: { data.currentPlace && data.currentPlace.word }</ListItemHalf>
           </ListItem>
           <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><EventIcon /></Icon>Возраст</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal">: { data.age }</ListItemHalf>
+            <ListItemHalf fontWeight="bold" onClick={ () => {
+          setPrompt(
+            {
+              question: data.age.question,
+              answer: data.age.answer
+            }
+          );
+          setIsActive('is-active');
+        } }><Icon><EventIcon /></Icon>Возраст</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal">: { data.age && data.age.word }</ListItemHalf>
           </ListItem>
           <ListItem forList={ true }>
-            <ListItemHalf fontWeight="bold"><Icon><RowingIcon /></Icon>Хобби</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" forList={ true } fontWeight="normal"> { data.hobbies && data.hobbies.map(item => (
+            <ListItemHalf fontWeight="bold" onClick={ () => {
+          setPrompt(
+            {
+              question: data.hobbies.question,
+              answer: data.hobbies.answer
+            }
+          );
+          setIsActive('is-active');
+        } }><Icon><RowingIcon /></Icon>Хобби</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" forList={ true } fontWeight="normal"> { data.hobbies && data.hobbies.word.map(item => (
               <p>{ item }</p>
             )) }</ListItemHalf>
           </ListItem>

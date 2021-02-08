@@ -30,6 +30,7 @@ export const generateCV = () => {
   if (chosenGender === "женщина") {
     let subjectPronoun = 'она';
     let objPronounGenitive = 'её'
+    let objPronoundative = 'ей'
     return {
       avatar: femalePhoto,
       gender: {
@@ -42,12 +43,32 @@ export const generateCV = () => {
         word: chosenFemaleName,
         answer: `${objPronounGenitive} зовут ${chosenFemaleName}`
       },
-      birthPlace: chosenBirthPlace,
-      currentPlace: chosenCurrentPlace,
-      occupation: chosenOccupation,
+      occupation: {
+        question: `Кто ${subjectPronoun} по профессии?`,
+        word:chosenOccupation,
+        answer: `${subjectPronoun} по профессии ${chosenOccupation}`
+      },
+      birthPlace: {
+        question: `Откуда ${subjectPronoun}?`,
+        word:chosenBirthPlace,
+        answer: `${subjectPronoun} из ${chosenBirthPlace.slice(0,chosenBirthPlace.length - 1)}и`
+      },
+      currentPlace: {
+        question:`Где ${subjectPronoun} сейчас живёт?`,
+        word:chosenCurrentPlace,
+        answer: `${subjectPronoun} сейчас живёт в ${changeEndingForContryPrepositionalCase(chosenCurrentPlace)}`
+      } ,
       likeOrNot: chosenYesOrNo,
-      age: generatedAge,
-      hobbies: chosenHobbies,
+      age: {
+        question:`Сколько ${objPronoundative} лет?`,
+        word:generatedAge,
+        answer: `${objPronoundative} ${generatedAge} ${setAgeAccordingToNumber(generatedAge)}`
+      },
+      hobbies: {
+        question:`Что ${objPronounGenitive} интересует?`,
+        word:chosenHobbies,
+        answer: `${objPronounGenitive} интересует ${chosenHobbies.map(hobby => hobby)}`
+      },
       skills: chosenSkills,
       languages: chosenlanguages
     };
@@ -69,6 +90,30 @@ export const generateCV = () => {
     };
   }
 };
+
+const changeEndingForContryPrepositionalCase = (word) => {
+  if (word.charAt(word.length - 1) === 'а') {
+    return `${word.slice(0, word.length - 1)}е`
+  }
+
+  if (word.charAt(word.length - 1) === 'н') {
+    return `${word}е`
+  }
+}
+
+const setAgeAccordingToNumber = (age) => {
+  if (Number(String(age)[1]) === 1) {
+    return 'год'
+  }
+
+  if (Number(String(age)[1]) >= 2 && Number(String(age)[1]) < 5) {
+    return 'года'
+  }
+
+  if (Number(String(age)[1]) >= 5 || Number(String(age)[1]) === 0) {
+    return 'лет'
+  }
+}
 
 const generateChoiceNum = (num) => {
   return Math.floor(Math.random() * num);

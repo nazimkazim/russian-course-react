@@ -1,12 +1,13 @@
 import React from 'react';
 import { generateCV } from './data';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import PlaceIcon from '@material-ui/icons/Place';
 import HomeIcon from '@material-ui/icons/Home';
 import EventIcon from '@material-ui/icons/Event';
 import RowingIcon from '@material-ui/icons/Rowing';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
 import GTranslateIcon from '@material-ui/icons/GTranslate';
+import Modal from './Modal';
 
 const Root = styled.div`
   display:flex;
@@ -17,7 +18,7 @@ const Root = styled.div`
   min-height:300px;
   background-color:#FE5722;
   border-radius:6px;
-`
+`;
 
 const Side = styled.div`
   position:relative;
@@ -33,7 +34,7 @@ const Side = styled.div`
   -webkit-box-shadow: -13px 14px 10px -12px rgba(223,53,1,1);
   -moz-box-shadow: -13px 14px 10px -12px rgba(223,53,1,1);
   box-shadow: -13px 14px 10px -12px rgba(223,53,1,1);
-`
+`;
 
 const Avatar = styled.div`
   width:200px;
@@ -49,7 +50,7 @@ const Avatar = styled.div`
   -moz-box-shadow: -13px 14px 10px -12px rgba(223,53,1,1);
   box-shadow: -13px 14px 10px -12px rgba(223,53,1,1);
   cursor:pointer;
-`
+`;
 
 const Header = styled.h3`
   color:white;
@@ -59,11 +60,11 @@ const Header = styled.h3`
   margin-top:${props => props.marginTop};
   cursor:pointer;
   margin-bottom:${props => props.marginBottom};
-`
+`;
 
 const Emoji = styled.span`
   font-size:20px;
-`
+`;
 
 const SideHeader = styled.div`
   position:absolute;
@@ -78,14 +79,14 @@ const SideHeader = styled.div`
   align-items:center;
   color:white;
   font-weight:bold;
-`
+`;
 
 const Info = styled.div`
   width:100%;
   margin-top:50px;
   min-height:100px;
   /* background-color:blue; */
-`
+`;
 
 const ListItem = styled.div`
   display:flex;
@@ -94,7 +95,7 @@ const ListItem = styled.div`
   /* background-color:yellow; */
   margin-top:10px;
   cursor:pointer;
-`
+`;
 
 const ListItemHalf = styled.div`  
   display:flex;
@@ -107,7 +108,7 @@ const ListItemHalf = styled.div`
   color:white;
   /* background-color:red; */
   padding-right:2px;
-`
+`;
 
 const Icon = styled.div`
   cursor:pointer;
@@ -122,24 +123,50 @@ const Icon = styled.div`
   color:#FE5722;
   margin-right:10px;
   margin-left:5px;
-`
+`;
 
 function Index() {
-  const [data, setData] = React.useState('')
+  const [data, setData] = React.useState('');
+  const [prompt, setPrompt] = React.useState({
+    question: '',
+    answer: ''
+  });
+  const [isActive, setIsActive] = React.useState('');
   React.useEffect(() => {
-    setData(generateCV())
+    setData(generateCV());
   }, []);
 
   console.log(data);
   return (
     <Root>
+      <Modal isActive={ isActive } setIsActive={ setIsActive } prompt={ prompt } />
       <Side>
-        <Avatar avatar={data.avatar}/>
-        <Header fontSize="24px" stringCase="uppercase" marginTop="20px">
-          {data.name}
+        <Avatar avatar={ data.avatar } onClick={ () => {
+          setPrompt(
+            {
+              question: data.gender.question,
+              answer: data.gender.answer
+            }
+          );
+          setIsActive('is-active');
+        }
+
+        } />
+        {/* { data.gender && data.gender.question }
+        { data.gender && data.gender.answer } */}
+        <Header fontSize="24px" stringCase="uppercase" marginTop="20px" onClick={ () => {
+          setPrompt(
+            {
+              question: data.name.question,
+              answer: data.name.answer
+            }
+          );
+          setIsActive('is-active');
+        } }>
+          { data.name && data.name.word }
         </Header>
         <Header fontSize="18px" marginBottom="40px">
-          {data.occupation} {data.likeOrNot === 'no' ? <Emoji>😞</Emoji> : <Emoji>😃</Emoji>}
+          { data.occupation } { data.likeOrNot === 'no' ? <Emoji>😞</Emoji> : <Emoji>😃</Emoji> }
         </Header>
       </Side>
       <Side verticalAlignment="start">
@@ -148,34 +175,34 @@ function Index() {
         </SideHeader>
         <Info>
           <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><HomeIcon/></Icon>Месторождение</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal">: {data.birthPlace}</ListItemHalf>
+            <ListItemHalf fontWeight="bold"><Icon><HomeIcon /></Icon>Месторождение</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal">: { data.birthPlace }</ListItemHalf>
           </ListItem>
           <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><PlaceIcon/></Icon>Местопроживание</ListItemHalf>
-            <ListItemHalf paddingLeft="15px" fontWeight="normal">: {data.currentPlace}</ListItemHalf>
+            <ListItemHalf fontWeight="bold"><Icon><PlaceIcon /></Icon>Местопроживание</ListItemHalf>
+            <ListItemHalf paddingLeft="15px" fontWeight="normal">: { data.currentPlace }</ListItemHalf>
           </ListItem>
           <ListItem>
-            <ListItemHalf fontWeight="bold"><Icon><EventIcon/></Icon>Возраст</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal">: {data.age}</ListItemHalf>
+            <ListItemHalf fontWeight="bold"><Icon><EventIcon /></Icon>Возраст</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal">: { data.age }</ListItemHalf>
           </ListItem>
-          <ListItem forList={true}>
-            <ListItemHalf fontWeight="bold"><Icon><RowingIcon/></Icon>Хобби</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" forList={true} fontWeight="normal"> {data.hobbies && data.hobbies.map(item => (
-              <p>{item}</p>
-            ))}</ListItemHalf>
+          <ListItem forList={ true }>
+            <ListItemHalf fontWeight="bold"><Icon><RowingIcon /></Icon>Хобби</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" forList={ true } fontWeight="normal"> { data.hobbies && data.hobbies.map(item => (
+              <p>{ item }</p>
+            )) }</ListItemHalf>
           </ListItem>
-          <ListItem forList={true}>
-            <ListItemHalf fontWeight="bold"><Icon><EqualizerIcon/></Icon>Навыки</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={true}>{data.skills && data.skills.map(item => (
-              <p>{item}</p>
-            ))}</ListItemHalf>
+          <ListItem forList={ true }>
+            <ListItemHalf fontWeight="bold"><Icon><EqualizerIcon /></Icon>Навыки</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={ true }>{ data.skills && data.skills.map(item => (
+              <p>{ item }</p>
+            )) }</ListItemHalf>
           </ListItem>
-          <ListItem forList={true}>
-            <ListItemHalf fontWeight="bold"><Icon><GTranslateIcon/></Icon>Языки</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={true}>{data.languages && data.languages.map(item => (
-              <p>{item}</p>
-            ))}</ListItemHalf>
+          <ListItem forList={ true }>
+            <ListItemHalf fontWeight="bold"><Icon><GTranslateIcon /></Icon>Языки</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={ true }>{ data.languages && data.languages.map(item => (
+              <p>{ item }</p>
+            )) }</ListItemHalf>
           </ListItem>
         </Info>
       </Side>

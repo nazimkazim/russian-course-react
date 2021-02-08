@@ -3,7 +3,7 @@ const malePhoto = 'https://res.cloudinary.com/nzmai/image/upload/w_1000,c_fill,a
 const femalePhoto = 'https://res.cloudinary.com/nzmai/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1612604225/russian%20course/general/sigmund-jzz_3jWMzHA-unsplash.jpg';
 
 export const generateCV = () => {
-  const genderType = ["male", "female"];
+  const genderType = ["мужчина", "женщина"];
   const yesOrNo = ['yes', 'no'];
 
   const femaleNames = ['Лара Крофт', 'Мария Шарапова', 'Елена Михаилова', 'Сауле Байсарина', 'Софи Лорен', 'Жустин Энен', 'Клаудия Шифер'];
@@ -27,11 +27,21 @@ export const generateCV = () => {
   const chosenlanguages = _.shuffle(languages).slice(0, 4);
   const generatedAge = randomRange(23, 63);
 
-  if (chosenGender === "female") {
+  if (chosenGender === "женщина") {
+    let subjectPronoun = 'она';
+    let objPronounGenitive = 'её'
     return {
       avatar: femalePhoto,
-      gender: chosenGender,
-      name: chosenFemaleName,
+      gender: {
+        question: `Кто ${subjectPronoun}?`,
+        word: chosenGender,
+        answer: `${subjectPronoun} ${chosenGender}`,
+      },
+      name: {
+        question: `Как ${objPronounGenitive} зовут?`,
+        word: chosenFemaleName,
+        answer: `${objPronounGenitive} зовут ${chosenFemaleName}`
+      },
       birthPlace: chosenBirthPlace,
       currentPlace: chosenCurrentPlace,
       occupation: chosenOccupation,
@@ -43,7 +53,7 @@ export const generateCV = () => {
     };
   }
 
-  if (chosenGender === "male") {
+  if (chosenGender === "мужчина") {
     return {
       avatar: malePhoto,
       gender: chosenGender,

@@ -233,14 +233,30 @@ function Index() {
             )) }</ListItemHalf>
           </ListItem>
           <ListItem forList={ true }>
-            <ListItemHalf fontWeight="bold"><Icon><EqualizerIcon /></Icon>Навыки</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={ true }>{ data.skills && data.skills.map(item => (
+            <ListItemHalf fontWeight="bold" onClick={ () => {
+          setPrompt(
+            {
+              question: data.skills.question,
+              answer: data.skills.answer
+            }
+          );
+          setIsActive('is-active');
+        } }><Icon><EqualizerIcon /></Icon>Навыки</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={ true }>{ data.skills && data.skills.word.map(item => (
               <p>{ item }</p>
             )) }</ListItemHalf>
           </ListItem>
           <ListItem forList={ true }>
-            <ListItemHalf fontWeight="bold"><Icon><GTranslateIcon /></Icon>Языки</ListItemHalf>
-            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={ true }>{ data.languages && data.languages.map(item => (
+            <ListItemHalf fontWeight="bold" onClick={ () => {
+          setPrompt(
+            {
+              question: data.languages.question,
+              answer: data.languages.answer
+            }
+          );
+          setIsActive('is-active');
+        } }><Icon><GTranslateIcon /></Icon>Языки</ListItemHalf>
+            <ListItemHalf paddingLeft="10px" fontWeight="normal" forList={ true }>{ data.languages && data.languages.word.map(item => (
               <p>{ item }</p>
             )) }</ListItemHalf>
           </ListItem>

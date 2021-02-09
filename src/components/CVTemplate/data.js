@@ -29,8 +29,8 @@ export const generateCV = () => {
 
   if (chosenGender === "женщина") {
     let subjectPronoun = 'она';
-    let objPronounGenitive = 'её'
-    let objPronoundative = 'ей'
+    let objPronounGenitive = 'её';
+    let objPronoundative = 'ей';
     return {
       avatar: femalePhoto,
       gender: {
@@ -45,37 +45,45 @@ export const generateCV = () => {
       },
       occupation: {
         question: `Кто ${subjectPronoun} по профессии?`,
-        word:chosenOccupation,
+        word: chosenOccupation,
         answer: `${subjectPronoun} по профессии ${chosenOccupation}`
       },
       birthPlace: {
         question: `Откуда ${subjectPronoun}?`,
-        word:chosenBirthPlace,
-        answer: `${subjectPronoun} из ${chosenBirthPlace.slice(0,chosenBirthPlace.length - 1)}и`
+        word: chosenBirthPlace,
+        answer: `${subjectPronoun} из ${chosenBirthPlace.slice(0, chosenBirthPlace.length - 1)}и`
       },
       currentPlace: {
-        question:`Где ${subjectPronoun} сейчас живёт?`,
-        word:chosenCurrentPlace,
+        question: `Где ${subjectPronoun} сейчас живёт?`,
+        word: chosenCurrentPlace,
         answer: `${subjectPronoun} сейчас живёт в ${changeEndingForContryPrepositionalCase(chosenCurrentPlace)}`
-      } ,
+      },
       likeOrNot: chosenYesOrNo,
       age: {
-        question:`Сколько ${objPronoundative} лет?`,
-        word:generatedAge,
+        question: `Сколько ${objPronoundative} лет?`,
+        word: generatedAge,
         answer: `${objPronoundative} ${generatedAge} ${setAgeAccordingToNumber(generatedAge)}`
       },
       hobbies: {
-        question:`Что ${objPronounGenitive} интересует?`,
-        word:chosenHobbies,
+        question: `Что ${objPronounGenitive} интересует?`,
+        word: chosenHobbies,
         answer: `${objPronounGenitive} интересует ${chosenHobbies.map(hobby => hobby)}`
       },
-      skills: chosenSkills,
-      languages: chosenlanguages
+      skills: {
+        question: `Что ${subjectPronoun} знает?`,
+        word: chosenSkills,
+        answer: `${subjectPronoun} знает ${chosenSkills.map(skill => skill)}`
+      },
+      languages: {
+        question: `На каких языках ${subjectPronoun} говорит?`,
+        word: chosenlanguages,
+        answer: `${subjectPronoun} говорит на ${chosenlanguages.map(language => changeLanguageEnding(language))}`
+      }
     };
   }
 
   if (chosenGender === "мужчина") {
-    return {
+    /* return {
       avatar: malePhoto,
       gender: chosenGender,
       name: chosenMaleName,
@@ -87,33 +95,91 @@ export const generateCV = () => {
       skills: chosenSkills,
       hobbies: chosenHobbies,
       languages: chosenlanguages
+    }; */
+    let subjectPronoun = 'он';
+    let objPronounGenitive = 'его';
+    let objPronoundative = 'ему';
+    return {
+      avatar: malePhoto,
+      gender: {
+        question: `Кто ${subjectPronoun}?`,
+        word: chosenGender,
+        answer: `${subjectPronoun} ${chosenGender}`,
+      },
+      name: {
+        question: `Как ${objPronounGenitive} зовут?`,
+        word: chosenMaleName,
+        answer: `${objPronounGenitive} зовут ${chosenMaleName}`
+      },
+      occupation: {
+        question: `Кто ${subjectPronoun} по профессии?`,
+        word: chosenOccupation,
+        answer: `${subjectPronoun} по профессии ${chosenOccupation}`
+      },
+      birthPlace: {
+        question: `Откуда ${subjectPronoun}?`,
+        word: chosenBirthPlace,
+        answer: `${subjectPronoun} из ${chosenBirthPlace.slice(0, chosenBirthPlace.length - 1)}и`
+      },
+      currentPlace: {
+        question: `Где ${subjectPronoun} сейчас живёт?`,
+        word: chosenCurrentPlace,
+        answer: `${subjectPronoun} сейчас живёт в ${changeEndingForContryPrepositionalCase(chosenCurrentPlace)}`
+      },
+      likeOrNot: chosenYesOrNo,
+      age: {
+        question: `Сколько ${objPronoundative} лет?`,
+        word: generatedAge,
+        answer: `${objPronoundative} ${generatedAge} ${setAgeAccordingToNumber(generatedAge)}`
+      },
+      hobbies: {
+        question: `Что ${objPronounGenitive} интересует?`,
+        word: chosenHobbies,
+        answer: `${objPronounGenitive} интересует ${chosenHobbies.map(hobby => hobby)}`
+      },
+      skills: {
+        question: `Что ${subjectPronoun} знает?`,
+        word: chosenSkills,
+        answer: `${subjectPronoun} знает ${chosenSkills.map(skill => skill)}`
+      },
+      languages: {
+        question: `На каких языках ${subjectPronoun} говорит?`,
+        word: chosenlanguages,
+        answer: `${subjectPronoun} говорит на ${chosenlanguages.map(language => changeLanguageEnding(language))}`
+      }
     };
   }
 };
 
 const changeEndingForContryPrepositionalCase = (word) => {
   if (word.charAt(word.length - 1) === 'а') {
-    return `${word.slice(0, word.length - 1)}е`
+    return `${word.slice(0, word.length - 1)}е`;
   }
 
   if (word.charAt(word.length - 1) === 'н') {
-    return `${word}е`
+    return `${word}е`;
   }
-}
+};
 
 const setAgeAccordingToNumber = (age) => {
   if (Number(String(age)[1]) === 1) {
-    return 'год'
+    return 'год';
   }
 
   if (Number(String(age)[1]) >= 2 && Number(String(age)[1]) < 5) {
-    return 'года'
+    return 'года';
   }
 
   if (Number(String(age)[1]) >= 5 || Number(String(age)[1]) === 0) {
-    return 'лет'
+    return 'лет';
   }
-}
+};
+
+const changeLanguageEnding = (language) => {
+  if (language.charAt(language.length - 1) === 'й') {
+    return `${language.slice(0, language.length - 2)}ом`;
+  }
+};
 
 const generateChoiceNum = (num) => {
   return Math.floor(Math.random() * num);

@@ -17,6 +17,8 @@ import { numData1 } from '../components/ChooseNumberOptions/data';
 import MatchingActivity from '../components/MatchWords';
 import { matchingWordsData8 } from '../data/MatchWordsData';
 import CVTemplate from '../components/CVTemplate/Index';
+import NewWordsBoard from '../components/NewWordsBoard';
+import { NWset8,NWset9 } from '../data/newWords';
 
 
 function Lesson_2_2() {
@@ -109,16 +111,30 @@ function Lesson_2_2() {
             <ChooseNumberOptions data={ numData1 } marginTop="30" />
           </div>
           <div className="column">
-            <Instruction letter="a" name="Сопоставьте цифры" engName="Match the digits" />
+            <Instruction letter="b" name="Сопоставьте цифры" engName="Match the digits" />
             <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData8 } />
           </div>
         </div>
+      </section>
+      <section className="newSection">
+        <SectionHeader name="Speaking practice" engName="Практика говорения" />
         <div className="columns">
           <div className="column">
+            <Instruction letter="a" name="Выучите новые фразы" engName="Learn new phrases" />
+            <div className="columns">
+              <div className="column">
+                <NewWordsBoard title="New phrases" data={ NWset8 } /></div>
+              <div className="column">
+                <NewWordsBoard title="Grammar explanation" data={ NWset9 } /></div>
+            </div>
+          </div>
+          <div className="column">
+            <Instruction letter="a" name="Спрашивайте и отвечайте о человеке" engName="Ask and answer about a person" />
             <CVTemplate />
           </div>
         </div>
       </section>
+
     </>
   );
 }

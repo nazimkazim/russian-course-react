@@ -65,7 +65,7 @@ class Lesson_1_3 extends Component {
               </div>
               <div className="column">
                 <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
-                <NewWordsBoard data={ NWset2 } />
+                <NewWordsBoard title="New words" data={ NWset2 } />
                 <div className="marginBottom" />
                 <ScrambleWordsActivity data={ set3COSOC } />
               </div>

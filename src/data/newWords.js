@@ -74,3 +74,64 @@ export const NWset7 = [
     note: `We use **дома** *not* **в доме** to say that we eat there, and the same with **на работе** *not* **в работе**`
   }
 ];
+
+export const NWset8 = [
+  {
+    rus: 'откуда он/она?',
+    eng: 'where is he/she from?'
+  },
+  {
+    rus: 'сколько её/ему лет?',
+    eng: 'how old is he/she?'
+  },
+  {
+    rus: 'что его/её интересует?',
+    eng: 'what does interest him/her?'
+  },
+  {
+    rus: 'что она знает?',
+    eng: 'what does he/she know?'
+  },
+  {
+    rus: 'на каких языках он/она говорит?',
+    eng: 'what languages does he/she speak?'
+  }
+];
+
+export const NWset9 = [
+  {
+    rus: 'В Германии (Германия)',
+    eng: 'In Germany',
+    note: `When we use **prepositional case** with a country (for example, **in Germany**) that ends with **<em>ия</em>**, for example Герман**ия** it changes to Герман**ии**`
+  },
+  {
+    rus: 'В Казахстане (Казахстан)',
+    eng: 'In Kazakhstan',
+    note: `When we use prepositional case with a country (for example, **in Kazakhstan**) that ends with with **consonant**, for example Казахста**н** we add **е** to the last consonant Казахстан**е**`
+  },
+  {
+    rus: 'В Украине (Украина)',
+    eng: 'In Ukraine',
+    note: `When we use prepositional case with a country (for example, **in Ukraine**) that ends with with **а**, for example Украин**а** we change **а** to **е**, Украине**е**`
+  },
+  {
+    rus: 'Из Афганистана (Афганистан)',
+    eng: 'From Afganistan',
+    note: `When we use genitive case with a country (for example, **from Afganistan**) that ends with with consonant **н**, for example Афганиста**н** we add **а** to the last consonant, Афганистан**а**`
+  },
+  {
+    rus: 'Из Украины (Украина)',
+    eng: 'From Ukraine',
+    note: `When we use genitive case with a country (for example, **from Ukraine**) that ends with with **а**, for example Украин**а** we change **а** to **ы**, Украин**ы**`
+  },
+  {
+    rus: 'Из Швеции (Швеция)',
+    eng: 'From Sweden',
+    note: `When we use genitive case with a country (for example, **from Sweden**) that ends with with **ия**, for example Швеци**ия** we change **ия** to **ии**, Швец**ии**`
+  },
+  {
+    rus: 'Она говорит на Английском (Английский)',
+    eng: 'She speaks English',
+    note: `When we say that a person speaks a language we use instrumental case, so that if a language end with **ий**, for example Английск**ий**, we change it to **ом**, so it becomes Английск**ом**`
+  }
+];

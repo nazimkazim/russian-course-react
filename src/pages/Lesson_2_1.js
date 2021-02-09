@@ -23,9 +23,6 @@ import { snakeDataSet6, snakeDataSet7, snakeDataSet8 } from '../data/SnakeData';
 import CaseQuiz from '../components/CaseQuiz/Index';
 import { PrepositionalCaseQuiz, InstrumentalCaseQuiz } from '../data/CaseQuiz';
 
-
-
-
 export default function Lesson_2_1() {
   return (
     <>
@@ -81,7 +78,7 @@ export default function Lesson_2_1() {
           <div className="columns is-multiline">
             <div className="column is-half">
               <Instruction letter="a" name="Узнайте о предложном падеже" engName="Learn about prepositional case" />
-              <NewWordsBoard data={ NWset5 } />
+              <NewWordsBoard title="new words" data={ NWset5 } />
               <CasesTemplate centered={ true } data={ prepositionalCaseData1 } />
             </div>
             <div className="column is-half">
@@ -94,7 +91,7 @@ export default function Lesson_2_1() {
             </div>
             <div className="column is-half">
               <Instruction letter="d" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
-              <NewWordsBoard data={ NWset4 } />
+              <NewWordsBoard title="new words" data={ NWset4 } />
               <ScrambleWordsActivity data={ set6COSOC } />
             </div>
           </div>
@@ -106,7 +103,7 @@ export default function Lesson_2_1() {
           <div className="columns is-multiline">
             <div className="column is-half">
               <Instruction letter="a" name="Узнайте о творительном падеже" engName="Learn about instrumental case" />
-              <NewWordsBoard data={ NWset6 } />
+              <NewWordsBoard title="New phrases" data={ NWset6 } />
               <CasesTemplate centered={ true } data={ instrumentalCaseData1 } />
             </div>
             <div className="column is-half">

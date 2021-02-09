@@ -44,11 +44,11 @@ const Tag = styled.span`
 
 function NewWordsBoard(props) {
   //console.log(props);
-  const { classes } = props;
+  const { classes, title } = props;
 
   return (
     <Card className={classes.card}>
-      <Tag>New Words</Tag>
+      <Tag>{title}</Tag>
       <CardContent className={classes.content}>
         {props.data.map((item, i) => (
           <div key={i}>

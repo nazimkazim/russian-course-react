@@ -127,7 +127,7 @@ export default class SingleFlower extends Component {
               </div>
               <div className="column">
                 <Instruction letter="б" name="Выберите число,отвечая на вопрос" engName="Choose a number, answering questions" />
-                <NewWordsBoard data={ NWset1 } />
+                <NewWordsBoard title="New words" data={ NWset1 } />
                 <div className="marginBottom" />
                 <LACRActivity data={ LCRSet1 } />
               </div>

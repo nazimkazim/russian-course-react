@@ -2,16 +2,18 @@ import React from 'react';
 import './modal.css'
 
 function Modal({ prompt, isActive, setIsActive }) {
-  console.log(prompt);
+  const handleClose = () => {
+    setIsActive(false)
+  }
   return (
-    <div className={`modal ${isActive}`}>
+    <div className={`modal ${isActive}`} onClick={handleClose}>
       <div className='modal-background'></div>
       <div className='modal-content'>
         <div class='card'>
           <div class='card-content' styles={{wordBreak:'break-all'}}>
             <div class='content'>
-              <h2><strong>Воспрос</strong>:{' '}{prompt.question.toUpperCase()}</h2>
-              <h2><strong>Ответ</strong>:{' '}{prompt.answer.toUpperCase()}</h2>
+              <h4><strong>Воспрос</strong>:{' '}{prompt.question.toUpperCase()}</h4>
+              <h4><strong>Ответ</strong>:{' '}{prompt.answer.toUpperCase()}</h4>
             </div>
           </div>
         </div>

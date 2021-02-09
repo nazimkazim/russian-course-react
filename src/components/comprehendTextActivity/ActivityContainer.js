@@ -87,7 +87,7 @@ export default function ScrollableTabsButtonAuto(props) {
           <Divider />
           <Divider />
           <div className="marginBottom"/>
-          {item.newWords && (<NewWordsBoard data={item.newWords}/>)}
+          {item.newWords && (<NewWordsBoard data={item.newWords} title="New words"/>)}
           <div className="marginBottom"/>
           <Quiz data={ item } />
         </TabPanel>

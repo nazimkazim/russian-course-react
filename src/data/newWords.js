@@ -77,24 +77,34 @@ export const NWset7 = [
 
 export const NWset8 = [
   {
-    rus: 'откуда он/она?',
-    eng: 'where is he/she from?'
+    rus: 'месторождения',
+    eng: 'birthplace'
+  },{
+    rus: 'место проживания',
+    eng: 'place of living'
+  },{
+    rus: 'навыки',
+    eng: 'skills'
   },
   {
-    rus: 'сколько её/ему лет?',
-    eng: 'how old is he/she?'
+    rus: 'откуда он / она?',
+    eng: 'where is he / she from?'
   },
   {
-    rus: 'что его/её интересует?',
-    eng: 'what does interest him/her?'
+    rus: 'сколько ей / ему лет?',
+    eng: 'how old is he / she?'
   },
   {
-    rus: 'что она знает?',
-    eng: 'what does he/she know?'
+    rus: 'что его / её интересует?',
+    eng: 'what does interest him / her?'
   },
   {
-    rus: 'на каких языках он/она говорит?',
-    eng: 'what languages does he/she speak?'
+    rus: 'что он / она знает?',
+    eng: 'what does he / she know?'
+  },
+  {
+    rus: 'на каких языках он / она говорит?',
+    eng: 'what languages does he / she speak?'
   }
 ];
 

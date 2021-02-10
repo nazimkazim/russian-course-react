@@ -7,7 +7,7 @@ export const generateCV = () => {
   const yesOrNo = ['yes', 'no'];
 
   const femaleNames = ['Лара Крофт', 'Мария Шарапова', 'Елена Михаилова', 'Сауле Байсарина', 'Софи Лорен', 'Жустин Энен', 'Клаудия Шифер'];
-  const maleNames = ['Майкл Джордан', 'Джордж Клуни', 'Олег Иванов', 'Сергей Еснин', 'Джеймс Тони', 'Брэдл Купер', 'Сильвестер Сталоне'];
+  const maleNames = ['Майкл Джордан', 'Джордж Клуни', 'Олег Иванов', 'Сергей Еснин', 'Джеймс Тони', 'Брэд Купер', 'Сильвестер Сталоне'];
   const birthPlaces = ['Франция', 'Германия', 'Испания', 'Германия', 'Чехия', 'Латвия', 'Колумбия', 'Норвегия'];
   const currentCountries = ['Казахстан', 'Америка', 'Украина', 'Литва', 'Мексика', 'Аргентина', 'Узбекистан', 'Польша'];
   const occupations = ['Менеджер', 'Президент', 'Бухгалтер', 'Профессор', 'Футболист', 'Депутат', 'Учитель', 'Доктор', 'Дизайнер'];
@@ -83,19 +83,6 @@ export const generateCV = () => {
   }
 
   if (chosenGender === "мужчина") {
-    /* return {
-      avatar: malePhoto,
-      gender: chosenGender,
-      name: chosenMaleName,
-      likeOrNot: chosenYesOrNo,
-      birthPlace: chosenBirthPlace,
-      currentPlace: chosenCurrentPlace,
-      age: generatedAge,
-      occupation: chosenOccupation,
-      skills: chosenSkills,
-      hobbies: chosenHobbies,
-      languages: chosenlanguages
-    }; */
     let subjectPronoun = 'он';
     let objPronounGenitive = 'его';
     let objPronoundative = 'ему';

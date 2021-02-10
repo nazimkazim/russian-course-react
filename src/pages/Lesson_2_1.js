@@ -160,7 +160,7 @@ export default function Lesson_2_1() {
           <div className="columns">
             <div className="column">
               <Instruction letter="c" name="Научитесь составлять простые предложения" engName="Learn composing simple sentences" />
-              <NewWordsBoard data={ NWset7 } />
+              <NewWordsBoard title="new words" data={ NWset7 } />
               <ScrambleWordsActivity data={ set8COSOC } />
             </div>
           </div>

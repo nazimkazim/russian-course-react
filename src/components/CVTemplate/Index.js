@@ -203,7 +203,7 @@ function Index() {
             }
           );
           setIsActive('is-active');
-        } }><Icon><PlaceIcon /></Icon>Местопроживание</ListItemHalf>
+        } }><Icon><PlaceIcon /></Icon>Место проживания</ListItemHalf>
             <ListItemHalf paddingLeft="15px" fontWeight="normal">: { data.currentPlace && data.currentPlace.word }</ListItemHalf>
           </ListItem>
           <ListItem>

@@ -80,7 +80,7 @@ function Lesson_2_2() {
               <ActivityContainer data={ set4TextQuizzer } />
             </div>
             <div className="column">
-              <Instruction letter="a" name="Выучите слова из предыдущего упражнения" engName="Learn the words from the previous exercise" />
+              <Instruction letter="b" name="Выучите слова из предыдущего упражнения" engName="Learn the words from the previous exercise" />
               <iframe
                 src="https://quizlet.com/564892257/flashcards/embed?i=4bby1&x=1jj1"
                 height="500"
@@ -91,7 +91,7 @@ function Lesson_2_2() {
           </div>
           <div className="columns">
             <div className="column">
-              <Instruction letter="a" name="Читайте и переводите предложения" engName="Read and translate the sentences" />
+              <Instruction letter="c" name="Читайте и переводите предложения" engName="Read and translate the sentences" />
               <MemorizeOnClickActivity data={ MTCText12 } />
             </div>
           </div>
@@ -107,12 +107,12 @@ function Lesson_2_2() {
         </div>
         <div className="columns">
           <div className="column">
-            <Instruction letter="a" name="Угадайте цифры" engName="Guess digits" />
+            <Instruction letter="b" name="Угадайте цифры" engName="Guess digits" />
             <ChooseNumberOptions data={ numData1 } marginTop="30" />
           </div>
           <div className="column">
-            <Instruction letter="b" name="Сопоставьте цифры" engName="Match the digits" />
-            <MatchingActivity headerLeft="Subject" headerRight="Verb" data={ matchingWordsData8 } />
+            <Instruction letter="c" name="Сопоставьте цифры" engName="Match the digits" />
+            <MatchingActivity headerLeft="Digit" headerRight="Word" data={ matchingWordsData8 } />
           </div>
         </div>
       </section>
@@ -129,7 +129,7 @@ function Lesson_2_2() {
             </div>
           </div>
           <div className="column">
-            <Instruction letter="a" name="Спрашивайте и отвечайте о человеке" engName="Ask and answer about a person" />
+            <Instruction letter="b" name="Спрашивайте и отвечайте о человеке" engName="Ask and answer about a person" />
             <CVTemplate />
           </div>
         </div>

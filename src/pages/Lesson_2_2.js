@@ -18,7 +18,9 @@ import MatchingActivity from '../components/MatchWords';
 import { matchingWordsData8 } from '../data/MatchWordsData';
 import CVTemplate from '../components/CVTemplate/Index';
 import NewWordsBoard from '../components/NewWordsBoard';
-import { NWset8,NWset9 } from '../data/newWords';
+import { NWset8, NWset9 } from '../data/newWords';
+import DialogueContainer from '../components/dialoguesActivity/DialogueContainer';
+import { dialogue5 } from '../data/dialoguesData';
 
 
 function Lesson_2_2() {
@@ -134,7 +136,17 @@ function Lesson_2_2() {
           </div>
         </div>
       </section>
-
+      <div className="newSection">
+        <SectionHeader name="Практика говорения" engName="Speaking practice" />
+        <div className="container is-fluid">
+          <div className="columns">
+            <div className="column is-half is-offset-one-quarter">
+              <Instruction letter="б" name="Говорите данные предложения на Русском" engName="Say the given sentences in Russian" />
+              <DialogueContainer dialogues={ dialogue5 } />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

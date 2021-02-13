@@ -5,6 +5,8 @@ import tomHardy from '../images/MTWTP/lesson1.2/tom_hardy.jpg';
 
 export const tomHardyAttr = '<a href="https://www.flickr.com/photos/gageskidmore/42774738485/in/photolist-28aRHv8-2iMHTLE-DNsbWr-YxHbmj-DavA6U-GDvrPd-KdQktM-8hNkFU-pSgXo1-cyLCgu-22vjEtc-qdF4W3-cyLCNL-brd3wj-bE7VVk-MCtxHT-MCFhjU-NAt1s2-26MS4BA-28aRN5Z-dMjEzM-HKy12u-bE7jFx-brcnWA-brcR9G-4Puwav-bE824H-bE7AWx-9DJ1mR-bE7TLV-brcR9y-cyLAaL-h7dAoK-bE7mND-bE7TMx-bE7Noi-cyLD3E-bE7ms6-brcR9N-brd3vY-cyLCwL-2b1kU1d-brcK19-brcR9b-bJ35rx-P6iQsW-bE7iuk-brd3ws-aweyGL-bE7sLp" target="_blank">"Tom Hardy"</a> by <a href="https://www.flickr.com/photos/gageskidmore/" target="_blank">Gage Skidmore</a>, <a>russian course</a>, <a href="https://www.flickr.com/" target="_blank">flickr</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0" target="_blank">CC BY 4.0</a>';
 
+const womanPhoto = 'https://res.cloudinary.com/nzmai/image/upload/v1612604225/russian%20course/general/sigmund-jzz_3jWMzHA-unsplash.jpg';
+const manPhoto = 'https://res.cloudinary.com/nzmai/image/upload/v1612604229/russian%20course/general/ben-parker-OhKElOkQ3RE-unsplash.jpg';
 
 // Lesson 1.1
 export const dialogue1 = [
@@ -293,7 +295,7 @@ export const dialogue3 = [
 export const dialogue4 = [
     {
         L1: `Who is this man?`,
-        name: "Tom Hardy",
+        name: "Tom Haedy",
         company: "Actor",
         speaker: 2,
         L2: "Кто этот мужчина?",
@@ -318,7 +320,7 @@ export const dialogue4 = [
     },
     {
         L1: "Who is this woman?",
-        name: "Tom Hardy",
+        name: "Tom Haedy",
         company: "Actor",
         speaker: 2,
         L2: "Кто эта женщина?",
@@ -351,7 +353,7 @@ export const dialogue4 = [
     },
     {
         L1: `Who is this man?`,
-        name: "Tom Hardy",
+        name: "Tom Haedy",
         company: "Actor",
         speaker: 2,
         L2: "Кто этот мужчина?",
@@ -386,7 +388,7 @@ export const dialogue4 = [
     },
     {
         L1: `Who is this man?`,
-        name: "Tom Hardy",
+        name: "Tom Haedy",
         company: "Actor",
         speaker: 2,
         L2: "Кто этот мужчина?",
@@ -421,7 +423,7 @@ export const dialogue4 = [
     },
     {
         L1: `Very interesting. Thanks for information`,
-        name: "Tom Hardy",
+        name: "Tom Haedy",
         company: "Actor",
         speaker: 2,
         L2: "Очень интересно. Спасибо за информацию",
@@ -436,5 +438,154 @@ export const dialogue4 = [
         L2: "Пожалуйста",
         image: billGates,
         extra: []
+    }
+];
+
+// Lesson 2.2
+// Practice speaking section
+export const dialogue5 = [
+    {
+        L1: "Who is this man on the photo?",
+        name: "Linda",
+        company: "Apple",
+        speaker: 2,
+        L2: "Кто этот мужчина на фото?",
+        image: womanPhoto,
+        extra: []
+    },
+    {
+        L1: "This is my brother.",
+        name: "David",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Это мой брат.",
+        image: manPhoto,
+        extra: []
+    },
+    {
+        L1: "What is his name?",
+        name: "Linda",
+        company: "Apple",
+        speaker: 2,
+        L2: "Как его зовут?",
+        image: womanPhoto,
+        extra: []
+    },
+    {
+        L1: "His name is Alex. He is a teacher at the local school.",
+        name: "David",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Его зовут Алекс. Он учитель в местной школе.",
+        image: manPhoto,
+        extra: [{
+            L1: "местной",
+            L2: "local"
+        }]
+    },
+    {
+        L1: `How old is he?`,
+        name: "Linda",
+        company: "Apple",
+        speaker: 2,
+        L2: "Сколько ему лет?",
+        image: womanPhoto,
+        extra: []
+    },
+    {
+        L1: "He is 32.",
+        name: "David",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Ему 32.",
+        image: manPhoto,
+        extra: []
+    },
+    {
+        L1: `Is he married?`,
+        name: "Linda",
+        company: "Apple",
+        speaker: 2,
+        L2: "Он женат?",
+        image: womanPhoto,
+        extra: [{
+            L1: "женат",
+            L2: "married"
+        }]
+    },
+    {
+        L1: "Yes, he is married. He has two children. Son and Daughter. His wife's name is Angelina. She is not a teacher, he is an accountant.",
+        name: "David",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Да, он женат. У него двое детей. Сын и дочь. Его жену зовут Ангелина. Она не учитель, она бухгалтер.",
+        image: manPhoto,
+        extra: [
+            {
+                L1: "У него",
+                L2: "he has"
+            }
+        ]
+    },
+    {
+        L1: `How interesting. I am an accountant too. So we are collegues`,
+        name: "Linda",
+        company: "Apple",
+        speaker: 2,
+        L2: "Как интересно. Я тоже бухгалтер. Так что мы коллеги.",
+        image: womanPhoto,
+        extra: [{
+            L1: "Как интересно",
+            L2: "How interesting"
+        },
+        {
+            L1: "Так что",
+            L2: "So"
+        },
+        {
+            L1: "Коллеги",
+            L2: "collegues"
+        }
+        ]
+    },
+    {
+        L1: `Yes, it is`,
+        name: "David",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Да, это так",
+        image: manPhoto,
+        extra: []
+    },
+    {
+        L1: `I know that you have a sister. Please, tell me about her.`,
+        name: "Linda",
+        company: "Apple",
+        speaker: 2,
+        L2: "Я знаю, что у тебя есть сестра, пожалуйста, расскажи мне о ней.",
+        image: womanPhoto,
+        extra: []
+    },
+    {
+        L1: "What can I tell you. She is still not married. But she wants to get married very much. She loves children a lot. She is a stewardess.",
+        name: "David",
+        company: "Microsoft",
+        speaker: 1,
+        L2: "Что я могу рассказать. Она все ещё не замужем. Но она очень хочет выйти замуж. Она очень сильно любит детей. Она стюардесса.",
+        image: manPhoto,
+        extra: [
+            {
+            L1: "Что я могу рассказать",
+            L2: "What can I tell you"
+        },
+        {
+            L1: "все ещё",
+            L2: "still"
+        },
+        {
+            L1: "не замужем",
+            L2: "not married"
+        }
+    ]
     }
 ];

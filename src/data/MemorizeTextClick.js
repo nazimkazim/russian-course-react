@@ -1889,3 +1889,137 @@ export const MTCTextCustomJon1dash30 = [
         turned: true
     }
 ]
+
+//Careful
+export const MTCTextCustomJon1dash31 = [
+    {
+        eng: "If you are running look forwards not backwards or you will fall",
+        rus: "Если ты бежишь, смотри вперёд не назад или ты упадешь",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Look where you are going",
+        rus: "Смотри куда ты идёшь",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "If you are under the table be careful when you stand up or you will hit your head",
+        rus: "Если ты под столом, будь осторожна когда встаёшь, или ты ударишь голову",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do not crawl on the floor its dirty",
+        rus: "Не ползай по полу он грязный",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Behave or you will knock the glass over",
+        rus: "Остановись или ты уронишь стакан",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do not play with your dinner. It is not a toy. Please eat properly",
+        rus: "Не играй с едой (ужином). Это не игрушка. Пожалуйста, ешь нормально",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do not run over the floor it has just been cleaned. The lady will have to clean again if you make it dirty",
+        rus: "Не бегай по полу, его помыли. Тёте придётся мыть его снова если ты его замараешь",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do not throw the toys you may hit someone",
+        rus: "Не бросай игрушки ты можешь попасть в кого-нибудь",
+        id: uuidv4(),
+        turned: true
+    }
+]
+
+//Games
+export const MTCTextCustomJon1dash32 = [
+    {
+        eng: "Where is Mia hiding?",
+        rus: "Где Мия прячется?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Papa monster is hungry he needs brains for dinner",
+        rus: "Папа-монстр голодный ему нужны мозги на ужин",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "I think I can smell brains. Maybe the brains of a small girl. Tasty",
+        rus: "Я думаю, я чую запах мозгов. Может быть мозги маленькой девочки. Вкусно",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do you feel dizzy after the carousel?",
+        rus: "Ты чувствуеш головокружение после карусели?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Who is following me?",
+        rus: "Кто преследует меня?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "I can hear someone breathing",
+        rus: "Я чуствую чьё-то дыхание",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Mia lost this game and Mia will lose the next game",
+        rus: "Мия проиграла эту игру и Мия проиграет следующую игру",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "What game are you playing are you winning?",
+        rus: "Какую игру ты играешь, ты выигрываешь?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Should I push you on the swing?",
+        rus: "Мне качать тебя?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do not swing too high and hold on with both hands",
+        rus: "Не качайся так высоко и держись двумя руками",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Ready to go super high on the swing? Maybe you will fly from the seat? Get ready to fly",
+        rus: "Готова раскачаться супер высоко? Может быть ты улетишь из качели. Приготовься летать",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Do you like the magnetic blocks I gave you. What did you build?",
+        rus: "Тебе понравились магнитные блоки, которые я дал тебе. Что ты построила?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "To win the game you need four counter in a row. Either Up, down or sideways",
+        rus: "Чтобы выиграть игру тебе нужно четыре фишки в ряд. Либо вверх, вниз или по бокам",
+        id: uuidv4(),
+        turned: true
+    }
+]

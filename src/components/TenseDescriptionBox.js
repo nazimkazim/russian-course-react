@@ -6,7 +6,8 @@ const Box = styled.div`
   flex-direction:column;
   text-align:center;
   align-self:center;
-  width:120px;
+  width:150px;
+  max-width:300px;
   min-height:50px;
   padding:5px;
   border-radius:6px;

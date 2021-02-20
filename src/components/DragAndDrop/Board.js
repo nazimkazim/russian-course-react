@@ -17,6 +17,11 @@ const Root = styled.div`
   -moz-box-shadow: -5px 0px 3px -2px rgba(46, 33, 46, 1);
   box-shadow: -5px 0px 3px -2px rgba(46, 33, 46, 1);
   border-radius: 3px;
+  @media (max-width: 414px) {
+    display:flex;
+    background-color:black;
+    max-width: 400px;
+  }
 `
 function Board(props) {
   const drop = e => {

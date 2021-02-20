@@ -9,6 +9,7 @@ const Root = styled.div`
   cursor: pointer;
   margin-bottom: 5px;
   border-radius: 3px;
+  width:100%;
   > img {
     width:20px;
     height:20px;

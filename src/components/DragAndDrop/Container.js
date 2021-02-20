@@ -22,6 +22,10 @@ const Root = styled.div`
   -moz-box-shadow: 0px 0px 13px 2px rgba(232, 208, 232, 1);
   box-shadow: 0px 0px 13px 2px rgba(232, 208, 232, 1);
   border-radius: 18px;
+
+  @media (max-width: 414px) {
+    overflow-x:scroll;
+  }
 `;
 
 const BoardsContainer = styled.div`

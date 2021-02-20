@@ -2023,3 +2023,124 @@ export const MTCTextCustomJon1dash32 = [
         turned: true
     }
 ]
+
+// Plants versus Zombies
+export const MTCTextCustomJon1dash33 = [
+    {
+        eng: "Zombie team will make a plan to fight and win",
+        rus: "Команда зомби сделает план чтобы сражаться и выиграть",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Plants team will make a plan to fight and win",
+        rus: "Команда растений сделает план чтобы сражаться и выиграть",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Zombie Team is the strongest",
+        rus: "Команда зомби самая сильная",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Plant team has 5 players against 3 zombies but zombies are stronge",
+        rus: "У команды растений пять игроков против трёх зомби, но команда зомби сильнее",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Zombies run the fastest so they will win",
+        rus: "Зомби бегают самое быстро, поэтому они выиграют",
+        id: uuidv4(),
+        turned: true
+    }
+]
+
+// Pazzle
+export const MTCTextCustomJon1dash34 = [
+    {
+        eng: "Did you have flu and a fever",
+        rus: "У тебя был грипп и простуда?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "That piece is upside down. Turn it around",
+        rus: "Пазл вверх ногами. Поверни",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "That piece is in the wrong place",
+        rus: "Пазл в неправильном месте",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Where do you think that piece fits? Can you see the same colour on the puzzle?",
+        rus: "Как ты думаешь куда подходит этот пазл? Видишь одинаковые цвета на пазле?",
+        id: uuidv4(),
+        turned: true
+    }
+]
+
+
+// Painting
+export const MTCTextCustomJon1dash35 = [
+    {
+        eng: "Draw a straight line between the dots. Use a ruler",
+        rus: "Рисуй прямую линию между точками. Используй линейку",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Draw a straight line between there are there",
+        rus: "Рисуй прямую линию между там и там",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Draw a curved line between the shapes",
+        rus: "Рисуй кривую линию между фигурами",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Don’t scribble you will ruin the picture",
+        rus: "Не рисуй каракули ты испортишь рисунок",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You need more water with the paint, the paint is too thick",
+        rus: "Тебе нужно добавить больше воды в краску, краска слишком густая",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "That is too much glue it will stick to everything",
+        rus: "Слишком много клея, он будет прилипать ко всему",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "What would you like to draw next? Can you draw a painting for Papa?",
+        rus: "Что бы ты хотела нарисовать следующим? Можешь нарисовать для папы?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Hold the paint brush properly it will make a better picture",
+        rus: "Держи кисточку правильно, так ты будешь рисовать лучше",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "What colour do you get if you mix blue and yellow?",
+        rus: "Какой цвет ты получишь если смешаешь синий и жёлтый?",
+        id: uuidv4(),
+        turned: true
+    }
+]

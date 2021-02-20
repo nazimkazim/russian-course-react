@@ -4,21 +4,21 @@ import SectionHeader from '../components/SectionHeader';
 import { conjVerbsSet2, conjVerbsSet3, conjVerbsSet4, conjVerbsSet5, conjVerbsSet6, conjVerbsSet7 } from '../data/ConjugatedVerbs';
 import VebConjugationTemplate from '../components/Charts/VerbConjugationTemplate';
 import MemorizeOnClickActivity from '../components/MemorizeTextOnClick/Index';
-import { MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18,MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25,MTCTextCustomJon1dash26, MTCTextCustomJon1dash27, MTCTextCustomJon1dash28,MTCTextCustomJon1dash29,MTCTextCustomJon1dash30, MTCTextCustomJon1dash31 } from '../data/MemorizeTextClick';
+import { MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18, MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25, MTCTextCustomJon1dash26, MTCTextCustomJon1dash27, MTCTextCustomJon1dash28, MTCTextCustomJon1dash29, MTCTextCustomJon1dash30, MTCTextCustomJon1dash31, MTCTextCustomJon1dash32, MTCTextCustomJon1dash33, MTCTextCustomJon1dash34, MTCTextCustomJon1dash35 } from '../data/MemorizeTextClick';
 import TenseDescriptionBox from '../components/TenseDescriptionBox';
 
 export default function Lesson_2_1() {
   const [randomSentences, setRandomSentence] = useState([]);
-  const [chosenSentence, setChosenSentence] = useState([])
+  const [chosenSentence, setChosenSentence] = useState([]);
 
   const getRandomTextOnClickSentence = () => {
     let randNum1 = Math.floor(Math.random() * randomSentences.length);
     let randNum2 = Math.floor(Math.random() * randomSentences[randNum1].length);
     const randomSentence = randomSentences[randNum1][randNum2];
-    setChosenSentence(randomSentence)
+    setChosenSentence(randomSentence);
   };
   useEffect(() => {
-    setRandomSentence([MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18, MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25, MTCTextCustomJon1dash26, MTCTextCustomJon1dash27, MTCTextCustomJon1dash28, MTCTextCustomJon1dash29,MTCTextCustomJon1dash30, MTCTextCustomJon1dash31]);
+    setRandomSentence([MTCTextCustomJon1dash1, MTCTextCustomJon1dash2, MTCTextCustomJon1dash3, MTCTextCustomJon1dash4, MTCTextCustomJon1dash5, MTCTextCustomJon1dash6, MTCTextCustomJon1dash7, MTCTextCustomJon1dash8, MTCTextCustomJon1dash9, MTCTextCustomJon1dash10, MTCTextCustomJon1dash11, MTCTextCustomJon1dash12, MTCTextCustomJon1dash13, MTCTextCustomJon1dash14, MTCTextCustomJon1dash15, MTCTextCustomJon1dash16, MTCTextCustomJon1dash17, MTCTextCustomJon1dash18, MTCTextCustomJon1dash19, MTCTextCustomJon1dash20, MTCTextCustomJon1dash21, MTCTextCustomJon1dash22, MTCTextCustomJon1dash23, MTCTextCustomJon1dash24, MTCTextCustomJon1dash25, MTCTextCustomJon1dash26, MTCTextCustomJon1dash27, MTCTextCustomJon1dash28, MTCTextCustomJon1dash29, MTCTextCustomJon1dash30, MTCTextCustomJon1dash31, MTCTextCustomJon1dash32, MTCTextCustomJon1dash33, MTCTextCustomJon1dash34, MTCTextCustomJon1dash35]);
   }, []);
   //console.log(chosenSentence);
   return (
@@ -29,7 +29,7 @@ export default function Lesson_2_1() {
           <div className="columns is-multiline">
             <Instruction letter="a" name="Нажмите на кнопку чтобы подучить случайное предложение" engName="Click the button to get a random sentence" />
             <div className="column">
-              <MemorizeOnClickActivity randSent={chosenSentence} randomMode={ true } />
+              <MemorizeOnClickActivity randSent={ chosenSentence } randomMode={ true } />
               <button className="button is-success" onClick={ getRandomTextOnClickSentence }>Random</button>
             </div>
           </div>
@@ -246,7 +246,16 @@ export default function Lesson_2_1() {
             <MemorizeOnClickActivity data={ MTCTextCustomJon1dash31 } />
             <hr />
             <TenseDescriptionBox word='Игры' tense='Games' />
-            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash31 } />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash32 } />
+            <hr />
+            <TenseDescriptionBox word='Растения против зомби' tense='Plants versus Zombies' />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash33 } />
+            <hr />
+            <TenseDescriptionBox word='Пазл' tense='Pazzle' />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash34 } />
+            <hr />
+            <TenseDescriptionBox word='Рисование' tense='Painting' />
+            <MemorizeOnClickActivity data={ MTCTextCustomJon1dash35 } />
             <hr />
           </div>
         </div>

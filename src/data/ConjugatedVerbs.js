@@ -530,3 +530,76 @@ export const conjVerbsSet7 = [
     ]
   }
 ];
+
+export const conjVerbsSet8 = [
+  {
+    verb: 'Встава<strong>ть</strong>',
+    tense: 'Present tense (imperfect)',
+    set: [
+      'Я вста<strong>ю</strong>',
+      'Ты вста<strong>ёшь</strong>',
+      'Он вста<strong>ёт</strong>',
+      'Она вста<strong>ёт</strong>',
+      'Оно вста<strong>ёт</strong>',
+      'Вы вста<strong>ёте</strong>',
+      'Мы вста<strong>ём</strong>',
+      'Они вста<strong>ют</strong>'
+    ]
+  },
+  {
+    verb: 'Встава<strong>ть</strong>',
+    tense: 'Future tense (imperfect)',
+    set: [
+      'Я(буду) встава<strong>ть</strong>',
+      'Ты(будешь) встава<strong>ть</strong>',
+      'Он(будет) встава<strong>ть</strong>',
+      'Она(будет) встава<strong>ть</strong>',
+      'Оно(будет) встава<strong>ть</strong>',
+      'Вы(будете) встава<strong>ть</strong>',
+      'Мы(будем) встава<strong>ть</strong>',
+      'Они(будут) встава<strong>ть</strong>'
+    ]
+  },
+  {
+    verb: 'Вста<strong>ть</strong>',
+    tense: 'Future tense (perfect)',
+    set: [
+      'Я встан<strong>у</strong>',
+      'Ты встан<strong>ешь</strong>',
+      'Он встан<strong>ет</strong>',
+      'Она встан<strong>ет</strong>',
+      'Оно встан<strong>ет</strong>',
+      'Вы встан<strong>ите</strong>',
+      'Мы встан<strong>ем</strong>',
+      'Они встан<strong>ут</strong>'
+    ]
+  },
+  {
+    verb: 'Встава<strong>ть</strong>',
+    tense: 'Past tense (imperfect)',
+    set: [
+      'Я встава<strong>л</strong>',
+      'Ты встава<strong>л</strong>',
+      'Он встава<strong>л</strong>',
+      'Она встава<strong>ла</strong>',
+      'Оно встава<strong>ло</strong>',
+      'Вы встава<strong>ли</strong>',
+      'Мы встава<strong>ли</strong>',
+      'Они встава<strong>ли</strong>'
+    ]
+  },
+  {
+    verb: 'Вста<strong>ть</strong>',
+    tense: 'Past tense (perfect)',
+    set: [
+      'Я встал(а)',
+      'Ты встал(а)',
+      'Он встал',
+      'Она встал<strong>а</strong>',
+      'Оно встал<strong>о</strong>',
+      'Вы встал<strong>и</strong>',
+      'Мы встал<strong>и</strong>',
+      'Они встал<strong>и</strong>'
+    ]
+  }
+];

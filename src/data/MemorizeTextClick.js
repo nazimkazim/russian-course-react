@@ -1796,7 +1796,7 @@ export const MTCTextCustomJon1dash28 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 // Садиться (Past perfect)
 export const MTCTextCustomJon1dash29 = [
@@ -1842,7 +1842,7 @@ export const MTCTextCustomJon1dash29 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 // Сесть (Past perfect)
 export const MTCTextCustomJon1dash30 = [
@@ -1888,7 +1888,7 @@ export const MTCTextCustomJon1dash30 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 //Careful
 export const MTCTextCustomJon1dash31 = [
@@ -1940,7 +1940,7 @@ export const MTCTextCustomJon1dash31 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 //Games
 export const MTCTextCustomJon1dash32 = [
@@ -1964,7 +1964,7 @@ export const MTCTextCustomJon1dash32 = [
     },
     {
         eng: "Do you feel dizzy after the carousel?",
-        rus: "Ты чувствуеш головокружение после карусели?",
+        rus: "Ты чувствуешь головокружение после карусели?",
         id: uuidv4(),
         turned: true
     },
@@ -2022,7 +2022,7 @@ export const MTCTextCustomJon1dash32 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 // Plants versus Zombies
 export const MTCTextCustomJon1dash33 = [
@@ -2045,7 +2045,7 @@ export const MTCTextCustomJon1dash33 = [
         turned: true
     },
     {
-        eng: "Plant team has 5 players against 3 zombies but zombies are stronge",
+        eng: "Plant team has 5 players against 3 zombies but zombies are stronger",
         rus: "У команды растений пять игроков против трёх зомби, но команда зомби сильнее",
         id: uuidv4(),
         turned: true
@@ -2056,7 +2056,7 @@ export const MTCTextCustomJon1dash33 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 // Pazzle
 export const MTCTextCustomJon1dash34 = [
@@ -2084,7 +2084,7 @@ export const MTCTextCustomJon1dash34 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
 
 
 // Painting
@@ -2143,4 +2143,50 @@ export const MTCTextCustomJon1dash35 = [
         id: uuidv4(),
         turned: true
     }
-]
+];
+
+// Вставать (present tense imperfect)
+export const MTCTextCustomJon1dash36 = [
+    {
+        eng: "If I get up early I feel cheerful",
+        rus: "Если я встаю рано я чувствую себя бодро",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "If you get out of bed quickly, you may feel dizzy.",
+        rus: "Если ты встаёшь с кровати быстро, ты можешь чувствовать головокружение",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "If he strikes a pose, just ignore him",
+        rus: "Если он встаёт в позу, просто игнорируй его",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Every Monday she gets up on the wrong foot",
+        rus: "Каждый понедельник она встаёт не с той ноги",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "If you get up at 7 in the morning, you usually come an hour earlier",
+        rus: "Если вы встаёте в 7 часов утра вы как правило приходите на час раньше",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "When we get up in the morning, we usually feel sleepy.",
+        rus: "Когда мы встаём утром, мы обычно испытываем сонливость",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "They get up late on Friday because they don't have to go to work.",
+        rus: "В пятницу они встают позднее, так как им не нужно идти на работу",
+        id: uuidv4(),
+        turned: true
+    }
+];

@@ -2190,3 +2190,49 @@ export const MTCTextCustomJon1dash36 = [
         turned: true
     }
 ];
+
+// Вставать (present tense imperfect)
+export const MTCTextCustomJon1dash37 = [
+    {
+        eng: "In New York I will get up early in the morning and go jogging in manhattan (area)",
+        rus: "В Нью Йорке я буду вставать рано утром и делать пробежку в районе Манхэттана",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Tomorrow when you will get up, put on slippers, which will be under the bed",
+        rus: "Завтра когда ты будешь вставать, одень тапочки, которые будут под кроватью",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "What for will he get up after the punch in this episode?",
+        rus: "Для  чего он будет вставать после удара в этом эпизоде?",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "She won't get up too early for this job",
+        rus: "Она не будет вставать слишком рано для этой работы",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You will get up at night to drink your medicine",
+        rus: "Вы будете вставать ночью чтобы выпить лекарство",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "We will get up and go to school together to be safer",
+        rus: "Мы будем вставать и вместе идти в школу,чтобы было безопасней",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "They will be constantly getting up and sit down, so they will need more comfortable and practical clothing",
+        rus: "Они будут постоянно вставать и садиться, поэтому им нужна будет более удобная и практичная одежда",
+        id: uuidv4(),
+        turned: true
+    }
+];

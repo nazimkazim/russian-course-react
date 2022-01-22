@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import click from '../data/media/click.wav';
 import denied from '../data/media/denied.mp3';
 import correct from '../data/media/correct.wav';
 import ProgressBar from '../components/ProgressBar';
-import {speakStr} from './Pronunciation'
+import { speakStr } from './Pronunciation';
 var _ = require('lodash');
 
 class ScrambleWordsActivity extends Component {
@@ -40,9 +39,8 @@ class ScrambleWordsActivity extends Component {
   };
 
   handleAnswer = (e) => {
-    
     let word = e.target.value;
-    speakStr(word, 'ru-RU')
+    speakStr(word, 'ru-RU');
     let obj = { ...this.state.data };
 
     let index = obj[this.state.index].scrambled.indexOf(word);

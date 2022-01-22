@@ -30,7 +30,7 @@ class Quiz extends Component {
           { translation: item.translation, disabled: false }
         );
         allPairs.push(item.pair);
-        return mixedWords, allPairs;
+        return { mixedWords, allPairs };
       });
 
     this.setState({

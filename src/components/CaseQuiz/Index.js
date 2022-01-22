@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Continer = styled.div`
+const Container = styled.div`
   position:relative;
   display:flex;
   flex-direction:column;
@@ -70,7 +70,7 @@ const Rule = styled.div`
 
 `;
 
-const Incrementer = styled.div`
+const Incrementor = styled.div`
   position:absolute;
   display:flex;
   align-items:center;
@@ -123,9 +123,7 @@ function Index({ data }) {
 
 
   const chooseAnswer = (e) => {
-    //console.log(e.target.value, e.target.name);
-    //console.log(`option1 ${option1}`,`option2 ${option2}`);
-    //setAnswer([...answer, e.target.idx]);
+    console.log(e);
     if (e.target.name === 'option1') {
       setOption1(e.target.value);
     }
@@ -142,11 +140,13 @@ function Index({ data }) {
 
   const correctAnswer = () => {
     let arr = [];
+    // eslint-disable-next-line array-callback-return
     data[index].choices[0].options.map((item, index) => {
       if (item.correct === true) {
         arr.push(index);
       }
     });
+    // eslint-disable-next-line array-callback-return
     data[index].choices[1].options.map((item, index) => {
       if (item.correct === true) {
         arr.push(index);
@@ -195,14 +195,14 @@ function Index({ data }) {
     setIncorrect(false);
   };
   return (
-    <Continer>
-      <Incrementer>{ index }/{ data.length }</Incrementer>
+    <Container>
+      <Incrementor>{ index }/{ data.length }</Incrementor>
       <Status>
         { incorrect && '😨' }
         { correct && '👍' }
       </Status>
-      {data[index] && <Word>{ data[index].word }</Word> }
-      {!isFinished ? <OptionContainer>
+      { data[index] && <Word>{ data[index].word }</Word> }
+      { !isFinished ? <OptionContainer>
         { data[index].choices.map((choice) => (
           <>
             <OptionName>{ choice.name }</OptionName>
@@ -217,9 +217,9 @@ function Index({ data }) {
           </>
         )) }
       </OptionContainer> : <Word>Game is finished</Word> }
-      {!isFinished ? <Button onClick={ checkAnswer }>Check answer</Button> : <Button onClick={ startAgain }>Start again</Button> }
-      {!isFinished && <Button disabled={ nextBtnDisabled } onClick={ nextQuestion }>Next Question</Button> }
-    </Continer>
+      { !isFinished ? <Button onClick={ checkAnswer }>Check answer</Button> : <Button onClick={ startAgain }>Start again</Button> }
+      { !isFinished && <Button disabled={ nextBtnDisabled } onClick={ nextQuestion }>Next Question</Button> }
+    </Container>
   );
 }
 

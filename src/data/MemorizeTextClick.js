@@ -2236,3 +2236,49 @@ export const MTCTextCustomJon1dash37 = [
         turned: true
     }
 ];
+
+// Встать (future tense perfect)
+export const MTCTextCustomJon1dash38 = [
+    {
+        eng: "I'll just get up and leave now because you're deceiving me",
+        rus: "Я сейчас просто встану и уйду, потому что ты меня обманываешь",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "You go to bed earlier, you get up earlier, he says cheerfully",
+        rus: "Раньше ляжешь, раньше встанешь, ― весело говорит он",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "I will tear apart anyone who gets in my way!",
+        rus: "Я разорву любого, кто встанет на моем пути!",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "If Masha gets up, there will be a fight, she just lies there and cannot do anything",
+        rus: "Если Маша встанет, будет драка, она просто лежит и ничего не может сделать",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Let's you stand in line for a subsidy, and within a year you will receive it",
+        rus: "Давайте вы встанете в очередь на субсидию, и в течение года вы ее получите",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "Together we will rise and walk to freedom",
+        rus: "Мы вместе встанем и пойдем к свободе",
+        id: uuidv4(),
+        turned: true
+    },
+    {
+        eng: "It was clear that sooner or later they would get up",
+        rus: "Было понятно, что рано или поздно они встанут",
+        id: uuidv4(),
+        turned: true
+    }
+];
